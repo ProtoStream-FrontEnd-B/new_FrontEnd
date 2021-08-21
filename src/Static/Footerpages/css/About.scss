@@ -1,0 +1,38 @@
+.about{
+    width: 90%;
+    margin: auto;
+
+    .head{
+        color: var(--text-pr);
+        padding-bottom: 1em;
+        text-decoration: underline;
+        text-underline-position: under;
+        text-decoration-color: var(--accent-sec);
+        font-family: var(--font-sec);
+        font-size: var(--heading-main);
+        margin: 2rem;
+        text-align: center;
+    }
+
+    .details{
+        .para {   
+            color: var(--text-pr);
+            font-family: var(--font-alt);
+            font-size: var(--span);
+            line-height: 30px;
+            word-spacing: 0.2rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .slides{
+            margin: 2rem 0;
+            .image{
+                height: 40%;
+                width: 60%;
+                margin: 2em 0;
+                // display: block;
+                image-rendering: pixelated;
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.Team {
+  text-align: center;
+}
+
+.Team .head {
+  color: var(--text-pr);
+  text-decoration: underline;
+  text-underline-position: under;
+  -webkit-text-decoration-color: var(--accent-sec);
+          text-decoration-color: var(--accent-sec);
+  font-family: var(--font-sec);
+  margin: 2rem;
+}
+
+.Team .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=Team.css.map */

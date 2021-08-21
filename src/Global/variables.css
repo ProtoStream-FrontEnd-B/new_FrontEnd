@@ -1,0 +1,26 @@
+:root {
+  /* colors */
+
+  --bg-pr: #242424;
+  --bg-sec: #1b1b1b;
+  --comp-pr: #2B2B2B;
+  --comp-sec: #393939;
+  --comp-sec-hover: #494949;
+  --accent-pr: #fbd11b;
+  --accent-sec: #ffb606;
+  --text-pr: #fff;
+  --text-sec: #ffffffb3;
+
+  /* Fonts */
+
+  --font-pr: 'Poppins', sans-serif;
+  --font-sec: 'Montserrat', sans-serif;
+  --font-alt: 'Rubik', sans-serif;
+
+  --heading-main: 2.6rem;
+  --heading-med: 2rem; 
+  --heading-small: 1.6rem;
+  --para: 1rem;
+  --span: 1.1rem;
+  --button: 1.2rem;   
+}

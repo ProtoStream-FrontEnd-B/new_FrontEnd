@@ -1,0 +1,20 @@
+.Team {
+    text-align: center;
+
+    .head{
+        color: var(--text-pr);
+        text-decoration: underline;
+        text-underline-position: under;
+        text-decoration-color: var(--accent-sec);
+        font-family: var(--font-sec);
+        margin: 2rem;
+    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+

@@ -1,0 +1,78 @@
+.errorpage {
+  height: 90vh;
+  width: 100%;
+  margin-top: 2%;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+
+  .box {
+    width: 800px;
+    height: 600px;
+    margin-top: 2%;
+    border-radius: 10px;
+    background: linear-gradient(130deg, var(--accent-pr), var(--accent-sec));
+    display: flex;
+
+    .details {
+      width: 60%;
+      text-align: center;
+      color: var(--text-pr);
+      font-family: var(--font-pr);
+
+      .main-head{
+        font-size: 5rem;
+      }
+
+      .sub-head{
+        font-size: 4rem;
+        margin-top: 2rem;
+      }
+
+      .para{
+        font-size: 1.5rem;
+        margin: 20px 0;
+        font-weight: bold;
+        font-family: var(--font-alt);
+      }
+
+      .btn{
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+        margin: 10px 0;
+        color: rgba(32, 32, 32, 0.952);
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        img{
+          margin:0 2px;
+        }
+      }
+
+      .btn:hover{
+        filter: brightness(0.9);
+      }
+    }
+
+    .image {
+      width: 20%;
+      display: flex;
+
+      .boy {
+        position: relative;
+        height: 60%;
+        left: -300px;
+        align-self: flex-end;
+      }
+
+      .jupiter {
+        align-self: flex-start;
+        position: relative;
+        right: -50px;
+      }
+    }
+  }
+}
