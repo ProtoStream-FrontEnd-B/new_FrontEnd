@@ -1,0 +1,169 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 3rem;
+  font-family: var(--font-pr);
+  width: 100vw;
+  min-width: 100vw;
+}
+
+.header .navbar-logo {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 4px 4px;
+}
+
+.header .menu-icon {
+  display: none;
+}
+
+.header .nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 50%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: var(--comp-pr);
+}
+
+.header .nav-menu .nav-item {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.header .nav-menu .nav-item .nav-links {
+  text-decoration: none;
+  color: var(--text-pr);
+  font-size: var(--para);
+}
+
+.header .nav-menu .nav-item:hover {
+  background: var(--accent-sec) 59.57%;
+}
+
+.header .buttons .btn {
+  background: linear-gradient(90.49deg, var(--accent-pr) 17.35%, var(--accent-sec) 59.57%);
+  padding: 0.5rem 2rem;
+  color: var(--text-pr);
+  font-size: var(--button);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.header .buttons .btn:hover {
+  -webkit-filter: brightness(1.3);
+          filter: brightness(1.3);
+}
+
+.activated {
+  background-color: red;
+}
+
+@media screen and (max-width: 720px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header .logo {
+    margin: 1rem;
+  }
+  .header .btn {
+    display: none;
+  }
+  .header .menu-icon {
+    display: block;
+    margin-left: 2rem;
+    position: absolute;
+    left: 10rem;
+    color: white;
+    font-size: 2rem;
+  }
+  .header .mobile-nav {
+    display: inline-block;
+    color: white;
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    margin: 2rem;
+    width: 100%;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    text-align: center;
+  }
+  .header .mobile-nav .nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    list-style: none;
+    width: 100%;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: var(--comp-pr);
+  }
+  .header .mobile-nav .nav-item {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  .header .mobile-nav .nav-item .nav-links {
+    text-decoration: none;
+    color: var(--text-pr);
+    font-size: var(--para);
+  }
+  .header .mobile-nav .nav-item:hover {
+    background: var(--accent-sec) 59.57%;
+  }
+  .header .nav-menu {
+    display: none;
+  }
+}
+/*# sourceMappingURL=Header.css.map */

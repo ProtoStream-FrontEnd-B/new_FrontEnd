@@ -8,10 +8,11 @@ import prototyping from "../../Assets/Illustrations/prototyping.svg";
 import resources from "../../Assets/Illustrations/resources.svg";
 import hackathon from "../../Assets/Illustrations/hackathon.svg";
 import internships from "../../Assets/Illustrations/internship.svg";
-
+import NavBar from "../../Components/Header/NavBar";
 const Home = () => {
   return (
     <div>
+
       <Section
         heading="Building the Future, One Idea at a time."
         subHeading="Ideas and Dreams are what makes Entrepreneurs different , but those dreams turned into reality is what makes the world different."

@@ -12,6 +12,8 @@
   padding: 5rem 0;
   margin: auto;
   font-family: var(--font-pr);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .footer-container .footer .box {
