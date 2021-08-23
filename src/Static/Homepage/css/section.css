@@ -6,7 +6,7 @@
 }
 
 .section {
-  min-width: 100vw;
+  min-width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,6 +20,7 @@
 }
 
 .section .container {
+  max-width: 100%;
   min-height: 100%;
   width: 90%;
   margin: auto;
@@ -88,7 +89,7 @@
 }
 
 .section .container .hero-image {
-  width: 50%;
+  width: 70%;
   padding: 1rem;
   position: relative;
 }
