@@ -27,170 +27,89 @@ const Header = () => {
 
     const headerElement = () => (
         <header className="header">
-            <div classNames="logo">
-                <NavLink to={user ? "/" : "/"} className="navbar-logo">
-                    <img src={logo} alt="" className="logo-img" />
-                </NavLink>
-            </div>
-
-
-            {(click) && (window.screen.width < 720) ? (
-                <div className="mobile-nav">
-                    <ul className="nav-list">
-                        {/* Designing Dashboard According to user roless...  pending */}
-                        {user && user.role === 1 ? (
-                            <li className="nav-item">
-                                <NavLink
-                                    to="/user/dashboard"
-                                    className="nav-links"
-                                    onClick={closeMobileMenu}
-                                >
-                                    Dashboard
-                                </NavLink>
-                            </li>
-                        ) : (
-                            <li className="nav-item">
-                                <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
-                                    Home
-                                </NavLink>
-                            </li>
-                        )}
-                        <li className="nav-item">
-                            <NavLink
-                                to="/projects"
-                                className="nav-links"
-                                onClick={closeMobileMenu}
-                            >
-                                Projects
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink
-                                to="/internships"
-                                className="nav-links"
-                                onClick={closeMobileMenu}
-                            >
-                                Internships
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink
-                                to="/schemes"
-                                className="nav-links"
-                                onClick={closeMobileMenu}
-                            >
-                                Schemes
-                            </NavLink>
-                        </li>
-                        {user && user.role === 1 ? (
-                            <NavLink to="/startups" className="buttons">
-                                <li className="btn">Startups</li>
-                            </NavLink>
-                        ) : (
-                            <li className="nav-item">
-                                <NavLink
-                                    to="/startups"
-                                    className="nav-links"
-                                    onClick={closeMobileMenu}
-                                >
-                                    Startups
-                                </NavLink>
-                            </li>
-                        )}
-                    </ul>
-                </div>
-            ) : (
-                <div className="nav-menu">
-
-
-                    <ul className={click ? "nav-menu active" : "nav-menu"}>
-                        {/* Designing Dashboard According to user roless...  pending */}
-                        {user && user.role === 1 ? (
-                            <li className="nav-item">
-                                <NavLink
-                                    to="/user/dashboard"
-                                    className="nav-links"
-                                    onClick={closeMobileMenu}
-                                >
-                                    Dashboard
-                                </NavLink>
-                            </li>
-                        ) : (
-                            <li className="nav-item">
-                                <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
-                                    Home
-                                </NavLink>
-                            </li>
-                        )}
-                        <li className="nav-item">
-                            <NavLink
-                                to="/projects"
-                                className="nav-links"
-                                onClick={closeMobileMenu}
-                            >
-                                Projects
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink
-                                to="/internships"
-                                className="nav-links"
-                                onClick={closeMobileMenu}
-                            >
-                                Internships
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink
-                                to="/schemes"
-                                className="nav-links"
-                                onClick={closeMobileMenu}
-                            >
-                                Schemes
-                            </NavLink>
-                        </li>
-                        {user && user.role === 1 ? (
-                            <NavLink to="/startups" className="buttons">
-                                <button className="btn">Startups</button>
-                            </NavLink>
-                        ) : (
-                            <li className="nav-item">
-                                <NavLink
-                                    to="/startups"
-                                    className="nav-links"
-                                    onClick={closeMobileMenu}
-                                >
-                                    Startups
-                                </NavLink>
-                            </li>
-                        )}
-                    </ul>
-
-                </div>
-
-
-            )}
-
-
-
-
+            <NavLink to={user ? "/" : "/"} className="navbar-logo">
+                <img src={logo} alt="" className="logo" />
+            </NavLink>
             <div className="menu-icon" onClick={handleClick}>
                 <i className={click ? "fas fa-times" : "fas fa-bars"} />
             </div>
-
-            {!user ? (
-                <div className="btn-div">
-                    <NavLink to="/signin" className="buttons">
-                        <button className="btn">Login</button>
+            <ul className={click ? "nav-menu active" : "nav-menu"}>
+                {/* Designing Dashboard According to user roless...  pending */}
+                {user && user.role === 1 ? (
+                    <li className="nav-item">
+                        <NavLink
+                            to="/user/dashboard"
+                            className="nav-links"
+                            onClick={closeMobileMenu}
+                        >
+                            Dashboard
+                        </NavLink>
+                    </li>
+                ) : (
+                    <li className="nav-item">
+                        <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
+                            Home
+                        </NavLink>
+                    </li>
+                )}
+                <li className="nav-item">
+                    <NavLink
+                        to="/projects"
+                        className="nav-links"
+                        onClick={closeMobileMenu}
+                    >
+                        Projects
                     </NavLink>
-                </div>
+                </li>
+                <li className="nav-item">
+                    <NavLink
+                        to="/internships"
+                        className="nav-links"
+                        onClick={closeMobileMenu}
+                    >
+                        Internships
+                    </NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink
+                        to="/schemes"
+                        className="nav-links"
+                        onClick={closeMobileMenu}
+                    >
+                        Schemes
+                    </NavLink>
+                </li>
+                {user && user.role === 1 ? (
+                    <NavLink to="/startups" className="buttons">
+                        <button className="btn">Startups</button>
+                    </NavLink>
+                ) : (
+                    <li className="nav-item">
+                        <NavLink
+                            to="/startups"
+                            className="nav-links"
+                            onClick={closeMobileMenu}
+                        >
+                            Startups
+                        </NavLink>
+                    </li>
+                )}
 
+                <li className={click ? "nav-item" : "none"}>
+                    <NavLink to="/signin" className="buttons">
+                        <button className="nav-btn">Login</button>
+                    </NavLink>
+                </li>
+            </ul>
+            {!user ? (
+                <NavLink to="/signin" className="buttons">
+                    <button className="btn">Login</button>
+                </NavLink>
             ) : (
                 ""
             )}
         </header>
-    );
-
+    )
     return (
         <div>
             {errorRedirect()}

@@ -1,5 +1,5 @@
 .startups {
-  max-width: 100vw;
+  min-width: 100vw;
   background: linear-gradient(93.11deg, var(--accent-sec) 10.85%, var(--accent-pr) 58.94%, var(--accent-sec) 80.15%);
   font-family: "Poppins", sans-serif;
   padding: 2rem 0;

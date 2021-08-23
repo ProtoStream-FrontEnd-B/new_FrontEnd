@@ -9,9 +9,11 @@ import resources from "../../Assets/Illustrations/resources.svg";
 import hackathon from "../../Assets/Illustrations/hackathon.svg";
 import internships from "../../Assets/Illustrations/internship.svg";
 import NavBar from "../../Components/Header/NavBar";
+import "./css/Home.css"
+
 const Home = () => {
   return (
-    <div>
+    <div className="Home">
 
       <Section
         heading="Building the Future, One Idea at a time."

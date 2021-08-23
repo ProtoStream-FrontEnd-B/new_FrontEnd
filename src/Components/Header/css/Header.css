@@ -10,8 +10,10 @@
           justify-content: space-between;
   padding: 1rem 3rem;
   font-family: var(--font-pr);
-  width: 100vw;
-  min-width: 100vw;
+  width: 100%;
+  min-width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .header .navbar-logo {
@@ -23,6 +25,10 @@
 }
 
 .header .menu-icon {
+  display: none;
+}
+
+.header .none {
   display: none;
 }
 
@@ -82,87 +88,34 @@
   background-color: red;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 780px) {
   .header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
-    min-height: -webkit-fit-content;
-    min-height: -moz-fit-content;
-    min-height: fit-content;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    min-width: -webkit-fit-content;
-    min-width: -moz-fit-content;
-    min-width: fit-content;
-    width: 100%;
+    padding: 2%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    position: relative;
   }
   .header .logo {
-    margin: 1rem;
-  }
-  .header .btn {
-    display: none;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
   }
   .header .menu-icon {
-    display: block;
-    margin-left: 2rem;
-    position: absolute;
-    left: 10rem;
-    color: white;
-    font-size: 2rem;
-  }
-  .header .mobile-nav {
     display: inline-block;
     color: white;
-    position: absolute;
-    top: 2rem;
-    right: 4rem;
-    margin: 2rem;
-    width: 100%;
-    min-width: -webkit-fit-content;
-    min-width: -moz-fit-content;
-    min-width: fit-content;
-    text-align: center;
-  }
-  .header .mobile-nav .nav-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    list-style: none;
-    width: 100%;
-    min-width: -webkit-fit-content;
-    min-width: -moz-fit-content;
-    min-width: fit-content;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    border-radius: 10px;
-    padding: 1rem;
-    background-color: var(--comp-pr);
-  }
-  .header .mobile-nav .nav-item {
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-  }
-  .header .mobile-nav .nav-item .nav-links {
-    text-decoration: none;
-    color: var(--text-pr);
-    font-size: var(--para);
-  }
-  .header .mobile-nav .nav-item:hover {
-    background: var(--accent-sec) 59.57%;
   }
   .header .nav-menu {
+    display: none;
+  }
+  .header .active {
+    display: block;
+    position: relative;
+  }
+  .header .btn {
     display: none;
   }
 }
