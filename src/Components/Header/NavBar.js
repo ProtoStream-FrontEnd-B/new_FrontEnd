@@ -27,13 +27,14 @@ const Header = () => {
 
     const headerElement = () => (
         <header className="header">
-            <NavLink to={user ? "/" : "/"} className="navbar-logo">
+            <div className="logo-div"> <NavLink to={user ? "/" : "/"} className="navbar-logo">
                 <img src={logo} alt="" className="logo" />
-            </NavLink>
+            </NavLink></div>
+
             <div className="menu-icon" onClick={handleClick}>
                 <i className={click ? "fas fa-times" : "fas fa-bars"} />
             </div>
-            <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <div className="nav-menu-div"><ul className={click ? "nav-menu active" : "nav-menu"}>
                 {/* Designing Dashboard According to user roless...  pending */}
                 {user && user.role === 1 ? (
                     <li className="nav-item">
@@ -100,7 +101,8 @@ const Header = () => {
                         <button className="nav-btn">Login</button>
                     </NavLink>
                 </li>
-            </ul>
+            </ul></div>
+
             {!user ? (
                 <NavLink to="/signin" className="buttons">
                     <button className="btn">Login</button>
