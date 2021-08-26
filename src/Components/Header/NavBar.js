@@ -96,21 +96,26 @@ const Header = () => {
                     </li>
                 )}
 
-                <li className={click ? "nav-item" : "none"}>
+
+
+
+            </ul>
+                {!user ? (<span className={click ? "nav-item" : "none"} >
                     <NavLink to="/signin" className="buttons">
                         <button className="nav-btn">Login</button>
                     </NavLink>
-                </li>
-            </ul></div>
+                </span>) : ("")}</div>
 
-            {!user ? (
-                <NavLink to="/signin" className="buttons">
-                    <button className="btn">Login</button>
-                </NavLink>
-            ) : (
-                ""
-            )}
-        </header>
+            {
+                !user ? (
+                    <NavLink to="/signin" className="buttons">
+                        <button className="btn">Login</button>
+                    </NavLink>
+                ) : (
+                    ""
+                )
+            }
+        </header >
     )
     return (
         <div>

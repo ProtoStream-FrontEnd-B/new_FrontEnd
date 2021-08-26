@@ -18,6 +18,10 @@
   .none {
     display: none;
   }
+
+  .nav-btn {
+    display: none;
+  }
   .nav-menu {
     display: flex;
     list-style: none;
@@ -101,6 +105,7 @@
     .nav-menu-div {
       display: block;
       margin-top: 0.8rem;
+      background-color: var(--comp-pr);
       // background-color: aquamarine;
       min-width: 100%;
       text-align: center;
@@ -117,6 +122,8 @@
     }
 
     .nav-btn {
+      margin: 0.2rem;
+      display: inline-block;
       background: linear-gradient(
         90.49deg,
         var(--accent-pr) 17.35%,
