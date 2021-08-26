@@ -74,16 +74,19 @@
 
 @media screen and (max-width: 780px) {
   .header {
-    display: grid;
+    // display: grid;
     padding: 2%;
+    display: flex;
     // background-color: azure;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 3fr;
+    // grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 1fr 3fr;
 
     .logo-div {
+      min-width: 50%;
     }
 
     .menu-icon {
+      min-height: 50%;
       margin-right: 0.5rem;
       display: inline-block;
       font-size: 2rem;
@@ -97,7 +100,7 @@
     }
     .nav-menu-div {
       display: block;
-
+      margin-top: 0.8rem;
       // background-color: aquamarine;
       min-width: 100%;
       text-align: center;
