@@ -11,8 +11,8 @@ export const DeskProjectCard = ({ src, head, para, branch, members, link }) => {
         <div className="project-container">
 
             <div className="img_div"> <img className="project_img" src={src} alt="" /></div>
-            <div className="head_div">
-                <h2 className="head">{head}</h2>
+            <div className="project_head_div">
+                <h2 className="project_head">{head}</h2>
             </div>
             <div className="project_content">
                 <p className="project_para">{para}</p>
