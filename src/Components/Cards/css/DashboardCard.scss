@@ -1,0 +1,12 @@
+.dashboard-card {
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
+  border-radius: 10px;
+  width: 100%;
+  min-width: fit-content;
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}

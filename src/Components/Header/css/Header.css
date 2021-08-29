@@ -71,6 +71,8 @@
 }
 
 .header .buttons .btn {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   background: linear-gradient(90.49deg, var(--accent-pr) 17.35%, var(--accent-sec) 59.57%);
   padding: 0.5rem 2rem;
   color: var(--text-pr);
@@ -92,7 +94,7 @@
   background-color: red;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1080px) {
   .header {
     padding: 2%;
     display: -webkit-box;
@@ -104,11 +106,13 @@
   }
   .header .menu-icon {
     min-height: 50%;
-    margin-right: 0.5rem;
+    margin-right: 2rem;
     display: inline-block;
     font-size: 2rem;
     text-align: right;
     color: white;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
   }
   .header .nav-menu {
     display: none;
@@ -117,21 +121,39 @@
     display: block;
     margin-top: 0.8rem;
     background-color: var(--comp-pr);
+    border-radius: 10px;
     min-width: 100%;
     text-align: center;
+    border-bottom: 2px solid var(--accent-pr);
   }
-  .header .active {
+  .header .mobile-nav {
+    list-style: none;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: var(--comp-pr);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-animation: slidein;
+            animation: slidein;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
   }
-  .header .active .nav-item {
+  .header .mobile-nav .nav-item {
     margin: 0.2rem;
+    color: white;
+    background-color: #292929;
+    width: 100%;
+  }
+  .header .mobile-nav .nav-item .nav-links {
+    text-decoration: none;
+    color: var(--text-pr);
+    font-size: var(--para);
   }
   .header .nav-btn {
     margin: 0.2rem;
@@ -153,6 +175,42 @@
   }
   .header .btn {
     display: none;
+  }
+}
+
+@-webkit-keyframes slidein {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=Header.css.map */

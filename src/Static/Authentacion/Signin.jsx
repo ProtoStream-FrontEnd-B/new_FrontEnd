@@ -18,7 +18,7 @@ function Signin() {
                         <input type="checkbox" name="" id="" />
                         <label htmlFor="">Remember me</label>
                     </div>
-                    <p className="para"><a href="#">Forgot Password.</a> New here? <a href="/signup2">Sign up</a></p>
+                    <p className="para"><a href="#">Forgot Password.</a> New here? <a href="/signup">Sign up</a></p>
                     <button className="sign-btn">Login</button>
                 </form>
             </div>

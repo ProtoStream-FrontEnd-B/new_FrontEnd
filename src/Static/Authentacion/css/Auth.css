@@ -1,7 +1,7 @@
 @import url(../../../Global/variables.css);
 .auth {
   width: 100%;
-  height: 90vh;
+  max-height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,13 +13,15 @@
   color: var(--text-pr);
 }
 
-.auth .overlay1, .auth .overlay2 {
+.auth .overlay1,
+.auth .overlay2 {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
-.auth .overlay1 img, .auth .overlay2 img {
+.auth .overlay1 img,
+.auth .overlay2 img {
   width: 100%;
 }
 

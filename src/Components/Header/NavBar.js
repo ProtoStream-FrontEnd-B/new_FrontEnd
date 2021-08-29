@@ -34,7 +34,7 @@ const Header = () => {
             <div className="menu-icon" onClick={handleClick}>
                 <i className={click ? "fas fa-times" : "fas fa-bars"} />
             </div>
-            <div className="nav-menu-div"><ul className={click ? "nav-menu active" : "nav-menu"}>
+            <div className="nav-menu-div"><ul className={click ? " nav-menu mobile-nav " : "nav-menu"}>
                 {/* Designing Dashboard According to user roless...  pending */}
                 {user && user.role === 1 ? (
                     <li className="nav-item">
@@ -100,12 +100,14 @@ const Header = () => {
 
 
             </ul>
+
+
                 {!user ? (<span className={click ? "nav-item" : "none"} >
                     <NavLink to="/signin" className="buttons">
                         <button className="nav-btn">Login</button>
                     </NavLink>
-                </span>) : ("")}</div>
-
+                </span>) : ("")}
+            </div>
             {
                 !user ? (
                     <NavLink to="/signin" className="buttons">
