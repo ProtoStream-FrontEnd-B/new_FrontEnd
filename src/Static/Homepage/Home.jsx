@@ -8,6 +8,7 @@ import prototyping from "../../Assets/Illustrations/prototyping.svg";
 import resources from "../../Assets/Illustrations/resources.svg";
 import hackathon from "../../Assets/Illustrations/hackathon.svg";
 import internships from "../../Assets/Illustrations/internship.svg";
+import CommonBtn from "../../Hoc/CommonBtn";
 import NavBar from "../../Components/Header/NavBar";
 import "./css/Home.css"
 
@@ -58,8 +59,10 @@ const Home = () => {
         classname="section"
         link="projects/hackathons"
       />
+      <CommonBtn />
       <Startups />
       <Footer />
+
     </div>
   );
 };

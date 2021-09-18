@@ -1,0 +1,71 @@
+.Scard {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  min-width: fit-content;
+  max-width: 30vw;
+  width: 25vw;
+  min-height: 60vh;
+
+  margin: 1rem;
+  border-radius: 10px;
+  .visible {
+    display: inline-block;
+  }
+
+  .verify {
+    height: 2rem;
+    align-self: baseline;
+    position: absolute;
+    right: 0.5rem;
+  }
+
+  .none {
+    display: none;
+  }
+  .head-div {
+    display: flex;
+    position: relative;
+    margin-bottom: 4rem;
+
+    .head {
+      color: var(--text-pr);
+      font-size: var(--heading-main);
+    }
+  }
+
+  .contents {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    .S-img {
+      margin-bottom: 3rem;
+    }
+    .para {
+      display: inline-block;
+      width: 15rem;
+      align-self: center;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .btn-div {
+    align-self: center;
+    margin-top: 1rem;
+
+    width: 6rem;
+
+    .btn {
+      background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
+      padding: 0.3rem;
+      border-radius: 2px;
+      height: 1.5rem;
+      width: 100%;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}

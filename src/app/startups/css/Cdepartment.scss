@@ -1,0 +1,33 @@
+.Cdepartment {
+  display: flex;
+  flex-direction: column;
+
+  min-width: fit-content;
+  min-height: 90vh;
+
+  .option-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 50%;
+    margin: 1rem;
+    min-width: fit-content;
+    background-color: var(--comp-pr);
+    .head {
+      font-size: var(--heading-main);
+      font-family: var(--font-sec);
+      color: var(--text-pr);
+    }
+  }
+
+  .container {
+    background-color: var(--comp-pr);
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./css/Header.css";
 import { NavLink, useHistory } from "react-router-dom";
 
-import logo from "C:/Users/ayush/new_FrontEnd/src/Assets/icons/logo.svg"
-import { isAuthenticated } from "C:/Users/ayush/new_FrontEnd/src/auth/index.js";
+import logo from "../../Assets/icons/logo.svg"
+import { isAuthenticated } from "../../auth/index";
 
 
 
