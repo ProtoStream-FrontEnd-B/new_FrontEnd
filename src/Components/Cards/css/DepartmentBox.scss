@@ -1,0 +1,22 @@
+.DepartmentBox {
+  width: 18rem;
+  height: 10rem;
+  cursor: pointer;
+  margin: 1rem;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(124.21deg, #fbd11b 28.71%, #ffb606 82.09%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .head {
+    font-size: var(--heading-main);
+    font-family: var(--font-sec);
+    color: var(--text-pr);
+  }
+}
+
+.DepartmentBox:hover {
+  transform: scale(1.05);
+}

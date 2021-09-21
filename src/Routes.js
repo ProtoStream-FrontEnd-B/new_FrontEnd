@@ -12,6 +12,9 @@ import Resources from './Static/Resources/Resources'
 import Header from './Components/Header/NavBar'
 import StudentDashboard from './app/dashboard/StudentDashboard'
 import TbiDashboard from "./app/dashboard/TbiDashboard"
+import Register from './app/startups/Register'
+import Cdepartment from './app/startups/CDepartment'
+import Main from './app/startups/Main'
 
 // import Header from "./Components/Header/Header"
 
@@ -36,6 +39,7 @@ const Routes = () => {
                     <Route path="/resources" exact component={Resources} />
                     <Route path="/user-dashboard" component={StudentDashboard} />
                     <Route path="/admin-dashboard" component={TbiDashboard} />
+                    <Route path="/dev-check" component={Main} />
                 </Switch>
             </div>
         </Router>

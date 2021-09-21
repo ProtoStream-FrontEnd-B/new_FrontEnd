@@ -1,0 +1,31 @@
+.DepartmentBox {
+  width: 18rem;
+  height: 10rem;
+  cursor: pointer;
+  margin: 1rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(124.21deg, #fbd11b 28.71%, #ffb606 82.09%);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.DepartmentBox .head {
+  font-size: var(--heading-main);
+  font-family: var(--font-sec);
+  color: var(--text-pr);
+}
+
+.DepartmentBox:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+/*# sourceMappingURL=DepartmentBox.css.map */
