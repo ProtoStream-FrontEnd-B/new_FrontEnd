@@ -3,7 +3,7 @@ import "./css/Header.css";
 import { NavLink, useHistory } from "react-router-dom";
 
 import logo from "../../Assets/icons/logo.svg"
-import { isAuthenticated } from "../../auth/index";
+// import { isAuthenticated } from "../../auth/index";
 
 
 
@@ -17,17 +17,17 @@ const Header = () => {
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
-    const { user, error } = isAuthenticated();
-    const errorRedirect = () => {
-        if (error) {
-            history.push("/error_99");
-            window.location.reload();
-        }
-    };
+    // const { user, error } = isAuthenticated();
+    // const errorRedirect = () => {
+    //     if (error) {
+    //         // history.push("/error_99");
+    //         // window.location.reload();
+    //     }
+    // };
 
     const headerElement = () => (
         <header className="header">
-            <div className="logo-div"> <NavLink to={user ? "/" : "/"} className="navbar-logo">
+            {/* <div className="logo-div"> <NavLink to={user ? "/" : "/"} className="navbar-logo">
                 <img src={logo} alt="" className="logo" />
             </NavLink></div>
 
@@ -36,7 +36,7 @@ const Header = () => {
             </div>
             <div className="nav-menu-div"><ul className={click ? " nav-menu mobile-nav " : "nav-menu"}>
                 {/* Designing Dashboard According to user roless...  pending */}
-                {user && user.role === 1 ? (
+                {/* {user && user.role === 1 ? (
                     <li className="nav-item">
                         <NavLink
                             to="/user/dashboard"
@@ -116,12 +116,12 @@ const Header = () => {
                 ) : (
                     ""
                 )
-            }
+            } */} haha
         </header >
     )
     return (
         <div>
-            {errorRedirect()}
+            {/* {errorRedirect()} */}
             {headerElement()}
         </div>
     );

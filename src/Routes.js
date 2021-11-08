@@ -1,7 +1,7 @@
 //Static Pages
 import Home from './Static/Homepage/Home'
-import Signin from './Static/Authentacion/Signin'
-import Signup from './Static/Authentacion/Signup'
+import Signin from './Static/Authentication/Signin'
+import Signup from './Static/Authentication/Signup'
 import About from './Static/Footerpages/About'
 import Team from './Static/Footerpages/Team'
 import Privacy from './Static/Footerpages/Privacy'
@@ -23,7 +23,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const Routes = () => {
     return (
+       
         <Router>
+       
             <div className="App">
                 <Header />
                 <Switch>
@@ -42,7 +44,9 @@ const Routes = () => {
                     <Route path="/dev-check" component={Main} />
                 </Switch>
             </div>
+            
         </Router>
+       
     )
 }
 
