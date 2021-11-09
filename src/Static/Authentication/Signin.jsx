@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Login } from "../../redux/actions/authAction";
 import { Link } from "react-router-dom";
 import Overlay1 from "../../Assets/Illustrations/Overlay1.svg";
 import Overlay2 from "../../Assets/Illustrations/Overlay2.svg";
@@ -6,9 +8,11 @@ import "./css/Auth.css";
 
 function Signin() {
   const [data, setData] = useState({
-    email: "",
-    password: "",
+    email: "akhil.1923cs1258@kiet.edu",
+    password: "12345",
   });
+
+  const dispatch = useDispatch();
 
   const onHandleChange = (e) => {
     setData({
@@ -20,7 +24,9 @@ function Signin() {
 
   const onHandleSubmit = (e)=>{
     e.preventDefault();  
+    dispatch(Login(data))
     console.log(data);
+
   }
   return (
     <section className="auth">

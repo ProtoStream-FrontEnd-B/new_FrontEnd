@@ -15,6 +15,7 @@ import TbiDashboard from "./app/dashboard/TbiDashboard"
 import Register from './app/startups/Register'
 import Cdepartment from './app/startups/CDepartment'
 import Main from './app/startups/Main'
+import { useSelector } from 'react-redux'
 
 // import Header from "./Components/Header/Header"
 
@@ -22,6 +23,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 const Routes = () => {
+
+    const user = useSelector(state=> state.auth);
+    console.log(user)
     return (
        
         <Router>

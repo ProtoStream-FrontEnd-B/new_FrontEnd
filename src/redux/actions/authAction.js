@@ -15,7 +15,7 @@ import {
 
 
 export const SignUp =
-  ({ email, password, confirmPassword }) =>
+  (data) =>
   async (dispatch) => {
     const config = {
       headers: {
@@ -23,21 +23,23 @@ export const SignUp =
       },
     };
 
-    const body = JSON.stringify({ email, password, confirmPassword });
 
     try {
-      const data = await axios.post("api", body, config);
-      if (data) {
+      const data2 = await axios.post("http://localhost:8000/register", data , config);
+    console.log(data2)
+      if (data2) {
         dispatch({
           type: REGISTER_SUCCESS,
-          payload: data.data,
+          payload: data2.data,
         });
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   };
 
 
-export const Login = ({email , password})=> async dispatch =>{
+export const Login = (data)=> async dispatch =>{
 
 
     const config = {
@@ -46,14 +48,13 @@ export const Login = ({email , password})=> async dispatch =>{
         }
       };
 
-      const body = JSON.stringify({ email, password });
 
       try {
-        const data = await axios.post("api", body, config);
-        if (data) {
+        const data2 = await axios.post("http://localhost:8000/login", data, config);
+        if (data2) {
           dispatch({
             type: LOGIN_SUCCESS,
-            payload: data.data,
+            payload: data2.data,
           });
         }
       } catch (error) {}
