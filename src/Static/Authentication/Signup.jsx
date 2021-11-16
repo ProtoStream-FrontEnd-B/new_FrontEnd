@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { SignUp } from "../../redux/actions/authAction";
 import { Link } from "react-router-dom";
 import Overlay1 from "../../Assets/Illustrations/Overlay1.svg";
 import Overlay2 from "../../Assets/Illustrations/Overlay2.svg";
@@ -11,10 +9,8 @@ function Signin() {
     email: "",
     password: "",
     confirmPassword: "",
-    number:8989898912
   });
 
-  const dispatch = useDispatch();
   const onHandleChange = (e) => {
     setData({
       ...data,
@@ -25,9 +21,6 @@ function Signin() {
   const onHandleSubmit = (e)=>{
       e.preventDefault()
       console.log(data);
-      dispatch(SignUp(data))
-
-
 
   }
   return (

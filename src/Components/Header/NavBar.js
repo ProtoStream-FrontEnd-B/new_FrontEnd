@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./css/Header.css";
 import { NavLink, useHistory } from "react-router-dom";
-import { useSelector , useDispatch } from "react-redux";
 
 import logo from "../../Assets/icons/logo.svg"
 // import { isAuthenticated } from "../../auth/index";
@@ -26,15 +25,9 @@ const Header = () => {
     //     }
     // };
 
-    const data = useSelector(state=> state.auth);
-    console.log(data);
-
-    const user = data.user;
-    console.log(user);
-
     const headerElement = () => (
         <header className="header">
-            <div className="logo-div"> <NavLink to={user ? "/" : "/"} className="navbar-logo">
+            {/* <div className="logo-div"> <NavLink to={user ? "/" : "/"} className="navbar-logo">
                 <img src={logo} alt="" className="logo" />
             </NavLink></div>
 
@@ -42,11 +35,11 @@ const Header = () => {
                 <i className={click ? "fas fa-times" : "fas fa-bars"} />
             </div>
             <div className="nav-menu-div"><ul className={click ? " nav-menu mobile-nav " : "nav-menu"}>
-               {/*Designing Dashboard According to user roless...  pending */}
-                {user && user.role === 0 ? (
+                {/* Designing Dashboard According to user roless...  pending */}
+                {/* {user && user.role === 1 ? (
                     <li className="nav-item">
                         <NavLink
-                            to="/user-dashboard"
+                            to="/user/dashboard"
                             className="nav-links"
                             onClick={closeMobileMenu}
                         >
@@ -123,7 +116,7 @@ const Header = () => {
                 ) : (
                     ""
                 )
-            } 
+            } */} haha
         </header >
     )
     return (

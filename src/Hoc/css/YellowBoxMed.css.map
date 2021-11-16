@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,KAAK,EAAE,GAAG;EACV,SAAS,EAAE,MAAM;EACjB,OAAO,EAAE,IAAI;EACb,aAAa,EAAE,IAAI;EACnB,UAAU,EAAE,2DAA2D;CACxE",
+    "sources": [
+        "YellowBoxMed.scss"
+    ],
+    "names": [],
+    "file": "YellowBoxMed.css"
+}

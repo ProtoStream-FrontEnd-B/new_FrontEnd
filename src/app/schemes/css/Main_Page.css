@@ -1,0 +1,203 @@
+.schemes {
+  margin: 4rem;
+  padding: 2rem;
+  background: linear-gradient(111.9deg, var(--accent-pr) 26.31%, var(--accent-sec) 87.23%);
+  border-radius: 10px;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.schemes .left {
+  color: var(--text-pr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  padding: 1rem;
+}
+
+.schemes .left .head {
+  font-family: var(--font-pr);
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.schemes .left .para {
+  font-family: "montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 80%;
+}
+
+.schemes .left .add {
+  text-decoration: none;
+  color: var(--text-pr);
+}
+
+.schemes .left .add button {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--text-pr);
+  font-weight: bold;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.schemes .left .add button img {
+  font-size: 16px;
+  margin-right: 0;
+}
+
+.schemes .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .schemes {
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    margin-top: 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .schemes .left {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 700px;
+    text-align: center;
+  }
+  .schemes .left .head {
+    font-size: var(--heading-main);
+  }
+  .schemes .left .para {
+    font-weight: normal;
+    font-size: var(--para);
+    width: 80%;
+    margin: auto;
+  }
+  .schemes .left .add button {
+    font-size: var(--span);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .schemes {
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    margin-top: 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .schemes .left {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 700px;
+    text-align: center;
+  }
+  .schemes .left .head {
+    font-size: var(--heading-main);
+  }
+  .schemes .left .para {
+    font-weight: normal;
+    font-size: var(--span);
+    width: 100%;
+  }
+  .schemes .left .add button {
+    font-size: var(--button);
+  }
+  .schemes .right .illustration {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .schemes {
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    margin-top: 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .schemes .left {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 700px;
+    text-align: center;
+  }
+  .schemes .left .head {
+    font-size: var(--heading-med);
+  }
+  .schemes .left .para {
+    font-weight: normal;
+    font-size: var(--para);
+    width: 100%;
+  }
+  .schemes .left .add button {
+    font-size: var(--span);
+  }
+  .schemes .right .illustration {
+    display: none;
+  }
+}
+/*# sourceMappingURL=Main_Page.css.map */
