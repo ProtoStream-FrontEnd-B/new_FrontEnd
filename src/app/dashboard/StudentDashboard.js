@@ -3,28 +3,37 @@ import { React, useState, useEffect } from "react"
 import Badge from "../../Assets/icons/Badge.svg";
 import ProfileImage from "../../Assets/icons/profile.svg"
 import Card from "./components/Card"
+import { Logout } from "../../redux/actions/authAction";
 import DashboardCard from "../../Components/Cards/DashboardCard";
 import { allHackathons, isAuthenticated, signout } from "../../auth";
 import { NavLink, useHistory } from "react-router-dom";
+import { useSelector , useDispatch } from "react-redux";
 import "./css/StudentDashboard.css"
 import ProjectIcon from "../../Assets/Illustrations/ProjectIcon.svg"
 import { DeskProjectCard } from "../../Components/Cards/ProjectCard";
 import MobArrow from "../../Assets/icons/MobArrow.svg"
 const StudentDashboard = () => {
-    const [load, setLoad] = useState();
-    const [hackathons, setHackathons] = useState([]);
+    // const [load, setLoad] = useState();
+    // const [hackathons, setHackathons] = useState([]);
     const [mobClick, setMobClick] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     const history = useHistory();
+const dispatch = useDispatch();
+    const user_Data = useSelector(state=> state.auth);
+    console.log(user_Data);
     const preload = () => {
-        if (load === true) setLoad(false);
-        allHackathons()
-            .then((response) => {
-                setHackathons(response);
-                console.log(response);
-            })
-            .catch();
+        // if (load === true) setLoad(false);
+        // allHackathons()
+        //     .then((response) => {
+        //         setHackathons(response);
+        //         console.log(response);
+        //     })
+        //     .catch();
         // console.log(allHackathons());
+        if(user_Data.isAuthenticated){
+            const imp_data =JSON.parse(localStorage.getItem("user "));
+            console.log(imp_data);
+        }
     };
 
     useEffect(() => {
@@ -49,10 +58,11 @@ const StudentDashboard = () => {
     }
 
     const onClickLogout = () => {
-        signout(() => {
-            history.push("/");
-            window.location.reload();
-        });
+      
+           dispatch(Logout());
+           window.location.reload();
+          
+        
     };
 
     return (
