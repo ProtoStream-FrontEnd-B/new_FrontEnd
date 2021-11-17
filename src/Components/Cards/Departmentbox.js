@@ -9,7 +9,6 @@ const DepartmentBox = ({ name }) => {
 
     return (
         <div className="DepartmentBox">
-
             <h2 className="head">
                 {name}
             </h2>

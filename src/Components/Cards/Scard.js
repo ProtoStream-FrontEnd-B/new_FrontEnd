@@ -1,32 +1,35 @@
 import react from "react";
-import verify from "../../Assets/icons/verify.svg"
-import "./css/Scard.css"
+import verify from "../../Assets/icons/verify.svg";
+import "./css/Scard.css";
 
-const Scard = ({ head, para, btnName, img, status, backgroundColor, imgHeight }) => {
+const Scard = ({ head, para, btnName, img, status }) => {
+  // enable, disable, completed
+  //   var status = "enable";
+  //   var status = "disable";
 
-
-
-    return (
-        <div style={backgroundColor} className="Scard">
-            <div className="head-div">
-                <h1 className="head">{head}</h1>
-                <img className={status ? "visible verify" : "none"} src={verify} alt="" />
-            </div>
-
-            <div className="contents">
-                <p className="para">{para}</p>
-
-
-                <img style={imgHeight} className="S-img" src={img} alt="" />
-            </div>
-            <div className={status ? "none" : "visible btn-div"}>
-                <button className="btn">{btnName}</button>
-            </div>
-        </div>
-    )
-
-
-}
-
+  return (
+    <button
+      disabled={status == "disable"}
+      className={status == "disable" ? "Scard disabled-card" : "Scard hover"}
+      onClick={() => alert("clicked")}
+    >
+      <header>
+        <h1 className="heading">{head}</h1>
+        {status == "completed" ? (
+          <img src={verify} alt="" className="verify-icon" />
+        ) : null}
+      </header>
+      <main>
+        <img src={img} alt="" className="illustration" />
+        <p className="para">{para}</p>
+      </main>
+      <footer>
+        <button disabled={status == "disable"}>
+          {status == "completed" ? "Completed" : `${ btnName }`}
+        </button>
+      </footer>
+    </button>
+  );
+};
 
 export default Scard;
