@@ -1,0 +1,18 @@
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 0 0.2rem;
+
+  min-width: 80vw;
+  .container {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    width: 100%;
+  }
+}

@@ -1,0 +1,105 @@
+.otpverify {
+  margin-top: 3rem;
+  padding-top: 4rem;
+  background: linear-gradient(111.9deg, #FBD11B 26.31%, #F2A31A 87.23%);
+  border-radius: 0.625rem;
+  padding-bottom: 4rem;
+  margin: auto;
+  margin-left: 12rem;
+  margin-right: 12rem;
+  margin-bottom: 3rem;
+}
+
+.otpverify .otpverify__step {
+  margin-left: 5rem;
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.125rem;
+  line-height: 5rem;
+  color: #FFFFFF;
+}
+
+.otpverify .otpverify__heading {
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 3.75rem;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.otpverify .optverify__container {
+  background: linear-gradient(131.91deg, #FBD11B 20.43%, #FFB606 85.35%);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 0.625rem;
+  width: 25.625rem;
+  height: 19.125rem;
+  margin: auto;
+  margin-top: 1.5rem;
+  padding-top: 2rem;
+  padding-left: 3rem;
+}
+
+.otpverify .optverify__container .optverify__container-uppertext {
+  font-family: var(--font-sec);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+.otpverify .optverify__container .optverify__container-lowertext {
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.otpverify .optverify__container .optverify__inputs input {
+  margin-right: 0.5rem;
+  background: #4D4D4D;
+  -webkit-box-shadow: 0px 4px 4px rgba(62, 37, 37, 0.25);
+          box-shadow: 0px 4px 4px rgba(62, 37, 37, 0.25);
+  border-radius: 0.635rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.otpverify .optverify__container button {
+  background: #FFFFFF;
+  border-radius: 5px;
+  height: 2rem;
+  width: 7rem;
+  font-family: var(--font-sec);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  color: #FFB606;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 1rem;
+}
+
+.otpverify .optverify__container button img {
+  height: 1rem;
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+.otpverify .optverify__container button p {
+  margin-top: 0.3rem;
+}
+/*# sourceMappingURL=otpverify.css.map */

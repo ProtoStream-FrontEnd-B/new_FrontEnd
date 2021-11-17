@@ -1,0 +1,42 @@
+.about {
+  width: 90%;
+  margin: auto;
+}
+
+.about .head {
+  color: var(--text-pr);
+  padding-bottom: 1em;
+  text-decoration: underline;
+  text-underline-position: under;
+  -webkit-text-decoration-color: var(--accent-sec);
+          text-decoration-color: var(--accent-sec);
+  font-family: var(--font-sec);
+  font-size: var(--heading-main);
+  margin: 2rem;
+  text-align: center;
+}
+
+.about .details .para {
+  color: var(--text-pr);
+  font-family: var(--font-alt);
+  font-size: var(--span);
+  line-height: 30px;
+  word-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.about .details .slides {
+  margin: 2rem 0;
+}
+
+.about .details .slides .image {
+  height: 40%;
+  width: 60%;
+  margin: 2em 0;
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-pixelated;
+      image-rendering: pixelated;
+}
+/*# sourceMappingURL=About.css.map */

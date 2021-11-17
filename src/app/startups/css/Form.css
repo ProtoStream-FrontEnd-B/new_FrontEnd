@@ -1,0 +1,266 @@
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form .form__cardleft {
+  background: linear-gradient(111.9deg, #fbd11b 26.31%, #f2a31a 87.23%);
+  border-radius: 10px;
+  height: 42rem;
+  width: 22rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 3rem;
+}
+
+.form .form__cardleft .form__cardleft-field {
+  margin-bottom: 1.5rem;
+}
+
+.form .form__cardleft .form__cardleft-field button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2.5rem;
+  width: 13rem;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  background: #ffffff;
+  border-radius: 5px;
+  border: none;
+  padding-top: 0.2rem;
+}
+
+.form .form__cardleft .form__cardleft-field button p {
+  margin-right: 0.2rem;
+  margin-top: 0.25rem;
+  font-family: var(--font-sec);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 16px;
+  /* identical to box height */
+  color: #ffb606;
+}
+
+.form .form__cardleft .form__cardleft-field button img {
+  height: 1rem;
+  margin-top: 0.3rem;
+}
+
+.form .form__cardleft .form__cardleft-field h3 {
+  margin-bottom: 0.8rem;
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 37px;
+  /* identical to box height */
+  color: #000000;
+}
+
+.form .form__cardleft .form__cardleft-field p {
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+  /* identical to box height */
+  color: #000000;
+}
+
+.form .form__cardright {
+  background: linear-gradient(111.9deg, #fbd11b 26.31%, #f2a31a 87.23%);
+  border-radius: 10px;
+  height: 42rem;
+  width: 50rem;
+  padding-top: 2rem;
+}
+
+.form .form__cardright .form__cardright-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form .form__cardright .form__cardright-heading button {
+  margin-right: 2rem;
+  margin-top: 2rem;
+  height: 3rem;
+  width: 14rem;
+  border-radius: 5px;
+  background-color: black;
+  font-family: var(--font-sec);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 43px;
+  /* identical to box height */
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.form .form__cardright .form__cardright-heading p {
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 90px;
+  color: #ffffff;
+  margin-left: 3rem;
+}
+
+.form .form__cardright .form__cardright-formupper {
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
+
+.form .form__cardright .form__cardright-formupper .form__cardright-field {
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form .form__cardright .form__cardright-formupper .form__cardright-field input {
+  width: 14rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  padding-left: 5px;
+}
+
+.form .form__cardright .form__cardright-formupper .form__cardright-field p {
+  margin-right: 0;
+  width: 14rem;
+  text-align: left;
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: 550;
+  font-size: 18px;
+  line-height: 30px;
+  /* identical to box height */
+  color: #000000;
+}
+
+.form .form__cardright .form__cardright-formupper .form__cardright-field-mentor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form .form__cardright .form__cardright-formupper .form__cardright-field-mentor input {
+  width: 14rem;
+  background: #FFFFFF;
+  border: 0.02rem solid black;
+  border-right: none;
+  padding-left: 5px;
+  outline: none;
+}
+
+.form .form__cardright .form__cardright-formupper .form__cardright-field-mentor img {
+  background: #FFFFFF;
+  width: 1.2rem;
+  border: 0.02rem solid black;
+  border-left: none;
+}
+
+.form .form__cardright .form__cardright-formupper .form__cardright-field-mentor p {
+  margin-right: 0;
+  width: 14rem;
+  text-align: left;
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: 550;
+  font-size: 18px;
+  line-height: 30px;
+  /* identical to box height */
+  color: #000000;
+}
+
+.form .form__cardright .form__cardright-formlower {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 6rem;
+}
+
+.form .form__cardright .form__cardright-formlower button {
+  margin-top: 0.5rem;
+  height: 2rem;
+  width: 20rem;
+  margin-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #ffffff;
+}
+
+.form .form__cardright .form__cardright-formlower button p {
+  margin-left: 1.5rem;
+  margin-top: 0.2rem;
+  font-family: var(--font-sec);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+  color: #ffb606;
+}
+
+.form .form__cardright .form__cardright-formlower button img {
+  height: 1rem;
+  margin-top: 0.4rem;
+  margin-left: 0.5rem;
+}
+
+.form .form__cardright .form__cardright-formlower p {
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000000;
+}
+
+.form__cardright-dropdown {
+  background-color: #FFFFFF;
+  position: absolute;
+  padding-left: 1rem;
+}
+
+.form__cardright-dropdown p {
+  border-bottom: 1px solid black;
+  font-family: var(--font-sec);
+}
+
+@media screen and (max-width: 1200px) {
+  .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .form .form__cardright {
+    margin: auto;
+  }
+  .form .form__cardleft {
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=Form.css.map */

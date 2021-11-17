@@ -1,0 +1,202 @@
+.container {
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-top: 2.5rem;
+  background: linear-gradient(111.9deg, #fbd11b 26.31%, #f2a31a 87.23%);
+  border-radius: 0.625rem;
+}
+
+.container .step3__heading {
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.75rem;
+  line-height: 5.625rem;
+  color: #ffffff;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+.container .step3__form-upper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  /* identical to box height */
+  margin-bottom: 5rem;
+  color: #000000;
+}
+
+.container .step3__form-upper .step3__form-upperleft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .step3__form-upper .step3__form-upperleft .step3__form-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1.25rem;
+}
+
+.container .step3__form-upper .step3__form-upperleft .step3__form-field input {
+  border-radius: 0.1875rem;
+  background: #ffffff;
+  border: 1px solid #aca8a8;
+  width: 15rem;
+  margin-left: 1.25rem;
+  padding-left: 0.5rem;
+  border: none;
+  outline: none;
+}
+
+.container .step3__form-upper .step3__form-upperleft .step3__form-field p {
+  width: 15rem;
+  text-align: right;
+}
+
+.container .step3__form-upper .step3__form-upperleft .step3__form-field p {
+  text-align-last: right;
+}
+
+.step3__form-upperright .step3__form-field input {
+  margin-bottom: 1.24rem;
+  margin-top: o 0.6rem;
+  height: 1.7rem;
+  width: 13.75rem;
+  padding-left: 0.5rem;
+  border: none;
+  outline: none;
+}
+
+.form__lower {
+  margin-right: 4rem;
+}
+
+.form__lower-field {
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  /* identical to box height */
+  color: #000000;
+  margin-left: 9rem;
+  margin-top: 2rem;
+}
+
+.form__lower-field .form__lower-field-options1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.form__lower-field .form__lower-field-options1 input {
+  margin-right: 0.8rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+}
+
+.form__lower-field textarea {
+  width: 92%;
+  height: 4.5rem;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  padding: 0.6rem;
+}
+
+.form__lower-field .form__lower-field-options {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form__lower-field .form__lower-field-options .form__lower-field-option1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 2rem;
+}
+
+.form__lower-field .form__lower-field-options .form__lower-field-option1 input {
+  margin-right: 0.8rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+}
+
+.form-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.form-footer button {
+  width: 9rem;
+  height: 2rem;
+  font-family: var(--font-pr);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.437rem;
+  line-height: 2.125rem;
+  background: #ffffff;
+}
+
+.step3__form {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .form__lower {
+    margin-right: 4rem;
+  }
+  .form__lower-field {
+    margin-left: 5rem;
+  }
+  .step3__form-upperright {
+    margin-top: 4rem;
+  }
+  .step3__form-upperleft {
+    margin-right: 6rem;
+  }
+}
+
+.form-footer-left .form-footer-left-verify {
+  font-family: var(--font-sec);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 41px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.form-footer-left .form-footer-left-tbi {
+  font-family: var(--font-sec);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 41px;
+  text-align: center;
+  color: #00160A;
+}
+/*# sourceMappingURL=Step3.css.map */

@@ -1,0 +1,81 @@
+.startups {
+  min-width: 100vw;
+  background: linear-gradient(93.11deg, var(--accent-sec) 10.85%, var(--accent-pr) 58.94%, var(--accent-sec) 80.15%);
+  font-family: "Poppins", sans-serif;
+  padding: 2rem 0;
+}
+
+.startups .heading {
+  font-size: 3rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.startups .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 3rem;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.startups .container .box {
+  width: 10rem;
+  margin: 2rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.startups .container .box .startup-icon {
+  margin-bottom: 15px;
+}
+
+.startups .container .box span {
+  font-size: var(--span);
+  font-family: var(--font-sec);
+  font-weight: bold;
+  color: var(--text-pr);
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .box {
+    width: 15rem;
+  }
+}
+/*# sourceMappingURL=startup.css.map */

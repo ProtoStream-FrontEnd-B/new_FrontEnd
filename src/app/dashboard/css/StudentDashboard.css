@@ -1,0 +1,276 @@
+.std-dashboard {
+  min-width: 100vw;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+.std-dashboard .dash-container {
+  background-color: #242424;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  padding: 1rem;
+}
+
+.std-dashboard .dash-container .side-bar {
+  position: relative;
+  background: var(--comp-pr);
+  margin: 2rem;
+  margin-right: 0;
+  padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 20%;
+  min-height: 80vh;
+}
+
+.std-dashboard .dash-container .side-bar .minus {
+  color: var(--accent-sec);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  position: absolute;
+  display: none;
+}
+
+.std-dashboard .dash-container .side-bar .student-img {
+  border-radius: 100%;
+  height: 7rem;
+  width: 7rem;
+}
+
+.std-dashboard .dash-container .side-bar .name {
+  font-family: var(--font-pr);
+  font-size: var(--heading-small);
+  color: var(--accent-sec);
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.std-dashboard .dash-container .side-bar .student {
+  font-size: var(--heading-small);
+  font-family: var(--font-pr);
+  color: var(--text-pr);
+  margin: 0.5rem;
+}
+
+.std-dashboard .dash-container .side-bar .startup-badge img {
+  width: 4rem;
+}
+
+.std-dashboard .dash-container .side-bar .startup-badge .num {
+  font-weight: bold;
+  margin: 1rem;
+  color: var(--accent-sec);
+  font-family: var(--font-sec);
+  font-size: var(--span);
+}
+
+.std-dashboard .dash-container .side-bar .log-out {
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: var(--comp-sec);
+  font-family: var(--font-pr);
+  font-size: var(--button);
+  color: var(--text-pr);
+}
+
+.std-dashboard .dash-container .side-bar .log-out:hover {
+  background-color: var(--comp-sec-hover);
+  cursor: pointer;
+}
+
+.std-dashboard .dash-container .mob_view_head {
+  display: none;
+}
+
+.std-dashboard .dash-container .content-container {
+  min-width: 55%;
+  max-width: 80%;
+  width: 70%;
+  background: var(--comp-pr);
+  margin: 2rem;
+  padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-radius: 10px;
+  min-height: 80vh;
+}
+
+.std-dashboard .dash-container .content-container .card_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.std-dashboard .dash-container .content-container .head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.std-dashboard .dash-container .content-container .head .heading {
+  color: var(--text-pr);
+  font-family: var(--font-sec);
+  font-size: var(--heading-main);
+}
+
+@media screen and (max-width: 1080px) {
+  .std-dashboard .dash-container {
+    position: relative;
+  }
+  .std-dashboard .dash-container .side-bar {
+    display: none;
+  }
+  .std-dashboard .dash-container .Mob-sideBar {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    -webkit-transform: translate(50%, -50%);
+            transform: translate(50%, -50%);
+    background: var(--comp-pr);
+    margin: 2rem;
+    margin-right: 0;
+    padding: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 10px;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    min-width: 70%;
+    min-height: 100%;
+  }
+  .std-dashboard .dash-container .Mob-sideBar .minus {
+    color: var(--accent-sec);
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    position: absolute;
+  }
+  .std-dashboard .dash-container .Mob-sideBar .student-img {
+    border-radius: 100%;
+    height: 7rem;
+    width: 7rem;
+  }
+  .std-dashboard .dash-container .Mob-sideBar .name {
+    font-family: var(--font-pr);
+    font-size: var(--heading-small);
+    color: var(--accent-sec);
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .std-dashboard .dash-container .Mob-sideBar .student {
+    font-size: var(--heading-small);
+    font-family: var(--font-pr);
+    color: var(--text-pr);
+    margin: 0.5rem;
+  }
+  .std-dashboard .dash-container .Mob-sideBar .startup-badge img {
+    width: 4rem;
+  }
+  .std-dashboard .dash-container .Mob-sideBar .startup-badge .num {
+    font-weight: bold;
+    margin: 1rem;
+    color: var(--accent-sec);
+    font-family: var(--font-sec);
+    font-size: var(--span);
+  }
+  .std-dashboard .dash-container .Mob-sideBar .log-out {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    border: none;
+    background-color: var(--comp-sec);
+    font-family: var(--font-pr);
+    font-size: var(--button);
+    color: var(--text-pr);
+  }
+  .std-dashboard .dash-container .Mob-sideBar .log-out:hover {
+    background-color: var(--comp-sec-hover);
+    cursor: pointer;
+  }
+  .std-dashboard .dash-container .mob_view_head {
+    min-width: 40%;
+    width: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .std-dashboard .dash-container .content-container .card_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=StudentDashboard.css.map */

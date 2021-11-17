@@ -1,0 +1,78 @@
+.footer-container {
+  background-color: var(--bg-sec);
+}
+
+.footer-container .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 90%;
+  padding: 5rem 0;
+  margin: auto;
+  font-family: var(--font-pr);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer-container .footer .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 2rem;
+}
+
+.footer-container .footer .box .head {
+  font-size: var(--heading-med);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  color: var(--text-pr);
+}
+
+.footer-container .footer .box p {
+  color: var(--text-sec);
+}
+
+.footer-container .footer .box .para {
+  color: var(--text-sec);
+  margin-bottom: 2rem;
+}
+
+.footer-container .footer .box .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.footer-container .footer .box .icons li {
+  margin-right: 2rem;
+  opacity: 0.7;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.footer-container .footer .box .icons li:hover {
+  opacity: 1;
+}
+
+.footer-container .footer .box .site-links {
+  list-style: none;
+}
+
+.footer-container .footer .box .site-links li a {
+  text-decoration: none;
+  color: var(--text-sec);
+}
+
+.footer-container .footer .box .site-links li a:hover {
+  color: var(--text-pr);
+  text-decoration: underline;
+}
+/*# sourceMappingURL=footer.css.map */

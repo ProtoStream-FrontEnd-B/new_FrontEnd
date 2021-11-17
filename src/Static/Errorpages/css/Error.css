@@ -1,0 +1,90 @@
+.errorpage {
+  height: 90vh;
+  width: 100%;
+  margin-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.errorpage .box {
+  width: 800px;
+  height: 600px;
+  margin-top: 2%;
+  border-radius: 10px;
+  background: linear-gradient(130deg, var(--accent-pr), var(--accent-sec));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.errorpage .box .details {
+  width: 60%;
+  text-align: center;
+  color: var(--text-pr);
+  font-family: var(--font-pr);
+}
+
+.errorpage .box .details .main-head {
+  font-size: 5rem;
+}
+
+.errorpage .box .details .sub-head {
+  font-size: 4rem;
+  margin-top: 2rem;
+}
+
+.errorpage .box .details .para {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  font-weight: bold;
+  font-family: var(--font-alt);
+}
+
+.errorpage .box .details .btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  margin: 10px 0;
+  color: rgba(32, 32, 32, 0.952);
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.errorpage .box .details .btn img {
+  margin: 0 2px;
+}
+
+.errorpage .box .details .btn:hover {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+}
+
+.errorpage .box .image {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.errorpage .box .image .boy {
+  position: relative;
+  height: 60%;
+  left: -300px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.errorpage .box .image .jupiter {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  position: relative;
+  right: -50px;
+}
+/*# sourceMappingURL=Error.css.map */

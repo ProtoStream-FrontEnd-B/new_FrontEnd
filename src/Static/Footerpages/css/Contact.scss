@@ -1,0 +1,26 @@
+.contact{
+    text-align: center;
+
+    .head{
+        color: var(--text-pr);
+        font-family: var(--font-sec);
+        font-size: var(--heading-med);
+        margin: 2rem;
+        text-decoration: underline;
+        text-underline-position: under;
+        text-decoration-color: var(--accent-sec); 
+    }
+}
+
+.sub_head{
+    color: var(--accent-sec);
+    font-family: var(--font-alt);
+    font-size: var(--heading-small);
+    padding-bottom: 0.5em;
+}
+.para{
+    color: var(--text-pr);
+    font-family: var(--font-sec);
+    font-size: var(--button);
+    // font-weight: 500;
+}

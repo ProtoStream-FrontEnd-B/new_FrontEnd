@@ -1,0 +1,35 @@
+
+.member{
+   margin: 2rem;
+
+    .PP{
+        width: 8em;
+        margin-bottom: 1rem;
+    }
+
+    .content {
+        text-align: center;
+        .name{
+            font-family: var(--font-sec);
+            font-size: var(--button);
+            padding-bottom: 0.2em;
+            color: var(--accent-sec);
+            margin-bottom: 0.5rem;
+        }
+        .session{
+            font-family: var(--font-pr);
+            font-size: var(--para);
+            padding-bottom: 0.2em;
+            color: var(--text-sec);
+        }
+        .work{
+            font-family: var(--font-sec);
+            font-weight: bold;
+            font-size: var(--para);
+            padding-bottom: 0.2em;
+            color: var(--text-pr);
+        }
+    }
+}
+
+

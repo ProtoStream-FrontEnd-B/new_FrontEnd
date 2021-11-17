@@ -1,0 +1,25 @@
+.Terms {
+  width: 90%;
+  margin: auto;
+}
+
+.Terms .more-details .toggle-head {
+  text-align: center;
+}
+
+.Terms .more-details .toggle-head .sub-head {
+  color: var(--text-pr);
+  padding-bottom: 1em;
+  text-decoration: underline;
+  text-underline-position: under;
+  -webkit-text-decoration-color: var(--accent-sec);
+          text-decoration-color: var(--accent-sec);
+  font-family: var(--font-sec);
+  font-size: var(--heading-small);
+  margin: 2rem;
+}
+
+.Terms .more-details .display {
+  display: none;
+}
+/*# sourceMappingURL=Terms.css.map */
