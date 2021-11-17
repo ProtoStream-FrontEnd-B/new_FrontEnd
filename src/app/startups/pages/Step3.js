@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/Step3.css";
 function Step3() {
-    const[isVerified,setisVerified]=useState(false)
+    const[isVerified,setisVerified]=useState(true)
     const[underVeriication,setunderVerfication]=useState(true)
    const showbutton= !underVeriication && !isVerified
 
@@ -137,7 +137,7 @@ function Step3() {
               <div className="form-footer-left" >
              {isVerified &&   <p className="form-footer-left-verify"> Under Verfication By</p>}
              {underVeriication &&  <p className="form-footer-left-verify"> is Verified By</p> }
-                <p className="form-footer-left-tbi">TBI</p>
+              {isVerified &&  <p className="form-footer-left-tbi">TBI</p>}
              {showbutton && <button  type="submit"> Submit</button>}
               </div>
               </div>
