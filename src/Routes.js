@@ -25,9 +25,12 @@ import NidhiPrayas from "./app/schemes/NidhiPrayas";
 import Scheme from "./app/schemes/Scheme";
 import ItPolicy from "./app/schemes/ItPolicy";
 
+//TBI
+
 // import Header from "./Components/Header/Header"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import IdeaDetails from "./app/startups/IdeaDetails";
 
 const Routes = () => {
   return (
@@ -47,7 +50,7 @@ const Routes = () => {
           <Route path="/resources" exact component={Resources} />
           <Route path="/user-dashboard" component={StudentDashboard} />
           <Route path="/admin-dashboard" component={TbiDashboard} />
-          <Route path="/dev-check" component={Main} />
+          <Route path="/dev-check" component={IdeaDetails} />
 
           <Route path="/student/schemes/" exact component={Scheme} />
           <Route path="/student/schemes/all" exact component={AllSchemes} />

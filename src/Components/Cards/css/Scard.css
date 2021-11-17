@@ -1,52 +1,17 @@
 .Scard {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 1rem;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-  max-width: 30vw;
-  width: 25vw;
-  min-height: 60vh;
-  margin: 1rem;
+  width: 400px;
+  height: 800px;
+  min-width: 350px;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  border: none;
   border-radius: 10px;
-}
-
-.Scard .visible {
-  display: inline-block;
-}
-
-.Scard .verify {
-  height: 2rem;
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
-  position: absolute;
-  right: 0.5rem;
-}
-
-.Scard .none {
-  display: none;
-}
-
-.Scard .head-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  margin-bottom: 4rem;
-}
-
-.Scard .head-div .head {
-  color: var(--text-pr);
-  font-size: var(--heading-main);
-}
-
-.Scard .contents {
+  background-color: var(--comp-pr);
+  margin: 1rem;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,42 +19,87 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-item-align: center;
-      align-self: center;
-  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: pointer;
+  position: relative;
+}
+
+.Scard header .heading {
+  font-size: var(--heading-main);
+  color: var(--text-pr);
+  font-family: var(--font-pr);
+}
+
+.Scard header .verify-icon {
+  top: 20px;
+  width: 50px;
+  right: 20px;
+  position: absolute;
+}
+
+.Scard main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
-.Scard .contents .S-img {
-  margin-bottom: 3rem;
+.Scard main .illustration {
+  margin-bottom: 4rem;
 }
 
-.Scard .contents .para {
-  display: inline-block;
-  width: 15rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin-bottom: 3rem;
+.Scard main .para {
+  font-family: var(--font-sec);
+  font-size: var(--span);
 }
 
-.Scard .btn-div {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin-top: 1rem;
-  width: 6rem;
-}
-
-.Scard .btn-div .btn {
-  background: -webkit-gradient(linear, left top, right top, from(var(--accent-sec)), to(var(--accent-pr)));
-  background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
-  padding: 0.3rem;
-  border-radius: 2px;
-  height: 1.5rem;
-  width: 100%;
+.Scard footer button {
+  padding: 0.5rem 1.5rem;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  color: var(--text-pr);
+  background-color: var(--bg-pr);
+  font-size: var(--button);
   border: none;
-  color: #fff;
   cursor: pointer;
+}
+
+.hover:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: linear-gradient(124.21deg, var(--accent-sec) 28.71%, var(--accent-pr) 82.09%);
+}
+
+.disabled-card {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0.5;
+  cursor: auto;
+}
+
+@media screen and (max-width: 414px) {
+  .Scard {
+    width: 350px;
+    height: 300px;
+  }
+  .Scard main .illustration {
+    display: none;
+  }
 }
 /*# sourceMappingURL=Scard.css.map */
