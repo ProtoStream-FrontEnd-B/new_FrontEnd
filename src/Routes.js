@@ -1,5 +1,6 @@
 //Static Pages
 import Home from './Static/Homepage/Home'
+import IdeaDetail from './app/startups/IdeaDetail'
 import { useEffect } from 'react'
 import Signin from './Static/Authentication/Signin'
 import Signup from './Static/Authentication/Signup'
@@ -18,6 +19,7 @@ import Register from './app/startups/Register'
 import Cdepartment from './app/startups/CDepartment'
 import Main from './app/startups/Main'
 import { useSelector } from 'react-redux'
+import otpverify from "./app/startups/pages/otpverify";
 import PrivateRoute from './auth_routes/private_route'
 
 // import Header from "./Components/Header/Header"
@@ -60,7 +62,10 @@ const Routes = () => {
                     <Route path="/resources" exact component={Resources} />
                     <PrivateRoute path="/user-dashboard" component={StudentDashboard} />
                     <Route path="/admin-dashboard" component={TbiDashboard} />
-                    <Route path="/dev-check" component={Main} />
+                    <PrivateRoute  exact path="/startups" component={Main} />
+                    <PrivateRoute path = "/startups/CYB" component = {Cdepartment} exact/>
+                    <PrivateRoute path = "/startups/Register" component = {Register} exact/>
+                    <PrivateRoute path = "/startups/Register/Otpverify" component = {otpverify} exact/>
                 </Switch>
             </div>
             

@@ -4,13 +4,14 @@
   align-items: center;
   min-height: 90vh;
   padding: 0 0.2rem;
-
+  width: 90%;
+  margin: auto;
   min-width: 80vw;
+
   .container {
     display: flex;
-
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     min-height: 90vh;
     width: 100%;

@@ -29,7 +29,7 @@ const Header = () => {
     const data = useSelector(state=> state.auth);
     console.log(data);
 
-    const user = data.user;
+    const user =  JSON.parse(localStorage.getItem("user"));;
     console.log(user);
 
     const headerElement = () => (

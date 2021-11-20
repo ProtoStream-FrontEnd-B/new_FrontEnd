@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState  , useEffect} from "react";
+import { useDispatch  , useSelector} from "react-redux";
 import { SignUp } from "../../redux/actions/authAction";
-import { Link } from "react-router-dom";
+import { Link , useHistory } from "react-router-dom";
 import Overlay1 from "../../Assets/Illustrations/Overlay1.svg";
 import Overlay2 from "../../Assets/Illustrations/Overlay2.svg";
 import "./css/Auth.css";
@@ -13,6 +13,10 @@ function Signin() {
     confirmPassword: "",
     number:8989898912
   });
+  const history = useHistory();
+  const resp = useSelector((state) => state.auth);
+
+  const { isAuthenticated } = resp;
 
   const dispatch = useDispatch();
   const onHandleChange = (e) => {
@@ -21,6 +25,21 @@ function Signin() {
       [e.target.name]: e.target.value,
     });
   };
+
+
+  const pushTo = (isAuth) => {
+    if (isAuth) {
+      console.log("he")
+      history.push("/user-dashboard");
+    }
+  };
+
+  
+  useEffect(() => {
+ 
+   pushTo(isAuthenticated);
+    
+  }, [isAuthenticated])
 
   const onHandleSubmit = (e)=>{
       e.preventDefault()

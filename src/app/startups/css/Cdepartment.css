@@ -26,6 +26,7 @@
   border-radius: 10px;
   width: 50%;
   margin: 1rem;
+  margin-left: 3rem;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -40,10 +41,19 @@
 
 .Cdepartment .container {
   background-color: var(--comp-pr);
-  margin: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: auto;
+  max-height: 80vh;
+  padding: 2rem;
+  border-radius: 10px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -53,5 +63,25 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .Cdepartment .option-header {
+    width: 90%;
+    margin: auto;
+  }
+  .Cdepartment .option-header .head {
+    font-size: var(--heading-main);
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .Cdepartment .option-header {
+    width: 90%;
+    margin: auto;
+  }
+  .Cdepartment .option-header .head {
+    font-size: var(--heading-med);
+  }
 }
 /*# sourceMappingURL=Cdepartment.css.map */

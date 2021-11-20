@@ -13,8 +13,10 @@
     border-radius: 10px;
     width: 50%;
     margin: 1rem;
+    margin-left: 3rem;
     min-width: fit-content;
     background-color: var(--comp-pr);
+
     .head {
       font-size: var(--heading-main);
       font-family: var(--font-sec);
@@ -24,10 +26,46 @@
 
   .container {
     background-color: var(--comp-pr);
-    margin: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
     display: flex;
+    height: fit-content;
+    overflow: auto;
+    max-height: 80vh;
+    padding: 2rem;
+    border-radius: 10px;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+  .Cdepartment {
+    .option-header {
+      width: 90%;
+      margin: auto;
+
+      .head {
+        font-size: var(--heading-main);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .Cdepartment {
+    .option-header {
+      width: 90%;
+      margin: auto;
+
+      .head {
+        font-size: var(--heading-med);
+      }
+    }
   }
 }
