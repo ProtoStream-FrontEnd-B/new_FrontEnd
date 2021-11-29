@@ -25,3 +25,5 @@ export const OPEN_STEP_2 = "OPEN_STEP_2";
 export const CREATE_STEP_2 = "CREATE_STEP_2";
 export const OPEN_STEP_3 = "OPEN_STEP_3";
 export const CREATE_STEP_3 =  "CREATE_STEP_3";
+export const GET_STEP_2 = "GET_STEP_2";
+export const GET_STEP_3 = "GET_STEP_2";

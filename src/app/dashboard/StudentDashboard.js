@@ -3,11 +3,12 @@ import { React, useState, useEffect } from "react"
 import Badge from "../../Assets/icons/Badge.svg";
 import ProfileImage from "../../Assets/icons/profile.svg"
 import Card from "./components/Card"
+import { Link } from "react-router-dom";
 import { Logout } from "../../redux/actions/authAction";
 import DashboardCard from "../../Components/Cards/DashboardCard";
 import { allHackathons, isAuthenticated, signout } from "../../auth";
 import { NavLink, useHistory } from "react-router-dom";
-import { useSelector , useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./css/StudentDashboard.css"
 import ProjectIcon from "../../Assets/Illustrations/ProjectIcon.svg"
 import { DeskProjectCard } from "../../Components/Cards/ProjectCard";
@@ -20,16 +21,16 @@ import MobArrow from "../../Assets/icons/MobArrow.svg"
 //     });
 //     // const [hackathons, setHackathons] = useState([]);
 //     const [mobClick, setMobClick] = useState(false)
-  
+
 //     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 //     const history = useHistory();
 //     const dispatch = useDispatch();
 //     const user_Data = useSelector(state=> state.auth);
 //     console.log(user_Data);
-   
+
 
 //     const preload = () => {
-       
+
 //         if(user_Data.isAuthenticated){
 //             console.log("heheh")
 //             const imp_data =JSON.parse(localStorage.getItem("user"));
@@ -42,13 +43,13 @@ import MobArrow from "../../Assets/icons/MobArrow.svg"
 //         }
 //     };
 
-  
+
 
 //     useEffect(() => {
 //        let data =  preload();
-       
+
 //        setLoad(data)
-       
+
 //     }, []);
 
 // const {  number , profiledata} = load;
@@ -77,11 +78,11 @@ import MobArrow from "../../Assets/icons/MobArrow.svg"
 //     }
 
 //     const onClickLogout = () => {
-      
+
 //            dispatch(Logout());
 //            window.location.reload();
-          
-        
+
+
 //     };
 
 //     return (
@@ -176,74 +177,74 @@ import MobArrow from "../../Assets/icons/MobArrow.svg"
 // import MobArrow from "../../Assets/icons/MobArrow.svg"
 const StudentDashboard = () => {
     const [load, setLoad] = useState({
-                _id:"",projects:[],hackathons:[],email:"",schemes:[],profiledata:{Profilename:"",ProfileID:"",ProfileBranch:"",ProfileYear:""},role:0,phonestatus:"",number: 0
-            });
-            // const [hackathons, setHackathons] = useState([]);
-            const [mobClick, setMobClick] = useState(false)
-          
-            const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-            const history = useHistory();
-            const dispatch = useDispatch();
-            const user_Data = useSelector(state=> state.auth);
-            console.log(user_Data);
-           
-        
-            const preload = () => {
-               
-                if(user_Data.isAuthenticated){
-                    console.log("heheh")
-                    const imp_data =JSON.parse(localStorage.getItem("user"));
-                    console.log(imp_data);
-                    return imp_data;
-                }
-        
-                else{
-                    return null;
-                }
-            };
-        
-          
-        
-            useEffect(() => {
-               let data =  preload();
-               
-               setLoad(data)
-               
-            }, []);
-        
-        const {  number , profiledata} = load;
-        
-        console.log( number );
-        
-        
-        
-        const {Profilename , ProfileBranch , ProfileID , ProfileYear} = profiledata
-        
-            useEffect(() => {
-                window.addEventListener("resize", () => {
-                    setScreenWidth(window.innerWidth)
-                })
-        
-                console.log(screenWidth)
-        
-                return () => {
-                    window.removeEventListener("resize", () => {
-                        setScreenWidth(window.innerWidth)
-                    })
-                }
+        _id: "", projects: [], hackathons: [], email: "", schemes: [], profiledata: { Profilename: "", ProfileID: "", ProfileBranch: "", ProfileYear: "" }, role: 0, phonestatus: "", number: 0
+    });
+    // const [hackathons, setHackathons] = useState([]);
+    const [mobClick, setMobClick] = useState(false)
+
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    const history = useHistory();
+    const dispatch = useDispatch();
+    const user_Data = useSelector(state => state.auth);
+    console.log(user_Data);
+
+
+    const preload = () => {
+
+        if (user_Data.isAuthenticated) {
+            console.log("heheh")
+            const imp_data = JSON.parse(localStorage.getItem("user"));
+            console.log(imp_data);
+            return imp_data;
+        }
+
+        else {
+            return null;
+        }
+    };
+
+
+
+    useEffect(() => {
+        let data = preload();
+
+        setLoad(data)
+
+    }, []);
+
+    const { number, profiledata } = load;
+
+    console.log(number);
+
+
+
+    const { Profilename, ProfileBranch, ProfileID, ProfileYear } = profiledata
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setScreenWidth(window.innerWidth)
+        })
+
+        console.log(screenWidth)
+
+        return () => {
+            window.removeEventListener("resize", () => {
+                setScreenWidth(window.innerWidth)
             })
-            const onMobViewSideBar = () => {
-                setMobClick(!mobClick)
-            }
-        
-            const onClickLogout = () => {
-              
-                   dispatch(Logout());
-                   window.location.reload();
-                  
-                
-            };
-        
+        }
+    })
+    const onMobViewSideBar = () => {
+        setMobClick(!mobClick)
+    }
+
+    const onClickLogout = () => {
+
+        dispatch(Logout());
+        window.location.reload();
+
+
+    };
+
 
     return (
         <div className="std-dashboard">
@@ -295,8 +296,9 @@ const StudentDashboard = () => {
 
 
                     <div className="card_container">
-                        <Card heading="Learn Entrepreneurship" para="Check the resources here" />
-                        <Card heading="Register a Startup" icon="fas fa-plus" />
+                        <Card route = "/resources" heading="Learn Entrepreneurship" para="Check the resources here" />
+                        <Card route = "/startups" heading="Register a Startup" icon="fas fa-plus" />
+
                     </div>
 
                     <DashboardCard>
