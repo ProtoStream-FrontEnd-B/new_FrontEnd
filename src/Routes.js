@@ -2,6 +2,7 @@
 import Home from './Static/Homepage/Home'
 import IdeaDetail from './app/startups/IdeaDetail'
 import { useEffect } from 'react'
+
 import Signin from './Static/Authentication/Signin'
 import Signup from './Static/Authentication/Signup'
 import About from './Static/Footerpages/About'
@@ -26,7 +27,7 @@ import PrivateRoute from './auth_routes/private_route'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { isLogin } from './redux/actions/authAction'
-
+import { getTrl ,UpdateTRL } from './redux/actions/startupAction'
 
 const Routes = () => {
 
@@ -34,12 +35,24 @@ const Routes = () => {
     // console.log(user)
     let token  = localStorage.getItem('token');
     let user = localStorage.getItem('user');
+    const userid =  JSON.parse(localStorage.getItem("user"));;
+    const id = userid._id;
+
+const startup_data = useSelector(state=> state.startup);
+console.log(startup_data)
   
-  
+const trl_data = {
+    id,
+   trl_value : {
+    TRL_Test: "PASS"
+   }
+
+}
     let maindata = {token , user};
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(isLogin(maindata))
+        dispatch(UpdateTRL(trl_data));
       
     }, [])
     return (
