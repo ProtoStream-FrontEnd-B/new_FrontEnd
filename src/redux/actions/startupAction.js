@@ -17,7 +17,6 @@ import {
   OTP_VERIFY,
 } from "./types";
 
-
 const config = {
   headers: {
     "Content-type": "application/json",
@@ -25,8 +24,6 @@ const config = {
 };
 
 export const getTrl = (id) => async (dispatch) => {
-
-
   try {
     const Trl = await axios.get(`${API}/getTrl/${id}`);
     if (Trl) {
@@ -40,37 +37,25 @@ export const getTrl = (id) => async (dispatch) => {
   }
 };
 
-export const UpdateTRL =
-  (userid) =>
-    async (dispatch) => {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-     
-const {id , trl_value} = userid;
+export const UpdateTRL = (userid) => async (dispatch) => {
+  const { id, trl_value } = userid;
 
-
-
-
-
-      try {
-        const TrlData = await axios.post(
-          `${API}/updateTrl/${id}`,
-         trl_value,
-          config
-        );
-        
-        if (TrlData) {
-          console.log(TrlData.data.Trl_value)
-          dispatch({
-            type: UPDATE_TRL,
-            payload: TrlData.data.Trl_value,
-          });
-        }
-      } catch (error) { }
-    };
+  try {
+    const TrlData = await axios.post(
+      `${API}/updateTrl/${id}`,
+      trl_value,
+      config
+    );
+    console.log(TrlData);
+    if (TrlData) {
+      console.log(TrlData.data.Trl_value);
+      dispatch({
+        type: UPDATE_TRL,
+        payload: TrlData.data.Trl_value,
+      });
+    }
+  } catch (error) {}
+};
 
 export const CreateIdea = (id) => async (dispatch) => {
   const config = {
@@ -80,24 +65,19 @@ export const CreateIdea = (id) => async (dispatch) => {
   };
 
   try {
-    const CIdea = await axios.post(
-      `${API}/createIdea/${id}`,
-      config
-    );
+    const CIdea = await axios.post(`${API}/createIdea/${id}`, config);
 
-    
     if (CIdea) {
-      console.log(CIdea)
+      console.log(CIdea);
       dispatch({
         type: CREATE_IDEA,
-        payload: CIdea,
+        payload: CIdea.data.Idea,
       });
     }
   } catch (error) {
     console.log(error);
   }
 };
-
 
 export const GetIdea = (id) => async (dispatch) => {
   const config = {
@@ -107,12 +87,9 @@ export const GetIdea = (id) => async (dispatch) => {
   };
 
   try {
-    const Idea = await axios.get(
-      `${API}/getIdea/${id}`,
-config
-    );
+    const Idea = await axios.get(`${API}/getIdea/${id}`, config);
     if (Idea.data) {
-      console.log(Idea)
+      console.log(Idea);
       dispatch({
         type: GET_IDEA,
         payload: Idea.data.Idea,
@@ -123,177 +100,170 @@ config
   }
 };
 
-export const ChooseBranch = ({ id, body }) => async(dispatch) => {
-  const config = {
-    headers: {
-      "Content-type": "application/json",
-    },
+export const ChooseBranch =
+  ({ id, body }) =>
+  async (dispatch) => {
+    
+
+    try {
+      const Branch = await axios.post(
+        `${API}/idea/chooseBranch/${id}`,
+        config,
+        body
+      );
+
+      if (Branch) {
+        console.log("huuiuuuhhh");
+        console.log(Branch)
+        dispatch({
+          type: CHOOSE_BRANCH,
+          payload: {
+            Message:Branch.data.Message,
+            Idea: Branch.data.Idea
+          },
+        });
+      }
+    } catch (error) {}
   };
 
-  try {
-    const Branch =  await axios.post(`${API}/idea/chooseBranch/${id}`, config, body);
+export const DropIdea =
+  ({ id }) =>
+  async (dispatch) => {
+    try {
+      const data = await axios.get(`${API}/idea/dropIdea/${id}`);
+      if (data) {
+        dispatch({
+          type: DROP_IDEA,
+          payload: null,
+        });
+      }
+    } catch (error) {}
+  };
 
-    if (Branch) {
-      dispatch({
-        type: CHOOSE_BRANCH,
-        payload: Branch
-      })
+export const OtpLogin =
+  ({ id }) =>
+  async (dispatch) => {
+    try {
+      const data = await axios.get(`${API}/idea/otplogin/${id}`);
+      if (data) {
+        dispatch({
+          type: OTP_LOGIN,
+          payload: data,
+        });
+      }
+    } catch (error) {}
+  };
+
+export const OtpVerify =
+  ({ id, code }) =>
+  async (dispatch) => {
+
+    const body = {
+      code: code
     }
-  } catch (error) {
+    try {
+      const data = await axios.post(
+        `${API}/idea/otpverify/${id}`,
+        config,
+        body
+      );
+      if (data) {
+        dispatch({
+          type: OTP_VERIFY,
+          payload: null,
+        });
+      }
+    } catch (error) {}
+  };
 
-  }
-}
+export const OpenStep2 =
+  ({ id }) =>
+  async (dispatch) => {
+    try {
+      const data = await axios.get(`${API}idea/clickStep2/${id}`);
+      if (data) {
+        dispatch({
+          type: OPEN_STEP_2,
+          payload: data,
+        });
+      }
+    } catch (error) {}
+  };
 
+export const CreateStep2 =
+  ({ id, Formdata }) =>
+  async (dispatch) => {
+    try {
+      const data = await axios.post(
+        `${API}/idea/createStep2/${id}`,
+        config,
+        Formdata
+      );
 
-export const DropIdea = ({ id }) => async (dispatch) => {
+      if (data) {
+        dispatch({
+          type: CREATE_STEP_2,
+          payload: data,
+        });
+      }
+    } catch (error) {}
+  };
 
+export const GetStep2 =
+  ({ id }) =>
+  async (dispatch) => {
+    try {
+      const data = await axios.post(`${API}/idea/getStep2/${id}`);
 
-  try {
-    const data = await axios.get(`${API}/idea/dropIdea/${id}`);
-    if (data) {
       dispatch({
-        type: DROP_IDEA,
-        payload: null
-      })
-    }
-  } catch (error) {
-
-  }
-}
-
-
-export const OtpLogin = ({ id }) => async (dispatch) => {
-
-
-  try {
-    const data = await axios.get(`${API}/idea/otplogin/${id}`)
-    if (data) {
-      dispatch({
-        type: OTP_LOGIN,
-        payload: data
-      })
-    }
-  } catch (error) {
-
-  }
-}
-
-export const OtpVerify = ({ id, code }) => async (dispatch) => {
-
-
-
-  try {
-    const data = await axios.post(`${API}/idea/otpverify/${id}`, config, data);
-    if (data) {
-      dispatch({
-        type: OTP_VERIFY,
-        payload: null
-      })
-    }
-  } catch (error) {
-
-  }
-
-}
-
-
-export const OpenStep2 = ({ id }) =>  async(dispatch) => {
-
-
-  try {
-
-
-    const data = await axios.get(`${API}idea/clickStep2/${id}`);
-    if (data) {
-      dispatch({
-        type: OPEN_STEP_2,
-        payload: data
-      })
-    }
-  } catch (error) {
-
-  }
-
-
-}
-
-
-export const CreateStep2 = ({ id, Formdata }) => async (dispatch) => {
-  try {
-
-    const data = await axios.post(`${API}/idea/createStep2/${id}`, config, Formdata);
-
-    if (data) {
-      dispatch({
-        type: CREATE_STEP_2,
+        type: GET_STEP_2,
         payload: data,
-      })
-    }
-  } catch (error) {
+      });
+    } catch (error) {}
+  };
 
-  }
-}
+export const OpenStep3 =
+  ({ id }) =>
+  async (dispatch) => {
+    try {
+      const data = await axios.get(`${API}/idea/clickStep3/${id}`);
+      if (data) {
+        dispatch({
+          type: OPEN_STEP_3,
+          payload: data,
+        });
+      }
+    } catch (error) {}
+  };
 
-export const GetStep2 = ({id})=> async (dispatch)=>{
-  try {
-    const data = await axios.post(`${API}/idea/getStep2/${id}`);
+export const CreateStep3 =
+  ({ id, Formdata }) =>
+  async (dispatch) => {
+    try {
+      const data = await axios.post(
+        `${API}/idea/createStep3/${id}`,
+        config,
+        Formdata
+      );
 
-    dispatch({
-      type: GET_STEP_2,
-      payload: data,
-    })
-  } catch (error) {
-    
-  }
-}
+      if (data) {
+        dispatch({
+          type: CREATE_STEP_3,
+          payload: data,
+        });
+      }
+    } catch (error) {}
+  };
 
+export const GetStep3 =
+  ({ id }) =>
+  async (dispatch) => {
+    try {
+      const data = await axios.post(`${API}/idea/getStep3/${id}`);
 
-export const OpenStep3 = ({ id }) => async (dispatch) => {
-
-
-  try {
-
-
-    const data = await axios.get(`${API}/idea/clickStep3/${id}`);
-    if (data) {
       dispatch({
-        type: OPEN_STEP_3,
-        payload: data
-      })
-    }
-  } catch (error) {
-
-  }
-
-
-}
-
-
-export const CreateStep3 = ({ id, Formdata }) => async (dispatch) => {
-  try {
-
-    const data = await axios.post(`${API}/idea/createStep3/${id}`, config, Formdata);
-
-    if (data) {
-      dispatch({
-        type: CREATE_STEP_3,
+        type: GET_STEP_3,
         payload: data,
-      })
-    }
-  } catch (error) {
-
-  }
-}
-
-export const GetStep3 = ({id})=> async (dispatch)=>{
-  try {
-    const data =  await axios.post(`${API}/idea/getStep3/${id}`);
-
-    dispatch({
-      type: GET_STEP_3,
-      payload: data,
-    })
-  } catch (error) {
-    
-  }
-}
+      });
+    } catch (error) {}
+  };

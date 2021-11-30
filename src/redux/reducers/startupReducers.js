@@ -42,7 +42,8 @@ export default function (state = initialState, action) {
     case CHOOSE_BRANCH:
       return {
         ...state,
-        data: action.payload,
+        Idea: action.payload.Idea,
+        Message: action.payload.Message
       };
 
     case OTP_LOGIN:
@@ -68,7 +69,7 @@ export default function (state = initialState, action) {
     case CREATE_IDEA:
       return {
         ...state,
-        state: action.payload
+       Idea: action.payload
       }
 
     case OPEN_STEP_2:

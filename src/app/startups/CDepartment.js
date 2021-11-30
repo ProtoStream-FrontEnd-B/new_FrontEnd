@@ -17,7 +17,7 @@ const Cdepartment = () => {
   const userid =  JSON.parse(localStorage.getItem("user"));;
   const id = userid._id;
   const HandleOnLoad = (value) => {
-    if (value === "PASS") {
+    if (value == "pass") {
         console.log("heyy")
       dispatch(CreateIdea(id));
     } else {

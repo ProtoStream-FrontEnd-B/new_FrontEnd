@@ -1,7 +1,8 @@
-import React, { useState  , useEffect} from "react";
-import { useDispatch  , useSelector} from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { UpdateTRL } from "../../redux/actions/startupAction";
 import { SignUp } from "../../redux/actions/authAction";
-import { Link , useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Overlay1 from "../../Assets/Illustrations/Overlay1.svg";
 import Overlay2 from "../../Assets/Illustrations/Overlay2.svg";
 import "./css/Auth.css";
@@ -11,9 +12,11 @@ function Signin() {
     email: "",
     password: "",
     confirmPassword: "",
-    number:8989898912
+    number: 8989898912,
   });
   const history = useHistory();
+  
+ 
   const resp = useSelector((state) => state.auth);
 
   const { isAuthenticated } = resp;
@@ -26,29 +29,35 @@ function Signin() {
     });
   };
 
-
   const pushTo = (isAuth) => {
     if (isAuth) {
-      console.log("he")
+      const userid = JSON.parse(localStorage.getItem("user"));
+      const id = userid._id;
+      
+        
+       
+        const trl_data = {
+          id,
+          trl_value: {
+            TRL_Test: "pass",
+          },
+        };
+        dispatch(UpdateTRL(trl_data));
+      
+      console.log("he");
       history.push("/user-dashboard");
     }
   };
 
-  
   useEffect(() => {
- 
-   pushTo(isAuthenticated);
-    
-  }, [isAuthenticated])
+    pushTo(isAuthenticated);
+  }, [isAuthenticated]);
 
-  const onHandleSubmit = (e)=>{
-      e.preventDefault()
-      console.log(data);
-      dispatch(SignUp(data))
-
-
-
-  }
+  const onHandleSubmit = (e) => {
+    e.preventDefault();
+    console.log(data);
+    dispatch(SignUp(data));
+  };
   return (
     <section className="auth">
       <div className="overlay1">
@@ -90,7 +99,9 @@ function Signin() {
           <p className="para">
             Already have an Account? <Link to="/signin">Sign in</Link>
           </p>
-          <button onClick = {onHandleSubmit} className="sign-btn">Signup</button>
+          <button onClick={onHandleSubmit} className="sign-btn">
+            Signup
+          </button>
         </form>
       </div>
     </section>
