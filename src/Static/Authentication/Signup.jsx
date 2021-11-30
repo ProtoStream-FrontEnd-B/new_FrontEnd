@@ -12,7 +12,7 @@ function Signin() {
     email: "",
     password: "",
     confirmPassword: "",
-    number: 8989898912,
+    number: 8445775919,
   });
   const history = useHistory();
   
@@ -94,6 +94,14 @@ function Signin() {
             value={data.confirmPassword}
             type="password"
             placeholder="Confirm Password"
+            className="inp-box"
+          />
+           <input
+            name="number"
+            onChange={onHandleChange}
+            value={data.number}
+            type="number"
+            placeholder="Mobile no"
             className="inp-box"
           />
           <p className="para">

@@ -92,7 +92,7 @@ export const GetIdea = (id) => async (dispatch) => {
       console.log(Idea);
       dispatch({
         type: GET_IDEA,
-        payload: Idea.data.Idea,
+        payload: { Idea: Idea.data.Idea, Message: Idea.data.Idea },
       });
     }
   } catch (error) {
@@ -103,8 +103,6 @@ export const GetIdea = (id) => async (dispatch) => {
 export const ChooseBranch =
   ({ id, body }) =>
   async (dispatch) => {
-    
-
     try {
       const Branch = await axios.post(
         `${API}/idea/chooseBranch/${id}`,
@@ -114,12 +112,12 @@ export const ChooseBranch =
 
       if (Branch) {
         console.log("huuiuuuhhh");
-        console.log(Branch)
+        console.log(Branch);
         dispatch({
           type: CHOOSE_BRANCH,
           payload: {
-            Message:Branch.data.Message,
-            Idea: Branch.data.Idea
+            Message: Branch.data.Message,
+            Idea: Branch.data.Idea,
           },
         });
       }
@@ -140,27 +138,24 @@ export const DropIdea =
     } catch (error) {}
   };
 
-export const OtpLogin =
-  ({ id }) =>
-  async (dispatch) => {
-    try {
-      const data = await axios.get(`${API}/idea/otplogin/${id}`);
-      if (data) {
-        dispatch({
-          type: OTP_LOGIN,
-          payload: data,
-        });
-      }
-    } catch (error) {}
-  };
+export const OtpLogin = (id) => async (dispatch) => {
+  try {
+    const data = await axios.get(`${API}/idea/otplogin/${id}`);
+    if (data) {
+      dispatch({
+        type: OTP_LOGIN,
+        payload: data,
+      });
+    }
+  } catch (error) {}
+};
 
 export const OtpVerify =
   ({ id, code }) =>
   async (dispatch) => {
-
     const body = {
-      code: code
-    }
+      code: code,
+    };
     try {
       const data = await axios.post(
         `${API}/idea/otpverify/${id}`,

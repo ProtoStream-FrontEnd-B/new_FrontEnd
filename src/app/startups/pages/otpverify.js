@@ -4,7 +4,7 @@ import arrow from "../../../Assets/icons/arrow.svg";
 import "../css/otp.css";
 
 const OTP = () => {
-  const number = 7882748219;
+  const number = 8445775919;
   let newNumber = number.toString();
   let array = newNumber.split("");
 

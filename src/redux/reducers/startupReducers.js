@@ -31,7 +31,8 @@ export default function (state = initialState, action) {
     case GET_IDEA:
       return {
         ...state,
-        Idea: action.payload,
+        Idea: action.payload.Idea,
+        Message: action.payload.Message
       };
     case UPDATE_TRL:
       return {

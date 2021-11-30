@@ -26,6 +26,10 @@ const DepartmentBox = ({ name }) => {
           history.push("/startups/Register");
     }
 
+    else if(startup_details.Idea.status==="branch-choosed"){
+        history.push("/startups/Register");
+    }
+
   
   };
   return (

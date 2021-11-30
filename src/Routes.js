@@ -27,7 +27,7 @@ import PrivateRoute from "./auth_routes/private_route";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { isLogin } from "./redux/actions/authAction";
-import { getTrl, UpdateTRL } from "./redux/actions/startupAction";
+import { getTrl, UpdateTRL , GetIdea } from "./redux/actions/startupAction";
 
 
 const Routes = () => {
@@ -54,6 +54,7 @@ const Routes = () => {
         },
       };
       dispatch(UpdateTRL(trl_data));
+      dispatch(GetIdea(id));
     }
   }, []);
   return (
