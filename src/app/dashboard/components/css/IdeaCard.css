@@ -29,6 +29,11 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .Ideacard .head button img {
@@ -36,6 +41,10 @@
   transition: all 0.2s ease;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+}
+
+.Ideacard .head Button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .Ideacard .hidden-section {
