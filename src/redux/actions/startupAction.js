@@ -101,13 +101,14 @@ export const GetIdea = (id) => async (dispatch) => {
 };
 
 export const ChooseBranch =
-  ({ id, body }) =>
+  ({ id, trl_value }) =>
   async (dispatch) => {
     try {
       const Branch = await axios.post(
         `${API}/idea/chooseBranch/${id}`,
-        config,
-        body
+        
+        trl_value,
+        config
       );
 
       if (Branch) {
@@ -141,10 +142,13 @@ export const DropIdea =
 export const OtpLogin = (id) => async (dispatch) => {
   try {
     const data = await axios.get(`${API}/idea/otplogin/${id}`);
+   
+    
     if (data) {
+      console.log("Hey i m the otp login ...." , data);
       dispatch({
         type: OTP_LOGIN,
-        payload: data,
+        payload: {Idea: data.data.Idea , Message: data.data.Message},
       });
     }
   } catch (error) {}
@@ -159,13 +163,14 @@ export const OtpVerify =
     try {
       const data = await axios.post(
         `${API}/idea/otpverify/${id}`,
-        config,
-        body
+        body,
+        config
       );
       if (data) {
+        console.log("Hey i m the otp verify req console ",data);
         dispatch({
           type: OTP_VERIFY,
-          payload: null,
+          payload: {Idea: data.data.Idea , Message: data.data.Message},
         });
       }
     } catch (error) {}

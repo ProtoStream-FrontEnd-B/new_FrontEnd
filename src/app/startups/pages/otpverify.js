@@ -1,16 +1,35 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
+import { useDispatch , useSelector } from "react-redux";
 import Otpimage from "../../../Assets/Illustrations/Otpverify.svg";
 import arrow from "../../../Assets/icons/arrow.svg";
 import "../css/otp.css";
+import { useHistory } from "react-router";
+import { OtpVerify } from "../../../redux/actions/startupAction";
 
 const OTP = () => {
   const number = 8445775919;
   let newNumber = number.toString();
   let array = newNumber.split("");
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const idea_detail = useSelector(state=> state.startup);
+  console.log(idea_detail);
+  let user = localStorage.getItem("user");
+  const userid = JSON.parse(localStorage.getItem("user"));
 
   for (var i = 0; i < array.length - 4; i++) {
     array[i] = "*";
   }
+  const handlePush =()=>{
+    if(idea_detail.Idea.status==="Step1-complete"){
+      console.log("hey its the handlepush")
+      history.push('/startups/Register');
+          }
+  }
+
+  useEffect(()=>{
+    handlePush();
+  },[])
 
   const [otp, setOtp] = useState(new Array(6).fill(""));
 
@@ -29,7 +48,15 @@ const OTP = () => {
   };
   const handleSubmit = () => {
     const OTP = otp.join("");
+
     console.log(OTP);
+    const otp_data = {
+      id: userid._id,
+      code: OTP
+    }
+    dispatch(OtpVerify(otp_data));
+ 
+
   };
 
   const error = false;

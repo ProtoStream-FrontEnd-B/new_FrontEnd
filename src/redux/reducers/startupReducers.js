@@ -50,13 +50,15 @@ export default function (state = initialState, action) {
     case OTP_LOGIN:
       return {
         ...state,
-        otp_status: "OTP SENT"
+        Idea: action.payload.Idea,
+        Message: action.payload.Message
       }
 
     case OTP_VERIFY:
       return {
         ...state,
-        otp_status: action.payload
+        Idea: action.payload.Idea ,
+        Message: action.payload.Message
       }
 
     case DROP_IDEA:

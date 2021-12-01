@@ -1,4 +1,4 @@
-import React from "react";
+import {React , useEffect, useState}  from "react";
 import { useSelector } from "react-redux";
 import Scard from "../../Components/Cards/Scard";
 import OtpVerify from "../../Assets/Illustrations/Otpverify.svg";
@@ -22,6 +22,37 @@ const Register = () => {
   const step3_data = {
     id: id,
   };
+
+  const [card_status1 , setCard_status1]= useState("enable");
+  const [card_status2 , setCard_status2]= useState("disable");
+  const [card_status3 , setCard_status3]= useState("disable");
+  const idea_detail = useSelector(state=> state.startup);
+
+
+  useEffect(() => {
+   console.log("hey the useEffect got run");
+   if(idea_detail.Idea.status==="Step1-complete"){
+     setCard_status1("completed");
+     setCard_status2("enable");
+     
+   }
+   else if(idea_detail.Idea.status==="Step2-complete"){
+    setCard_status2("completed");
+    setCard_status3("enable");
+   }
+
+   else if(idea_detail.Idea.status==="Step3-complete"){
+  
+    setCard_status3("completed");
+   }
+
+   else{
+    setCard_status1("enable");
+    setCard_status2("disable");
+    setCard_status3("disable");
+   }
+
+  }, [])
   return (
     <div className="register">
       <div className="container">
@@ -33,7 +64,7 @@ const Register = () => {
           para="Register your Mobile Number"
           btnName="Go"
           img={OtpVerify}
-          status="enable"
+          status={card_status1}
         />
         <Scard
           data={step2_data}
@@ -43,7 +74,7 @@ const Register = () => {
           para="Enter some details about your Startup Idea, which helps you to provide a mentorship for your Idea."
           btnName="Go"
           img={formIcon}
-          status="disable"
+          status={card_status2}
         />
         <Scard
           data={step3_data}
@@ -53,7 +84,7 @@ const Register = () => {
           para="After completing Step 2, you have to fill some more details which is directly sent to TBI Head for verification of your Startup Idea."
           btnName="Go"
           img={ThirdStep}
-          status="completed"
+          status={card_status3}
         />
       </div>
     </div>
