@@ -1,0 +1,77 @@
+.Ideacard {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0.5rem auto;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  height: 70px;
+
+  .head {
+    font-family: var(--font-pr);
+    color: var(--accent-sec);
+    font-size: var(--heading-med);
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      img {
+        transition: all 0.2s ease;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .hidden-section {
+    display: none;
+    transition: all 0.2s ease;
+
+    .details {
+      transition: all 0.5s ease;
+      opacity: 0;
+      width: 50%;
+      justify-content: space-around;
+      margin: auto;
+      display: flex;
+
+      .ques,
+      .ans {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        .question,
+        .answers {
+          margin: 0.5rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.expanded {
+  height: 200px;
+
+  .head {
+    button {
+      img {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .hidden-section {
+    display: block;
+
+    .details {
+      opacity: 1;
+    }
+  }
+}

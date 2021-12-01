@@ -15,6 +15,7 @@ import TbiDashboard from "./app/dashboard/TbiDashboard";
 import Register from "./app/startups/Register";
 import Cdepartment from "./app/startups/CDepartment";
 import Main from "./app/startups/Main";
+import MentorDashboard from "./app/dashboard/MentorDashboard";
 
 //Schemes Import
 
@@ -50,6 +51,7 @@ const Routes = () => {
           <Route path="/resources" exact component={Resources} />
           <Route path="/user-dashboard" component={StudentDashboard} />
           <Route path="/admin-dashboard" component={TbiDashboard} />
+          <Route path="/mentor-dashboard" component={MentorDashboard} />
           <Route path="/dev-check" component={IdeaDetails} />
 
           <Route path="/student/schemes/" exact component={Scheme} />

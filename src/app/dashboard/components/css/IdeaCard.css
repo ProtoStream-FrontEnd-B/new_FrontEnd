@@ -1,0 +1,96 @@
+.Ideacard {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0.5rem auto;
+  padding: 1rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  height: 70px;
+}
+
+.Ideacard .head {
+  font-family: var(--font-pr);
+  color: var(--accent-sec);
+  font-size: var(--heading-med);
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Ideacard .head button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.Ideacard .head button img {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.Ideacard .hidden-section {
+  display: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.Ideacard .hidden-section .details {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0;
+  width: 50%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Ideacard .hidden-section .details .ques,
+.Ideacard .hidden-section .details .ans {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+
+.Ideacard .hidden-section .details .ques .question,
+.Ideacard .hidden-section .details .ques .answers,
+.Ideacard .hidden-section .details .ans .question,
+.Ideacard .hidden-section .details .ans .answers {
+  margin: 0.5rem;
+  font-weight: bold;
+}
+
+.expanded {
+  height: 200px;
+}
+
+.expanded .head button img {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.expanded .hidden-section {
+  display: block;
+}
+
+.expanded .hidden-section .details {
+  opacity: 1;
+}
+/*# sourceMappingURL=IdeaCard.css.map */

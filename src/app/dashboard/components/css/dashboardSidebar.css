@@ -1,0 +1,60 @@
+.dashboard-Sidebar {
+  position: relative;
+  background: var(--comp-pr);
+  margin: 2rem;
+  margin-right: 0;
+  padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 20%;
+  min-height: 80vh;
+}
+
+.dashboard-Sidebar .name,
+.dashboard-Sidebar .role {
+  font-family: var(--font-pr);
+  font-size: var(--heading-small);
+  color: var(--accent-sec);
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.dashboard-Sidebar p {
+  font-family: var(--font-pr);
+  font-size: var(--heading-small);
+  color: var(--text-pr);
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.dashboard-Sidebar .logout .log-out {
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: var(--comp-sec);
+  font-family: var(--font-pr);
+  font-size: var(--button);
+  color: var(--text-pr);
+}
+
+.dashboard-Sidebar .logout .log-out:hover {
+  background-color: var(--comp-sec-hover);
+  cursor: pointer;
+}
+/*# sourceMappingURL=dashboardSidebar.css.map */
