@@ -2,7 +2,8 @@
 import Home from "./Static/Homepage/Home";
 import IdeaDetail from "./app/startups/IdeaDetail";
 import { useEffect } from "react";
-
+import DetailedForm from "./app/startups/pages/DetailedForm";
+import  Form  from "./app/startups/pages/Form";
 import Signin from "./Static/Authentication/Signin";
 import Signup from "./Static/Authentication/Signup";
 import About from "./Static/Footerpages/About";
@@ -27,8 +28,7 @@ import PrivateRoute from "./auth_routes/private_route";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { isLogin } from "./redux/actions/authAction";
-import { getTrl, UpdateTRL , GetIdea } from "./redux/actions/startupAction";
-
+import { getTrl, UpdateTRL, GetIdea } from "./redux/actions/startupAction";
 
 const Routes = () => {
   // const user = useSelector(state=> state.auth);
@@ -46,7 +46,7 @@ const Routes = () => {
     dispatch(isLogin(maindata));
     if (userid) {
       const id = userid._id;
-     
+
       const trl_data = {
         id,
         trl_value: {
@@ -82,6 +82,8 @@ const Routes = () => {
             component={otpverify}
             exact
           />
+          <PrivateRoute path="/startups/Register/form" component={Form} exact />
+          <PrivateRoute path = "/startups/Register/Dform" component = {DetailedForm} exact/> 
         </Switch>
       </div>
     </Router>

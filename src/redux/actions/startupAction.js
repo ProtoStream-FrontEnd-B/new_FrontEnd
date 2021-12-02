@@ -196,8 +196,8 @@ export const CreateStep2 =
     try {
       const data = await axios.post(
         `${API}/idea/createStep2/${id}`,
-        config,
-        Formdata
+        Formdata,
+        config
       );
 
       if (data) {
@@ -242,8 +242,8 @@ export const CreateStep3 =
     try {
       const data = await axios.post(
         `${API}/idea/createStep3/${id}`,
-        config,
-        Formdata
+        Formdata,
+        config
       );
 
       if (data) {

@@ -29,7 +29,7 @@ const OTP = () => {
 
   useEffect(()=>{
     handlePush();
-  },[])
+  })
 
   const [otp, setOtp] = useState(new Array(6).fill(""));
 
