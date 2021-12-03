@@ -40,11 +40,29 @@
 .MainArea .container {
   width: 90%;
   margin: 1rem auto;
-  height: 80%;
+  height: 650px;
+  max-height: 650px;
   border-radius: 10px;
   padding: 1rem;
   overflow: auto;
   background: -webkit-gradient(linear, left top, right top, from(var(--accent-sec)), to(var(--accent-pr)));
   background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.MainArea .container .subpage {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  place-items: center;
 }
 /*# sourceMappingURL=MainArea.css.map */

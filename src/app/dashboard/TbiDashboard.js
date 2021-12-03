@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import MainArea from "./components/MainArea";
+import DashboardCard from "./components/DashboardCard";
+import { signout } from "../../auth";
+import "./css/TbiDashboard.css";
+import { useHistory } from "react-router-dom";
+
+// adding icons
 import profile from "../../Assets/icons/profile.svg";
 import Badge from "../../Assets/icons/Badge.svg";
-import "./css/TbiDashboard.css";
-import { signout } from "../../auth";
-import { useHistory } from "react-router-dom";
+import plus from "../../Assets/icons/plus.svg";
+import trophy from "../../Assets/icons/trophy-icon.svg";
+import idea from "../../Assets/icons/idea-icon.svg";
+import erase from "../../Assets/icons/Erase-icon.svg";
+import slot from "../../Assets/icons/slot-icon.svg";
 
 const TbiDashboard = () => {
   const [active, setActive] = useState("hackathon");
@@ -19,10 +27,81 @@ const TbiDashboard = () => {
   };
 
   const getPage = () => {
-    if (active == "hackathon") return <div>Hackathon Page</div>;
-    else if (active == "schemes") return <div>Schemes page</div>;
-    else if (active == "internship") return <div>Internship page</div>;
-    else if (active == "startups") return <div>Startups</div>;
+    if (active == "hackathon")
+      return (
+        <div className="subpage">
+          <DashboardCard
+            icon={plus}
+            heading={"Add Hackathon"}
+            para={"create a new category for Hackathon for the current year"}
+          />
+          <DashboardCard
+            icon={trophy}
+            heading={"Choose Winner"}
+            para={
+              "Choose a Winner for Hackathon or Assign Positions to Winning Project"
+            }
+          />
+          <DashboardCard
+            icon={idea}
+            heading={"Add/Remove Project"}
+            para={
+              "Add or Remove any project that violates the rules or is disqualified ."
+            }
+          />
+          <DashboardCard
+            icon={erase}
+            heading={"Edit/Remove Hackathon"}
+            para={"create a new category for Hackathon for the current year"}
+          />
+        </div>
+      );
+    else if (active == "schemes")
+      return (
+        <div className="subpage">
+          <DashboardCard
+            icon={plus}
+            heading={"Add Scheme"}
+            para={"Create a New Scheme or  Competition"}
+          />
+          <DashboardCard
+            icon={erase}
+            heading={"Remove/Archive Scheme"}
+            para={"Remove or Archive any Scheme."}
+          />
+          <DashboardCard
+            icon={idea}
+            heading={"Edit/Update Scheme"}
+            para={
+              "Increase /Decrease Deadlines.Add Files or Google Forms to Fill"
+            }
+          />
+        </div>
+      );
+    else if (active == "internship")
+      return (
+        <div className="subpage">
+          <DashboardCard
+            icon={plus}
+            heading={"Add Internship"}
+            para={"Create a New Internship"}
+          />
+          <DashboardCard
+            icon={erase}
+            heading={"Remove/Archive Internship"}
+            para={"Remove or Archive any Internship."}
+          />
+          <DashboardCard
+            icon={idea}
+            heading={"Edit/Update Internship"}
+            para={
+              "Increase /Decrease Deadlines.Add Files or Google Forms to Fill"
+            }
+          />
+        </div>
+      );
+    else if (active == "startups")
+      return <div className="subpage">Startups</div>;
   };
 
   return (
