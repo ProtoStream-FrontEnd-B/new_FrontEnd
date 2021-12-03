@@ -1,1 +1,2 @@
-export const API = "http://localhost:8000";
+require("dotenv").config();
+export const API =process.env.BACKEND;
