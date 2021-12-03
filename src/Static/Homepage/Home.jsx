@@ -13,9 +13,10 @@ import NavBar from "../../Components/Header/NavBar";
 import "./css/Home.css"
 
 const Home = () => {
+  console.log(process.env.BACKEND);
   return (
     <div className="Home">
-
+      
       <Section
         heading="Building the Future, One Idea at a time."
         subHeading="Ideas and Dreams are what makes Entrepreneurs different , but those dreams turned into reality is what makes the world different."

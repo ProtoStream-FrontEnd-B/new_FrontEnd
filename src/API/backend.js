@@ -1,2 +1,2 @@
-require("dotenv").config();
-export const API = process.env.BACKEND;
+
+export const API = `${process.env.BACKEND}`;
