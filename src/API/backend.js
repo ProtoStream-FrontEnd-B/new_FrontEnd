@@ -1,2 +1,2 @@
 
-export const API = `${process.env.BACKEND}`;
+export const API = "https://calm-lake-75912.herokuapp.com";
