@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MainArea from "./components/MainArea";
 import DashboardCard from "./components/DashboardCard";
+import StartupCard from "./components/StartupCard";
 import { signout } from "../../auth";
 import "./css/TbiDashboard.css";
 import { useHistory } from "react-router-dom";
@@ -101,7 +102,22 @@ const TbiDashboard = () => {
         </div>
       );
     else if (active == "startups")
-      return <div className="subpage">Startups</div>;
+      return (
+        <div className="subpage">
+          <StartupCard
+            heading="List of Ideas"
+            icon={idea}
+            para="Here you can verify, dismiss and delete anideas submit by students."
+            btn="Check List"
+          />
+          <StartupCard
+            heading="Book Slot/ Attendance"
+            icon={slot}
+            para="Book slot for ideas evaluation by  calling students to TBI for face to face meeting with them."
+            btn="Check Slot"
+          />
+        </div>
+      );
   };
 
   return (
