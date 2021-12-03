@@ -1,3 +1,2 @@
 require("dotenv").config();
-export const API ="https://localhost:8000/"
-
+export const API = process.env.BACKEND;

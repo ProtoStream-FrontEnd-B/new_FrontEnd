@@ -1,3 +1,4 @@
+import { API } from "../../API/backend";
 import axios from "axios";
 
 import {
@@ -23,7 +24,7 @@ export const SignUp = (data) => async (dispatch) => {
 
   try {
     const data2 = await axios.post(
-      "http://localhost:8000/register",
+      `${API}/register`,
       data,
       config
     );
@@ -47,7 +48,7 @@ export const Login = (data) => async (dispatch) => {
   };
 
   try {
-    const data2 = await axios.post("http://localhost:8000/login", data, config);
+    const data2 = await axios.post(`${API}/login`, data, config);
     if (data2) {
       dispatch({
         type: LOGIN_SUCCESS,
