@@ -1,0 +1,46 @@
+.Startup-Card {
+  width: 400px;
+  height: 550px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  margin: 2rem;
+  font-family: var(--font-pr);
+  padding: 1rem;
+  transition: all 0.2s ease;
+
+  img {
+    width: 200px;
+  }
+
+  .head {
+    font-size: var(--heading-med);
+    color: var(--accent-sec);
+  }
+  .para {
+    color: black;
+    font-size: var(--para);
+  }
+
+  .btn {
+    transition: all 0.2s ease;
+    width: 50%;
+    padding: 0.5rem;
+    font-size: var(--button);
+    font-weight: bold;
+    font-family: var(--font-pr);
+    background-color: var(--comp-sec);
+    border-radius: 5px;
+    color: var(--text-pr);
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: var(--comp-pr);
+  }
+}

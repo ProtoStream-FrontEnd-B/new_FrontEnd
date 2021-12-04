@@ -2,6 +2,9 @@
 import Home from "./Static/Homepage/Home";
 import IdeaDetail from "./app/startups/IdeaDetail";
 import { useEffect } from "react";
+import TbiDashboard from "./app/dashboard/TbiDashboard";
+import MentorDashboard from "./app/dashboard/MentorDashboard"
+import PublicRoute from "./auth_routes/public_route";
 import DetailedForm from "./app/startups/pages/DetailedForm";
 import  Form  from "./app/startups/pages/Form";
 import Signin from "./Static/Authentication/Signin";
@@ -16,7 +19,7 @@ import Error99 from "./Static/Errorpages/Error99";
 import Resources from "./Static/Resources/Resources";
 import Header from "./Components/Header/NavBar";
 import StudentDashboard from "./app/dashboard/StudentDashboard";
-import TbiDashboard from "./app/dashboard/TbiDashboard";
+
 import Register from "./app/startups/Register";
 import Cdepartment from "./app/startups/CDepartment";
 import Main from "./app/startups/Main";
@@ -62,7 +65,7 @@ const Routes = () => {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <PublicRoute path="/" exact component={Home} />
           <Route path="/signin" exact component={Signin} />
           <Route path="/signup" exact component={Signup} />
           <Route path="/about" exact component={About} />
@@ -73,7 +76,7 @@ const Routes = () => {
           <Route path="/error_99" exact component={Error99} />
           <Route path="/resources" exact component={Resources} />
           <PrivateRoute path="/user-dashboard" component={StudentDashboard} />
-          <Route path="/admin-dashboard" component={TbiDashboard} />
+          {/* <Route path="/admin-dashboard" component={TbiDashboard} /> */}
           <PrivateRoute exact path="/startups" component={Main} />
           <PrivateRoute path="/startups/CYB" component={Cdepartment} exact />
           <PrivateRoute path="/startups/Register" component={Register} exact />
@@ -83,6 +86,8 @@ const Routes = () => {
             exact
           />
           <PrivateRoute path="/startups/Register/form" component={Form} exact />
+          <Route path = "/tbi-dashboard" component = {TbiDashboard} exact/>
+          <Route path = "/Mentor-dashboard" component = {MentorDashboard} exact/>
           <PrivateRoute path = "/startups/Register/Dform" component = {DetailedForm} exact/> 
         </Switch>
       </div>

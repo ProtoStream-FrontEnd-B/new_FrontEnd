@@ -1,0 +1,58 @@
+.Startup-Card {
+  width: 400px;
+  height: 550px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: black;
+  margin: 2rem;
+  font-family: var(--font-pr);
+  padding: 1rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.Startup-Card img {
+  width: 200px;
+}
+
+.Startup-Card .head {
+  font-size: var(--heading-med);
+  color: var(--accent-sec);
+}
+
+.Startup-Card .para {
+  color: black;
+  font-size: var(--para);
+}
+
+.Startup-Card .btn {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  width: 50%;
+  padding: 0.5rem;
+  font-size: var(--button);
+  font-weight: bold;
+  font-family: var(--font-pr);
+  background-color: var(--comp-sec);
+  border-radius: 5px;
+  color: var(--text-pr);
+  border: none;
+  cursor: pointer;
+}
+
+.Startup-Card .btn:hover {
+  background-color: var(--comp-pr);
+}
+/*# sourceMappingURL=StartupCard.css.map */

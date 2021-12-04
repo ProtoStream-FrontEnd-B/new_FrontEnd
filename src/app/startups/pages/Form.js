@@ -3,9 +3,13 @@ import { useDispatch , useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import arrow from "../../../Assets/icons/arrow.svg";
 import { CreateStep2 } from "../../../redux/actions/startupAction";
+import {  OpenStep2 , GetStep2} from "../../../redux/actions/startupAction";
+
+
+
 const  Form =()=> {
- 
-  const [verified, setverified] = useState(2);
+  const idea_detail = useSelector(state=> state.startup);
+  const [verified, setverified] = useState(0);
 const dispatch = useDispatch();
 const history = useHistory();
 let user = localStorage.getItem("user");
@@ -21,6 +25,25 @@ let user = localStorage.getItem("user");
   });
 const startup_detail = useSelector(state=>state.startup);
 
+
+const handleonLoad = ()=>{
+  let user = localStorage.getItem("user");
+  const userid = JSON.parse(localStorage.getItem("user"));
+  if(idea_detail.Idea.status==="Step1-complete"){
+    console.log("hey its the handlepush")
+    const id = userid._id;
+   dispatch(OpenStep2({id}));
+    
+        }
+
+        else if(idea_detail.Idea.status===""){
+          const id = userid._id;
+dispatch(GetStep2(id));
+        }
+}
+useEffect(()=>{
+handleonLoad();
+},[])
   const setFormStatus = ()=>{
 if(startup_detail.Idea.status==="Step1-complete"){
     setverified(0);
@@ -70,9 +93,28 @@ else {
 
 
   const onHandleSubmit = (e)=>{
+    const userid = JSON.parse(localStorage.getItem("user"));
+  console.log(userid)
+    console.log(userid.number)
       let id = userid._id;
+const body = {
+  Name: data.Fullname,
+  MobNo: userid.number,
+  Email: userid.email,
+  Carrer: "student",
+  Idea: data.Idea_title,
+  BriefData: data.Brief_Idea,
+  URL: "https/::drivelink/data/vpcoket",
+  mentorid: "61aa75a4124f9b148ca7631b"
 
-      dispatch(CreateStep2(id, data))
+}
+console.log(body)
+
+const Fdata = {
+  id: id,
+  FormData: body
+}
+      dispatch(CreateStep2(Fdata))
       e.preventDefault();
       console.log(data);
       

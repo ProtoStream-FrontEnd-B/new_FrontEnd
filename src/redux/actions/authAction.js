@@ -23,7 +23,7 @@ export const SignUp = (data) => async (dispatch) => {
 
   try {
     const data2 = await axios.post(
-      "http://localhost:8000/register",
+      `${process.env.REACT_APP_BACKEND_API}/register`,
       data,
       config
     );
@@ -47,7 +47,7 @@ export const Login = (data) => async (dispatch) => {
   };
 
   try {
-    const data2 = await axios.post("http://localhost:8000/login", data, config);
+    const data2 = await axios.post(`${process.env.REACT_APP_BACKEND_API}/login`, data, config);
     if (data2) {
       dispatch({
         type: LOGIN_SUCCESS,

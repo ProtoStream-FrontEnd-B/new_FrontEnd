@@ -6,6 +6,7 @@ import "../css/otp.css";
 import { useHistory } from "react-router";
 import { OtpVerify } from "../../../redux/actions/startupAction";
 
+
 const OTP = () => {
   const number = 8445775919;
   let newNumber = number.toString();
@@ -23,6 +24,8 @@ const OTP = () => {
   const handlePush =()=>{
     if(idea_detail.Idea.status==="Step1-complete"){
       console.log("hey its the handlepush")
+      const id = userid._id;
+     
       history.push('/startups/Register');
           }
   }
@@ -55,6 +58,7 @@ const OTP = () => {
       code: OTP
     }
     dispatch(OtpVerify(otp_data));
+    
  
 
   };

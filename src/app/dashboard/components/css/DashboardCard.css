@@ -1,0 +1,52 @@
+.DashboardCard {
+  width: 400px;
+  height: 250px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: black;
+  margin: 1rem;
+  font-family: var(--font-pr);
+  padding: 1rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.DashboardCard img {
+  width: 100px;
+}
+
+.DashboardCard .head {
+  font-size: var(--heading-med);
+}
+
+.DashboardCard .para {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  color: black;
+  font-size: var(--para);
+}
+
+.DashboardCard:hover {
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(109.8deg, var(--accent-sec) -4.02%, var(--accent-pr) 100.11%);
+  color: #fff;
+}
+
+.DashboardCard:hover .para {
+  color: #fff;
+}
+/*# sourceMappingURL=DashboardCard.css.map */
