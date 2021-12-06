@@ -12,6 +12,8 @@ import Resources from "./Static/Resources/Resources";
 import Header from "./Components/Header/NavBar";
 import StudentDashboard from "./app/dashboard/StudentDashboard";
 import TbiDashboard from "./app/dashboard/TbiDashboard";
+import IdeaList from "./app/dashboard/IdeaList";
+import Attendence from "./app/dashboard/Attendence";
 import Register from "./app/startups/Register";
 import Cdepartment from "./app/startups/CDepartment";
 import Main from "./app/startups/Main";
@@ -49,10 +51,16 @@ const Routes = () => {
           <Route path="/error_404" exact component={Error404} />
           <Route path="/error_99" exact component={Error99} />
           <Route path="/resources" exact component={Resources} />
-          <Route path="/user-dashboard" component={StudentDashboard} />
-          <Route path="/admin-dashboard" component={TbiDashboard} />
-          <Route path="/mentor-dashboard" component={MentorDashboard} />
-          <Route path="/dev-check" component={IdeaDetails} />
+          <Route path="/user-dashboard" exact component={StudentDashboard} />
+          <Route path="/admin-dashboard" exact component={TbiDashboard} />
+          <Route path="/admin-dashboard/ideas" exact component={IdeaList} />
+          <Route
+            path="/admin-dashboard/attendence"
+            exact
+            component={Attendence}
+          />
+          <Route path="/mentor-dashboard" exact component={MentorDashboard} />
+          <Route path="/dev-check" exact component={IdeaDetails} />
 
           <Route path="/student/schemes/" exact component={Scheme} />
           <Route path="/student/schemes/all" exact component={AllSchemes} />

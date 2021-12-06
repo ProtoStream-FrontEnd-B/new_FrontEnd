@@ -109,12 +109,14 @@ const TbiDashboard = () => {
             icon={idea}
             para="Here you can verify, dismiss and delete anideas submit by students."
             btn="Check List"
+            link={"/admin-dashboard/ideas"}
           />
           <StartupCard
             heading="Book Slot/ Attendance"
             icon={slot}
-            para="Book slot for ideas evaluation by  calling students to TBI for face to face meeting with them."
+            para="Book slot for ideas evaluation by calling students to TBI for face to facemeeting with them."
             btn="Check Slot"
+            link={"/admin-dashboard/attendence"}
           />
         </div>
       );

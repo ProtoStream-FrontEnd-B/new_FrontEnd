@@ -42,14 +42,19 @@
   transition: all 0.2s ease;
   width: 50%;
   padding: 0.5rem;
-  font-size: var(--button);
-  font-weight: bold;
-  font-family: var(--font-pr);
   background-color: var(--comp-sec);
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.Startup-Card .btn .btn-1 {
+  font-size: var(--button);
+  font-weight: bold;
   color: var(--text-pr);
   border: none;
+  background-color: transparent;
   cursor: pointer;
+  font-family: var(--font-pr);
 }
 
 .Startup-Card .btn:hover {

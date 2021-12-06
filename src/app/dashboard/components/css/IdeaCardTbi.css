@@ -1,0 +1,41 @@
+.ideacardtbi {
+  background-color: white;
+  border-radius: 5px;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-family: var(--font-pr);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.ideacardtbi .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: var(--button);
+}
+
+.ideacardtbi .col .ans {
+  color: var(--accent-sec);
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 414px) {
+  .ideacardtbi .col {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  .ideacardtbi .col .label,
+  .ideacardtbi .col .ans {
+    font-size: var(--span);
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=IdeaCardTbi.css.map */
