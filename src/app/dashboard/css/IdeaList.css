@@ -50,45 +50,35 @@
   padding: 2rem;
 }
 
-.idea-list .main .filter-box button {
-  color: var(--text-pr);
-  padding: 0.5rem 1rem;
+.idea-list .main .filter-box .head {
+  font-weight: bold;
+  font-size: var(--heading-small);
+  font-family: var(--font-pr);
+}
+
+.idea-list .main .filter-box .feedback-container {
+  padding: 0;
+}
+
+.idea-list .main .filter-box .feedback-container .feedback {
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--comp-sec);
+  margin: 1rem 0;
+  width: 100%;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  font-family: var(--font-pr);
+}
+
+.idea-list .main .filter-box .feedback-container .feedback .name {
+  cursor: pointer;
   font-size: var(--button);
   font-weight: bold;
-  background-color: var(--comp-sec);
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
 }
 
-.idea-list .main .filter-box .field {
-  margin: 2rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.idea-list .main .filter-box .field label {
-  color: var(--accent-sec);
-  font-size: var(--heading-small);
-  font-weight: bold;
-  font-family: var(--font-pr);
-  margin-bottom: 1rem;
-}
-
-.idea-list .main .filter-box .field input {
-  color: black;
-  padding: 0.5rem;
-  font-size: var(--heading-small);
-  font-weight: bold;
-  font-family: var(--font-pr);
-  border-radius: 5px;
-  border: none;
-  outline-color: var(--accent-sec);
+.idea-list .main .filter-box .feedback-container .feedback:hover {
+  background-color: var(--bg-pr);
 }
 
 @media screen and (max-width: 1024px) {

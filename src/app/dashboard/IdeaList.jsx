@@ -5,6 +5,24 @@ import ideasList from "./Ideas";
 
 function IdeaList() {
   const ideas = ideasList;
+  const feedbacks = [
+    {
+      title: "Roxet",
+      feedback: "haha gotcha",
+    },
+    {
+      title: "Roxet",
+      feedback: "haha gotcha",
+    },
+    {
+      title: "Roxet",
+      feedback: "haha gotcha",
+    },
+    {
+      title: "Roxet",
+      feedback: "haha gotcha",
+    },
+  ];
   return (
     <div className="idea-list">
       <div className="header">
@@ -22,7 +40,7 @@ function IdeaList() {
             ))}
           </div>
         </div>
-        <form className="filter-box">
+        {/* <form className="filter-box">
           <h2 className="head">Filter by:</h2>
           <div className="field">
             <label htmlFor="dept">Department</label>
@@ -33,7 +51,19 @@ function IdeaList() {
             <input name="ment" id="ment" type="text" />
           </div>
           <button type="submit">Search</button>
-        </form>
+        </form> */}
+
+        <div className="filter-box">
+          <h2 className="head">Student Feedbacks:</h2>
+          <div className="feedback-container">
+            {feedbacks.map((feedback) => (
+              <div className="feedback">
+                <p className="name">{feedback.title}</p>
+                <p className="feed">{feedback.feedback}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
