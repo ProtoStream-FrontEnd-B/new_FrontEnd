@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import ideasList from "./Ideas";
 import "./css/Attendence.css";
 
 function Attendence() {
+  const [active, setActive] = useState("attendence");
+
   const ideas = ideasList;
   return (
     <div className="attendence-section">
       <header className="header-sec">
         <div className="btns">
-          <button className="tab">Attendence</button>
-          <button className="tab">Create Next Slot</button>
+          <button
+            onClick={() => setActive("attendence")}
+            className={active == "attendence" ? "tab active" : "tab"}
+          >
+            Attendence
+          </button>
+          <button
+            onClick={() => setActive("create")}
+            className={active == "create" ? "tab active" : "tab"}
+          >
+            Create Slot
+          </button>
         </div>
         <form action="" className="slots">
           <label htmlFor="slot">Meeting Slot</label>
@@ -17,28 +29,51 @@ function Attendence() {
           <button type="submit">Submit</button>
         </form>
       </header>
-      <div className="container">
-        {ideas.map((idea) => (
-          <div className="idea-field">
-            <div className="idea-card">
-              <p className="name">{idea.title}</p>
-              <div className="attendence-record">
-                {idea.attendence.map((att) => (
-                  <p className="att">{att.val ? "P" : "A"}</p>
-                ))}
+
+      {active == "attendence" ? (
+        <div className="container">
+          {ideas.map((idea) => (
+            <div className="idea-field">
+              <div className="idea-card">
+                <p className="name">{idea.title}</p>
+                <div className="attendence-record">
+                  {idea.attendence.map((att) => (
+                    <p className="att">{att.val ? "P" : "A"}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="btns">
+                <button className="btn" id="present">
+                  P
+                </button>
+                <button className="btn" id="absent">
+                  A
+                </button>
               </div>
             </div>
-            <div className="btns">
-              <button className="btn" id="present">
-                Present
-              </button>
-              <button className="btn" id="absent">
-                Absent
-              </button>
+          ))}
+        </div>
+      ) : (
+        <div className="container">
+          {ideas.map((idea) => (
+            <div className="idea-field">
+              <div className="idea-card">
+                <p className="name">{idea.title}</p>
+                <div className="attendence-record">
+                  {idea.attendence.map((att) => (
+                    <p className="att">{att.val ? "P" : "A"}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="btns">
+                <button className="btn" id="present">
+                  Invite
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

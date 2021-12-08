@@ -4,14 +4,13 @@
   .header-sec {
     width: 90%;
     margin: 1rem auto;
-    // background-color: var(--comp-pr);
-    // padding: 1rem;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
 
     .btns {
       .tab {
+        width: 300px;
         padding: 1rem;
         font-size: var(--heading-small);
         font-weight: bold;
@@ -113,7 +112,7 @@
       }
 
       .btns {
-        flex: 2;
+        flex: 1;
         padding: 1rem;
         justify-content: space-around;
         display: flex;
@@ -131,6 +130,85 @@
 
         #present {
           color: var(--accent-sec);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 428px) {
+  .attendence-section {
+    width: 100vw;
+
+    .header-sec {
+      width: 100%;
+      align-items: center;
+
+      .btns {
+        .tab {
+          font-size: var(--button);
+          width: 170px;
+          margin: 5px;
+          padding: 0.5rem;
+        }
+      }
+
+      .slots {
+        width: 95%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        label {
+          font-size: var(--span);
+        }
+        #slot {
+          margin: 10px 0;
+          width: 100%;
+        }
+      }
+    }
+
+    .container {
+      .idea-field {
+          margin: 2px;
+          padding: 0;
+
+        .idea-card {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 9px;
+          flex: 7;
+          .name {
+            width: 100%;
+            font-size: var(--span);
+          }
+
+          .attendence-record {
+              display: none;
+            .att {
+              font-size: var(--para);
+              padding: 0.3rem;
+              margin: 0;
+              margin-top: 2px;
+              margin-right: 10px;
+            }
+          }
+        }
+        .btns {
+            width: 20%;
+            padding: 0;
+            margin: 0 10px;
+          .btn {
+            font-size: var(--para);
+            margin: 5px;
+            padding: 0.5rem;
+          }
         }
       }
     }
