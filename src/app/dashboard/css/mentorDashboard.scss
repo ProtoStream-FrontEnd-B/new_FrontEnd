@@ -1,0 +1,21 @@
+.dashboard {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  .main-container {
+    width: 90%;
+    display: flex;
+
+    .idea-container {
+      background-color: var(--accent-sec);
+      padding: 1rem;
+      max-height: 85%;
+      overflow: auto;
+      border-radius: 10px;
+      width: 90%;
+      margin: auto;
+      height: 80%;
+    }
+  }
+}

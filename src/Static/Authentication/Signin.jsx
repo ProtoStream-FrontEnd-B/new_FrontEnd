@@ -10,21 +10,35 @@ import "./css/Auth.css";
 
 function Signin() {
   const [data, setData] = useState({
-    email: "akhil.1923cs1258@kiet.edu",
-    password: "12345",
+    email: "",
+    password: "",
   });
 
   const dispatch = useDispatch();
   const history = useHistory();
 
   const resp = useSelector((state) => state.auth);
+  
 
   const { isAuthenticated } = resp;
 
   const pushTo = (isAuth) => {
+    
     if (isAuth) {
-      console.log("he")
-      history.push("/user-dashboard");
+      console.log(resp)
+     
+      if(resp.user.role===0){
+        console.log("hi im the user")
+        history.push("/user-dashboard");
+      }
+      else if(resp.user.role===2){
+        history.push("/tbi-dashboard")
+      }
+
+      else if(resp.user.role===3){
+        history.push("/Mentor-dashboard");
+      }
+     
     }
   };
 

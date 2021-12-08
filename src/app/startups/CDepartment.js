@@ -40,9 +40,9 @@ const Cdepartment = () => {
         <DepartmentBox name="CO" />
         <DepartmentBox name="IT" />
         <DepartmentBox name="CSIT" />
-        <DepartmentBox name="EC" />
+
         <DepartmentBox name="ME" />
-        <DepartmentBox name="EN" />
+        <DepartmentBox name="EEE" />
         <DepartmentBox name="ECE" />
         <DepartmentBox name="CIVIL" />
         <DepartmentBox name="PHARMA" />

@@ -179,12 +179,15 @@ export const OtpVerify =
 export const OpenStep2 =
   ({ id }) =>
   async (dispatch) => {
+    console.log("hey its woeking")
     try {
-      const data = await axios.get(`${API}idea/clickStep2/${id}`);
+      const data = await axios.get(`${API}/idea/clickStep2/${id}`);
+     console.log(data);
       if (data) {
+        console.log(data , 'Open step 2 got run');
         dispatch({
           type: OPEN_STEP_2,
-          payload: data,
+          payload: {Idea: data.data.Idea , Message: data.data.Message},
         });
       }
     } catch (error) {}
@@ -201,9 +204,10 @@ export const CreateStep2 =
       );
 
       if (data) {
+        console.log(data, "hey create form ran")
         dispatch({
           type: CREATE_STEP_2,
-          payload: data,
+          payload: {Idea: data.data.Idea , Step2: data.data.Step2 , Message: data.data.Message},
         });
       }
     } catch (error) {}

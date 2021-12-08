@@ -268,7 +268,7 @@ const StudentDashboard = () => {
                 </div>
                 <div className="mob_view_head">
                     {!mobClick && (<><img className="mob_img" src={ProfileImage} alt="" />
-                        <h2 className="mob_head">KARAN</h2>
+                        <h2 className="mob_head">{Profilename}</h2>
                         <img onClick={onMobViewSideBar} className="mob_img" src={MobArrow} alt="" /></>)}
 
 

@@ -13,6 +13,7 @@ function Signin() {
     password: "",
     confirmPassword: "",
     number: 8445775919,
+    branch: "CSE"
   });
   const history = useHistory();
   
@@ -35,17 +36,34 @@ function Signin() {
       const id = userid._id;
       
         
+      if (isAuth) {
+        console.log(resp)
        
-        const trl_data = {
-          id,
-          trl_value: {
-            TRL_Test: "pass",
-          },
-        };
-        dispatch(UpdateTRL(trl_data));
-      
-      console.log("he");
-      history.push("/user-dashboard");
+        if(resp.user.role===0){
+          console.log("hi im the user")
+          const trl_data = {
+            id,
+            trl_value: {
+              TRL_Test: "pass",
+            },
+          };
+          dispatch(UpdateTRL(trl_data));
+        
+        console.log("he");
+        history.push("/user-dashboard");
+          
+        }
+        else if(resp.user.role===2){
+          history.push("/tbi-dashboard")
+        }
+  
+        else if(resp.user.role===3){
+          history.push("/Mentor-dashboard");
+        }
+       
+      }
+       
+       
     }
   };
 
