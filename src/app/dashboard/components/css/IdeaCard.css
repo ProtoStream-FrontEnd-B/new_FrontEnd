@@ -86,8 +86,18 @@
   font-weight: bold;
 }
 
+.Ideacard .hidden-section .btns .btn {
+  padding: 0.5rem 1rem;
+  font-size: var(--button);
+  color: var(--text-pr);
+  background-color: var(--accent-sec);
+  border-radius: 5px;
+  border: none;
+  margin: 1rem;
+}
+
 .expanded {
-  height: 200px;
+  height: 350px;
 }
 
 .expanded .head button img {
