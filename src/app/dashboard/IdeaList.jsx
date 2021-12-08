@@ -1,30 +1,10 @@
 import React from "react";
 import IdeaCardTbi from "./components/IdeaCardTbi";
 import "./css/IdeaList.css";
+import ideasList from "./Ideas";
 
 function IdeaList() {
-  const ideas = [
-    {
-      title: "Roxet",
-      name: "Himanshu",
-      mentorship: true,
-    },
-    {
-      title: "Roxet",
-      name: "Himanshu",
-      mentorship: true,
-    },
-    {
-      title: "Roxet",
-      name: "Himanshu",
-      mentorship: true,
-    },
-    {
-      title: "Roxet",
-      name: "Himanshu",
-      mentorship: false,
-    },
-  ];
+  const ideas = ideasList;
   return (
     <div className="idea-list">
       <div className="header">

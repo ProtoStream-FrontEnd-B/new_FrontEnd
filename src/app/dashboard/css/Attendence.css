@@ -1,1 +1,163 @@
-/* No CSS *//*# sourceMappingURL=Attendence.css.map */
+.attendence-section {
+  width: 100%;
+}
+
+.attendence-section .header-sec {
+  width: 90%;
+  margin: 1rem auto;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.attendence-section .header-sec .btns .tab {
+  padding: 1rem;
+  font-size: var(--heading-small);
+  font-weight: bold;
+  font-family: var(--font-pr);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--comp-pr);
+  color: var(--accent-sec);
+  margin: 1rem;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.attendence-section .header-sec .btns .tab:hover {
+  opacity: 0.8;
+}
+
+.attendence-section .header-sec .btns .active {
+  background-color: var(--accent-sec);
+  color: var(--text-pr);
+}
+
+.attendence-section .header-sec .slots {
+  margin: 1rem;
+  font-family: var(--font-sec);
+}
+
+.attendence-section .header-sec .slots label {
+  color: var(--accent-sec);
+  font-size: var(--button);
+  font-weight: bold;
+}
+
+.attendence-section .header-sec .slots #slot {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  outline-color: var(--accent-sec);
+  margin: 0 1rem;
+  font-size: var(--button);
+  font-weight: bold;
+}
+
+.attendence-section .header-sec .slots button {
+  font-size: var(--button);
+  padding: 0.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.attendence-section .container {
+  width: 90%;
+  border-radius: 10px;
+  margin: 2rem auto;
+  padding: 1rem;
+  max-height: 650px;
+  overflow: auto;
+  background: -webkit-gradient(linear, left top, right top, from(var(--accent-sec)), to(var(--accent-pr)));
+  background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
+}
+
+.attendence-section .container .idea-field {
+  width: 98%;
+  margin: 0.5rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.attendence-section .container .idea-field .idea-card {
+  border-radius: 5px;
+  background-color: white;
+  padding: 0.3rem 1rem;
+  -webkit-box-flex: 7;
+      -ms-flex: 7;
+          flex: 7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.attendence-section .container .idea-field .idea-card .name {
+  color: var(--accent-sec);
+  font-size: var(--heading-small);
+  font-weight: bold;
+}
+
+.attendence-section .container .idea-field .idea-card .attendence-record {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.attendence-section .container .idea-field .idea-card .attendence-record .att {
+  padding: 0.5rem 0.8rem;
+  background-color: black;
+  color: white;
+  font-size: var(--button);
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+.attendence-section .container .idea-field .btns {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  padding: 1rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.attendence-section .container .idea-field .btns .btn {
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: var(--text-pr);
+  font-size: var(--heading-med);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.attendence-section .container .idea-field .btns #present {
+  color: var(--accent-sec);
+}
+/*# sourceMappingURL=Attendence.css.map */
