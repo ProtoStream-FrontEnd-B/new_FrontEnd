@@ -43,7 +43,10 @@ const Header = () => {
             </div>
             <div className="nav-menu-div"><ul className={click ? " nav-menu mobile-nav " : "nav-menu"}>
                {/*Designing Dashboard According to user roless...  pending */}
-                {user && user.role === 0 ? (
+                {
+                    
+                    
+                    user && user.role === 0 && (
                     <li className="nav-item">
                         <NavLink
                             to="/user-dashboard"
@@ -53,13 +56,44 @@ const Header = () => {
                             Dashboard
                         </NavLink>
                     </li>
-                ) : (
+                )  }
+
+                {user && user.role === 2 && (
                     <li className="nav-item">
-                        <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
-                            Home
+                        <NavLink
+                            to="/tbi-dashboard"
+                            className="nav-links"
+                            onClick={closeMobileMenu}
+                        >
+                            Dashboard
+                        </NavLink>
+                    </li>
+                )  }
+
+                {user && user.role === 3 && (
+                    <li className="nav-item">
+                        <NavLink
+                            to="/tbi-dashboard"
+                            className="nav-links"
+                            onClick={closeMobileMenu}
+                        >
+                            Dashboard
+                        </NavLink>
+                    </li>
+                ) }
+
+                {!user &&(
+                    <li className="nav-item">
+                        <NavLink
+                            to="/"
+                            className="nav-links"
+                            onClick={closeMobileMenu}
+                        >
+                           Home
                         </NavLink>
                     </li>
                 )}
+
                 <li className="nav-item">
                     <NavLink
                         to="/projects"

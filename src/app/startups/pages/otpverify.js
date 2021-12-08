@@ -6,8 +6,14 @@ import "../css/otp.css";
 import { useHistory } from "react-router";
 import { OtpVerify } from "../../../redux/actions/startupAction";
 
+
 const OTP = () => {
-  const number = 8445775919;
+
+
+  const userid = JSON.parse(localStorage.getItem("user"));
+  const number = userid.number;
+  console.log(number);
+
   let newNumber = number.toString();
   let array = newNumber.split("");
   const dispatch = useDispatch();
@@ -15,7 +21,7 @@ const OTP = () => {
   const idea_detail = useSelector(state=> state.startup);
   console.log(idea_detail);
   let user = localStorage.getItem("user");
-  const userid = JSON.parse(localStorage.getItem("user"));
+  // const userid = JSON.parse(localStorage.getItem("user"));
 
   for (var i = 0; i < array.length - 4; i++) {
     array[i] = "*";
@@ -23,6 +29,8 @@ const OTP = () => {
   const handlePush =()=>{
     if(idea_detail.Idea.status==="Step1-complete"){
       console.log("hey its the handlepush")
+      const id = userid._id;
+     
       history.push('/startups/Register');
           }
   }
@@ -55,6 +63,7 @@ const OTP = () => {
       code: OTP
     }
     dispatch(OtpVerify(otp_data));
+    
  
 
   };
