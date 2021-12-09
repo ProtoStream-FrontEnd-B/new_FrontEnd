@@ -73,7 +73,7 @@ const Header = () => {
                 {user && user.role === 3 && (
                     <li className="nav-item">
                         <NavLink
-                            to="/tbi-dashboard"
+                            to="/Mentor-dashboard"
                             className="nav-links"
                             onClick={closeMobileMenu}
                         >

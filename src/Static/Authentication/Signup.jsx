@@ -13,11 +13,10 @@ function Signin() {
     password: "",
     confirmPassword: "",
     number: 8445775919,
-    branch: "CSE"
+    branch: "",
   });
   const history = useHistory();
-  
- 
+
   const resp = useSelector((state) => state.auth);
 
   const { isAuthenticated } = resp;
@@ -30,17 +29,30 @@ function Signin() {
     });
   };
 
+  // to set the branch in the mentor login without making a new route for mentor 
+useEffect(()=>{
+  console.log("useEffect ran")
+  const mentorRegx = /^([a-z]+)(\.)([a-z]{2,4})(@)(kiet)(\.)(edu)$/;
+  if(mentorRegx.test(data.email)){
+    console.log("i know it run")
+    const a = data.email.split(".");
+    const branchArray = a[1].split("@");
+    const branch = branchArray[0];
+    const newbranch = branch.toUpperCase();
+    setData({ ...data, branch: newbranch});
+    
+  }
+},[data.email])
   const pushTo = (isAuth) => {
     if (isAuth) {
       const userid = JSON.parse(localStorage.getItem("user"));
       const id = userid._id;
-      
-        
+
       if (isAuth) {
-        console.log(resp)
-       
-        if(resp.user.role===0){
-          console.log("hi im the user")
+        console.log(resp);
+
+        if (resp.user.role === 0) {
+          console.log("hi im the user");
           const trl_data = {
             id,
             trl_value: {
@@ -48,22 +60,15 @@ function Signin() {
             },
           };
           dispatch(UpdateTRL(trl_data));
-        
-        console.log("he");
-        history.push("/user-dashboard");
-          
-        }
-        else if(resp.user.role===2){
-          history.push("/tbi-dashboard")
-        }
-  
-        else if(resp.user.role===3){
+
+          console.log("he");
+          history.push("/user-dashboard");
+        } else if (resp.user.role === 2) {
+          history.push("/tbi-dashboard");
+        } else if (resp.user.role === 3) {
           history.push("/Mentor-dashboard");
         }
-       
       }
-       
-       
     }
   };
 
@@ -73,6 +78,17 @@ function Signin() {
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
+    // const mentorRegx = /^([a-z]+)(\.)([a-z]{2,4})(@)(kiet)(\.)(edu)$/;
+    // if(mentorRegx.test(data.email)){
+    //   console.log("i know it run")
+    //   const a = data.email.split(".");
+    //   const branchArray = a[1].split("@");
+    //   const branch = branchArray[0];
+    //   const newbranch = branch.toUpperCase();
+    //   setData({ ...data, branch: newbranch});
+      
+    // }
+    
     console.log(data);
     dispatch(SignUp(data));
   };
@@ -114,7 +130,7 @@ function Signin() {
             placeholder="Confirm Password"
             className="inp-box"
           />
-           <input
+          <input
             name="number"
             onChange={onHandleChange}
             value={data.number}

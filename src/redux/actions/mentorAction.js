@@ -17,9 +17,9 @@ const config = {
 
 export const GetAllIdea =
   ({ id }) =>
-  (dispatch) => {
+  async  (dispatch) => {
     try {
-      const Idea = axios.get(`${API}/idea/getMENTORIdeas/${id}`);
+      const Idea = await axios.get(`${API}/idea/getMENTORIdeas/${id}`);
       if (Idea) {
         dispatch({
           type: GET_ALL_IDEA,
@@ -33,12 +33,12 @@ export const GetAllIdea =
 
 export const SelectIdea =
   ({ id, ideaId }) =>
-  (dispatch) => {
+   async (dispatch) => {
     const body = {
       ideaId: ideaId,
     };
     try {
-      const Idea = axios.post(`${API}/idea/selectIdea/{id}`, body, config);
+      const Idea = await axios.post(`${API}/idea/selectIdea/{id}`, body, config);
       if (Idea) {
         dispatch({
           type: SELECT_IDEA,
@@ -52,14 +52,14 @@ export const SelectIdea =
 
 export const EditIdea =
   ({ id, value, ideaId }) =>
-  (dispatch) => {
+  async (dispatch) => {
     const body = {
       value: value,
       ideaId: ideaId,
     };
 
     try {
-      const Idea = axios.post(`${API}/idea/ideaId/${id}`);
+      const Idea = await axios.post(`${API}/idea/ideaId/${id}`);
       if (Idea) {
         dispatch({
           type: EDIT_IDEA,
@@ -73,9 +73,9 @@ export const EditIdea =
 
 export const GetMentorInfo =
   ({ id }) =>
-  (dispatch) => {
+  async (dispatch) => {
     try {
-      const Idea = axios.get(`${API}/getMentor/${id}`);
+      const Idea = await axios.get(`${API}/getMentor/${id}`);
       if(Idea){
         dispatch({
           type: GET_MENTOR_INFO,

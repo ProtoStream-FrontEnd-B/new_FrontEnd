@@ -17,7 +17,7 @@ export default function (state = initialState, action) {
     case GET_ALL_IDEA:
       return {
         ...state,
-        Ideas: action.payload,
+        Ideas: action.payload.data.Ideas,
       };
     case SELECT_IDEA:
       return {

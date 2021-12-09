@@ -1,0 +1,216 @@
+.attendence-section {
+  width: 100%;
+
+  .header-sec {
+    width: 90%;
+    margin: 1rem auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .btns {
+      .tab {
+        width: 300px;
+        padding: 1rem;
+        font-size: var(--heading-small);
+        font-weight: bold;
+        font-family: var(--font-pr);
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        background-color: var(--comp-pr);
+        color: var(--accent-sec);
+        margin: 1rem;
+        transition: all 0.1s ease;
+      }
+
+      .tab:hover {
+        opacity: 0.8;
+      }
+
+      .active {
+        background-color: var(--accent-sec);
+        color: var(--text-pr);
+      }
+    }
+
+    .slots {
+      margin: 1rem;
+      font-family: var(--font-sec);
+
+      label {
+        color: var(--accent-sec);
+        font-size: var(--button);
+        font-weight: bold;
+      }
+
+      #slot {
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: none;
+        outline-color: var(--accent-sec);
+        margin: 0 1rem;
+        font-size: var(--button);
+        font-weight: bold;
+      }
+      button {
+        font-size: var(--button);
+        padding: 0.5rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .container {
+    width: 90%;
+    border-radius: 10px;
+    margin: 2rem auto;
+    padding: 1rem;
+    max-height: 650px;
+    overflow: auto;
+    background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
+
+    .idea-field {
+      width: 98%;
+      margin: 0.5rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .idea-card {
+        border-radius: 5px;
+        background-color: white;
+        padding: 0.3rem 1rem;
+        // width: 80%;
+        flex: 7;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .name {
+          color: var(--accent-sec);
+          font-size: var(--heading-small);
+          font-weight: bold;
+        }
+
+        .attendence-record {
+          display: flex;
+
+          .att {
+            padding: 0.5rem 0.8rem;
+            background-color: black;
+            color: white;
+            font-size: var(--button);
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 0.5rem;
+          }
+        }
+      }
+
+      .btns {
+        flex: 1;
+        padding: 1rem;
+        justify-content: space-around;
+        display: flex;
+
+        .btn {
+          padding: 0.5rem 1rem;
+          background-color: black;
+          color: var(--text-pr);
+          font-size: var(--heading-med);
+          font-weight: bold;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        #present {
+          color: var(--accent-sec);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 428px) {
+  .attendence-section {
+    width: 100vw;
+
+    .header-sec {
+      width: 100%;
+      align-items: center;
+
+      .btns {
+        .tab {
+          font-size: var(--button);
+          width: 170px;
+          margin: 5px;
+          padding: 0.5rem;
+        }
+      }
+
+      .slots {
+        width: 95%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        label {
+          font-size: var(--span);
+        }
+        #slot {
+          margin: 10px 0;
+          width: 100%;
+        }
+      }
+    }
+
+    .container {
+      .idea-field {
+        margin: 2px;
+        padding: 0;
+
+        .idea-card {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 9px;
+          flex: 7;
+          .name {
+            width: 100%;
+            font-size: var(--span);
+          }
+
+          .attendence-record {
+            display: none;
+            .att {
+              font-size: var(--para);
+              padding: 0.3rem;
+              margin: 0;
+              margin-top: 2px;
+              margin-right: 10px;
+            }
+          }
+        }
+        .btns {
+          width: 20%;
+          padding: 0;
+          margin: 0 10px;
+          .btn {
+            font-size: var(--para);
+            margin: 5px;
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

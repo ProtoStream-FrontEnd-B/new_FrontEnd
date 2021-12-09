@@ -81,14 +81,14 @@ const Form = () => {
     console.log(userid.number);
     let id = userid._id;
     const body = {
-      Name: data.Fullname,
-      MobNo: userid.number,
-      Email: userid.email,
+      Name: "UJJWAL KUMAR",
+      MobNo: 8445775919,
+      Email: data.Personal_email,
       Carrer: "student",
       Idea: data.Idea_title,
       BriefData: data.Brief_Idea,
       URL: "https/::drivelink/data/vpcoket",
-      mentorid: "61aa75a4124f9b148ca7631b",
+      mentorid: "61b10b6f112c7d50e10dd8fe",
     };
     console.log(body);
 

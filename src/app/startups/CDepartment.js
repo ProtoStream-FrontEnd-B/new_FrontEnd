@@ -36,16 +36,16 @@ const Cdepartment = () => {
         <h2 className="head">Choose your department</h2>
       </div>
       <div className="container">
-        <DepartmentBox name="CSE" />
-        <DepartmentBox name="CO" />
-        <DepartmentBox name="IT" />
-        <DepartmentBox name="CSIT" />
+        <DepartmentBox name="cse" />
+        <DepartmentBox name="co" />
+        <DepartmentBox name="it" />
+        <DepartmentBox name="csit" />
 
-        <DepartmentBox name="ME" />
-        <DepartmentBox name="EEE" />
-        <DepartmentBox name="ECE" />
-        <DepartmentBox name="CIVIL" />
-        <DepartmentBox name="PHARMA" />
+        <DepartmentBox name="me" />
+        <DepartmentBox name="eee" />
+        <DepartmentBox name="ece" />
+        <DepartmentBox name="civil" />
+        <DepartmentBox name="pharma" />
       </div>
     </div>
   );

@@ -30,7 +30,10 @@ function IdeaCard({ title, name, email, link, year }) {
             </div>
           </div>
         </div>
-        <div className="btns"></div>
+        <div className="btns">
+          <button className="btn">Dissmiss</button>
+          <button className="btn">Review</button>
+        </div>
       </div>
     </div>
   );

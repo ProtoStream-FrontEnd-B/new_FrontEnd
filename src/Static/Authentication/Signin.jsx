@@ -18,8 +18,8 @@ function Signin() {
   const history = useHistory();
 
   const resp = useSelector((state) => state.auth);
-  
-
+  console.log(resp);
+  const userid = JSON.parse(localStorage.getItem("user"));
   const { isAuthenticated } = resp;
 
   const pushTo = (isAuth) => {
@@ -27,23 +27,31 @@ function Signin() {
     if (isAuth) {
       console.log(resp)
      
-      if(resp.user.role===0){
+      if(userid.role===0){
         console.log("hi im the user")
         history.push("/user-dashboard");
       }
-      else if(resp.user.role===2){
+      else if(userid.role===2){
+
         history.push("/tbi-dashboard")
       }
 
-      else if(resp.user.role===3){
+      else if(userid.role===3){
         history.push("/Mentor-dashboard");
       }
      
     }
   };
 
+  // useEffect(()=>{
+    
+  //   pushTo(isAuthenticated);
+  // },[])
+
   
   useEffect(() => {
+
+    
  
    pushTo(isAuthenticated);
     

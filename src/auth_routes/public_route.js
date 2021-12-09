@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const PublicRoute = ({ component: Component, ...rest }) => {
 
     const user = useSelector(state=> state.auth);
-const isAuthenticated = user.isAuthenticated;
+    const isAuthenticated = user.isAuthenticated;
 
   return (
     <Route
