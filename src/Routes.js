@@ -34,6 +34,7 @@ import ItPolicy from "./app/schemes/ItPolicy";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import IdeaDetails from "./app/startups/IdeaDetails";
+import AllInternships from "./app/Internships/AllInternships";
 
 const Routes = () => {
   return (
@@ -72,6 +73,8 @@ const Routes = () => {
           />
           <Route path="/student/schemes/it_policy" exact component={ItPolicy} />
           <Route path="/schemes/add_scheme" exact component={AddSchemes} />
+
+          <Route path="/internships" exact component={AllInternships} />
         </Switch>
       </div>
     </Router>
