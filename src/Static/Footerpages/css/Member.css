@@ -4,6 +4,7 @@
 
 .member .PP {
   width: 8em;
+  border-radius: 50%;
   margin-bottom: 1rem;
 }
 
