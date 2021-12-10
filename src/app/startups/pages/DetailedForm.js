@@ -351,18 +351,18 @@ const DetailedForm = () => {
     console.log(userid.number);
     let id = userid._id;
     const body = {
-      comment: "",
-      Gender: "",
-      Aadhar: null,
-      PAN: "",
-      Category: "",
-      Q1: "",
-      Q2: "",
-      Q3: "",
-      Q4: "",
-      Q5: "",
-      Q6: "",
-      Q7: "",
+      comment: data.comment,
+      Gender: data.Gender,
+      Aadhar: data.Aadhar,
+      PAN: data.PAN,
+      Category: data.Category,
+      Q1: data.Q1,
+      Q2: data.Q2,
+      Q3: data.Q3,
+      Q4: data.Q4,
+      Q5: data.Q5,
+      Q6: data.Q6,
+      Q7: data.Q7,
     };
     console.log(body);
 

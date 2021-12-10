@@ -92,7 +92,7 @@ export const GetIdea = (id) => async (dispatch) => {
       console.log(Idea);
       dispatch({
         type: GET_IDEA,
-        payload: { Idea: Idea.data.Idea, Message: Idea.data.Idea },
+        payload: { Idea: Idea.data.Idea, Message: Idea.data.Message },
       });
     }
   } catch (error) {

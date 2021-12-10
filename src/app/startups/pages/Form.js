@@ -47,9 +47,13 @@ console.log("its the open step2 form ")
       setverified(1);
       
 
-    } else if(idea_detail.Idea.status==='approved'|| idea_detail.Idea.status==='verified'){
-      // const {BriefData , Carrer , Name , Email,MobNo , URL ,Idea} = startup_detail.Step2;
-      // setData({Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData})
+    } else if(idea_detail.Idea.status==='approved'|| idea_detail.Idea.status==='verified'|| idea_detail.Idea.status==='Step3-form-open'){
+
+      if(startup_detail.Step2!=null){
+        const {BriefData , Carrer , Name , Email,MobNo , URL ,Idea} = startup_detail.Step2;
+        setData({Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData})
+      }
+     
 setverified(2);
     }
   
@@ -57,16 +61,16 @@ setverified(2);
   useEffect(() => {
     handleonLoad();
   },[]);
-  const setFormStatus = () => {
-    if (startup_detail.Idea.status === "Step1-complete") {
-      setverified(0);
-    } else if (startup_detail.Idea.status === "under-reviewed" || startup_detail.Step2.review==="0") {
+  // const setFormStatus = () => {
+  //   if (startup_detail.Idea.status === "Step1-complete") {
+  //     setverified(0);
+  //   } else if (startup_detail.Idea.status === "under-reviewed" || startup_detail.Step2.review==="0") {
       
-      setverified(1);
-    } else if(startup_detail.Step2.review==="1") {
-      setverified(2);
-    }
-  };
+  //     setverified(1);
+  //   } else if(startup_detail.Step2.review==="1") {
+  //     setverified(2);
+  //   }
+  // };
   const onHandleBack = () => {
     history.push("/startups/Register");
   };
@@ -105,7 +109,7 @@ setverified(2);
       Idea: data.Idea_title,
       BriefData: data.Brief_Idea,
       URL: "https/::drivelink/data/vpcoket",
-      mentorid: "61b223bf144a2d354962bc25",
+      mentorid: "61b380f0be81b72d64675b6e",
     };
     console.log(body);
 

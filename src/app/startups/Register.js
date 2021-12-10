@@ -1,15 +1,16 @@
 import {React , useEffect, useState}  from "react";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch } from "react-redux";
 import Scard from "../../Components/Cards/Scard";
 import OtpVerify from "../../Assets/Illustrations/Otpverify.svg";
 import formIcon from "../../Assets/icons/formIcon.svg";
 import ThirdStep from "../../Assets/icons/3rdStep.svg";
+import { GetIdea } from "../../redux/actions/startupAction";
 import "./css/Register.css";
 
 const Register = () => {
   const startup_details = useSelector((state) => state.startup);
   console.log(startup_details);
-  
+  const dispatch = useDispatch();
   const userid = JSON.parse(localStorage.getItem("user"));
   const id = userid._id;
 
@@ -30,6 +31,7 @@ const Register = () => {
 
 
   useEffect(() => {
+    dispatch(GetIdea(id));
    console.log("hey the useEffect got run");
    if(idea_detail.Idea.phonestatus==="approved"|| idea_detail.Idea.Step2!=null ||idea_detail.Idea.status==="under-reviewed"){
     
@@ -40,7 +42,7 @@ const Register = () => {
      
      
    }
-   if(idea_detail.Idea.status==="approved"|| idea_detail.Idea.Step3!=null  ){
+   if(idea_detail.Idea.status==="approved"|| idea_detail.Idea.Step3!=null || idea_detail.Idea.status === "Step3-form-open" ){
      console.log("hola it ran ")
     //  setCard_status1("completed")
     // setCard_status2("completed");
@@ -83,7 +85,7 @@ const Register = () => {
         <Scard
           data={step3_data}
           func="step-3"
-          route="/startups/Register/FormReview"
+          route="/startups/Register/Dform"
           head="Step 3"
           para="After completing Step 2, you have to fill some more details which is directly sent to TBI Head for verification of your Startup Idea."
           btnName="Go"
