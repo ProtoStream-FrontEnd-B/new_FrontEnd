@@ -3,8 +3,12 @@ import Home from "./Static/Homepage/Home";
 import IdeaDetail from "./app/startups/IdeaDetail";
 import { useEffect } from "react";
 import TbiDashboard from "./app/dashboard/TbiDashboard";
+import Attendence from "./app/dashboard/Attendance"; 
+import ideasList from "./app/dashboard/IdeaList"
 import MentorDashboard from "./app/dashboard/MentorDashboard"
 import PublicRoute from "./auth_routes/public_route";
+import TbiRoute from "./auth_routes/tbi_route";
+import MentorRoute from "./auth_routes/mentor_route";
 import DetailedForm from "./app/startups/pages/DetailedForm";
 import  Form  from "./app/startups/pages/Form";
 import Signin from "./Static/Authentication/Signin";
@@ -47,7 +51,7 @@ const Routes = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(isLogin(maindata));
-    if (userid) {
+    if (userid && userid.role===0) {
       const id = userid._id;
 
       const trl_data = {
@@ -86,9 +90,11 @@ const Routes = () => {
             exact
           />
           <PrivateRoute path="/startups/Register/form" component={Form} exact />
-          <PrivateRoute path = "/tbi-dashboard" component = {TbiDashboard} exact/>
-          <Route path = "/Mentor-dashboard" component = {MentorDashboard} exact/>
+          <TbiRoute path = "/tbi-dashboard" component = {TbiDashboard} exact/>
+          <MentorRoute path = "/Mentor-dashboard" component = {MentorDashboard} exact/>
           <PrivateRoute path = "/startups/Register/Dform" component = {DetailedForm} exact/> 
+          <TbiRoute path = "/tbi-dashboard/Attendence" component  = {Attendence} exact />
+          <TbiRoute path = "/tbi-dashboard/IdeaList"   component = {ideasList} exact/>
         </Switch>
       </div>
     </Router>

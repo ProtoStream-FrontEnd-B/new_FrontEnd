@@ -7,6 +7,9 @@ import {
   REGISTER_TBI,
   GET_TBI_INFO,
   CREATE_SLOT,
+  CHECK_SLOT,
+  CHECK_ATTENDANCE_SLOT,
+  UPDATE_ATTENDANCE
 } from "./types";
 import { API } from "../../API/backend";
 
@@ -32,7 +35,7 @@ export const getTrl = (id) => async (dispatch) => {
 };
 
 
-export const SelectIdea = ({id , ideaId})=> (dispatch)=>{
+export const SelectIdea = ({id , ideaId})=> async (dispatch)=>{
 
 
 
@@ -51,7 +54,7 @@ export const SelectIdea = ({id , ideaId})=> (dispatch)=>{
   
 }
 
-export const EditIdea = ({id , status , IdeaId})=> (dispatch)=>{
+export const EditIdea = ({id , status , IdeaId})=> async (dispatch)=>{
 
   const body = {
     value: status,
@@ -74,7 +77,7 @@ export const EditIdea = ({id , status , IdeaId})=> (dispatch)=>{
 }
 
 
-export const EditIdea = ({id ,email , password})=> (dispatch)=>{
+export const EditIdea = ({id ,email , password})=> async (dispatch)=>{
 
   const body = {
     email: email,
@@ -96,12 +99,12 @@ export const EditIdea = ({id ,email , password})=> (dispatch)=>{
 
 }
 
-export const GetTbiInfo = ({id })=> (dispatch)=>{
+export const GetTbiInfo = ({id })=> async(dispatch)=>{
 
 
 
   try {
-    const TRL = axios.get(`${API}/${id}` , config);
+    const TRL = await axios.get(`${API}/${id}` , config);
     if(TRL){
       dispatch({
         type:GET_TBI_INFO,
@@ -115,15 +118,15 @@ export const GetTbiInfo = ({id })=> (dispatch)=>{
   
 }
 
-export const CreateSlot = ({id , ideaId , Slots})=> (dispatch)=>{
+export const CreateSlot = ({id , ideaId , Slot})=> async(dispatch)=>{
 
 const body = {
   ideaId: ideaId,
-  Slot: Slots
+  Slot: Slot
 }
 
 try {
-  const TRL = axios.post(`${API}/idea/createSlot/${id}` , body, config);
+  const TRL = await axios.post(`${API}/idea/createSlot/${id}` , body, config);
   if(TRL){
     dispatch({
       type:CREATE_SLOT,
@@ -137,6 +140,70 @@ try {
 
 }
 
-export const GetSlot = ({id })=>(dispatch)=>{
+export const CheckSlot = ({check_slot , id}) = async (dispatch)=>{
+
+  const body = {
+    check_slot: check_slot
+  }
+
+  try {
+    const TRL = await axios.post(`${API}/idea/checkslot/${id}` , body , config);
+
+    if(TRL){
+      dispatch({
+        type:CHECK_SLOT,
+        payload: TRL
+      })
+    }
+    
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const CheckAttendanceSlot = ({id , check_slot}) => async (dispatch)=>{
+
+const body = {
+  check_slot: check_slot
+}
+
+try {
+  const TRL = await axios.post(`${API}/idea/checkAttendanceSlot/${id}` , body , config);
+
+  if(TRL){
+    dispatch({
+      type: CHECK_ATTENDANCE_SLOT,
+      payload: TRL
+    })
+  }
+  
+} catch (error) {
+  console.log(error);
+}
 
 }
+
+export const UpdateAttendance = ({id , attend , ideaId  , slot_no})=> async (dispatch)=>{
+
+const body = {
+  attend: attend,
+  ideaId: ideaId,
+  slot_no: slot_no,
+}
+
+try {
+  const TRL =  await axios.post(`${API}/idea/updateAttendance/${id}` , body , config);
+  if(TRL){
+    dispatch({
+      type: UPDATE_ATTENDANCE,
+      payload: TRL
+    })
+  }
+  
+} catch (error) 
+{
+console.log(error)  
+}
+
+}
+

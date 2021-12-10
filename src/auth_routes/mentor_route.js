@@ -2,17 +2,17 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+const MentorRoute = ({ component: Component, ...rest }) => {
 
     const user = useSelector(state=> state.auth);
-    const userid = JSON.parse(localStorage.getItem("user"));
 const isAuthenticated = user.isAuthenticated;
+const userid = JSON.parse(localStorage.getItem("user"));
 
   return (
     <Route
       {...rest}
       render={(props) =>
-        isAuthenticated && userid.role===0? (
+        isAuthenticated && userid.role===3 ? (
           <Component {...props} />
         ) : (
           <Redirect
@@ -27,4 +27,4 @@ const isAuthenticated = user.isAuthenticated;
   );
 };
 
-export default PrivateRoute;
+export default MentorRoute;

@@ -4,8 +4,8 @@ import DashboardCard from "./components/DashboardCard";
 import StartupCard from "./components/StartupCard";
 import { signout } from "../../auth";
 import { Logout } from "../../redux/actions/authAction";
-import { useDispatch, useSelector } from "react-redux";
 import "./css/TbiDashboard.css";
+import { useDispatch , useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 // adding icons
@@ -19,14 +19,16 @@ import slot from "../../Assets/icons/slot-icon.svg";
 
 const TbiDashboard = () => {
   const [active, setActive] = useState("hackathon");
+const dispatch = useDispatch();
 
   const history = useHistory();
-  const dispatch = useDispatch();
+
   const onClickLogout = () => {
-   
-      dispatch(Logout());
-      history.push("/");
-    
+    // signout(() => {
+    //   history.push("/");
+    //   window.location.reload();
+    // });
+    dispatch(Logout());
   };
 
   const getPage = () => {
@@ -111,12 +113,14 @@ const TbiDashboard = () => {
             icon={idea}
             para="Here you can verify, dismiss and delete anideas submit by students."
             btn="Check List"
+            link={"/tbi-dashboard/IdeaList"}
           />
           <StartupCard
             heading="Book Slot/ Attendance"
             icon={slot}
             para="Book slot for ideas evaluation by calling students to TBI for face to facemeeting with them."
             btn="Check Slot"
+            link={"/tbi-dashboard/Attendence"}
           />
         </div>
       );

@@ -49,3 +49,6 @@ export const LOGIN_TBI = "LOGIN_TBI";
 export const REGISTER_TBI = "REGISTER_TBI";
 export const GET_TBI_INFO = "GET_TBI_INFO";
 export const CREATE_SLOT = "CREATE_SLOT"
+export const CHECK_SLOT = "CHECK_SLOT";
+export const CHECK_ATTENDANCE_SLOT = "CHECK_ATTENDANCE_SLOT";
+export const UPDATE_ATTENDANCE = "UPDATE_ATTENDANCE";

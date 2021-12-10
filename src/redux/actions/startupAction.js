@@ -202,15 +202,19 @@ export const CreateStep2 =
         Formdata,
         config
       );
+      console.log(data);
 
       if (data) {
-        console.log(data, "hey create form ran")
+       
         dispatch({
           type: CREATE_STEP_2,
           payload: {Idea: data.data.Idea , Step2: data.data.Step2 , Message: data.data.Message},
         });
       }
-    } catch (error) {}
+
+    } catch (error) {
+      console.log(error);
+    }
   };
 
 export const GetStep2 =
@@ -251,9 +255,10 @@ export const CreateStep3 =
       );
 
       if (data) {
+        console.log(data)
         dispatch({
           type: CREATE_STEP_3,
-          payload: data,
+          payload: {Idea: data.data.Idea , Step3: data.data.Step3 , Message: data.data.Message},
         });
       }
     } catch (error) {}

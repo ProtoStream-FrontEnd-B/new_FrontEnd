@@ -27,10 +27,10 @@ const Header = () => {
     // };
 
     const data = useSelector(state=> state.auth);
-    console.log(data);
+  
 
     const user =  JSON.parse(localStorage.getItem("user"));;
-    console.log(user);
+    
 
     const headerElement = () => (
         <header className="header">
@@ -73,7 +73,7 @@ const Header = () => {
                 {user && user.role === 3 && (
                     <li className="nav-item">
                         <NavLink
-                            to="/tbi-dashboard"
+                            to="/Mentor-dashboard"
                             className="nav-links"
                             onClick={closeMobileMenu}
                         >

@@ -6,6 +6,9 @@ import {
   REGISTER_TBI,
   GET_TBI_INFO,
   CREATE_SLOT,
+  CHECK_SLOT,
+  CHECK_ATTENDANCE_SLOT,
+  UPDATE_ATTENDANCE,
 } from "../actions/types";
 
 const initialState = {
@@ -42,6 +45,24 @@ export default function (state = initialState, action) {
         ...state,
         Ideas: action.payload,
       };
+
+    case CHECK_SLOT:
+      return{
+        ...state,
+        Ideas:action.payload
+      }
+      
+    case CHECK_ATTENDANCE_SLOT:
+      return{
+        ...state,
+        Ideas: action.payload
+      } 
+      
+    case UPDATE_ATTENDANCE:
+      return{
+        ...state,
+        Ideas: action.payload
+      }  
 
     default:
       return state;
