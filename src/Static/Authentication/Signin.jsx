@@ -18,7 +18,7 @@ function Signin() {
   const history = useHistory();
 
   const resp = useSelector((state) => state.auth);
-  console.log(resp);
+ 
   const userid = JSON.parse(localStorage.getItem("user"));
   const { isAuthenticated } = resp;
 
@@ -28,7 +28,7 @@ function Signin() {
       console.log(resp)
      
       if(userid.role===0){
-        console.log("hi im the user")
+        
         history.push("/user-dashboard");
       }
       else if(userid.role===2){

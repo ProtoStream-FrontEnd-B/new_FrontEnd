@@ -22,6 +22,7 @@ const Scard = ({ head, para, btnName, img, status, route, func, data }) => {
   const checkFunc = (func, data) => {
     if (func === "step-1") {
       console.log("step-1 run...");
+      console.log("otp get request")
       dispatch(OtpLogin(data));
     } else if (func === "step-2") {
       console.log("step- 2 run .....");

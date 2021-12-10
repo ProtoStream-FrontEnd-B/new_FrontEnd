@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import arrow from "../../../Assets/icons/arrow.svg";
-import { CreateStep2 } from "../../../redux/actions/startupAction";
+import { CreateStep2, GetIdea } from "../../../redux/actions/startupAction";
 import { OpenStep2, GetStep2 } from "../../../redux/actions/startupAction";
 
 const Form = () => {
@@ -21,33 +21,49 @@ const Form = () => {
     Brief_Idea: "",
     URL: "",
     Mentor: "",
+    MobNo: null,
   });
   const startup_detail = useSelector((state) => state.startup);
+ 
 
   const handleonLoad = () => {
-    let user = localStorage.getItem("user");
+
     const userid = JSON.parse(localStorage.getItem("user"));
+    const id = userid._id;
+    dispatch(GetIdea(id));
+    console.log(startup_detail, "hey its the new startup detail")
     if (idea_detail.Idea.status === "Step1-complete") {
-      console.log("hey its the handlepush");
-      const id = userid._id;
+console.log("its the open step2 form ")
+     
       dispatch(OpenStep2({ id }));
     } else if (idea_detail.Idea.status === "under-reviewed") {
-      // const id = userid._id;
-      // dispatch(GetStep2(id));
+      console.log("hey hey hey its not working")
+     
+    
+      console.log("step 2 already filled")
+      console.log(startup_detail);
+      const {BriefData , Carrer , Name , Email,MobNo , URL ,Idea} = startup_detail.Step2;
+      setData({Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData})
       setverified(1);
       
 
+    } else if(idea_detail.Idea.status==='approved'|| idea_detail.Idea.status==='verified'){
+      // const {BriefData , Carrer , Name , Email,MobNo , URL ,Idea} = startup_detail.Step2;
+      // setData({Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData})
+setverified(2);
     }
+  
   };
   useEffect(() => {
     handleonLoad();
-  }, []);
+  },[]);
   const setFormStatus = () => {
     if (startup_detail.Idea.status === "Step1-complete") {
       setverified(0);
-    } else if (startup_detail.Idea.status === "under-reviewed") {
+    } else if (startup_detail.Idea.status === "under-reviewed" || startup_detail.Step2.review==="0") {
+      
       setverified(1);
-    } else {
+    } else if(startup_detail.Step2.review==="1") {
       setverified(2);
     }
   };
@@ -56,7 +72,7 @@ const Form = () => {
   };
 
   const onStep3 = () => {
-    history.push("/startups/Register");
+    history.push("/startups/Register/Dform");
   };
 
   const onHandleChange = (e) => {
@@ -76,28 +92,32 @@ const Form = () => {
   ];
 
   const onHandleSubmit = (e) => {
+    e.preventDefault();
     const userid = JSON.parse(localStorage.getItem("user"));
     console.log(userid);
     console.log(userid.number);
     let id = userid._id;
     const body = {
-      Name: "UJJWAL KUMAR",
+      Name: data.Fullname,
       MobNo: 8445775919,
       Email: data.Personal_email,
       Carrer: "student",
       Idea: data.Idea_title,
       BriefData: data.Brief_Idea,
       URL: "https/::drivelink/data/vpcoket",
-      mentorid: "61b10b6f112c7d50e10dd8fe",
+      mentorid: "61b223bf144a2d354962bc25",
     };
     console.log(body);
 
     const Fdata = {
       id: id,
-      FormData: body,
+      Formdata: body,
+
     };
+
+  
     dispatch(CreateStep2(Fdata));
-    e.preventDefault();
+    history.push('/startups/Register')
     console.log(data);
   };
   //const nextstep

@@ -4,7 +4,7 @@ import IdeaDetail from "./app/startups/IdeaDetail";
 import { useEffect } from "react";
 import TbiDashboard from "./app/dashboard/TbiDashboard";
 import Attendence from "./app/dashboard/Attendance"; 
-import ideasList from "./app/dashboard/Ideas";
+import ideasList from "./app/dashboard/IdeaList"
 import MentorDashboard from "./app/dashboard/MentorDashboard"
 import PublicRoute from "./auth_routes/public_route";
 import TbiRoute from "./auth_routes/tbi_route";

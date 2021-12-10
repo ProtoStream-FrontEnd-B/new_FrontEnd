@@ -17,8 +17,15 @@ const Cdepartment = () => {
   const userid =  JSON.parse(localStorage.getItem("user"));;
   const id = userid._id;
   const HandleOnLoad = (value) => {
-    if (value == "pass") {
+
+    if(startup_details.Idea!=null){
+      console.log("y this is not running")
+     history.push('/startups/Register')
+    }
+   else if (value == "pass" && startup_details.Idea===null) {
         console.log("heyy")
+       
+        
       dispatch(CreateIdea(id));
     } else {
         console.log("heee")
