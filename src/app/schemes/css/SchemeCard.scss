@@ -1,0 +1,64 @@
+.scheme-card {
+  background-color: var(--comp-sec);
+  color: var(--text-pr);
+  width: 400px;
+  height: 330px;
+  margin: 1rem;
+  border-radius: 5px;
+  font-family: var(--font-pr);
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+
+  .poster-sec {
+    position: relative;
+
+    .title {
+      position: absolute;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem;
+      font-size: var(--button);
+      font-weight: bold;
+      text-align: center;
+      border-radius: 5px 5px 0 0;
+    }
+    .poster {
+      width: 400px;
+    }
+  }
+
+  .details-sec {
+    padding: 1rem;
+    .field {
+      margin: 0.5rem 0;
+
+      span {
+        color: var(--accent-sec);
+        font-weight: bold;
+      }
+    }
+    .btns {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 1rem 0;
+
+      .link {
+        padding: 0.5rem 1rem;
+        background-color: var(--accent-sec);
+        border-radius: 5px;
+        cursor: pointer;
+
+        button {
+          cursor: pointer;
+          color: var(--text-pr);
+          background-color: transparent;
+          border: none;
+          font-size: var(--button);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
