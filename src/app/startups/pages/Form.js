@@ -30,7 +30,7 @@ const Form = () => {
 
     const userid = JSON.parse(localStorage.getItem("user"));
     const id = userid._id;
-    dispatch(GetIdea(id));
+    dispatch(OpenStep2({id}));
     console.log(startup_detail, "hey its the new startup detail")
     if (idea_detail.Idea.status === "Step1-complete") {
 console.log("its the open step2 form ")
@@ -60,7 +60,7 @@ setverified(2);
   };
   useEffect(() => {
     handleonLoad();
-  },[]);
+  },[verified]);
   // const setFormStatus = () => {
   //   if (startup_detail.Idea.status === "Step1-complete") {
   //     setverified(0);
