@@ -31,7 +31,7 @@ const Register = () => {
 
 
   useEffect(() => {
-    dispatch(GetIdea(id));
+    // dispatch(GetIdea(id));
    console.log("hey the useEffect got run");
    if(idea_detail.Idea.phonestatus==="approved"|| idea_detail.Idea.Step2!=null ||idea_detail.Idea.status==="under-reviewed"){
     
@@ -73,7 +73,7 @@ const Register = () => {
           status={card_status.card_status1}
         />
         <Scard
-          data={step2_data}
+          data={step2_data.id}
           func="step-2"
           route="/startups/Register/form"
           head="Step 2"
@@ -83,7 +83,7 @@ const Register = () => {
           status={card_status.card_status2}
         />
         <Scard
-          data={step3_data}
+          data={step3_data.id}
           func="step-3"
           route="/startups/Register/Dform"
           head="Step 3"

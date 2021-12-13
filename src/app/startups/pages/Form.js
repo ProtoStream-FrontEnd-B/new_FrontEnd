@@ -26,51 +26,43 @@ const Form = () => {
   const startup_detail = useSelector((state) => state.startup);
  
 
-  const handleonLoad = () => {
+  const handleonLoad =  () => {
 
-    const userid = JSON.parse(localStorage.getItem("user"));
-    const id = userid._id;
-    dispatch(OpenStep2({id}));
+    
+   
+   
     console.log(startup_detail, "hey its the new startup detail")
     if (idea_detail.Idea.status === "Step1-complete") {
-console.log("its the open step2 form ")
+    console.log("its the open step2 form ")
      
-      dispatch(OpenStep2({ id }));
+     
     } else if (idea_detail.Idea.status === "under-reviewed") {
-      console.log("hey hey hey its not working")
+
+      if(startup_detail.Step2!==null){
+        const {BriefData , Carrer , Name , Email,MobNo , URL ,Idea} = startup_detail.Step2;
+        setData({Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData})
+        setverified(1);
+      }
      
-    
-      console.log("step 2 already filled")
-      console.log(startup_detail);
-      const {BriefData , Carrer , Name , Email,MobNo , URL ,Idea} = startup_detail.Step2;
-      setData({Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData})
-      setverified(1);
       
 
     } else if(idea_detail.Idea.status==='approved'|| idea_detail.Idea.status==='verified'|| idea_detail.Idea.status==='Step3-form-open'){
 
-      if(startup_detail.Step2!=null){
+      if(startup_detail.Step2!==null){
         const {BriefData , Carrer , Name , Email,MobNo , URL ,Idea} = startup_detail.Step2;
-        setData({Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData})
+        setData({...data,Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData})
       }
      
 setverified(2);
     }
   
   };
+
+
   useEffect(() => {
     handleonLoad();
-  },[verified]);
-  // const setFormStatus = () => {
-  //   if (startup_detail.Idea.status === "Step1-complete") {
-  //     setverified(0);
-  //   } else if (startup_detail.Idea.status === "under-reviewed" || startup_detail.Step2.review==="0") {
-      
-  //     setverified(1);
-  //   } else if(startup_detail.Step2.review==="1") {
-  //     setverified(2);
-  //   }
-  // };
+  },[startup_detail]);
+
   const onHandleBack = () => {
     history.push("/startups/Register");
   };

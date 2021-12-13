@@ -106,7 +106,7 @@ export const ChooseBranch =
     try {
       const Branch = await axios.post(
         `${API}/idea/chooseBranch/${id}`,
-        
+
         trl_value,
         config
       );
@@ -142,13 +142,12 @@ export const DropIdea =
 export const OtpLogin = (id) => async (dispatch) => {
   try {
     const data = await axios.get(`${API}/idea/otplogin/${id}`);
-   
-    
+
     if (data) {
-      console.log("Hey i m the otp login ...." , data);
+      console.log("Hey i m the otp login ....", data);
       dispatch({
         type: OTP_LOGIN,
-        payload: {Idea: data.data.Idea , Message: data.data.Message},
+        payload: { Idea: data.data.Idea, Message: data.data.Message },
       });
     }
   } catch (error) {}
@@ -167,31 +166,32 @@ export const OtpVerify =
         config
       );
       if (data) {
-        console.log("Hey i m the otp verify req console ",data);
+        console.log("Hey i m the otp verify req console ", data);
         dispatch({
           type: OTP_VERIFY,
-          payload: {Idea: data.data.Idea , Message: data.data.Message},
+          payload: { Idea: data.data.Idea, Message: data.data.Message },
         });
       }
     } catch (error) {}
   };
 
-export const OpenStep2 =
-  ({ id }) =>
-  async (dispatch) => {
-    console.log("hey its woeking")
-    try {
-      const data = await axios.get(`${API}/idea/clickStep2/${id}`);
-     console.log(data);
-      if (data) {
-        console.log(data , 'Open step 2 got run');
-        dispatch({
-          type: OPEN_STEP_2,
-          payload: {Idea: data.data.Idea , Message: data.data.Message},
-        });
-      }
-    } catch (error) {}
-  };
+export const OpenStep2 = (id) => async (dispatch) => {
+  try {
+    const data = await axios.get(`${API}/idea/clickStep2/${id}`);
+
+    if (data) {
+      console.log(data, "Open step 2 got run");
+      dispatch({
+
+        type: OPEN_STEP_2,
+        payload: {Idea: data.data.Idea , Message: data.data.Message , Step2: data.data.Step2},
+      });
+     
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const CreateStep2 =
   ({ id, Formdata }) =>
@@ -205,13 +205,15 @@ export const CreateStep2 =
       console.log(data);
 
       if (data) {
-       
         dispatch({
           type: CREATE_STEP_2,
-          payload: {Idea: data.data.Idea , Step2: data.data.Step2 , Message: data.data.Message},
+          payload: {
+            Idea: data.data.Idea,
+            Step2: data.data.Step2,
+            Message: data.data.Message,
+          },
         });
       }
-
     } catch (error) {
       console.log(error);
     }
@@ -238,7 +240,12 @@ export const OpenStep3 =
       if (data) {
         dispatch({
           type: OPEN_STEP_3,
-          payload: data,
+          payload: {
+            Idea: data.data.Idea,
+            Step2: data.data.Step2,
+            Message: data.data.Message,
+            Step3: data.data.Step3,
+          },
         });
       }
     } catch (error) {}
@@ -255,10 +262,14 @@ export const CreateStep3 =
       );
 
       if (data) {
-        console.log(data)
+        console.log(data);
         dispatch({
           type: CREATE_STEP_3,
-          payload: {Idea: data.data.Idea , Step3: data.data.Step3 , Message: data.data.Message},
+          payload: {
+            Idea: data.data.Idea,
+            Step3: data.data.Step3,
+            Message: data.data.Message,
+          },
         });
       }
     } catch (error) {}

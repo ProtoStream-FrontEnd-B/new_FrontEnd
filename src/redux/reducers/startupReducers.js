@@ -81,7 +81,8 @@ export default function (state = initialState, action) {
       return {
         ...state,
         Idea: action.payload.Idea,
-        Message: action.payload.Message
+        Message: action.payload.Message, 
+        Step2: action.payload.Step2
       }
 
     case CREATE_STEP_2:
@@ -104,7 +105,9 @@ export default function (state = initialState, action) {
       return {
         ...state,
         Idea: action.payload.Idea,
-        Message: action.payload.Message
+        Message: action.payload.Message,
+        Step2: action.payload.Step2,
+        Step3: action.payload.Step3
       }
 
     case CREATE_STEP_3:
