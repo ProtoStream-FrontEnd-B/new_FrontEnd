@@ -29,8 +29,10 @@ import Cdepartment from "./app/startups/CDepartment";
 import Main from "./app/startups/Main";
 import { useSelector } from "react-redux";
 import otpverify from "./app/startups/pages/otpverify";
+
 import PrivateRoute from "./auth_routes/private_route";
 
+// nothing
 // import Header from "./Components/Header/Header"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
