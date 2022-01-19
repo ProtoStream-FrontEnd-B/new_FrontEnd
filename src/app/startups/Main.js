@@ -6,9 +6,10 @@ import { GetIdea, getTrl } from "../../redux/actions/startupAction";
 import "./css/Main.css";
 import StartupCard from "../../Components/Cards/StartupCard";
 import { useHistory } from "react-router";
+import { setJson } from "../../Global/Helper";
 
 const Main = () => {
-  const userid = JSON.parse(localStorage.getItem("user"));
+  const userid = setJson(localStorage.getItem("user"));
   const id = userid._id;
   const dispatch = useDispatch();
  const history = useHistory();

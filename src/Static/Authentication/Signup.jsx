@@ -6,6 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import Overlay1 from "../../Assets/Illustrations/Overlay1.svg";
 import Overlay2 from "../../Assets/Illustrations/Overlay2.svg";
 import "./css/Auth.css";
+import { setJson } from "../../Global/Helper";
 
 function Signin() {
   const [data, setData] = useState({
@@ -45,7 +46,7 @@ useEffect(()=>{
 },[data.email])
   const pushTo = (isAuth) => {
     if (isAuth) {
-      const userid = JSON.parse(localStorage.getItem("user"));
+      const userid = setJson(localStorage.getItem("user"));
       const id = userid._id;
 
       if (isAuth) {

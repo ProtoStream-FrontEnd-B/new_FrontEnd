@@ -8,6 +8,7 @@ import profile from "../../Assets/icons/profile.svg";
 import IdeaCard from "./components/IdeaCard";
 import "./css/mentorDashboard.css";
 import {ideasList} from "./Ideas"
+import { setJson } from "../../Global/Helper";
 
 function MentorDashboard() {
   const name = "Himanshu";
@@ -15,7 +16,7 @@ function MentorDashboard() {
   const batch = "2019-2023";
   const role = "Mentor";
   const pp = profile;
-  const userid = JSON.parse(localStorage.getItem("user"));
+  const userid = setJson(localStorage.getItem("user"));
 
  const {Profilename} = userid.profiledata
 
@@ -29,7 +30,7 @@ function MentorDashboard() {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    const userid = JSON.parse(localStorage.getItem("user"));
+    const userid = setJson(localStorage.getItem("user"));
     console.log(userid._id);
     const body = {
       id: userid._id

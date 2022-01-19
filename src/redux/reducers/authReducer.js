@@ -19,6 +19,7 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case USER_LOADING:
+      console.log(" hey now i m loading");
       return {
         ...state,
         isLoading: true,
@@ -44,11 +45,18 @@ export default function (state = initialState, action) {
        
 
       };
-     
+  // case USER_LOADING:
+  //      console.log("hey now i am loading ")
+  //      return{
+  //        ...state ,
+  //        isLoading: true
+  //      };
     case AUTH_ERROR:
     case LOGIN_FAIL:
     case LOGOUT_SUCCESS:
     case REGISTER_FAIL:
+
+      console.log("Register fail run")
       localStorage.removeItem("token");
       localStorage.removeItem("user");
       
@@ -60,7 +68,9 @@ export default function (state = initialState, action) {
         isAuthenticated: false,
         isLoading: false,
       };
+     
     default:
       return state;
   }
 }
+

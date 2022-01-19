@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { CreateIdea } from "../../redux/actions/startupAction.js";
 import { useHistory } from "react-router";
 import { GetIdea } from "../../redux/actions/startupAction.js";
+import { setJson } from "../../Global/Helper.js";
 const Cdepartment = () => {
   const history = useHistory();
 
@@ -14,7 +15,7 @@ const Cdepartment = () => {
   const dispatch = useDispatch();
   console.log(startup_details)
   const value = startup_details.Trl_value;
-  const userid =  JSON.parse(localStorage.getItem("user"));;
+  const userid =  setJson(localStorage.getItem("user"));;
   const id = userid._id;
   const HandleOnLoad = (value) => {
 

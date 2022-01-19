@@ -1,12 +1,13 @@
 import React, { useState , useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Login } from "../../redux/actions/authAction";
+import { Login , Loading } from "../../redux/actions/authAction";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import Overlay1 from "../../Assets/Illustrations/Overlay1.svg";
-import { isLogin } from "../../redux/actions/authAction";
+import { isLogin  } from "../../redux/actions/authAction";
 import Overlay2 from "../../Assets/Illustrations/Overlay2.svg";
 import "./css/Auth.css";
+import { setJson } from "../../Global/Helper";
 
 function Signin() {
   const [data, setData] = useState({
@@ -19,7 +20,7 @@ function Signin() {
 
   const resp = useSelector((state) => state.auth);
  
-  const userid = JSON.parse(localStorage.getItem("user"));
+  const userid = setJson(localStorage.getItem("user"));
   const { isAuthenticated } = resp;
 
   const pushTo = (isAuth) => {
@@ -65,7 +66,9 @@ function Signin() {
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
+    dispatch(Loading());
     dispatch(Login(data));
+    
     console.log(isAuthenticated);
    
   };

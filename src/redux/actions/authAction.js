@@ -22,6 +22,13 @@ export const SignUp = (data) => async (dispatch) => {
   };
 
   try {
+    dispatch({
+      
+      type: USER_LOADING,
+      payload: "loading"
+     
+    })
+  
     const data2 = await axios.post(
       `${process.env.REACT_APP_BACKEND_API}/register`,
       data,
@@ -35,9 +42,48 @@ export const SignUp = (data) => async (dispatch) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    console.log(`${error} error is here `);
+    dispatch({
+      type: REGISTER_FAIL,
+      payload: error
+    })
   }
 };
+
+// const delayLogin = (data) => async (dispatch)=>{
+  
+//   const config = {
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   };
+//   try {
+//     console.log("Hey this function ran ")
+//     const data2 = await axios.post(`${process.env.REACT_APP_BACKEND_API}/login`, data, config);
+//     if (data2) {
+//       dispatch({
+//         type: LOGIN_SUCCESS,
+//         payload: data2.data,
+        
+      
+//       });
+
+//     console.log("User is laoding ")
+//   }
+//  } catch (error) {
+//     console.log("error")
+//   }
+
+// }
+export const Loading = ()=>{
+
+  console.log("I ran i m sure of it ")
+return {
+  type: USER_LOADING,
+ 
+}
+
+}
 
 export const Login = (data) => async (dispatch) => {
   const config = {
@@ -47,6 +93,11 @@ export const Login = (data) => async (dispatch) => {
   };
 
   try {
+    
+    console.log("User is not loaded")
+ 
+
+    
     const data2 = await axios.post(`${process.env.REACT_APP_BACKEND_API}/login`, data, config);
     if (data2) {
       dispatch({
@@ -56,13 +107,23 @@ export const Login = (data) => async (dispatch) => {
       
       });
 
-    
+    console.log("User is laoded ")
       
-     
     }
-  } catch (error) {}
+    }
+   catch (error) {
+    console.log(error)
+    dispatch({
+      type: LOGIN_FAIL,
+    payload: error
+      })
+  }
+}
+
+  
+   
  
-};
+
 
 
 export const Logout = ()=> {
@@ -75,10 +136,19 @@ export const Logout = ()=> {
 }
 
 export const isLogin = (data) => {
+  console.log("hfsuayduiuui"+!data.token)
+ if(!data.token || !data.user){
+  return{
+    type: LOGIN_FAIL,
+    payload: null
+  }
+ }
  
  
   if (data.token && data.user) {
+    console.log("This runs perfectly")
     return {
+     
       type: USER_LOADED,
       payload: data,
     };

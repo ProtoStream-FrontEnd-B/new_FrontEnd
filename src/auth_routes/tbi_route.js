@@ -1,12 +1,13 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { setJson } from "../Global/Helper";
 
 const TbiRoute = ({ component: Component, ...rest }) => {
 
     const user = useSelector(state=> state.auth);
 const isAuthenticated = user.isAuthenticated;
-const userid = JSON.parse(localStorage.getItem("user"));
+const userid = setJson(localStorage.getItem("user"));
 
   return (
     <Route

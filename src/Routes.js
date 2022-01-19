@@ -38,13 +38,14 @@ import PrivateRoute from "./auth_routes/private_route";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { isLogin } from "./redux/actions/authAction";
 import { getTrl, UpdateTRL, GetIdea } from "./redux/actions/startupAction";
+import { setJson } from "./Global/Helper";
 
 const Routes = () => {
   // const user = useSelector(state=> state.auth);
   // console.log(user)
   let token = localStorage.getItem("token");
   let user = localStorage.getItem("user");
-  const userid = JSON.parse(localStorage.getItem("user"));
+  const userid = setJson(localStorage.getItem("user"));
 
   const startup_data = useSelector((state) => state.startup);
   console.log(startup_data);

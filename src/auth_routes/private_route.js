@@ -1,11 +1,12 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { setJson } from "../Global/Helper";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
 
     const user = useSelector(state=> state.auth);
-    const userid = JSON.parse(localStorage.getItem("user"));
+    const userid = setJson(localStorage.getItem("user"));
 const isAuthenticated = user.isAuthenticated;
 
   return (

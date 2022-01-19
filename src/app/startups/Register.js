@@ -6,12 +6,13 @@ import formIcon from "../../Assets/icons/formIcon.svg";
 import ThirdStep from "../../Assets/icons/3rdStep.svg";
 import { GetIdea } from "../../redux/actions/startupAction";
 import "./css/Register.css";
+import { setJson } from "../../Global/Helper";
 
 const Register = () => {
   const startup_details = useSelector((state) => state.startup);
   console.log(startup_details);
   const dispatch = useDispatch();
-  const userid = JSON.parse(localStorage.getItem("user"));
+  const userid = setJson(localStorage.getItem("user"));
   const id = userid._id;
 
   const step1_data = {

@@ -4,13 +4,14 @@ import Otpimage from "../../../Assets/Illustrations/Otpverify.svg";
 import arrow from "../../../Assets/icons/arrow.svg";
 import "../css/otp.css";
 import { useHistory } from "react-router";
+import { setJson } from "../../../Global/Helper";
 import { OtpVerify } from "../../../redux/actions/startupAction";
 
 
 const OTP = () => {
 
 
-  const userid = JSON.parse(localStorage.getItem("user"));
+  const userid = setJson(localStorage.getItem("user"));
   const number = userid.number;
   console.log(number);
 

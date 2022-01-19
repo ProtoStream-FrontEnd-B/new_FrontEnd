@@ -14,6 +14,7 @@ import ProjectIcon from "../../Assets/Illustrations/ProjectIcon.svg"
 import { DeskProjectCard } from "../../Components/Cards/ProjectCard";
 import MobArrow from "../../Assets/icons/MobArrow.svg"
 import { GetIdea } from "../../redux/actions/startupAction";
+import { setJson } from "../../Global/Helper";
 
 
 // const StudentDashboard = () => {
@@ -195,7 +196,7 @@ const StudentDashboard = () => {
 
         if (user_Data.isAuthenticated) {
             console.log("heheh")
-            const imp_data = JSON.parse(localStorage.getItem("user"));
+            const imp_data = setJson(localStorage.getItem("user"));
 
             console.log(imp_data);
             return imp_data;
@@ -212,7 +213,7 @@ const StudentDashboard = () => {
         let data = preload();
 
         setLoad(data)
-        const imp_data = JSON.parse(localStorage.getItem("user"));
+        const imp_data = setJson(localStorage.getItem("user"));
         dispatch(GetIdea(imp_data._id));
         console.log(start_up);
 

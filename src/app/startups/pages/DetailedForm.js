@@ -2,6 +2,7 @@ import React, { useState , useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import arrow from "../../../Assets/icons/arrow.svg";
+import { setJson } from "../../../Global/Helper";
 import { CreateStep3, GetIdea } from "../../../redux/actions/startupAction";
 import { OpenStep3, GetStep2 } from "../../../redux/actions/startupAction";
 
@@ -262,7 +263,7 @@ const DetailedForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   let user = localStorage.getItem("user");
-  const userid = JSON.parse(localStorage.getItem("user"));
+  const userid = setJson(localStorage.getItem("user"));
   const [data, setData] = useState({
     comment: "",
     Gender: "",
@@ -280,7 +281,7 @@ const DetailedForm = () => {
   const startup_detail = useSelector((state) => state.startup);
 
   const handleonLoad = () => {
-    const userid = JSON.parse(localStorage.getItem("user"));
+    const userid = setJson(localStorage.getItem("user"));
     const id = userid._id;
    
     console.log(startup_detail, "hey its the new startup detail");
@@ -363,7 +364,7 @@ const DetailedForm = () => {
   
   const onHandleSubmit = (e) => {
     e.preventDefault();
-    const userid = JSON.parse(localStorage.getItem("user"));
+    const userid = setJson(localStorage.getItem("user"));
     console.log(userid);
     console.log(userid.number);
     let id = userid._id;

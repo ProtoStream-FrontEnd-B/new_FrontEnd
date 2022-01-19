@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import arrow from "../../../Assets/icons/arrow.svg";
+import { setJson } from "../../../Global/Helper";
 import { CreateStep2, GetIdea } from "../../../redux/actions/startupAction";
 import { OpenStep2, GetStep2 } from "../../../redux/actions/startupAction";
 
@@ -12,7 +13,7 @@ const Form = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   let user = localStorage.getItem("user");
-  const userid = JSON.parse(localStorage.getItem("user"));
+  const userid = setJson(localStorage.getItem("user"));
   const [data, setData] = useState({
     Fullname: "",
     Personal_email: "",
@@ -89,7 +90,7 @@ setverified(2);
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
-    const userid = JSON.parse(localStorage.getItem("user"));
+    const userid = setJson(localStorage.getItem("user"));
     console.log(userid);
     console.log(userid.number);
     let id = userid._id;

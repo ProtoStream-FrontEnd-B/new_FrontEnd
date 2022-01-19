@@ -4,6 +4,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import { useSelector , useDispatch } from "react-redux";
 
 import logo from "../../Assets/icons/logo.svg"
+import { setJson } from "../../Global/Helper";
 // import { isAuthenticated } from "../../auth/index";
 
 
@@ -29,7 +30,7 @@ const Header = () => {
     const data = useSelector(state=> state.auth);
   
 
-    const user =  JSON.parse(localStorage.getItem("user"));;
+    const user =  setJson(localStorage.getItem("user"));;
     
 
     const headerElement = () => (
