@@ -1,0 +1,155 @@
+.main-container {
+  width: 90%;
+  margin: 1rem auto;
+  border-radius: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: linear-gradient(283.42deg, var(--accent-sec) 22.46%, var(--accent-pr) 96.19%);
+  padding: 1rem;
+  font-family: var(--font-pr);
+}
+
+.main-container .container {
+  padding: 1rem;
+  position: relative;
+}
+
+.main-container .container .verify {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.main-container .container .basic-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-container .container .basic-details .left,
+.main-container .container .basic-details .right {
+  width: 48%;
+  margin: 1rem;
+}
+
+.main-container .container .basic-details .left .row,
+.main-container .container .basic-details .left .row-alt,
+.main-container .container .basic-details .right .row,
+.main-container .container .basic-details .right .row-alt {
+  margin: 1rem 0;
+}
+
+.main-container .container .basic-details .left .row .que,
+.main-container .container .basic-details .left .row-alt .que,
+.main-container .container .basic-details .right .row .que,
+.main-container .container .basic-details .right .row-alt .que {
+  font-weight: bold;
+}
+
+.main-container .container .basic-details .left .row,
+.main-container .container .basic-details .right .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 50%;
+}
+
+.main-container .container .basic-details .left .row .response .profile,
+.main-container .container .basic-details .right .row .response .profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.main-container .container .btn {
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-size: var(--button);
+  font-weight: bold;
+  font-family: var(--font-pr);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  margin: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 350px;
+}
+
+.main-container .container .btn:hover {
+  background-color: #e0e0e0;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-container .container .control-buttons {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .container .questions {
+  margin: 1rem 0;
+}
+
+.main-container .container .questions .field {
+  margin: 1.5rem;
+  font-weight: bold;
+}
+
+.main-container .container .questions .field .response {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
+}
+
+.main-container .container .questions .field .response .fill-section {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: lighter;
+  background-color: white;
+}
+
+.main-container .container .questions .field .response .span {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.main-container .container .questions .field .response .mark {
+  background-color: black;
+}
+
+.main-container .container .questions .field .response .options {
+  margin-right: 20px;
+}
+/*# sourceMappingURL=StartupDetails.css.map */

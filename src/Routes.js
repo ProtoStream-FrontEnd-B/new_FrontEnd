@@ -3,14 +3,14 @@ import Home from "./Static/Homepage/Home";
 import IdeaDetail from "./app/startups/IdeaDetail";
 import { useEffect } from "react";
 import TbiDashboard from "./app/dashboard/TbiDashboard";
-import Attendence from "./app/dashboard/Attendance"; 
-import ideasList from "./app/dashboard/IdeaList"
-import MentorDashboard from "./app/dashboard/MentorDashboard"
+import Attendence from "./app/dashboard/Attendance";
+import ideasList from "./app/dashboard/IdeaList";
+import MentorDashboard from "./app/dashboard/MentorDashboard";
 import PublicRoute from "./auth_routes/public_route";
 import TbiRoute from "./auth_routes/tbi_route";
 import MentorRoute from "./auth_routes/mentor_route";
 import DetailedForm from "./app/startups/pages/DetailedForm";
-import  Form  from "./app/startups/pages/Form";
+import Form from "./app/startups/pages/Form";
 import Signin from "./Static/Authentication/Signin";
 import Signup from "./Static/Authentication/Signup";
 import About from "./Static/Footerpages/About";
@@ -39,6 +39,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { isLogin } from "./redux/actions/authAction";
 import { getTrl, UpdateTRL, GetIdea } from "./redux/actions/startupAction";
 import { setJson } from "./Global/Helper";
+import StartupDetailsForm from "./app/dashboard/StartupDetailsForm.jsx";
 
 const Routes = () => {
   // const user = useSelector(state=> state.auth);
@@ -54,7 +55,7 @@ const Routes = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(isLogin(maindata));
-    if (userid && userid.role===0) {
+    if (userid && userid.role === 0) {
       const id = userid._id;
 
       const trl_data = {
@@ -82,6 +83,8 @@ const Routes = () => {
           <Route path="/error_404" exact component={Error404} />
           <Route path="/error_99" exact component={Error99} />
           <Route path="/resources" exact component={Resources} />
+
+          <Route path="/dev" exact component={StartupDetailsForm} />
           <PrivateRoute path="/user-dashboard" component={StudentDashboard} />
           {/* <Route path="/admin-dashboard" component={TbiDashboard} /> */}
           <PrivateRoute exact path="/startups" component={Main} />
@@ -93,11 +96,27 @@ const Routes = () => {
             exact
           />
           <PrivateRoute path="/startups/Register/form" component={Form} exact />
-          <TbiRoute path = "/tbi-dashboard" component = {TbiDashboard} exact/>
-          <MentorRoute path = "/Mentor-dashboard" component = {MentorDashboard} exact/>
-          <PrivateRoute path = "/startups/Register/Dform" component = {DetailedForm} exact/> 
-          <TbiRoute path = "/tbi-dashboard/Attendence" component  = {Attendence} exact />
-          <TbiRoute path = "/tbi-dashboard/IdeaList"   component = {ideasList} exact/>
+          <TbiRoute path="/tbi-dashboard" component={TbiDashboard} exact />
+          <MentorRoute
+            path="/Mentor-dashboard"
+            component={MentorDashboard}
+            exact
+          />
+          <PrivateRoute
+            path="/startups/Register/Dform"
+            component={DetailedForm}
+            exact
+          />
+          <TbiRoute
+            path="/tbi-dashboard/Attendence"
+            component={Attendence}
+            exact
+          />
+          <TbiRoute
+            path="/tbi-dashboard/IdeaList"
+            component={ideasList}
+            exact
+          />
         </Switch>
       </div>
     </Router>
