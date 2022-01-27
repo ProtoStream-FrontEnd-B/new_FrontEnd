@@ -20,13 +20,14 @@ const config = {
   },
 };
 
-export const getTrl = (id) => async (dispatch) => {
+export const GetAllIdea = (id) => async (dispatch) => {
   try {
-    const Trl = await axios.get(`${API}/getTrl/${id}`);
-    if (Trl) {
+    const Ideas = await axios.get(`${API}/idea/getTBIIdeas/${id}`);
+    if (Ideas) {
+      console.log(Ideas);
       dispatch({
         type: GET_ALL_IDEA_TBI,
-        payload: Trl.data.Trl_value,
+        payload:{Ideas: Ideas.data.Ideas},
       });
     }
   } catch (error) {
@@ -77,27 +78,27 @@ export const EditIdea = ({id , status , IdeaId})=> async (dispatch)=>{
 }
 
 
-export const EditIdea = ({id ,email , password})=> async (dispatch)=>{
+// export const EditIdea = ({id ,email , password})=> async (dispatch)=>{
 
-  const body = {
-    email: email,
-    password: password
-  }
+//   const body = {
+//     email: email,
+//     password: password
+//   }
 
-  try {
-    const Trl = await axios.post(`${API}/login` , body, config);
-  if (Trl) {
-    dispatch({
-      type: LOGIN_TBI,
-      payload: Trl,
-    });
-  }
-  } catch (error) {
-    console.log(error);
-  }
+//   try {
+//     const Trl = await axios.post(`${API}/login` , body, config);
+//   if (Trl) {
+//     dispatch({
+//       type: LOGIN_TBI,
+//       payload: Trl,
+//     });
+//   }
+//   } catch (error) {
+//     console.log(error);
+//   }
   
 
-}
+// }
 
 export const GetTbiInfo = ({id })=> async(dispatch)=>{
 
@@ -140,7 +141,7 @@ try {
 
 }
 
-export const CheckSlot = ({check_slot , id}) = async (dispatch)=>{
+export const CheckSlot = ({check_slot , id}) => async (dispatch)=>{
 
   const body = {
     check_slot: check_slot

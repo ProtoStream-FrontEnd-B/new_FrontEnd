@@ -10,6 +10,8 @@ import {
 const initialState = {
   Ideas: null,
   Mentor: null,
+  Step2:null,
+  Message: null
 };
 
 export default function (state = initialState, action) {
@@ -20,14 +22,15 @@ export default function (state = initialState, action) {
         Ideas: action.payload.data.Ideas,
       };
     case SELECT_IDEA:
+    
       return {
         ...state,
-        Ideas: action.payload,
+        Step2: action.payload,
       };
     case EDIT_IDEA:
       return {
         ...state,
-        Ideas: action.payload,
+        Message: action.payload.Message,
       };
 
     case GET_MENTOR_INFO:

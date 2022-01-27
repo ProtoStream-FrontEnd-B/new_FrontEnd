@@ -38,11 +38,16 @@ export const SelectIdea =
       ideaId: ideaId,
     };
     try {
-      const Idea = await axios.post(`${API}/idea/selectIdea/{id}`, body, config);
+      const Idea = await axios.post(`${API}/idea/selectIdea/${id}`, body, config);
+   
       if (Idea) {
+        console.log(Idea)
+      
         dispatch({
           type: SELECT_IDEA,
-          payload: Idea,
+          payload:{
+            Step2:Idea.data.Step2,
+          } 
         });
       }
     } catch (error) {
@@ -59,11 +64,11 @@ export const EditIdea =
     };
 
     try {
-      const Idea = await axios.post(`${API}/idea/ideaId/${id}`);
+      const Idea = await axios.post(`${API}/idea/editIdea/${id}`,body, config);
       if (Idea) {
         dispatch({
           type: EDIT_IDEA,
-          payload: Idea,
+          payload: {Message: Idea.data.Message},
         });
       }
     } catch (error) {

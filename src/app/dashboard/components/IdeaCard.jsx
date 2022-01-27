@@ -1,9 +1,51 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/IdeaCard.css";
+import { useDispatch, useSelector } from "react-redux";
+import { EditIdea, SelectIdea } from "../../../redux/actions/mentorAction";
 import arrow from "../../../Assets/icons/arrow.svg";
+import { setJson } from "../../../Global/Helper";
 
-function IdeaCard({ title, name, email, link, year }) {
+function IdeaCard({ title, name, email, link, year , id , Step2_id }) {
   const [hidden, setHidden] = useState(true);
+  const dispatch = useDispatch();
+ 
+
+  const onClickHandle=(ideaId)=>{
+    const user_id = setJson(localStorage.getItem("user"));
+    const userid = user_id._id;
+console.log(user_id._id);
+
+
+const body ={
+  id: userid,
+  ideaId: ideaId
+}
+dispatch(SelectIdea(body));
+  }
+const state = useSelector((state) => state.mentor);
+const [accept , setAccept] = useState(false);
+
+const onAccept = (id)=>{
+  const user_id = setJson(localStorage.getItem("user"));
+  const userId = user_id._id;
+  console.log(userId);
+const body = {
+  id: userId,
+  value: "approved",
+  ideaId: id,
+}
+console.log(id);
+dispatch(EditIdea(body));
+}
+
+useEffect(()=>{
+if(state.Step2!=null || state.Step2!=undefined){
+  setAccept(true);
+}else{
+  setAccept(false)}
+
+},[state])
+
 
   return (
     <div className={hidden ? "Ideacard" : "Ideacard expanded"}>
@@ -31,8 +73,9 @@ function IdeaCard({ title, name, email, link, year }) {
           </div>
         </div>
         <div className="btns">
-          <button className="btn">Dissmiss</button>
-          <button className="btn">Review</button>
+          <button  className="btn">Dissmiss</button>
+          <button onClick ={()=>{onClickHandle(id)}} className="btn">Review</button>
+        {accept&&<button onClick={ ()=>{onAccept(state.Step2.Step2._id)}} className="btn">Accept</button>}  
         </div>
       </div>
     </div>

@@ -54,7 +54,7 @@ const Register = () => {
 
   if(idea_detail.Idea.status==="verified"){
  
-    setCard_status({card_status1:"completed" , card_status2:"completed" , card_status3:"completed"});
+    setCard_status({card_status1:"disable" , card_status2:"disable" , card_status3:"disable"});
    }
 
    

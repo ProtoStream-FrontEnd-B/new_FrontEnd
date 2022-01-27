@@ -4,16 +4,16 @@ import { useHistory } from "react-router";
 import arrow from "../../../Assets/icons/arrow.svg";
 import { setJson } from "../../../Global/Helper";
 import { CreateStep2, GetIdea } from "../../../redux/actions/startupAction";
-import { OpenStep2, GetStep2 } from "../../../redux/actions/startupAction";
+import { OpenStep3, GetStep2 } from "../../../redux/actions/startupAction";
 
 const Form = () => {
   const idea_detail = useSelector((state) => state.startup);
   const Idea_status = idea_detail.status;
-  const [verified, setverified] = useState(0);
+  // const [verified, setverified] = useState(0);
   const dispatch = useDispatch();
   const history = useHistory();
-  let user = localStorage.getItem("user");
-  const userid = setJson(localStorage.getItem("user"));
+  
+
   const [data, setData] = useState({
     Fullname: "",
     Personal_email: "",
@@ -21,8 +21,10 @@ const Form = () => {
     Idea_title: "",
     Brief_Idea: "",
     URL: "",
-    Mentor: "",
+    Carrer:"",
+    Mentor: null,
     MobNo: null,
+    verified:0
   });
   const startup_detail = useSelector((state) => state.startup);
  
@@ -39,22 +41,22 @@ const Form = () => {
      
     } else if (idea_detail.Idea.status === "under-reviewed") {
 
-      if(startup_detail.Step2!==null){
+      if(startup_detail.Step2!=null|| startup_detail.Step2!=undefined){
         const {BriefData , Carrer , Name , Email,MobNo , URL ,Idea} = startup_detail.Step2;
-        setData({Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData})
-        setverified(1);
+        setData({Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData , verified:1})
+   
       }
      
       
 
-    } else if(idea_detail.Idea.status==='approved'|| idea_detail.Idea.status==='verified'|| idea_detail.Idea.status==='Step3-form-open'){
+    } else if(idea_detail.Idea.status==='approved'|| idea_detail.Idea.status==='verified'|| idea_detail.Idea.status==='under-verified'){
 
-      if(startup_detail.Step2!==null){
+      if(startup_detail.Step2!=null || startup_detail.Step2!=undefined){
         const {BriefData , Carrer , Name , Email,MobNo , URL ,Idea} = startup_detail.Step2;
-        setData({...data,Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData})
+        setData({...data,Fullname:Name , Personal_email:Email , Idea_title:Idea ,MobNo: MobNo , URL:URL  ,Brief_Idea: BriefData , verified:2})
       }
      
-setverified(2);
+
     }
   
   };
@@ -69,6 +71,10 @@ setverified(2);
   };
 
   const onStep3 = () => {
+    const userid = setJson(localStorage.getItem("user"));
+    const id = userid._id;
+
+    dispatch(OpenStep3(id))
     history.push("/startups/Register/Dform");
   };
 
@@ -79,21 +85,20 @@ setverified(2);
     });
   };
 
-  const mentors = [
-    { key: 1, name: " mr. amitsingh" },
-    { key: 2, name: " lakshmi" },
-    { key: 3, name: "hondsa" },
-    { key: 4, name: " chehe" },
-    { key: 5, name: " hola" },
-    { key: 6, name: " mr. amitsingh" },
-  ];
+  const mentors = startup_detail.Mentor;
+ 
+ 
+  
+ 
+  
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
     const userid = setJson(localStorage.getItem("user"));
-    console.log(userid);
-    console.log(userid.number);
+   
     let id = userid._id;
+    console.log(data.Mentor);
+    console.log(data);
     const body = {
       Name: data.Fullname,
       MobNo: 8445775919,
@@ -102,9 +107,11 @@ setverified(2);
       Idea: data.Idea_title,
       BriefData: data.Brief_Idea,
       URL: "https/::drivelink/data/vpcoket",
-      mentorid: "61b380f0be81b72d64675b6e",
+      mentorId: data.Mentor,
     };
-    console.log(body);
+
+    
+    console.log("This is the data that gets send",body);
 
     const Fdata = {
       id: id,
@@ -119,6 +126,7 @@ setverified(2);
   };
   //const nextstep
 
+  const verified = data.verified;
   return (
     <div className="form">
       <form>
@@ -205,9 +213,9 @@ setverified(2);
           Mentor:
           {verified === 0 && (
             <select value={data.Mentor} onChange={onHandleChange} name="Mentor">
-              {mentors.map((fbb) => (
-                <option key={fbb.key} value={fbb.name}>
-                  {fbb.name}
+              {mentors!=null && mentors.map((mentor) => (
+                <option key={mentor._id} value={mentor._id}>
+                  {mentor.profiledata.Profilename}
                 </option>
               ))}
               ;

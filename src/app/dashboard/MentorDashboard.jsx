@@ -23,9 +23,7 @@ function MentorDashboard() {
   
   const ideaData =  useSelector(state=> state.mentor);
   let Ideas =  ideaData.Ideas;
-  if(Ideas===null){
-    Ideas= []
-  }
+ 
   console.log(ideaData);
 
   const dispatch = useDispatch();
@@ -38,36 +36,7 @@ function MentorDashboard() {
     dispatch(GetAllIdea(body));
   }, []);
 
-  const ideas = [
-    {
-      title: "Roxet",
-      name: "Himanshu Pandey",
-      email: "hp200229@gmail.com",
-      year: "3rd",
-      link: "www.haha.com",
-    },
-    {
-      title: "Roxet",
-      name: "Himanshu Pandey",
-      email: "hp200229@gmail.com",
-      year: "3rd",
-      link: "www.haha.com",
-    },
-    {
-      title: "Roxet",
-      name: "Himanshu Pandey",
-      email: "hp200229@gmail.com",
-      year: "3rd",
-      link: "www.haha.com",
-    },
-    {
-      title: "Roxet",
-      name: "Himanshu Pandey",
-      email: "hp200229@gmail.com",
-      year: "3rd",
-      link: "www.haha.com",
-    },
-  ];
+ 
   return (
     <div className="dashboard">
       <div className="main-container">
@@ -81,14 +50,15 @@ function MentorDashboard() {
         <MainArea>
           <h1 className="heading">List of Ideas</h1>
           <div className="idea-container">
-            {  ideas.length > 0 ? (
-              ideas.map((idea) => (
+            { Ideas!=null && Ideas.length > 0 ? (
+             Ideas.map((idea) => (
                 <IdeaCard
-                  title={idea.title}
-                  name={idea.name}
-                  year={idea.year}
-                  link={idea.link}
-                  email={idea.email}
+                  title={idea.Idea}
+                  name={idea.Name}
+                  id = {idea._id}
+                  link={idea.URL}
+                  email={idea.Email}
+                
                 />
               ))
             ) : (

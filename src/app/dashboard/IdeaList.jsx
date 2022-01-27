@@ -1,30 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import IdeaCardTbi from "./components/IdeaCardTbi";
 import "./css/IdeaList.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setJson } from "../../Global/Helper";
+import { GetAllIdea } from "../../redux/actions/tbiAction";
 
 function IdeaList() {
-  const ideas = [
-    {
-      title: "Roxet",
-      name: "Himanshu",
-      mentorship: true,
-    },
-    {
-      title: "Roxet",
-      name: "Himanshu",
-      mentorship: true,
-    },
-    {
-      title: "Roxet",
-      name: "Himanshu",
-      mentorship: true,
-    },
-    {
-      title: "Roxet",
-      name: "Himanshu",
-      mentorship: false,
-    },
-  ];
+  const state = useSelector((state) => state.tbi);
+
+  const dispatch = useDispatch();
+  const userid = setJson(localStorage.getItem("user"));
+  console.log(userid._id);
+  useEffect(() => {
+    console.log("use")
+    dispatch(GetAllIdea(userid._id));
+  },[]);
+const Ideas = state.Ideas;
+
+console.log(state);
+
+
   return (
     <div className="idea-list">
       <div className="header">
@@ -33,11 +28,11 @@ function IdeaList() {
       <div className="main">
         <div className="main-container">
           <div className="ideas">
-            {ideas.map((idea) => (
+            {Ideas!=null &&Ideas.Ideas.map((idea) => (
               <IdeaCardTbi
-                title={idea.title}
-                name={idea.name}
-                mentorship={idea.mentorship}
+                title={idea.PAN}
+                name={idea.Aadhar}
+               
               />
             ))}
           </div>

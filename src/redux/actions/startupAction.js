@@ -184,7 +184,7 @@ export const OpenStep2 = (id) => async (dispatch) => {
       dispatch({
 
         type: OPEN_STEP_2,
-        payload: {Idea: data.data.Idea , Message: data.data.Message , Step2: data.data.Step2},
+        payload: {Idea: data.data.Idea , Message: data.data.Message , Step2: data.data.Step2 , Mentor: data.data.Mentor},
       });
      
     }
@@ -202,15 +202,18 @@ export const CreateStep2 =
         Formdata,
         config
       );
-      console.log(data);
+      
 
       if (data) {
+        console.log("Hye create step got run")
+        console.log(data)
         dispatch({
           type: CREATE_STEP_2,
           payload: {
             Idea: data.data.Idea,
             Step2: data.data.Step2,
             Message: data.data.Message,
+            Mentor: data.data.Mentor
           },
         });
       }
@@ -233,11 +236,12 @@ export const GetStep2 =
   };
 
 export const OpenStep3 =
-  ({ id }) =>
+  ( id ) =>
   async (dispatch) => {
     try {
       const data = await axios.get(`${API}/idea/clickStep3/${id}`);
       if (data) {
+        console.log("Hey its me step 3 i ran")
         dispatch({
           type: OPEN_STEP_3,
           payload: {

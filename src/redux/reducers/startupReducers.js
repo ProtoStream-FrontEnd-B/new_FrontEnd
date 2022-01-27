@@ -19,6 +19,7 @@ const initialState = {
   Trl_value: null,
   Idea: null,
   Message: null,
+  Mentor: null,
   Step2: null, 
   Step3: null
 };
@@ -82,7 +83,8 @@ export default function (state = initialState, action) {
         ...state,
         Idea: action.payload.Idea,
         Message: action.payload.Message, 
-        Step2: action.payload.Step2
+        Step2: action.payload.Step2,
+        Mentor: action.payload.Mentor
       }
 
     case CREATE_STEP_2:
@@ -91,7 +93,8 @@ export default function (state = initialState, action) {
         ...state,
         Idea: action.payload.Idea,
         Step2: action.payload.Step2,
-        Message: action.payload.Message
+        Message: action.payload.Message,
+        Mentor: action.payload.Mentor
       }
 
     case GET_STEP_2:
