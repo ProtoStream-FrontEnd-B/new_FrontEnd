@@ -1,0 +1,159 @@
+.main-section {
+  width: 80%;
+  margin: 2rem auto;
+  color: var(--text-pr);
+  font-family: var(--font-sec);
+}
+
+.main-section .main-heading {
+  text-align: center;
+  text-decoration: underline;
+  text-underline-position: under;
+  -webkit-text-decoration-color: var(--accent-sec);
+          text-decoration-color: var(--accent-sec);
+  font-size: var(--heading-main);
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.main-section .sec .table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  border: 1px solid white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.main-section .sec .table .main-row,
+.main-section .sec .table .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.main-section .sec .table .main-row .column,
+.main-section .sec .table .row .column {
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  height: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+.main-section .sec .table .main-row .column img,
+.main-section .sec .table .row .column img {
+  max-width: 60%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 50%;
+}
+
+.main-section .sec .table .main-row a,
+.main-section .sec .table .row a {
+  text-underline-position: under;
+}
+
+.main-section .sec .table .main-row .main-column,
+.main-section .sec .table .row .main-column {
+  border-right: 1px solid white;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-left: 1px solid white;
+}
+
+.main-section .sec .table .main-row .serial,
+.main-section .sec .table .row .serial {
+  width: 100px;
+}
+
+.main-section .sec .table .main-row .name,
+.main-section .sec .table .row .name {
+  width: 350px;
+}
+
+.main-section .sec .table .main-row .enterprise,
+.main-section .sec .table .row .enterprise {
+  width: 300px;
+}
+
+.main-section .sec .table .main-row .project-name,
+.main-section .sec .table .row .project-name {
+  width: 350px;
+}
+
+.main-section .sec .table .main-row .fellowship,
+.main-section .sec .table .row .fellowship {
+  width: 200px;
+}
+
+.main-section .sec .Link button {
+  padding: 0.5rem;
+  background-color: var(--accent-sec);
+  color: var(--text-pr);
+  font-size: var(--heading-med);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.main-section .sec .Link button:hover {
+  text-decoration: underline;
+}
+
+.main-section .sec .head {
+  font-size: var(--heading-small);
+  margin: 2rem 0;
+  font-weight: bold;
+}
+
+.main-section .sec ul,
+.main-section .sec ol {
+  margin: 0 1rem;
+}
+
+.main-section .sec a {
+  color: var(--text-pr);
+}
+
+.main-section .sec p {
+  color: var(--text-pr);
+  font-family: var(--font-alt);
+  font-size: var(--span);
+  line-height: 30px;
+  word-spacing: 0.1rem;
+  letter-spacing: 0.1rem;
+  margin: 1rem 0;
+}
+/*# sourceMappingURL=StaticPages.css.map */

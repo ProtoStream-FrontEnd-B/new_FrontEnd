@@ -1,0 +1,160 @@
+.form-container {
+  width: 80vw;
+  max-width: 1700px;
+  margin: auto;
+  margin-top: 1rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 80vh;
+  min-height: 700px;
+  overflow: auto;
+  padding: 2rem;
+  font-family: var(--font-pr);
+  border-radius: 10px;
+  background: -webkit-gradient(linear, left top, right top, from(var(--accent-sec)), to(var(--accent-pr)));
+  background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
+}
+
+.form-container .heading {
+  font-size: var(--heading-main);
+}
+
+.form-container .main-form-container form {
+  width: 60%;
+  font-size: 1rem;
+}
+
+.form-container .main-form-container form .field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-container .main-form-container form .field .input {
+  width: 75%;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #000;
+}
+
+.form-container .main-form-container form .field .file {
+  padding: 1rem;
+}
+
+.form-container .main-form-container form .field .file::-webkit-file-upload-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--comp-sec);
+  color: var(--text-pr);
+  font-family: var(--font-sec);
+  font-weight: bold;
+  font-size: var(--span);
+  cursor: pointer;
+  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.137);
+          box-shadow: 0 4px 5px rgba(0, 0, 0, 0.137);
+  border-radius: 10px;
+}
+
+.form-container .main-form-container form .field .file::-webkit-file-upload-button:hover {
+  background-color: var(--comp-pr);
+}
+
+@media screen and (max-width: 1024px) {
+  .form-container {
+    width: 95vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .form-container .heading {
+    font-size: var(--heading-med);
+    margin-bottom: 2rem;
+  }
+  .form-container .main-form-container form {
+    width: 100%;
+    margin: auto;
+  }
+  .form-container .main-form-container form .field {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  .form-container .main-form-container form .field .input {
+    width: 80%;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    width: 95vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .form-container .heading {
+    font-size: var(--heading-small);
+    margin-bottom: 2rem;
+  }
+  .form-container .main-form-container form {
+    width: 100%;
+    margin: auto;
+  }
+  .form-container .main-form-container form .field {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  .form-container .main-form-container form .field .input {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .form-container {
+    width: 95vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .form-container .heading {
+    font-size: var(--heading-small);
+    margin-bottom: 2rem;
+  }
+  .form-container .main-form-container form {
+    width: 100%;
+    margin: auto;
+  }
+  .form-container .main-form-container form .field {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  .form-container .main-form-container form .field .input {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+/*# sourceMappingURL=FormContainer.css.map */

@@ -1,0 +1,24 @@
+.internships {
+  width: 90%;
+  margin: auto;
+
+  .header-sec {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    font-family: var(--font-pr);
+    background-color: var(--comp-pr);
+    color: var(--text-pr);
+  }
+
+  .internship-container {
+    // width: 100%;
+    padding: 1rem;
+    background-color: var(--comp-pr);
+    margin: 1rem 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}

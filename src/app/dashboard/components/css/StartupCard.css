@@ -50,6 +50,19 @@
   color: var(--text-pr);
   border: none;
   cursor: pointer;
+  background-color: var(--comp-sec);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Startup-Card .btn .btn-1 {
+  font-size: var(--button);
+  font-weight: bold;
+  color: var(--text-pr);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: var(--font-pr);
 }
 
 .Startup-Card .btn:hover {

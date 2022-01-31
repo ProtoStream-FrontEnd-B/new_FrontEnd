@@ -1,8 +1,7 @@
 import React from 'react'
 import './css/Member.css'
-import PP from "../../Assets/Illustrations/pp.svg"
 
-function Member({name, session, work}) {
+function Member({name, session, work, PP}) {
     return (
       <div className="member">
         <img className="PP" src={PP} alt="" />

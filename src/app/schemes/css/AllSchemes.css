@@ -1,0 +1,92 @@
+.all-schemes {
+  width: 90%;
+  margin: auto;
+}
+
+.all-schemes .header-sec {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: var(--font-pr);
+  background-color: var(--comp-pr);
+  color: var(--text-pr);
+}
+
+.all-schemes .header-sec .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.all-schemes .header-sec .filter .btn-filter {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--accent-sec);
+  font-size: var(--heading-small);
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  margin-right: 1rem;
+  border-bottom: 5px solid transparent;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.all-schemes .header-sec .filter .btn-filter:hover {
+  color: var(--accent-pr);
+}
+
+.all-schemes .header-sec .filter .active {
+  border-bottom: 5px solid white;
+}
+
+.all-schemes .header-sec .filter .count {
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.all-schemes .scheme-container {
+  padding: 1rem;
+  background-color: var(--comp-pr);
+  margin: 1rem 0;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=AllSchemes.css.map */

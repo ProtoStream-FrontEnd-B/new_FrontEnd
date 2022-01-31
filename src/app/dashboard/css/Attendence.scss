@@ -179,6 +179,8 @@
         margin: 2px;
         padding: 0;
 
+        margin: 2px;
+
         .idea-card {
           flex-direction: column;
           align-items: flex-start;
@@ -191,6 +193,9 @@
 
           .attendence-record {
             display: none;
+
+            display: none;
+
             .att {
               font-size: var(--para);
               padding: 0.3rem;
@@ -204,6 +209,11 @@
           width: 20%;
           padding: 0;
           margin: 0 10px;
+
+          width: 20%;
+          padding: 0;
+          margin: 0 10px;
+
           .btn {
             font-size: var(--para);
             margin: 5px;

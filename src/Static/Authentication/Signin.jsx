@@ -1,8 +1,7 @@
 import React, { useState , useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Login , Loading } from "../../redux/actions/authAction";
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router";
+import { Link , useHistory } from "react-router-dom";
 import Overlay1 from "../../Assets/Illustrations/Overlay1.svg";
 import { isLogin  } from "../../redux/actions/authAction";
 import Overlay2 from "../../Assets/Illustrations/Overlay2.svg";
@@ -110,9 +109,7 @@ function Signin() {
             <Link to="#">Forgot Password.</Link> New here?{" "}
             <Link to="/signup">Sign up</Link>
           </p>
-          <button onClick={onHandleSubmit} className="sign-btn">
-            Login
-          </button>
+          <button onClick = {onHandleSubmit} className="sign-btn">Login</button>
         </form>
       </div>
     </section>

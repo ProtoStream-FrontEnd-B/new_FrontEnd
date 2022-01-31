@@ -1,0 +1,29 @@
+.internships {
+  width: 90%;
+  margin: auto;
+}
+
+.internships .header-sec {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: var(--font-pr);
+  background-color: var(--comp-pr);
+  color: var(--text-pr);
+}
+
+.internships .internship-container {
+  padding: 1rem;
+  background-color: var(--comp-pr);
+  margin: 1rem 0;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=Internships.css.map */

@@ -1,0 +1,121 @@
+.main-section {
+  width: 80%;
+  margin: 2rem auto;
+  color: var(--text-pr);
+  font-family: var(--font-sec);
+
+  .main-heading {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: var(--accent-sec);
+    font-size: var(--heading-main);
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+
+  .sec {
+    .table {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      border: 1px solid white;
+      width: fit-content;
+
+      .main-row,
+      .row {
+        display: flex;
+        border: 1px solid white;
+        align-items: center;
+        height: 100%;
+
+        .column {
+          border-right: 1px solid white;
+          border-left: 1px solid white;
+          height: 450px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+
+          img {
+            max-width: 60%;
+            width: fit-content;
+            min-width: 50%;
+          }
+        }
+
+        a {
+          text-underline-position: under;
+        }
+
+        .main-column {
+          border-right: 1px solid white;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-left: 1px solid white;
+        }
+
+        .serial {
+          width: 100px;
+        }
+        .name {
+          width: 350px;
+        }
+        .enterprise {
+          width: 300px;
+        }
+
+        .project-name {
+          width: 350px;
+        }
+        .fellowship {
+          width: 200px;
+        }
+      }
+    }
+    .Link {
+      button {
+        padding: 0.5rem;
+        background-color: var(--accent-sec);
+        color: var(--text-pr);
+        font-size: var(--heading-med);
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        width: 100%;
+        margin: 2rem auto;
+        text-align: center;
+      }
+      button:hover {
+        text-decoration: underline;
+      }
+    }
+    .head {
+      font-size: var(--heading-small);
+      margin: 2rem 0;
+      font-weight: bold;
+    }
+
+    ul,
+    ol {
+      margin: 0 1rem;
+    }
+
+    a {
+      color: var(--text-pr);
+    }
+
+    p {
+      color: var(--text-pr);
+      font-family: var(--font-alt);
+      font-size: var(--span);
+      line-height: 30px;
+      word-spacing: 0.1rem;
+      letter-spacing: 0.1rem;
+      margin: 1rem 0;
+    }
+  }
+}
