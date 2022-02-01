@@ -1,0 +1,165 @@
+.step-2 {
+  width: 92%;
+  margin: auto;
+  font-family: var(--font-pr);
+}
+
+.step-2 .stepForm-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.step-2 .stepForm-container .sidebar,
+.step-2 .stepForm-container .main-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+  max-width: 500px;
+  width: 30%;
+  margin: 1.5rem;
+  border-radius: 10px;
+  height: 750px;
+  max-height: 80vh;
+  overflow: auto;
+  background: linear-gradient(111.9deg, var(--accent-pr) 26.31%, var(--accent-sec) 87.23%);
+}
+
+.step-2 .stepForm-container .sidebar .btn,
+.step-2 .stepForm-container .main-form .btn {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 12px;
+  font-size: var(--span);
+  font-family: var(--font-pr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: var(--accent-sec);
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.step-2 .stepForm-container .sidebar .btn img,
+.step-2 .stepForm-container .main-form .btn img {
+  margin-left: 15px;
+}
+
+.step-2 .stepForm-container .sidebar .btn:hover,
+.step-2 .stepForm-container .main-form .btn:hover {
+  opacity: 0.8;
+}
+
+.step-2 .stepForm-container .sidebar .sec,
+.step-2 .stepForm-container .main-form .sec {
+  margin: 1rem 0;
+}
+
+.step-2 .stepForm-container .sidebar .sec .heading,
+.step-2 .stepForm-container .main-form .sec .heading {
+  font-size: var(--button);
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.step-2 .stepForm-container .main-form {
+  width: 70%;
+  max-width: 1500px;
+}
+
+.step-2 .stepForm-container .main-form .form {
+  padding: 1rem;
+  padding-left: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.step-2 .stepForm-container .main-form .form .main-head {
+  color: white;
+  font-size: var(--heading-main);
+}
+
+.step-2 .stepForm-container .main-form .form .form-container {
+  width: 70%;
+}
+
+.step-2 .stepForm-container .main-form .form .form-container .field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: var(--span);
+  margin: 1rem;
+}
+
+.step-2 .stepForm-container .main-form .form .form-container .field label {
+  font-weight: bold;
+}
+
+.step-2 .stepForm-container .main-form .form .form-container .field .inp {
+  width: 65%;
+  padding: 0.5rem;
+  font-size: var(--span);
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+}
+
+.step-2 .stepForm-container .main-form .form .btm-sec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.step-2 .stepForm-container .main-form .form .btm-sec .submit {
+  margin: 0;
+  width: 250px;
+}
+
+.step-2 .stepForm-container .main-form .form .btm-sec .text {
+  width: 70%;
+}
+/*# sourceMappingURL=Step2.css.map */
