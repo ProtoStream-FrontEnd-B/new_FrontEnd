@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { EditIdea } from "../../redux/actions/tbiAction";
+import { useSelector } from "react-redux";
+import { setJson } from "../../Global/Helper";
 import "./css/StartupDetails.css";
 
 function StartupDetailsForm() {
+  const state = useSelector((state) => state.tbi);
+  const dispatch = useDispatch();
+  const userid = setJson(localStorage.getItem("user")); 
+  console.log(state);
+  console.log(userid._id);
+  const handleOnLoad = () => {
+
+  };
+
+  const step3 = state.Step3;
+
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
   const details = {
     photo: "",
     gender: "male",
@@ -9,7 +27,7 @@ function StartupDetailsForm() {
     pan: "FCKUHEHE",
     category: "General",
     status: "Student",
-    cameToKnow: "ProtoStream",
+    cameToKnow: "ProtoStream", 
     qualification: "B.Tech CSE",
     experience: true,
     ownVenture: true,
@@ -19,6 +37,13 @@ function StartupDetailsForm() {
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s",
     agreement1: true,
     agreement2: true,
+  };
+
+  const onHandleVerify = (id , IdeaId) => {
+    console.log(id)
+    const status = "verified";
+    dispatch(EditIdea({id ,status , IdeaId}));
+
   };
 
   return (
@@ -160,7 +185,7 @@ function StartupDetailsForm() {
             </div>
           </div>
           <button className="btn">See Uploaded Signature</button>
-          <button className="btn verify">Verify it</button>
+          <button onClick= {()=>{onHandleVerify(userid._id ,step3[0]._id )}} className="btn verify">Verify it</button>
         </div>
         <div className="control-buttons">
           <button className="btn">Dismiss with Comment</button>

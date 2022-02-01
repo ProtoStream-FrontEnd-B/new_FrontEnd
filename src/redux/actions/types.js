@@ -45,6 +45,7 @@ export const GET_MENTOR_INFO = "GET_MENTOR_INFO";
 export const GET_ALL_IDEA_TBI = "GET_ALL_IDEA_TBI";
 export const SELECT_IDEA_TBI = "SELECT_IDEA_TBI";
 export const EDIT_IDEA_TBI = "EDIT_IDEA_TBI";
+export const OPEN_IDEA_TBI = "OPEN_IDEA_TBI";
 export const LOGIN_TBI = "LOGIN_TBI";
 export const REGISTER_TBI = "REGISTER_TBI";
 export const GET_TBI_INFO = "GET_TBI_INFO";

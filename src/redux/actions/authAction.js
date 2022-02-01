@@ -35,7 +35,15 @@ export const SignUp = (data) => async (dispatch) => {
       config
     );
     console.log(data2);
-    if (data2) {
+    if(data2.data.error=="Email already registered"){
+      console.log("this error ran ")
+      alert('Email already registered')
+      dispatch({
+        type: REGISTER_FAIL,
+        payload: {Error: "Email already registered"},
+      })
+    }
+    if (data2.data.user) {
       dispatch({
         type: REGISTER_SUCCESS,
         payload: data2.data,
@@ -43,6 +51,7 @@ export const SignUp = (data) => async (dispatch) => {
     }
   } catch (error) {
     console.log(`${error} error is here `);
+    alert("please check the fields you have filled")
     dispatch({
       type: REGISTER_FAIL,
       payload: error
@@ -99,7 +108,9 @@ export const Login = (data) => async (dispatch) => {
 
     
     const data2 = await axios.post(`${process.env.REACT_APP_BACKEND_API}/login`, data, config);
-    if (data2) {
+   
+  
+    if (data2.data.user && data2.data.token) {
       dispatch({
         type: LOGIN_SUCCESS,
         payload: data2.data,
@@ -112,10 +123,12 @@ export const Login = (data) => async (dispatch) => {
     }
     }
    catch (error) {
+  
     console.log(error)
+    alert("Please check your details")
     dispatch({
       type: LOGIN_FAIL,
-    payload: error
+      payload: error
       })
   }
 }

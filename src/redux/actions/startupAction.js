@@ -54,7 +54,10 @@ export const UpdateTRL = (userid) => async (dispatch) => {
         payload: TrlData.data.Trl_value,
       });
     }
-  } catch (error) {}
+  } catch (error) {
+    alert("TRL VALUE WAS NOT UPDATED DUE TO SOME ISSUE ");
+    console.log(error);
+  }
 };
 
 export const CreateIdea = (id) => async (dispatch) => {
@@ -76,6 +79,7 @@ export const CreateIdea = (id) => async (dispatch) => {
     }
   } catch (error) {
     console.log(error);
+    alert("Idea was not created")
   }
 };
 
@@ -122,7 +126,10 @@ export const ChooseBranch =
           },
         });
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+      alert("Branch was not updated ")
+    }
   };
 
 export const DropIdea =
@@ -150,7 +157,10 @@ export const OtpLogin = (id) => async (dispatch) => {
         payload: { Idea: data.data.Idea, Message: data.data.Message },
       });
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log("Error");
+    alert("Otp was not send to the user");
+  }
 };
 
 export const OtpVerify =
@@ -172,7 +182,10 @@ export const OtpVerify =
           payload: { Idea: data.data.Idea, Message: data.data.Message },
         });
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+      alert("OTP NOT MATCHED")
+    }
   };
 
 export const OpenStep2 = (id) => async (dispatch) => {

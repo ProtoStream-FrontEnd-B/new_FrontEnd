@@ -1,9 +1,19 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import "./css/IdeaCardTbi.css";
+import { OpenIdea } from "../../../redux/actions/tbiAction";
 
-function IdeaCardTbi({ title, name, mentorship }) {
+function IdeaCardTbi({ title, name, mentorship, ideaId ,id }) {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const onHandleClick = (ideaId, id) => {
+    dispatch(OpenIdea({ id , ideaId }));
+    history.push("/dev");
+  };
+
   return (
-    <div className="ideacardtbi">
+    <div onClick={()=>onHandleClick(ideaId ,id )} className="ideacardtbi">
       <div className="col">
         <h3 className="label">Idea:</h3>
         <h3 className="ans">{title}</h3>

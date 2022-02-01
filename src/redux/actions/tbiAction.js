@@ -6,6 +6,7 @@ import {
   LOGIN_TBI,
   REGISTER_TBI,
   GET_TBI_INFO,
+  OPEN_IDEA_TBI,
   CREATE_SLOT,
   CHECK_SLOT,
   CHECK_ATTENDANCE_SLOT,
@@ -41,11 +42,11 @@ export const SelectIdea = ({id , ideaId})=> async (dispatch)=>{
 
 
   try {
-    const Trl = await axios.post(`${API}/idea/selectIdea3/${id}` , ideaId , config);
-    if (Trl) {
+    const Idea = await axios.post(`${API}/idea/selectIdea3/${id}` , ideaId , config);
+    if (Idea) {
       dispatch({
         type: SELECT_IDEA_TBI,
-        payload: Trl.data.Trl_value,
+        payload: {Idea:Idea.data.Step3},
       });
     }
   } catch (error) {
@@ -63,11 +64,36 @@ export const EditIdea = ({id , status , IdeaId})=> async (dispatch)=>{
   }
 
   try {
-    const Trl = await axios.post(`${API}//idea/editIdea3/${id}` , body, config);
-  if (Trl) {
+    const Idea = await axios.post(`${API}/idea/editIdea3/${id}` , body, config);
+  if (Idea) {
     dispatch({
       type: EDIT_IDEA_TBI,
-      payload: Trl.data.Trl_value,
+      payload: {Step3: Idea.data.Step3, Message: Idea.data.Message}
+    });
+  }
+  } catch (error) {
+    console.log(error);
+  }
+  
+
+}
+
+
+export const OpenIdea = ({id , ideaId})=> async (dispatch)=>{
+
+  const body = {
+    
+    ideaId: ideaId
+  }
+  console.log(body);
+
+  try {
+    const Idea = await axios.post(`${API}/idea/openIdea/${id}` , body, config);
+    console.log(Idea)
+  if (Idea) {
+    dispatch({
+      type: OPEN_IDEA_TBI,
+      payload: {Step3: Idea.data.Step3, Message: Idea.data.Message , Idea: Idea.data.Idea}
     });
   }
   } catch (error) {

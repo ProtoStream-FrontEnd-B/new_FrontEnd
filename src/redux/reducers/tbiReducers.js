@@ -6,14 +6,18 @@ import {
   REGISTER_TBI,
   GET_TBI_INFO,
   CREATE_SLOT,
+  OPEN_IDEA_TBI,
   CHECK_SLOT,
   CHECK_ATTENDANCE_SLOT,
   UPDATE_ATTENDANCE,
 } from "../actions/types";
 
+
 const initialState = {
   Ideas: null,
   TBI: null,
+  Idea: null,
+  Message: null,
 };
 
 export default function (state = initialState, action) {
@@ -26,13 +30,22 @@ export default function (state = initialState, action) {
     case SELECT_IDEA_TBI:
       return {
         ...state,
-        Ideas: action.payload,
+        Idea: action.payload,
       };
     case EDIT_IDEA_TBI:
       return {
         ...state,
-        Ideas: action.payload,
+        Idea: action.payload.Idea,
+        Step3: action.payload.Step3,
+        Message: action.payload.Message
       };
+    case OPEN_IDEA_TBI:
+      return{
+        ...state,
+        Idea: action.payload.Idea,
+        Step3: action.payload.Step3,
+        Message: action.payload.Message
+      }  
 
     case GET_TBI_INFO:
       return {

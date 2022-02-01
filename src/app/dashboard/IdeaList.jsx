@@ -32,7 +32,8 @@ console.log(state);
               <IdeaCardTbi
                 title={idea.PAN}
                 name={idea.Aadhar}
-               
+                id = {userid._id}
+                ideaId={idea._id}
               />
             ))}
           </div>
