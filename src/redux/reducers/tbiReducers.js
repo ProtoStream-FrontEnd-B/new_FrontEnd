@@ -18,6 +18,7 @@ const initialState = {
   TBI: null,
   Idea: null,
   Message: null,
+  isLoading: false,
 };
 
 export default function (state = initialState, action) {

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import "./css/StartupCard.css";
 const StartupCard = ({ btn1, btn2, head, para, route1, route2 }) => {
   const history = useHistory();
-
+  const start_up = useSelector((state) => state.startup);
+  const {isLoading} = start_up;
+  console.log(isLoading , "Hey this is laoding state");
   const onBtnClick = (route) => {
     console.log("btn clicked");
     history.push(route);

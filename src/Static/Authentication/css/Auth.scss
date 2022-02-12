@@ -81,6 +81,20 @@
         border: none;
         border-radius: 5px;
         transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      .sign-btn-hid {
+        width: 100%;
+        padding: 0.7rem;
+        font-size: var(--button);
+        margin: 2rem 0;
+        background-color: var(--accent-sec);
+        color: var(--text-pr);
+        font-family: var(--font-pr);
+        border: none;
+        border-radius: 5px;
+        transition: all 0.2s ease;
+        opacity: 0.5;
       }
       .sign-btn:hover {
         background-color: var(--accent-pr);

@@ -1,13 +1,6 @@
 import axios from "axios";
 import { API } from "../../API/backend";
-import {
-  GET_ALL_IDEA,
-  SELECT_IDEA,
-  EDIT_IDEA,
-  LOGIN_MENTOR,
-  GET_MENTOR_INFO,
-  REGISTER_MENTOR,
-} from "./types";
+import { GET_ALL_IDEA, SELECT_IDEA, EDIT_IDEA, GET_MENTOR_INFO , IS_LOADING } from "./types";
 
 const config = {
   headers: {
@@ -17,8 +10,13 @@ const config = {
 
 export const GetAllIdea =
   ({ id }) =>
-  async  (dispatch) => {
+  async (dispatch) => {
     try {
+
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
       const Idea = await axios.get(`${API}/idea/getMENTORIdeas/${id}`);
       if (Idea) {
         dispatch({
@@ -33,21 +31,30 @@ export const GetAllIdea =
 
 export const SelectIdea =
   ({ id, ideaId }) =>
-   async (dispatch) => {
+  async (dispatch) => {
     const body = {
       ideaId: ideaId,
     };
     try {
-      const Idea = await axios.post(`${API}/idea/selectIdea/${id}`, body, config);
-   
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
+
+      const Idea = await axios.post(
+        `${API}/idea/selectIdea/${id}`,
+        body,
+        config
+      );
+
       if (Idea) {
-        console.log(Idea)
-      
+        console.log(Idea);
+
         dispatch({
           type: SELECT_IDEA,
-          payload:{
-            Step2:Idea.data.Step2,
-          } 
+          payload: {
+            Step2: Idea.data.Step2,
+          },
         });
       }
     } catch (error) {
@@ -64,11 +71,16 @@ export const EditIdea =
     };
 
     try {
-      const Idea = await axios.post(`${API}/idea/editIdea/${id}`,body, config);
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
+
+      const Idea = await axios.post(`${API}/idea/editIdea/${id}`, body, config);
       if (Idea) {
         dispatch({
           type: EDIT_IDEA,
-          payload: {Message: Idea.data.Message},
+          payload: { Message: Idea.data.Message },
         });
       }
     } catch (error) {
@@ -80,12 +92,17 @@ export const GetMentorInfo =
   ({ id }) =>
   async (dispatch) => {
     try {
+
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
       const Idea = await axios.get(`${API}/getMentor/${id}`);
-      if(Idea){
+      if (Idea) {
         dispatch({
           type: GET_MENTOR_INFO,
-          payload: Idea
-        })
+          payload: Idea,
+        });
       }
     } catch (error) {
       console.log(error);

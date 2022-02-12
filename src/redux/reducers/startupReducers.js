@@ -13,6 +13,7 @@ import {
   DROP_IDEA,
   OTP_LOGIN,
   OTP_VERIFY,
+  IS_LOADING,
 } from "../actions/types";
 
 const initialState = {
@@ -21,47 +22,59 @@ const initialState = {
   Message: null,
   Mentor: null,
   Step2: null, 
-  Step3: null
+  Step3: null,
+  isLoading: false,
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case IS_LOADING:
+      return{
+        ...state,
+        isLoading: true,
+      }
     case GET_TRL:
       return {
         ...state,
         Trl_value: action.payload,
+        isLoading: false
       };
     case GET_IDEA:
       return {
         ...state,
         Idea: action.payload.Idea,
-        Message: action.payload.Message
+        Message: action.payload.Message,
+        isLoading: false
       };
     case UPDATE_TRL:
       return {
         ...state,
         Trl_value: action.payload,
+        isLoading: false
       };
 
     case CHOOSE_BRANCH:
       return {
         ...state,
         Idea: action.payload.Idea,
-        Message: action.payload.Message
+        Message: action.payload.Message,
+        isLoading: false
       };
 
     case OTP_LOGIN:
       return {
         ...state,
         Idea: action.payload.Idea,
-        Message: action.payload.Message
+        Message: action.payload.Message,
+        isLoading: false
       }
 
     case OTP_VERIFY:
       return {
         ...state,
         Idea: action.payload.Idea ,
-        Message: action.payload.Message
+        Message: action.payload.Message,
+        isLoading: false
       }
 
     case DROP_IDEA:
@@ -69,13 +82,15 @@ export default function (state = initialState, action) {
         ...state,
         Trl_value: null,
         Idea: null,
-        Message: null
+        Message: null,
+        isLoading: false
       }
 
     case CREATE_IDEA:
       return {
         ...state,
-       Idea: action.payload
+       Idea: action.payload,
+       isLoading: false
       }
 
     case OPEN_STEP_2:
@@ -84,7 +99,8 @@ export default function (state = initialState, action) {
         Idea: action.payload.Idea,
         Message: action.payload.Message, 
         Step2: action.payload.Step2,
-        Mentor: action.payload.Mentor
+        Mentor: action.payload.Mentor,
+        isLoading: false
       }
 
     case CREATE_STEP_2:
@@ -94,7 +110,8 @@ export default function (state = initialState, action) {
         Idea: action.payload.Idea,
         Step2: action.payload.Step2,
         Message: action.payload.Message,
-        Mentor: action.payload.Mentor
+        Mentor: action.payload.Mentor,
+        isLoading: false
       }
 
     case GET_STEP_2:
@@ -110,7 +127,8 @@ export default function (state = initialState, action) {
         Idea: action.payload.Idea,
         Message: action.payload.Message,
         Step2: action.payload.Step2,
-        Step3: action.payload.Step3
+        Step3: action.payload.Step3,
+        isLoading: false
       }
 
     case CREATE_STEP_3:
@@ -118,7 +136,8 @@ export default function (state = initialState, action) {
         ...state,
         Idea: action.payload.Idea,
         Step3: action.payload.Step3,
-        Message: action.payload.Message
+        Message: action.payload.Message,
+        isLoading: false
 
       }
 

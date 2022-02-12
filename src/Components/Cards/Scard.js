@@ -1,5 +1,5 @@
 import react from "react";
-
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import verify from "../../Assets/icons/verify.svg";
 import "./css/Scard.css";
@@ -17,6 +17,10 @@ const Scard = ({ head, para, btnName, img, status, route, func, data }) => {
   // enable, disable, completed
   //   var status = "enable";
   //   var status = "disable";
+
+  const startup_details = useSelector((state) => state.startup);
+  const {isLoading} = startup_details;
+  console.log(isLoading, "Hey this is the loading state")
   const history = useHistory();
   const dispatch = useDispatch();
   const checkFunc = (func, data) => {
@@ -41,7 +45,7 @@ const Scard = ({ head, para, btnName, img, status, route, func, data }) => {
     <button
       disabled={status == "disable"}
       className={status == "disable" ? "Scard disabled-card" : "Scard hover"}
-      onClick={() => alert("clicked")}
+     
     >
       <header>
         <h1 className="heading">{head}</h1>
@@ -58,7 +62,7 @@ const Scard = ({ head, para, btnName, img, status, route, func, data }) => {
           onClick={() => {
             onBtnClick(route);
           }}
-          disabled={status == "disable"}
+          disabled={status == "disable"|| isLoading}
         >
           {status == "completed" ? "Completed" : `${btnName}`}
         </button>

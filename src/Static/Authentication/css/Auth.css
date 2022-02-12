@@ -89,6 +89,22 @@
   border-radius: 5px;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.auth .container .form .sign-btn-hid {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: var(--button);
+  margin: 2rem 0;
+  background-color: var(--accent-sec);
+  color: var(--text-pr);
+  font-family: var(--font-pr);
+  border: none;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  opacity: 0.5;
 }
 
 .auth .container .form .sign-btn:hover {

@@ -15,6 +15,7 @@ import {
   DROP_IDEA,
   OTP_LOGIN,
   OTP_VERIFY,
+  IS_LOADING
 } from "./types";
 
 const config = {
@@ -25,6 +26,11 @@ const config = {
 
 export const getTrl = (id) => async (dispatch) => {
   try {
+    dispatch({
+      type: IS_LOADING,
+      payload: "Loading.."
+    })
+
     const Trl = await axios.get(`${API}/getTrl/${id}`);
     if (Trl) {
       dispatch({
@@ -41,6 +47,10 @@ export const UpdateTRL = (userid) => async (dispatch) => {
   const { id, trl_value } = userid;
 
   try {
+    dispatch({
+      type: IS_LOADING,
+      payload: "Loading.."
+    })
     const TrlData = await axios.post(
       `${API}/updateTrl/${id}`,
       trl_value,
@@ -68,6 +78,10 @@ export const CreateIdea = (id) => async (dispatch) => {
   };
 
   try {
+    dispatch({
+      type: IS_LOADING,
+      payload: "Loading.."
+    })
     const CIdea = await axios.post(`${API}/createIdea/${id}`, config);
 
     if (CIdea) {
@@ -91,6 +105,10 @@ export const GetIdea = (id) => async (dispatch) => {
   };
 
   try {
+    dispatch({
+      type: IS_LOADING,
+      payload: "Loading.."
+    })
     const Idea = await axios.get(`${API}/getIdea/${id}`, config);
     if (Idea.data) {
       console.log(Idea);
@@ -108,6 +126,10 @@ export const ChooseBranch =
   ({ id, trl_value }) =>
   async (dispatch) => {
     try {
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
       const Branch = await axios.post(
         `${API}/idea/chooseBranch/${id}`,
 
@@ -136,6 +158,10 @@ export const DropIdea =
   ({ id }) =>
   async (dispatch) => {
     try {
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
       const data = await axios.get(`${API}/idea/dropIdea/${id}`);
       if (data) {
         dispatch({
@@ -148,6 +174,10 @@ export const DropIdea =
 
 export const OtpLogin = (id) => async (dispatch) => {
   try {
+    dispatch({
+      type: IS_LOADING,
+      payload: "Loading.."
+    })
     const data = await axios.get(`${API}/idea/otplogin/${id}`);
 
     if (data) {
@@ -170,7 +200,12 @@ export const OtpVerify =
       code: code,
     };
     try {
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
       const data = await axios.post(
+        
         `${API}/idea/otpverify/${id}`,
         body,
         config
@@ -190,6 +225,10 @@ export const OtpVerify =
 
 export const OpenStep2 = (id) => async (dispatch) => {
   try {
+    dispatch({
+      type: IS_LOADING,
+      payload: "Loading.."
+    })
     const data = await axios.get(`${API}/idea/clickStep2/${id}`);
 
     if (data) {
@@ -210,6 +249,10 @@ export const CreateStep2 =
   ({ id, Formdata }) =>
   async (dispatch) => {
     try {
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
       const data = await axios.post(
         `${API}/idea/createStep2/${id}`,
         Formdata,
@@ -239,6 +282,10 @@ export const GetStep2 =
   ({ id }) =>
   async (dispatch) => {
     try {
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
       const data = await axios.post(`${API}/idea/getStep2/${id}`);
 
       dispatch({
@@ -252,6 +299,10 @@ export const OpenStep3 =
   ( id ) =>
   async (dispatch) => {
     try {
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
       const data = await axios.get(`${API}/idea/clickStep3/${id}`);
       if (data) {
         console.log("Hey its me step 3 i ran")
@@ -272,6 +323,10 @@ export const CreateStep3 =
   ({ id, Formdata }) =>
   async (dispatch) => {
     try {
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
       const data = await axios.post(
         `${API}/idea/createStep3/${id}`,
         Formdata,
@@ -296,6 +351,10 @@ export const GetStep3 =
   ({ id }) =>
   async (dispatch) => {
     try {
+      dispatch({
+        type: IS_LOADING,
+        payload: "Loading.."
+      })
       const data = await axios.post(`${API}/idea/getStep3/${id}`);
 
       dispatch({

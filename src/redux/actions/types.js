@@ -29,7 +29,6 @@ export const GET_STEP_2 = "GET_STEP_2";
 export const GET_STEP_3 = "GET_STEP_2";
 
 
-
 // MENTOR TYPES 
 
 export const GET_ALL_IDEA = "GET_ALL_IDEA";
@@ -53,3 +52,8 @@ export const CREATE_SLOT = "CREATE_SLOT"
 export const CHECK_SLOT = "CHECK_SLOT";
 export const CHECK_ATTENDANCE_SLOT = "CHECK_ATTENDANCE_SLOT";
 export const UPDATE_ATTENDANCE = "UPDATE_ATTENDANCE";
+
+
+// Loading type 
+
+export const IS_LOADING =  "IS_LOADING"

@@ -10,6 +10,7 @@ import { setJson } from "../../Global/Helper";
 
 const Register = () => {
   const startup_details = useSelector((state) => state.startup);
+  const {isLoading} = startup_details;
   console.log(startup_details);
   const dispatch = useDispatch();
   const userid = setJson(localStorage.getItem("user"));

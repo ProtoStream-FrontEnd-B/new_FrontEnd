@@ -18,7 +18,7 @@ function Signin() {
   const history = useHistory();
 
   const resp = useSelector((state) => state.auth);
- 
+  const {isLoading} = resp;
   const userid = setJson(localStorage.getItem("user"));
   const { isAuthenticated } = resp;
 
@@ -109,7 +109,7 @@ function Signin() {
             <Link to="#">Forgot Password.</Link> New here?{" "}
             <Link to="/signup">Sign up</Link>
           </p>
-          <button onClick = {onHandleSubmit} className="sign-btn">Login</button>
+          <button disabled = {isLoading} onClick = {onHandleSubmit} className={!isLoading?"sign-btn":"sign-btn-hid"}>Login</button>
         </form>
       </div>
     </section>

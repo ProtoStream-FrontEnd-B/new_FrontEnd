@@ -175,7 +175,8 @@ function Signin() {
   const resp = useSelector((state) => state.auth);
 
   const { isAuthenticated } = resp;
-
+  const {isLoading} = resp;
+console.log(isLoading)
   const dispatch = useDispatch();
   const onHandleChange = (e) => {
     setData({
@@ -296,7 +297,7 @@ useEffect(()=>{
           <p className="para">
             Already have an Account? <Link to="/signin">Sign in</Link>
           </p>
-          <button onClick={onHandleSubmit} className="sign-btn">
+          <button disabled = {isLoading} onClick={onHandleSubmit} className={!isLoading?"sign-btn":"sign-btn-hid"}>
             Signup
           </button>
         </form>
