@@ -165,7 +165,7 @@ const Form = () => {
         <div className="main-form">
           <form action="" className="form">
             <h1 className="main-head">Step 2</h1>
-            <div className="form-container">
+            <div className="form-containers">
               <div className="field">
                 <label htmlFor="Fullname">Full Name</label>
                 {verified === 0 ? (

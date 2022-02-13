@@ -65,6 +65,7 @@
     .main-form {
       width: 70%;
       max-width: 1500px;
+      // background-color: red;
 
       .form {
         padding: 1rem;
@@ -79,7 +80,7 @@
           font-size: var(--heading-main);
         }
 
-        .form-container {
+        .form-containers {
           width: 70%;
 
           .field {
@@ -120,5 +121,12 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .step-2 {
+    background-color: red;
+    height: 700px;
   }
 }

@@ -110,11 +110,11 @@
   font-size: var(--heading-main);
 }
 
-.step-2 .stepForm-container .main-form .form .form-container {
+.step-2 .stepForm-container .main-form .form .form-containers {
   width: 70%;
 }
 
-.step-2 .stepForm-container .main-form .form .form-container .field {
+.step-2 .stepForm-container .main-form .form .form-containers .field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,11 +128,11 @@
   margin: 1rem;
 }
 
-.step-2 .stepForm-container .main-form .form .form-container .field label {
+.step-2 .stepForm-container .main-form .form .form-containers .field label {
   font-weight: bold;
 }
 
-.step-2 .stepForm-container .main-form .form .form-container .field .inp {
+.step-2 .stepForm-container .main-form .form .form-containers .field .inp {
   width: 65%;
   padding: 0.5rem;
   font-size: var(--span);
@@ -161,5 +161,12 @@
 
 .step-2 .stepForm-container .main-form .form .btm-sec .text {
   width: 70%;
+}
+
+@media screen and (max-width: 414px) {
+  .step-2 {
+    background-color: red;
+    height: 700px;
+  }
 }
 /*# sourceMappingURL=Step2.css.map */

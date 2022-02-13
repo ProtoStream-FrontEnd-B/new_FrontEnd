@@ -1,0 +1,180 @@
+{
+  "Questions": [
+    {
+      "Question": "My Startup is?",
+      "info": "Startup type and modal",
+      "id": 1,
+      "Answers": [
+        {
+          "answer": "Service",
+          "info": "A service is a transaction in which no physical goods are transferred from the seller to the buyer. It can be B2C or B2B",
+          "value": 10
+        },
+        {
+          "answer": "Product",
+          "info": "A product is an object or system made available for consumer use; it is anything that can be offered to a market to satisfy the desire or need of a customer",
+          "value": 20
+        },
+        {
+          "answer": "Other",
+          "info": "It does not fit in both categories but I can create a business model that gets revenue and has potential to change the world",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "Question": "The Target audience for my product is?",
+      "info": "initial research and ideas",
+      "id": 2,
+      "Answers": [
+        {
+          "answer": "Economic Buyers",
+          "info": "Economic buyers purchase the product (for example, CFOs/COOs, function or line of business [LoB] executives)",
+          "value": 10
+        },
+        {
+          "answer": "Technical Buyers",
+          "info": "make the product accessible to end-users (for example, technology directors, technology evaluators)",
+          "value": 20
+        },
+        {
+          "answer": "End-Users",
+          "info": "General Public , The Youth  is directly buying / using my product/service ",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "Question": "I got the right tools",
+      "info": "applied research ",
+      "id": 3,
+      "Answers": [
+        {
+          "answer": "No",
+          "info": "No , i just got the idea and its kind of crazy if built , all I need is a steve wozniak and a million dollars to create the startup",
+          "value": 10
+        },
+        {
+          "answer": "Maybe",
+          "info": "Yes , i have some idea about the field and possibilities of what i am talking about and I can try to figure out things",
+          "value": 20
+        },
+        {
+          "answer": "Yes",
+          "info": "Absolutely , I am a genius . All I need is support and directions . I got the technical skills and did my economics homework last night. ",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "Question": "The product/service is viable and possible",
+      "info": "Critical Function/Proof of Concept",
+      "id": 4,
+      "Answers": [
+        {
+          "answer": "No",
+          "info": "Then stop watching Doreamon or Silicon Valley and Go Study. This ain’t your piece of cake",
+          "value": 10
+        },
+        {
+          "answer": "Maybe",
+          "info": "Not sure about these words , but yes its possible to create and I need mentoring to do so ",
+          "value": 20
+        },
+        {
+          "answer": "Absolutely",
+          "info": "Yes , i Got it all covered . It is possible to create and I can do it . I need mentoring and maybe some team members to row the boat with me.",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "Question": "I have a mockup /prototype or maybe a sketch",
+      "info": "Alpha Prototype Component/Process",
+      "id": 5,
+      "Answers": [
+        {
+          "answer": "No",
+          "info": "Then Stop dreaming , close this website and start thinking . Paper and Pen will be a good starting point ;)",
+          "value": 10
+        },
+        {
+          "answer": "Kind of",
+          "info": "I have some informal designs and I can explain the abstract idea or process to you and maybe You can help",
+          "value": 20
+        },
+        {
+          "answer": "Absolutely",
+          "info": "Told You , I am a genius . I have the designs/service model and the important things figured out",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "Question": "I got the prototype checked by a Mentor ",
+      "info": "Prototype system verified",
+      "id": 6,
+      "Answers": [
+        {
+          "answer": "No",
+          "info": "For that to be done , you atleast need that pen and paper thing done. ",
+          "value": 10
+        },
+        {
+          "answer": "Yeah",
+          "info": "Not sure if the guy was smart enough but the product is possible and he said it would be a great startup if executed",
+          "value": 20
+        },
+        {
+          "answer": "Absolutely",
+          "info": "He just loved it : ) ",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "Question": "I even have the product/service ready",
+      "info": "Integrated Pilot System Demonstrated",
+      "id": 7,
+      "Answers": [
+        {
+          "answer": "No",
+          "info": "I need to work upon it ",
+          "value": 10
+        },
+        {
+          "answer": "It is , but...",
+          "info": "I started but I need help",
+          "value": 20
+        },
+        {
+          "answer": "Absolutely",
+          "info": "“I am the CEO , fish ! “- Mark ZuckZuck",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "Question": "I have the will and consistency to be an Entrepreneur",
+      "info": "A basic HR question ",
+      "id": 8,
+      "Answers": [
+        {
+          "answer": "No",
+          "info": "You Still Here !!",
+          "value": 10
+        },
+        {
+          "answer": "Yes",
+          "info": "I can do it or maybe I can try",
+          "value": 20
+        },
+        {
+          "answer": "Absolutely",
+          "info": "Trust me , I got that fire !",
+          "value": 30
+        }
+      ]
+    }
+  ]
+}

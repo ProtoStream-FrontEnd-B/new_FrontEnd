@@ -48,6 +48,7 @@ import AddSchemes from "./app/schemes/AddSchemes";
 import NidhiEir from "./app/schemes/NidhiEir";
 import ItPolicy from "./app/schemes/ItPolicy";
 import NidhiPrayas from "./app/schemes/NidhiPrayas";
+import TRL from "./app/startups/TRL/TRL";
 // import StartupDashboard from "./app/dashboard/StartupDashboard";
 
 const Routes = () => {
@@ -92,12 +93,14 @@ const Routes = () => {
           <Route path="/error_404" exact component={Error404} />
           <Route path="/error_99" exact component={Error99} />
           <Route path="/resources" exact component={Resources} />
+          <Route path="/trl_test" exact component={TRL} />
           <Route path="/dev" exact component={StartupDetailsForm} />
           <Route path="/dev-check" exact component={Step3} />
-          {/* <Route path="/dev-check" exact component={StartupDashboard} /> */}
-          //Internships
+          {/* <Route path="/dev-check" exact component={Form} /> */}
+
+          {/* Internships */}
           <PrivateRoute path="/internships" exact component={AllInternships} />
-          //Schemes
+          {/* Schemes */}
           <PrivateRoute path="/schemes" exact component={Scheme} />
           <PrivateRoute
             path="/schemes/competitions"

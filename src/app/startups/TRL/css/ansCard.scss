@@ -1,0 +1,33 @@
+.AnsCard {
+  width: 400px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: var(--comp-pr);
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  .mhead {
+    margin-bottom: 1rem;
+  }
+}
+
+.AnsCard:hover {
+  color: black;
+  background-color: var(--accent-sec);
+}
+
+@media screen and (max-width: 414px) {
+  .AnsCard {
+    width: 300px;
+
+    .mhead {
+      font-size: var(--button);
+    }
+
+    .sub {
+      font-size: var(--para);
+    }
+  }
+}
