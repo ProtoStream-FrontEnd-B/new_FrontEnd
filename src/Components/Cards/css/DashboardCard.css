@@ -20,4 +20,10 @@
           align-items: center;
   padding: 1rem;
 }
+
+@media screen and (max-width: 414px) {
+  .dashboard-card {
+    width: 400px;
+  }
+}
 /*# sourceMappingURL=DashboardCard.css.map */

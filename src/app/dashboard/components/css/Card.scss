@@ -14,8 +14,10 @@
   margin-bottom: 1rem;
   text-align: center;
   border-radius: 10px;
+  font-family: var(--font-pr);
 
   .heading {
+    font-size: var(--heading-small);
     color: var(--text-pr);
   }
   .para {
@@ -28,4 +30,22 @@
 
 .box-container:hover {
   transform: scale(1.02);
+}
+
+@media screen and (max-width: 414px) {
+  .box-container {
+    width: 350px;
+
+    .box {
+      width: 80%;
+
+      .heading {
+        font-size: var(--button);
+        margin-bottom: 15px;
+      }
+      .para {
+        font-size: var(--para);
+      }
+    }
+  }
 }
