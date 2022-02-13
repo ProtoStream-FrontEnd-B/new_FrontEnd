@@ -49,6 +49,7 @@ import NidhiEir from "./app/schemes/NidhiEir";
 import ItPolicy from "./app/schemes/ItPolicy";
 import NidhiPrayas from "./app/schemes/NidhiPrayas";
 import TRL from "./app/startups/TRL/TRL";
+import ProjectMain from "./app/Project/ProjectMain";
 // import StartupDashboard from "./app/dashboard/StartupDashboard";
 
 const Routes = () => {
@@ -97,6 +98,8 @@ const Routes = () => {
           <Route path="/dev" exact component={StartupDetailsForm} />
           <Route path="/dev-check" exact component={Step3} />
           {/* <Route path="/dev-check" exact component={Form} /> */}
+
+          <PrivateRoute path="/projects" exact component={ProjectMain} />
 
           {/* Internships */}
           <PrivateRoute path="/internships" exact component={AllInternships} />
