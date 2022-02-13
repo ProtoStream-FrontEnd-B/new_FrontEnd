@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./css/AllSchemes.css";
 import Schemes from "./Schemes";
 import SchemeCard from "./SchemeCard";
+import YojanaCard from "./YojanaCard";
 
 function AllSchemes() {
   const [active, setActive] = useState("live");
@@ -42,16 +43,40 @@ function AllSchemes() {
         </div>
       </div>
       <div className="scheme-container">
-        {Schemes.map((item) => (
-          <SchemeCard
-            title={item.title}
-            poster={item.poster}
-            starts={item.starts}
-            deadline={item.Deadline}
-            link={item.registrationLink}
-            details={item.details}
+        <div className="static-schemes">
+          <YojanaCard
+            name="NIDHI-EIR"
+            link="/schemes/NidhiEir"
+            image="http://www.tbi-kiet.in/assets/images/nidhi-banner.jpg"
           />
-        ))}
+          <YojanaCard
+            name="NIDHI-PRAYAS"
+            link="/schemes/NidhiPrayas"
+            image="http://www.tbi-kiet.in/assets/images/prayas-banner.jpg"
+          />
+          <YojanaCard
+            name="IT & Security Policy"
+            link="/schemes/it_policy"
+            image="http://www.tbi-kiet.in/assets/images/image.jpg"
+          />
+          <YojanaCard
+            name="MEITY STARTUP"
+            link="http://www.tbi-kiet.in/uploads/tide2.pdf"
+            image="http://www.tbi-kiet.in/assets/images/MeitYtbi2.jpg"
+          />
+        </div>
+        <div className="all-schemes">
+          {Schemes.map((item) => (
+            <SchemeCard
+              title={item.title}
+              poster={item.poster}
+              starts={item.starts}
+              deadline={item.Deadline}
+              link={item.registrationLink}
+              details={item.details}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

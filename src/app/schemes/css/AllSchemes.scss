@@ -63,8 +63,20 @@
     background-color: var(--comp-pr);
     margin: 1rem 0;
     border-radius: 10px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    // display: flex;
+    // justify-content: space-evenly;
+    // flex-wrap: wrap;
+
+    .static-schemes {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    .all-schemes {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
   }
 }

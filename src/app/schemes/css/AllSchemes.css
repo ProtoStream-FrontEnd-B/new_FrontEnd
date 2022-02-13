@@ -80,6 +80,20 @@
   background-color: var(--comp-pr);
   margin: 1rem 0;
   border-radius: 10px;
+}
+
+.all-schemes .scheme-container .static-schemes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.all-schemes .scheme-container .all-schemes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -40,6 +40,14 @@ import { isLogin } from "./redux/actions/authAction";
 import { getTrl, UpdateTRL, GetIdea } from "./redux/actions/startupAction";
 import { setJson } from "./Global/Helper";
 import StartupDetailsForm from "./app/dashboard/StartupDetailsForm.jsx";
+import Step3 from "./app/startups/pages/Step3";
+import AllInternships from "./app/Internships/AllInternships";
+import Scheme from "./app/schemes/Scheme";
+import AllSchemes from "./app/schemes/AllSchemes";
+import AddSchemes from "./app/schemes/AddSchemes";
+import NidhiEir from "./app/schemes/NidhiEir";
+import ItPolicy from "./app/schemes/ItPolicy";
+import NidhiPrayas from "./app/schemes/NidhiPrayas";
 
 const Routes = () => {
   // const user = useSelector(state=> state.auth);
@@ -83,8 +91,30 @@ const Routes = () => {
           <Route path="/error_404" exact component={Error404} />
           <Route path="/error_99" exact component={Error99} />
           <Route path="/resources" exact component={Resources} />
-
           <Route path="/dev" exact component={StartupDetailsForm} />
+          <Route path="/dev-check" exact component={Step3} />
+          //Internships
+          <PrivateRoute path="/internships" exact component={AllInternships} />
+          //Schemes
+          <PrivateRoute path="/schemes" exact component={Scheme} />
+          <PrivateRoute
+            path="/schemes/competitions"
+            exact
+            component={AllSchemes}
+          />
+          <PrivateRoute
+            path="/schemes/addscheme"
+            exact
+            component={AddSchemes}
+          />
+          <Route path="/schemes/NidhiEir" exact component={NidhiEir} />
+          <Route path="/schemes/NidhiPrayas" exact component={NidhiPrayas} />
+          <Route path="/schemes/it_policy" exact component={ItPolicy} />
+          <PrivateRoute
+            path="/schemes/addscheme"
+            exact
+            component={AddSchemes}
+          />
           <PrivateRoute path="/user-dashboard" component={StudentDashboard} />
           {/* <Route path="/admin-dashboard" component={TbiDashboard} /> */}
           <PrivateRoute exact path="/startups" component={Main} />
@@ -124,3 +154,6 @@ const Routes = () => {
 };
 
 export default Routes;
+
+// sudo apt update and sudo apt not-update and what else can you do huh ?? so hello everyone my name is Himanshu Pandey and I'm a
+// 3rd year computer science and engineering student at KIET Group of Institutions
