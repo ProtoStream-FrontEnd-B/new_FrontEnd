@@ -1,5 +1,6 @@
 .start_page {
-  min-width: 100%;
+  width: 80%;
+  margin: auto;
   min-height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7,9 +8,8 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

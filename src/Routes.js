@@ -48,6 +48,7 @@ import AddSchemes from "./app/schemes/AddSchemes";
 import NidhiEir from "./app/schemes/NidhiEir";
 import ItPolicy from "./app/schemes/ItPolicy";
 import NidhiPrayas from "./app/schemes/NidhiPrayas";
+// import StartupDashboard from "./app/dashboard/StartupDashboard";
 
 const Routes = () => {
   // const user = useSelector(state=> state.auth);
@@ -93,6 +94,7 @@ const Routes = () => {
           <Route path="/resources" exact component={Resources} />
           <Route path="/dev" exact component={StartupDetailsForm} />
           <Route path="/dev-check" exact component={Step3} />
+          {/* <Route path="/dev-check" exact component={StartupDashboard} /> */}
           //Internships
           <PrivateRoute path="/internships" exact component={AllInternships} />
           //Schemes

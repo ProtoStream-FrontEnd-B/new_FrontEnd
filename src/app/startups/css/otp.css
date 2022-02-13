@@ -1,12 +1,19 @@
-.otp_container {
+.OTP {
   background-color: #2d2d2d;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-radius: 10px;
+  max-width: 1800px;
+  width: 90%;
+  margin: 1rem auto;
+  height: 780px;
+  min-height: 500px;
+  font-family: var(--font-pr);
+  color: white;
 }
 
-.otp_container .img_container {
+.OTP .img_container {
   padding: 3rem;
   width: 50%;
   display: -webkit-box;
@@ -20,127 +27,142 @@
           align-items: center;
 }
 
-.otp_container .img_container .otpimage {
+.OTP .img_container .otpimage {
   height: 80%;
 }
 
-.otp_container .main_container {
-  background: linear-gradient(111.9deg, var(--accnt-pr), var(--accent-sec));
-  width: 100%;
-  border-radius: 0 10px 10px 0;
+.OTP .otp-container {
+  padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.otp_container .main_container .head {
-  font-family: var(--font-pr);
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 60px;
-  margin-bottom: 2rem;
-  color: var(--text-pr);
-}
-
-.otp_container .main_container .form_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: linear-gradient(111.9deg, var(--accnt-pr), var(--accent-sec));
-  -webkit-box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
-          box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
   width: 60%;
-  height: 50%;
-  padding: 2rem;
+  position: relative;
 }
 
-.otp_container .main_container .form_container .form_head {
-  font-family: var(--font-sec);
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 29px;
-  margin-bottom: 0.5rem;
-  color: var(--text-pr);
-}
-
-.otp_container .main_container .form_container input {
-  height: 2rem;
-  margin-bottom: 2rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  background: transparent;
-  border: none;
-  width: 2rem;
-  background: #4d4d4d;
-  -webkit-box-shadow: 0px 4px 4px rgba(62, 37, 37, 0.25);
-          box-shadow: 0px 4px 4px rgba(62, 37, 37, 0.25);
-  border-radius: 10px;
-  outline: none;
-  padding: 0.5rem;
-  font-weight: bolder;
-  color: #ffffff;
-}
-
-.otp_container .main_container .form_container .para {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
-  color: #ffffff;
-}
-
-.otp_container .main_container .form_container .resend {
-  font-size: 22px;
-  font-weight: bolder;
-  cursor: pointer;
-}
-
-.otp_container .main_container .form_container .error {
-  margin-top: 0.5rem;
-  color: red;
-  font-weight: bolder;
-}
-
-.otp_container .main_container .btn_div {
-  margin-top: 2rem;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  padding: 2rem;
-}
-
-.otp_container .main_container .btn_div .btn {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bolder;
-  font-size: 18px;
-  border: none;
-  cursor: pointer;
-  background: #ffffff;
+.OTP .otp-container .otp-form {
+  margin: 2rem;
+  text-align: center;
+  padding: 1rem;
   border-radius: 5px;
-  padding: 0.8rem;
-  color: #ffb606;
 }
 
-.otp_container .main_container .btn_div .btn .arrow {
-  height: 0.8rem;
-  margin-left: 0.5rem;
+.OTP .otp-container .otp-form .head {
+  font-size: var(--heading-main);
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.OTP .otp-container .otp-form .sub-line {
+  font-size: var(--heading-small);
+  margin: 1rem;
+}
+
+.OTP .otp-container .otp-form .otp_input .otp-field {
+  background-color: var(--comp-sec);
+  color: white;
+  font-weight: bold;
+  font-family: var(--font-pr);
+  padding: 0.5rem;
+  font-size: var(--button);
+  text-align: center;
+  width: 50px;
+  border: none;
+  border-radius: 5px;
+  margin: 1rem 5px;
+}
+
+.OTP .otp-container .otp-form .otp-para {
+  font-size: var(--span);
+  margin: 1rem 0;
+}
+
+.OTP .otp-container .otp-form .otp-para .resend {
+  color: var(--accent-sec);
+  margin: 10px;
+  cursor: pointer;
+}
+
+.OTP .otp-container .otp-form .otp-para .resend:hover {
+  text-decoration: underline;
+}
+
+.OTP .otp-container .otp-form .otp-btn {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: var(--button);
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.OTP .otp-container .otp-form .otp-btn img {
+  margin-left: 15px;
+}
+
+.OTP .otp-container .otp-form .otp-btn:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 414px) {
+  .OTP {
+    height: 700px;
+    min-height: 650px;
+  }
+  .OTP .img_container {
+    display: none;
+  }
+  .OTP .otp-container {
+    padding: 10px;
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .OTP .otp-container .otp-form {
+    width: 100%;
+    padding: 0;
+  }
+  .OTP .otp-container .otp-form .head {
+    font-size: var(--heading-small);
+  }
+  .OTP .otp-container .otp-form .sub-line {
+    font-size: var(--span);
+    font-weight: bold;
+  }
+  .OTP .otp-container .otp-form .otp_input .otp-field {
+    font-size: var(--span);
+    width: 35px;
+  }
+  .OTP .otp-container .otp-form .otp-para {
+    font-size: var(--para);
+  }
+  .OTP .otp-container .otp-form .otp-btn {
+    position: static;
+    margin: 2rem auto;
+  }
 }
 /*# sourceMappingURL=otp.css.map */

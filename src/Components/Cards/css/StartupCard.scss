@@ -1,10 +1,8 @@
 .Startup_card {
   transition: all ease-in-out 0.3s;
   background-color: var(--comp-pr);
-  height: 60vh;
-  min-height: fit-content;
-  min-width: 30rem;
-  width: 40%;
+  height: 750px;
+  width: 500px;
   margin: 2rem;
   border-radius: 10px;
   display: flex;
@@ -22,7 +20,8 @@
   }
 
   .para {
-    font-size: var(--heading-small);
+    font-size: var(--button);
+    font-weight: bold;
     display: inline-block;
     width: 25rem;
     align-self: center;
@@ -31,10 +30,11 @@
 
   .btn_div {
     text-align: center;
-    align-self: center;
     position: absolute;
     bottom: 2rem;
-    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
     display: flex;
     flex-direction: column;
 
@@ -42,7 +42,7 @@
       background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
       color: #fff;
       border-radius: 5px;
-      margin: 1rem;
+      margin-bottom: 1rem;
       width: 100%;
       min-height: fit-content;
       padding: 0.5rem;
@@ -60,7 +60,7 @@
     .btnhover {
       color: #fff;
       border-radius: 5px;
-      margin: 1rem;
+      margin-bottom: 1rem;
       width: 100%;
       min-height: fit-content;
       padding: 0.5rem;
@@ -85,4 +85,10 @@ div:empty {
 
 .Startup_card:hover .btn_div .btn {
   background-color: var(--comp-pr);
+}
+
+@media screen and (max-width: 414px) {
+  .Startup_card {
+    height: 500px;
+  }
 }

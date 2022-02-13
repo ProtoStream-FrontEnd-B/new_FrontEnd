@@ -2,12 +2,8 @@
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
   background-color: var(--comp-pr);
-  height: 60vh;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-  min-width: 30rem;
-  width: 40%;
+  height: 750px;
+  width: 500px;
   margin: 2rem;
   border-radius: 10px;
   display: -webkit-box;
@@ -33,7 +29,8 @@
 }
 
 .Startup_card .para {
-  font-size: var(--heading-small);
+  font-size: var(--button);
+  font-weight: bold;
   display: inline-block;
   width: 25rem;
   -ms-flex-item-align: center;
@@ -44,11 +41,12 @@
 
 .Startup_card .btn_div {
   text-align: center;
-  -ms-flex-item-align: center;
-      align-self: center;
   position: absolute;
   bottom: 2rem;
-  width: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,7 +61,7 @@
   background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
   color: #fff;
   border-radius: 5px;
-  margin: 1rem;
+  margin-bottom: 1rem;
   width: 100%;
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
@@ -86,7 +84,7 @@
 .Startup_card .btn_div .btnhover {
   color: #fff;
   border-radius: 5px;
-  margin: 1rem;
+  margin-bottom: 1rem;
   width: 100%;
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
@@ -115,5 +113,11 @@ div:empty {
 
 .Startup_card:hover .btn_div .btn {
   background-color: var(--comp-pr);
+}
+
+@media screen and (max-width: 414px) {
+  .Startup_card {
+    height: 500px;
+  }
 }
 /*# sourceMappingURL=StartupCard.css.map */

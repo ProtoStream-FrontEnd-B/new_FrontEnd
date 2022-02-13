@@ -12,27 +12,26 @@ const Main = () => {
   const userid = setJson(localStorage.getItem("user"));
   const id = userid._id;
   const dispatch = useDispatch();
- const history = useHistory();
+  const history = useHistory();
   const start_up = useSelector((state) => state.startup);
-console.log(start_up)
+  console.log(start_up);
   const onHandleLoad = (id) => {
-      dispatch(getTrl(id));
-     
-        if(start_up.Idea!=null){
-            console.log(start_up);
-            history.push('/startups/CYB')
-        }
-      
-    
+    dispatch(getTrl(id));
 
-  };
-  useEffect(()=>{onHandleLoad(id)}, []);
-
-const onRegisterClick = ()=>{
-    if(start_up.Idea===null){
-        history.push('/startups/CYB')
+    if (start_up.Idea != null) {
+      console.log(start_up);
+      history.push("/startups/CYB");
     }
-}
+  };
+  useEffect(() => {
+    onHandleLoad(id);
+  }, []);
+
+  const onRegisterClick = () => {
+    if (start_up.Idea === null) {
+      history.push("/startups/CYB");
+    }
+  };
 
   const startup_data = useSelector((state) => state.startup);
   console.log(startup_data);
@@ -41,7 +40,7 @@ const onRegisterClick = ()=>{
   return (
     <div className="start_page">
       <StartupCard
-        route1="/resorces"
+        route1="/resources"
         route2={route2}
         head="Startup"
         para=" “Innovation distinguishes between a leader and a follower.” "
