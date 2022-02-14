@@ -102,3 +102,35 @@
     }
   }
 }
+
+@media screen and (max-width: 414px) {
+  .auth {
+    height: 100%;
+    width: 380px;
+    margin: 1rem auto;
+
+    .container {
+      .heading {
+        font-size: var(--heading-med);
+      }
+      .sub-head {
+        font-size: var(--span);
+      }
+
+      .form {
+        .inp-box {
+          font-size: var(--para);
+        }
+
+        .para {
+          font-size: 12px;
+        }
+
+        .sign-btn {
+          padding: 0.5rem;
+          font-size: var(--span);
+        }
+      }
+    }
+  }
+}

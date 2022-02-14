@@ -110,4 +110,28 @@
 .auth .container .form .sign-btn:hover {
   background-color: var(--accent-pr);
 }
+
+@media screen and (max-width: 414px) {
+  .auth {
+    height: 100%;
+    width: 380px;
+    margin: 1rem auto;
+  }
+  .auth .container .heading {
+    font-size: var(--heading-med);
+  }
+  .auth .container .sub-head {
+    font-size: var(--span);
+  }
+  .auth .container .form .inp-box {
+    font-size: var(--para);
+  }
+  .auth .container .form .para {
+    font-size: 12px;
+  }
+  .auth .container .form .sign-btn {
+    padding: 0.5rem;
+    font-size: var(--span);
+  }
+}
 /*# sourceMappingURL=Auth.css.map */

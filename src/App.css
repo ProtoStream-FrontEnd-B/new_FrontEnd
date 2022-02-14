@@ -4,6 +4,7 @@ body {
     url(../assets/images/noise.svg); */
   background: var(--bg-pr);
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 *::-webkit-scrollbar {
