@@ -34,8 +34,8 @@ function ProjectMain() {
         para={
           "list of projects submitted by  final year students with their particular branches and domains"
         }
-        route1={"/"}
-        route2={"/"}
+        route1={"/projects/final_year"}
+        route2={"/projects/final_year"}
       />
     </div>
   );

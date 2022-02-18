@@ -50,6 +50,7 @@ import ItPolicy from "./app/schemes/ItPolicy";
 import NidhiPrayas from "./app/schemes/NidhiPrayas";
 import TRL from "./app/startups/TRL/TRL";
 import ProjectMain from "./app/Project/ProjectMain";
+import Branches from "./app/Project/Branches";
 // import StartupDashboard from "./app/dashboard/StartupDashboard";
 
 const Routes = () => {
@@ -100,6 +101,11 @@ const Routes = () => {
           {/* <Route path="/dev-check" exact component={Form} /> */}
 
           <PrivateRoute path="/projects" exact component={ProjectMain} />
+          <PrivateRoute
+            path="/projects/final_year"
+            exact
+            component={Branches}
+          />
 
           {/* Internships */}
           <PrivateRoute path="/internships" exact component={AllInternships} />
