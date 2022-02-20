@@ -225,21 +225,65 @@
 }
 
 @media screen and (max-width: 414px) {
+  .main-container {
+    width: 350px;
+  }
+  .main-container .container {
+    width: 100%;
+    padding: 0;
+  }
   .main-container .container .verify {
     position: static;
   }
-  .main-container .container .basic-details .left .row {
+  .main-container .container .response-inp {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+  }
+  .main-container .container .basic-details {
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .main-container .container .basic-details .left,
+  .main-container .container .basic-details .right {
+    margin: 0;
+    width: 100%;
+  }
+  .main-container .container .basic-details .left .row,
+  .main-container .container .basic-details .right .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-container .container .basic-details .left .row .que,
+  .main-container .container .basic-details .right .row .que {
+    margin-bottom: 10px;
+  }
+  .main-container .container .basic-details .left .row .preview,
+  .main-container .container .basic-details .right .row .preview {
+    display: none;
+  }
+  .main-container .container .questions {
+    margin: 0;
+    width: 100%;
+  }
+  .main-container .container .questions .field {
+    margin: 1.5rem 0;
+  }
+  .main-container .container .btn {
+    width: 300px;
+  }
+  .main-container .container .control-buttons {
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main-container .container .control-buttons button {
+    margin: 1rem 0;
+    min-width: 300px;
   }
 }
 /*# sourceMappingURL=StartupDetails.css.map */

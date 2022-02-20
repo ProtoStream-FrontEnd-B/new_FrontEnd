@@ -72,7 +72,7 @@
           justify-content: space-between;
           width: 70%;
 
-          .preview{
+          .preview {
             width: 80px;
           }
 
@@ -195,18 +195,61 @@
 
 @media screen and (max-width: 414px) {
   .main-container {
+    width: 350px;
+
     .container {
+      width: 100%;
+      padding: 0;
+
       .verify {
         position: static;
       }
+
+      .response-inp {
+        width: 100%;
+      }
       .basic-details {
-        .left {
+        width: 100%;
+        flex-direction: column;
+
+        .left,
+        .right {
+          margin: 0;
+          width: 100%;
+
           .row {
-            width: 100%;
-            display: flex;
-            align-items: flex-start;
             flex-direction: column;
+
+            .que {
+              margin-bottom: 10px;
+            }
+            .preview {
+              display: none;
+            }
           }
+        }
+      }
+
+      .questions {
+        margin: 0;
+        width: 100%;
+
+        .field {
+          margin: 1.5rem 0;
+        }
+      }
+
+      .btn {
+        width: 300px;
+      }
+
+      .control-buttons {
+        width: 100%;
+        align-items: center;
+
+        button {
+          margin: 1rem 0;
+          min-width: 300px;
         }
       }
     }
