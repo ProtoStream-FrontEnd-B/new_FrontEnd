@@ -124,9 +124,120 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .step-2 {
+    // background-color: red;
+    width: 700px;
+    height: 700px;
+
+    .stepForm-container {
+      width: 100%;
+
+      .sidebar {
+        display: none;
+      }
+
+      .main-form {
+        width: 100%;
+        padding: 1rem;
+
+        .form {
+          padding: 0;
+
+          .main-head {
+            font-size: var(--heading-med);
+          }
+          .form-containers {
+            width: 100%;
+
+            .field {
+              flex-direction: column;
+              align-items: flex-start;
+              margin: 1rem 0;
+
+              label {
+                font-size: var(--para);
+              }
+              .inp {
+                width: 100%;
+              }
+            }
+          }
+          .btm-sec {
+            flex-direction: column;
+            padding: 0;
+            padding-bottom: 1rem;
+            .text {
+              width: 100%;
+              font-size: 14px;
+            }
+            .submit {
+              width: 70%;
+              font-size: var(--span);
+              margin: 1rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 414px) {
   .step-2 {
-    background-color: red;
+    // background-color: red;
+    width: 380px;
     height: 700px;
+
+    .stepForm-container {
+      width: 100%;
+
+      .sidebar {
+        display: none;
+      }
+
+      .main-form {
+        width: 100%;
+        padding: 1rem;
+
+        .form {
+          padding: 0;
+
+          .main-head {
+            font-size: var(--heading-med);
+          }
+          .form-containers {
+            width: 100%;
+
+            .field {
+              flex-direction: column;
+              align-items: flex-start;
+              margin: 1rem 0;
+
+              label {
+                font-size: var(--para);
+              }
+              .inp {
+                width: 100%;
+              }
+            }
+          }
+          .btm-sec {
+            flex-direction: column;
+            padding: 0;
+            padding-bottom: 1rem;
+            .text {
+              width: 100%;
+              font-size: 14px;
+            }
+            .submit {
+              width: 70%;
+              font-size: var(--span);
+              margin: 1rem 0;
+            }
+          }
+        }
+      }
+    }
   }
 }

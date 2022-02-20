@@ -124,7 +124,8 @@ const Form = () => {
   };
   //const nextstep
 
-  const verified = data.verified;
+  // const verified = data.verified;
+  const verified = 2;
 
   return (
     <div className="step-2">

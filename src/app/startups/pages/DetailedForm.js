@@ -1,20 +1,17 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
-import arrow from "../../../Assets/icons/arrow.svg";
+// import arrow from "../../../Assets/icons/arrow.svg";
 import { setJson } from "../../../Global/Helper";
 import { CreateStep3, GetIdea } from "../../../redux/actions/startupAction";
-import { OpenStep3, GetStep2 } from "../../../redux/actions/startupAction";
-
-
+// import { OpenStep3, GetStep2 } from "../../../redux/actions/startupAction";
 
 const DetailedForm = () => {
   const idea_detail = useSelector((state) => state.startup);
- 
- 
+
   const dispatch = useDispatch();
   const history = useHistory();
- 
+
   const [data, setData] = useState({
     comment: "",
     Gender: "",
@@ -28,47 +25,87 @@ const DetailedForm = () => {
     Q5: "",
     Q6: "",
     Q7: "",
-    verified:0
+    verified: 0,
   });
   const startup_detail = useSelector((state) => state.startup);
 
   const handleonLoad = () => {
-   
-   
     console.log(startup_detail, "hey its the new startup detail");
 
-
-   
-    console.log(idea_detail)
+    console.log(idea_detail);
     if (idea_detail.Idea.status === "approved") {
-    console.log("its the open step2 form ")
-     
-     
+      console.log("its the open step2 form ");
     } else if (idea_detail.Idea.status === "under-verified") {
-
-      if(startup_detail.Step3!=null || startup_detail.Step3!=undefined){
-        console.log("Hey this must work otherwise its no use")
-        const {comment , Gender , Aadhar , PAN, Category , Q1 ,Q2 , Q3, Q4 , Q5 , Q6 , Q7} = startup_detail.Step3;
-        setData({...data ,comment:comment , Gender:Gender , Aadhar:Aadhar,PAN:PAN, Category:Category  ,Q1:Q1 , Q2:Q2, Q3:Q3, Q4:Q4, Q5:Q5, Q6:Q6, Q7:Q7 , verified:1})
-      
-      } else{
-        setData({...data , verified:1})
+      if (startup_detail.Step3 != null || startup_detail.Step3 != undefined) {
+        console.log("Hey this must work otherwise its no use");
+        const {
+          comment,
+          Gender,
+          Aadhar,
+          PAN,
+          Category,
+          Q1,
+          Q2,
+          Q3,
+          Q4,
+          Q5,
+          Q6,
+          Q7,
+        } = startup_detail.Step3;
+        setData({
+          ...data,
+          comment: comment,
+          Gender: Gender,
+          Aadhar: Aadhar,
+          PAN: PAN,
+          Category: Category,
+          Q1: Q1,
+          Q2: Q2,
+          Q3: Q3,
+          Q4: Q4,
+          Q5: Q5,
+          Q6: Q6,
+          Q7: Q7,
+          verified: 1,
+        });
+      } else {
+        setData({ ...data, verified: 1 });
       }
-     
-      
-
-    } else if( idea_detail.Idea.status==='verified'){
-
-      if(startup_detail.Step3!==null || startup_detail.Step3!==undefined){
-        
-        const {comment , Gender , Aadhar , PAN, Category , Q1 ,Q2 , Q3, Q4 , Q5 , Q6 , Q7} = startup_detail.Step3;
-        setData({...data ,comment:comment , Gender:Gender , Aadhar:Aadhar,PAN:PAN, Category:Category  ,Q1:Q1 , Q2:Q2, Q3:Q3, Q4:Q4, Q5:Q5, Q6:Q6, Q7:Q7 , verified:2})
-      
-       } else{
-        setData({...data , verified:2})
-       }
-     
-
+    } else if (idea_detail.Idea.status === "verified") {
+      if (startup_detail.Step3 !== null || startup_detail.Step3 !== undefined) {
+        const {
+          comment,
+          Gender,
+          Aadhar,
+          PAN,
+          Category,
+          Q1,
+          Q2,
+          Q3,
+          Q4,
+          Q5,
+          Q6,
+          Q7,
+        } = startup_detail.Step3;
+        setData({
+          ...data,
+          comment: comment,
+          Gender: Gender,
+          Aadhar: Aadhar,
+          PAN: PAN,
+          Category: Category,
+          Q1: Q1,
+          Q2: Q2,
+          Q3: Q3,
+          Q4: Q4,
+          Q5: Q5,
+          Q6: Q6,
+          Q7: Q7,
+          verified: 2,
+        });
+      } else {
+        setData({ ...data, verified: 2 });
+      }
     }
   };
   useEffect(() => {
@@ -90,7 +127,6 @@ const DetailedForm = () => {
     });
   };
 
-  
   const onHandleSubmit = (e) => {
     e.preventDefault();
     const userid = setJson(localStorage.getItem("user"));
@@ -123,9 +159,9 @@ const DetailedForm = () => {
     console.log(data);
   };
   //const nextstep
-const verified = data.verified;
+  const verified = data.verified;
 
-console.log(`verified ${verified}`)
+  console.log(`verified ${verified}`);
   return (
     <div className="form">
       <form>

@@ -163,10 +163,121 @@
   width: 70%;
 }
 
+@media screen and (max-width: 768px) {
+  .step-2 {
+    width: 700px;
+    height: 700px;
+  }
+  .step-2 .stepForm-container {
+    width: 100%;
+  }
+  .step-2 .stepForm-container .sidebar {
+    display: none;
+  }
+  .step-2 .stepForm-container .main-form {
+    width: 100%;
+    padding: 1rem;
+  }
+  .step-2 .stepForm-container .main-form .form {
+    padding: 0;
+  }
+  .step-2 .stepForm-container .main-form .form .main-head {
+    font-size: var(--heading-med);
+  }
+  .step-2 .stepForm-container .main-form .form .form-containers {
+    width: 100%;
+  }
+  .step-2 .stepForm-container .main-form .form .form-containers .field {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 1rem 0;
+  }
+  .step-2 .stepForm-container .main-form .form .form-containers .field label {
+    font-size: var(--para);
+  }
+  .step-2 .stepForm-container .main-form .form .form-containers .field .inp {
+    width: 100%;
+  }
+  .step-2 .stepForm-container .main-form .form .btm-sec {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+  .step-2 .stepForm-container .main-form .form .btm-sec .text {
+    width: 100%;
+    font-size: 14px;
+  }
+  .step-2 .stepForm-container .main-form .form .btm-sec .submit {
+    width: 70%;
+    font-size: var(--span);
+    margin: 1rem 0;
+  }
+}
+
 @media screen and (max-width: 414px) {
   .step-2 {
-    background-color: red;
+    width: 380px;
     height: 700px;
+  }
+  .step-2 .stepForm-container {
+    width: 100%;
+  }
+  .step-2 .stepForm-container .sidebar {
+    display: none;
+  }
+  .step-2 .stepForm-container .main-form {
+    width: 100%;
+    padding: 1rem;
+  }
+  .step-2 .stepForm-container .main-form .form {
+    padding: 0;
+  }
+  .step-2 .stepForm-container .main-form .form .main-head {
+    font-size: var(--heading-med);
+  }
+  .step-2 .stepForm-container .main-form .form .form-containers {
+    width: 100%;
+  }
+  .step-2 .stepForm-container .main-form .form .form-containers .field {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 1rem 0;
+  }
+  .step-2 .stepForm-container .main-form .form .form-containers .field label {
+    font-size: var(--para);
+  }
+  .step-2 .stepForm-container .main-form .form .form-containers .field .inp {
+    width: 100%;
+  }
+  .step-2 .stepForm-container .main-form .form .btm-sec {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+  .step-2 .stepForm-container .main-form .form .btm-sec .text {
+    width: 100%;
+    font-size: 14px;
+  }
+  .step-2 .stepForm-container .main-form .form .btm-sec .submit {
+    width: 70%;
+    font-size: var(--span);
+    margin: 1rem 0;
   }
 }
 /*# sourceMappingURL=Step2.css.map */

@@ -40,29 +40,18 @@
 }
 
 .Cdepartment .container {
-  background-color: var(--comp-pr);
-  margin-left: auto;
-  margin-right: auto;
   width: 95%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  overflow: auto;
-  max-height: 80vh;
-  padding: 2rem;
+  background-color: var(--comp-sec);
   border-radius: 10px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  padding: 1rem;
+  margin: auto;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  place-items: center;
+  overflow: auto;
 }
 
 @media screen and (max-width: 768px) {

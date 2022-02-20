@@ -51,6 +51,7 @@ import NidhiPrayas from "./app/schemes/NidhiPrayas";
 import TRL from "./app/startups/TRL/TRL";
 import ProjectMain from "./app/Project/ProjectMain";
 import Branches from "./app/Project/Branches";
+import Dform from "./app/startups/pages/Dform";
 // import StartupDashboard from "./app/dashboard/StartupDashboard";
 
 const Routes = () => {
@@ -97,7 +98,7 @@ const Routes = () => {
           <Route path="/resources" exact component={Resources} />
           <Route path="/trl_test" exact component={TRL} />
           <Route path="/dev" exact component={StartupDetailsForm} />
-          <Route path="/dev-check" exact component={Step3} />
+          {/* <Route path="/dev-check" exact component={Step3} /> */}
           {/* <Route path="/dev-check" exact component={Form} /> */}
 
           <PrivateRoute path="/projects" exact component={ProjectMain} />
@@ -148,7 +149,7 @@ const Routes = () => {
           />
           <PrivateRoute
             path="/startups/Register/Dform"
-            component={DetailedForm}
+            component={Dform}
             exact
           />
           <TbiRoute

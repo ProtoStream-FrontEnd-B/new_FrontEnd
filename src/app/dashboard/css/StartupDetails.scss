@@ -21,6 +21,35 @@
       right: 0;
     }
 
+    .response-inp-radio {
+      .radio-inp {
+        margin-right: 15px;
+      }
+      label {
+        margin-right: 45px;
+      }
+    }
+
+    .response-selection {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-family: var(--font-pr);
+      font-size: var(--para);
+      background-color: white;
+      width: 50%;
+    }
+
+    .response-inp {
+      width: 50%;
+      background-color: transparent;
+      padding: 5px;
+      font-family: var(--font-pr);
+      font-size: var(--para);
+      border: none;
+      border-bottom: 2px solid black;
+    }
+
     .basic-details {
       display: flex;
 
@@ -28,6 +57,7 @@
       .right {
         width: 48%;
         margin: 1rem;
+
         .row,
         .row-alt {
           margin: 1rem 0;
@@ -40,7 +70,11 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 50%;
+          width: 70%;
+
+          .preview{
+            width: 80px;
+          }
 
           .response {
             .profile {
