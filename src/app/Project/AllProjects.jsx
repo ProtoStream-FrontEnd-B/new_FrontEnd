@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "./css/AllProjects.css";
 import { DeskProjectCard } from "../../Components/Cards/ProjectCard";
+import ProjectModal from "../../Components/Modal/ProjectModal";
 
 function AllProjects() {
   const projects = [
     {
       title: "ProtoStream",
+      id: 0,
+      phone: 8476090539,
+      roll: 1900290100073,
       leader: "Siddhant Siwach",
       branch: "CSE",
       total_members: "4",
@@ -34,7 +38,10 @@ function AllProjects() {
       ],
     },
     {
-      title: "ProtoStream",
+      title: "Roxet",
+      id: 1,
+      phone: 8476090539,
+      roll: 1900290100073,
       leader: "Siddhant Siwach",
       branch: "CSE",
       total_members: "4",
@@ -65,13 +72,38 @@ function AllProjects() {
   ];
   const [currValue, setCurrValue] = useState(2019);
   const years = [2019, 2020, 2021];
+  const [showModal, setShowModal] = useState(false);
+  const [curr, setCurr] = useState(projects[0]);
 
   const handleYears = (year) => {
     setCurrValue(year);
   };
 
+  const handleModal = (id) => {
+    setShowModal(true);
+    setCurr(projects[id]);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="projects">
+      {showModal ? (
+        <ProjectModal
+          title={curr.title}
+          leader={curr.leader}
+          branch={curr.branch}
+          phone={curr.phone}
+          total={curr.total_members}
+          members={curr.members}
+          date={curr.submission}
+          roll={curr.roll}
+          summary={curr.summary}
+          closeModal={handleClose}
+        />
+      ) : null}
       <h2 className="heading">Hackathons Projects</h2>
       <div className="projects-sec">
         <div className="project-header">
@@ -96,6 +128,8 @@ function AllProjects() {
               para={project.summary}
               branch={project.branch}
               members={project.total_members}
+              id={project.id}
+              modal={() => handleModal(project.id)}
             />
           ))}
         </div>
