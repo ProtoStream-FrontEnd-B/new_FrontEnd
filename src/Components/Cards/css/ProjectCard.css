@@ -1,9 +1,8 @@
 .project-container {
   background-color: white;
   width: 100%;
-  margin: 1rem;
   border-radius: 10px;
-  margin: 0.5rem;
+  margin: 0.5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

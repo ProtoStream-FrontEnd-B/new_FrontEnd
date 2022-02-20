@@ -53,6 +53,7 @@ import ProjectMain from "./app/Project/ProjectMain";
 import Branches from "./app/Project/Branches";
 import Dform from "./app/startups/pages/Dform";
 import YearlyProjectsModal from "./Components/Modal/YearlyProjectsModal";
+import AllProjects from "./app/Project/AllProjects";
 // import StartupDashboard from "./app/dashboard/StartupDashboard";
 
 const Routes = () => {
@@ -103,6 +104,11 @@ const Routes = () => {
           <Route path="/dev-check" exact component={YearlyProjectsModal} />
 
           <PrivateRoute path="/projects" exact component={ProjectMain} />
+          <PrivateRoute
+            path="/projects/hackathons"
+            exact
+            component={AllProjects}
+          />
           <PrivateRoute
             path="/projects/final_year"
             exact

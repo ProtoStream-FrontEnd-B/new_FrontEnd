@@ -1,0 +1,96 @@
+.projects {
+  width: 90%;
+  margin: 1rem auto;
+  font-family: var(--font-pr);
+}
+
+.projects .heading {
+  font-size: var(--heading-med);
+  color: white;
+  margin: 1rem;
+}
+
+.projects .projects-sec {
+  border-radius: 10px;
+  width: 100%;
+  height: 700px;
+  padding: 1rem;
+  background: -webkit-gradient(linear, left top, right top, from(var(--accent-sec)), to(var(--accent-pr)));
+  background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
+}
+
+.projects .projects-sec .project-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95%;
+  margin: 1rem auto;
+}
+
+.projects .projects-sec .project-header .years .year {
+  font-size: var(--heading-small);
+  cursor: pointer;
+  font-family: var(--font-pr);
+  font-weight: bold;
+  border: none;
+  margin: 10px;
+  padding: 0 1rem;
+  border-bottom: 5px solid transparent;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  background-color: transparent;
+}
+
+.projects .projects-sec .project-header .years .year:hover {
+  border-bottom: 5px solid black;
+}
+
+.projects .projects-sec .project-header .years .active {
+  color: white;
+  border-color: white;
+}
+
+.projects .projects-sec .project-header .years .active:hover {
+  border-color: white;
+}
+
+.projects .projects-sec .project-header .search input {
+  width: 100%;
+  padding: 10px;
+  font-family: var(--font-pr);
+  font-size: var(--para);
+  border-radius: 5px;
+  border: none;
+  background-color: var(--comp-sec);
+  color: white;
+  font-weight: bold;
+}
+
+.projects .projects-sec .projects-container {
+  width: 95%;
+  margin: auto;
+}
+
+@media screen and (max-width: 414px) {
+  .projects .heading {
+    font-size: var(--heading-small);
+  }
+  .projects .projects-sec .project-header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .projects .projects-sec .project-header .years {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=AllProjects.css.map */
