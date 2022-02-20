@@ -52,6 +52,7 @@ import TRL from "./app/startups/TRL/TRL";
 import ProjectMain from "./app/Project/ProjectMain";
 import Branches from "./app/Project/Branches";
 import Dform from "./app/startups/pages/Dform";
+import YearlyProjectsModal from "./Components/Modal/YearlyProjectsModal";
 // import StartupDashboard from "./app/dashboard/StartupDashboard";
 
 const Routes = () => {
@@ -99,7 +100,7 @@ const Routes = () => {
           <Route path="/trl_test" exact component={TRL} />
           <Route path="/dev" exact component={StartupDetailsForm} />
           {/* <Route path="/dev-check" exact component={Step3} /> */}
-          {/* <Route path="/dev-check" exact component={Form} /> */}
+          <Route path="/dev-check" exact component={YearlyProjectsModal} />
 
           <PrivateRoute path="/projects" exact component={ProjectMain} />
           <PrivateRoute
