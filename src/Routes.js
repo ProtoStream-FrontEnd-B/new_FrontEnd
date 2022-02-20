@@ -55,6 +55,8 @@ import Dform from "./app/startups/pages/Dform";
 import YearlyProjectsModal from "./Components/Modal/YearlyProjectsModal";
 import AllProjects from "./app/Project/AllProjects";
 import ProjectModal from "./Components/Modal/ProjectModal";
+import AllInnotech from "./app/Project/AllInnotech";
+import AddForm from "./app/Project/Form/Addform";
 // import StartupDashboard from "./app/dashboard/StartupDashboard";
 
 const Routes = () => {
@@ -109,6 +111,12 @@ const Routes = () => {
             path="/projects/hackathons"
             exact
             component={AllProjects}
+          />
+
+          <PrivateRoute
+            path="/projects/innotech"
+            exact
+            component={AllInnotech}
           />
           <PrivateRoute
             path="/projects/final_year"
