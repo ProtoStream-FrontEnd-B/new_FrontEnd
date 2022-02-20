@@ -1,7 +1,7 @@
 .modal-container {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow-y: hidden;
   position: absolute;
   background-color: rgba($color: #000000, $alpha: 0.6);
   top: 0;
@@ -9,7 +9,8 @@
   z-index: 100;
 
   .modal {
-    width: 1200px;
+    // width: 1200px;
+    width: 80%;
     height: 700px;
     border-radius: 10px;
     margin: auto;
@@ -103,6 +104,48 @@
       iframe {
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .modal-container {
+    width: 100%;
+
+    .modal {
+      width: 350px;
+      padding: 10px;
+
+      .head {
+        .close {
+          font-size: 25px;
+        }
+
+        .dept_name {
+          font-size: var(--heading-small);
+        }
+      }
+
+      .modal-header {
+        .years {
+          overflow: auto;
+          width: 80%;
+
+          .year {
+            font-size: var(--span);
+            margin: 0;
+          }
+        }
+
+        .download {
+          .download-btn {
+            img {
+              width: 30px;
+              height: 25px;
+            }
+          }
+        }
       }
     }
   }
