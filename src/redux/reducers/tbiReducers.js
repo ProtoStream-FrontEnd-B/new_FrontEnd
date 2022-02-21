@@ -5,9 +5,11 @@ import {
   LOGIN_TBI,
   REGISTER_TBI,
   GET_TBI_INFO,
+  GET_TBI_IDEAS,
   CREATE_SLOT,
   OPEN_IDEA_TBI,
   CHECK_SLOT,
+  CLEAR_STATE,
   CHECK_ATTENDANCE_SLOT,
   UPDATE_ATTENDANCE,
 } from "../actions/types";
@@ -57,7 +59,7 @@ export default function (state = initialState, action) {
     case CREATE_SLOT:
       return {
         ...state,
-        Ideas: action.payload,
+        Idea: action.payload.Idea,
       };
 
     case CHECK_SLOT:
@@ -69,15 +71,25 @@ export default function (state = initialState, action) {
     case CHECK_ATTENDANCE_SLOT:
       return{
         ...state,
-        Ideas: action.payload
+        Ideas: {Ideas :action.payload.Ideas}
       } 
-      
+    case GET_TBI_IDEAS:
+      return{
+        ...state,
+        Ideas: action.payload.Ideas
+      }  
     case UPDATE_ATTENDANCE:
       return{
         ...state,
         Ideas: action.payload
       }  
-
+    case CLEAR_STATE:
+      return{
+        ...state,
+        Ideas:null,
+        Idea:null,
+        Message: null,
+      }
     default:
       return state;
   }

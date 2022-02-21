@@ -72,6 +72,7 @@ const Register = () => {
           para="Register your Mobile Number"
           btnName="Go"
           img={OtpVerify}
+          
           status={card_status.card_status1}
         />
         <Scard

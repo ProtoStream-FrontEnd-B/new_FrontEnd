@@ -56,7 +56,7 @@ import YearlyProjectsModal from "./Components/Modal/YearlyProjectsModal";
 import AllProjects from "./app/Project/AllProjects";
 import ProjectModal from "./Components/Modal/ProjectModal";
 import AllInnotech from "./app/Project/AllInnotech";
-import AddForm from "./app/Project/Form/Addform";
+// import AddForm from "./app/Project/Form/Addform";
 // import StartupDashboard from "./app/dashboard/StartupDashboard";
 
 const Routes = () => {
@@ -165,7 +165,7 @@ const Routes = () => {
           />
           <PrivateRoute
             path="/startups/Register/Dform"
-            component={Dform}
+            component={DetailedForm}
             exact
           />
           <TbiRoute

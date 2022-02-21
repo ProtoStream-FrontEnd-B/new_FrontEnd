@@ -128,6 +128,8 @@ const DetailedForm = () => {
   };
 
   const onHandleSubmit = (e) => {
+
+    console.log("At least htis work i dont know klnowown")
     e.preventDefault();
     const userid = setJson(localStorage.getItem("user"));
     console.log(userid);

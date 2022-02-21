@@ -52,7 +52,8 @@ export const CREATE_SLOT = "CREATE_SLOT"
 export const CHECK_SLOT = "CHECK_SLOT";
 export const CHECK_ATTENDANCE_SLOT = "CHECK_ATTENDANCE_SLOT";
 export const UPDATE_ATTENDANCE = "UPDATE_ATTENDANCE";
-
+export const GET_TBI_IDEAS = "GET_TBI_IDEAS";
+export const CLEAR_STATE = "CLEAR_STATE";
 
 // Loading type 
 

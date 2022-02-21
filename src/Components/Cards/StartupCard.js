@@ -27,7 +27,7 @@ const StartupCard = ({ btn1, btn2, head, para, route1, route2 }) => {
         <h1 className="head">{head}</h1>
         <p className="para">{para}</p>
         <div className="btn_div">
-          <div onClick={()=>{onBtnClick(route1)}} className={hoverBtn ? "btnhover" : "btn"}>
+          <div  onClick={()=>{onBtnClick(route1)}} className={hoverBtn ? "btnhover" : "btn"}>
             {btn1}
           </div>
           <div onClick={()=>{onBtnClick(route2)}} className={hoverBtn ? "btnhover" : "btn"}>

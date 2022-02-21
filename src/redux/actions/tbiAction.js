@@ -10,7 +10,8 @@ import {
   CREATE_SLOT,
   CHECK_SLOT,
   CHECK_ATTENDANCE_SLOT,
-  UPDATE_ATTENDANCE
+  UPDATE_ATTENDANCE,
+  CLEAR_STATE
 } from "./types";
 import { API } from "../../API/backend";
 
@@ -145,6 +146,28 @@ export const GetTbiInfo = ({id })=> async(dispatch)=>{
   
 }
 
+
+export const Get_Ideas_for_Tbi = ({id})=> async (dispatch)=>{
+
+console.log("Hey i just confiremed that get idea run")
+  try {
+    const data = await  axios.get(`${API}/idea/getIdeas/${id}`);
+
+    if(data){
+
+      console.log(data);
+      dispatch({
+        type: GET_ALL_IDEA_TBI,
+        payload: {Ideas:data.data.UserIDeas}
+      })
+    }
+
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export const CreateSlot = ({id , ideaId , Slot})=> async(dispatch)=>{
 
 const body = {
@@ -152,12 +175,17 @@ const body = {
   Slot: Slot
 }
 
+console.log("Hey this bloody works",body);
+
 try {
+
+  console.log("Hey create slot ")
   const TRL = await axios.post(`${API}/idea/createSlot/${id}` , body, config);
   if(TRL){
+    console.log(TRL);
     dispatch({
       type:CREATE_SLOT,
-      payload: TRL
+      payload: {Idea: TRL.data.Idea}
     })
   }
   
@@ -198,9 +226,10 @@ try {
   const TRL = await axios.post(`${API}/idea/checkAttendanceSlot/${id}` , body , config);
 
   if(TRL){
+    console.log(TRL);
     dispatch({
       type: CHECK_ATTENDANCE_SLOT,
-      payload: TRL
+      payload: {Ideas:TRL.data.IdeaList}
     })
   }
   
@@ -232,5 +261,14 @@ try {
 console.log(error)  
 }
 
+}
+
+export const ClearState = ()=>{
+
+  console.log("Hey thos is clear state")
+  return{
+    type: CLEAR_STATE,
+    payload: null
+  }
 }
 

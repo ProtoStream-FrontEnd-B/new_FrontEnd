@@ -102,12 +102,12 @@ const Form = () => {
     console.log(data);
     const body = {
       Name: data.Fullname,
-      MobNo: 8445775919,
+      MobNo: data.MobNo,
       Email: data.Personal_email,
       Carrer: "student",
       Idea: data.Idea_title,
       BriefData: data.Brief_Idea,
-      URL: "https/::drivelink/data/vpcoket",
+      URL: data.URL,
       mentorId: data.Mentor,
     };
 
@@ -174,6 +174,20 @@ const Form = () => {
                     onChange={onHandleChange}
                     name="Fullname"
                     type="text"
+                    className="inp"
+                  />
+                ) : (
+                  <label>{data.Fullname}</label>
+                )}
+              </div>
+              <div className="field">
+                <label htmlFor="MobNo">Mobile Number </label>
+                {verified === 0 ? (
+                  <input
+                    value={data.MobNo}
+                    onChange={onHandleChange}
+                    name="MobNo"
+                    type="number"
                     className="inp"
                   />
                 ) : (
@@ -259,7 +273,7 @@ const Form = () => {
                     name="Mentor"
                     className="inp"
                   >
-                    {mentors != null &&
+                    {mentors != null && mentors != undefined &&
                       mentors.map((mentor) => (
                         <option key={mentor._id} value={mentor._id}>
                           {mentor.profiledata.Profilename}

@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import ideasList from "./Ideas";
+import { useSelector } from "react-redux";
 import "./css/Attendence.css";
 
-function Attendence() {
+const Attendence = () => {
   const [active, setActive] = useState("attendence");
+  
 
+  const ideaData =  useSelector(state=> state.tbi);
   const ideas = ideasList;
   return (
     <div className="attendence-section">
@@ -66,7 +69,11 @@ function Attendence() {
                 </div>
               </div>
               <div className="btns">
-                <button className="btn" id="present">
+                <button
+                  onClick={()=>{console.log("Hye its working")}}
+                  className="btn"
+                  id="present"
+                >
                   Invite
                 </button>
               </div>
@@ -76,6 +83,6 @@ function Attendence() {
       )}
     </div>
   );
-}
+};
 
 export default Attendence;
