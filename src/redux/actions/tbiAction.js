@@ -227,9 +227,10 @@ try {
 
   if(TRL){
     console.log(TRL);
+    console.log(TRL.data.Idea_List);
     dispatch({
       type: CHECK_ATTENDANCE_SLOT,
-      payload: {Ideas:TRL.data.IdeaList}
+      payload: {Ideas:TRL.data.Idea_List}
     })
   }
   

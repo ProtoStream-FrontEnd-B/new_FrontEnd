@@ -71,7 +71,7 @@ export default function (state = initialState, action) {
     case CHECK_ATTENDANCE_SLOT:
       return{
         ...state,
-        Ideas: {Ideas :action.payload.Ideas}
+        Ideas:  action.payload.Ideas
       } 
     case GET_TBI_IDEAS:
       return{
@@ -86,7 +86,7 @@ export default function (state = initialState, action) {
     case CLEAR_STATE:
       return{
         ...state,
-        Ideas:null,
+        Ideas:[],
         Idea:null,
         Message: null,
       }

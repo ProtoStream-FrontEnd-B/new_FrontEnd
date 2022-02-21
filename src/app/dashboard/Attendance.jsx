@@ -37,9 +37,9 @@ setSubmitSlot(slot);
     id: userid._id
   }
 
-  dispatch(ClearState());
+ 
   if(active==="attendence"){
-console.log("Please select the slot ")
+    dispatch(ClearState());
   }else{
     dispatch(Get_Ideas_for_Tbi(body));
   }
@@ -54,13 +54,13 @@ console.log("Please select the slot ")
   };
 
 useEffect(()=>{
-  if(state.Ideas!=null && state.Ideas!=undefined &&  state.Ideas.Ideas!=null &&state.Ideas.Ideas!=undefined){
+  if(state.Ideas!=null && state.Ideas!=undefined ){
     setIdeas(state.Ideas.Ideas)
   }
 
 },[state])
 
-
+console.log(state);
   return (
     <div className="attendence-section">
       <header className="header-sec">
