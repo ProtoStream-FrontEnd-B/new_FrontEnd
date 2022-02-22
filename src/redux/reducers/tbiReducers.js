@@ -28,7 +28,7 @@ export default function (state = initialState, action) {
     case GET_ALL_IDEA_TBI:
       return {
         ...state,
-        Ideas: action.payload,
+        Ideas: action.payload.Ideas,
       };
     case SELECT_IDEA_TBI:
       return {
@@ -81,7 +81,7 @@ export default function (state = initialState, action) {
     case UPDATE_ATTENDANCE:
       return{
         ...state,
-        Ideas: action.payload
+        // Ideas: action.payload
       }  
     case CLEAR_STATE:
       return{

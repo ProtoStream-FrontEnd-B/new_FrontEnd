@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import "./css/IdeaCardTbi.css";
 import { OpenIdea } from "../../../redux/actions/tbiAction";
 
-function IdeaCardTbi({ title, name, mentorship, ideaId ,id }) {
+function IdeaCardTbi({ title, name, mentorship, ideaId ,id , verify }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const onHandleClick = (ideaId, id) => {
@@ -13,7 +13,7 @@ function IdeaCardTbi({ title, name, mentorship, ideaId ,id }) {
   };
 
   return (
-    <div onClick={()=>onHandleClick(ideaId ,id )} className="ideacardtbi">
+    <div  onClick={()=>onHandleClick(ideaId ,id )} className={verify==0?"ideacardtbi":"hidden"}>
       <div className="col">
         <h3 className="label">Idea:</h3>
         <h3 className="ans">{title}</h3>

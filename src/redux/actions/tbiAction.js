@@ -249,8 +249,11 @@ const body = {
 }
 
 try {
+  console.log(body);
+  
   const TRL =  await axios.post(`${API}/idea/updateAttendance/${id}` , body , config);
   if(TRL){
+    console.log(TRL);
     dispatch({
       type: UPDATE_ATTENDANCE,
       payload: TRL

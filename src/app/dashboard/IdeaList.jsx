@@ -28,12 +28,13 @@ console.log(state);
       <div className="main">
         <div className="main-container">
           <div className="ideas">
-            {Ideas!=null &&Ideas.Ideas.map((idea) => (
+            {Ideas!=null && Ideas!=undefined &&Ideas.Ideas.map((idea) => (
               <IdeaCardTbi
                 title={idea.PAN}
                 name={idea.Aadhar}
                 id = {userid._id}
                 ideaId={idea._id}
+                verify = {idea.verify}
               />
             ))}
           </div>

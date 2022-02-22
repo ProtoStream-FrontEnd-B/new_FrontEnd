@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ideasList from "./Ideas";
+import { UpdateAttendance } from "../../redux/actions/tbiAction";
 import "./css/Attendence.css";
 import { setJson } from "../../Global/Helper";
 import {useDispatch, useSelector} from "react-redux";
@@ -13,15 +14,28 @@ function Attendence() {
  const dispatch = useDispatch();
  const state =  useSelector(state=> state.tbi);
  const userid = setJson(localStorage.getItem("user"));
+ const id = userid._id;
  const onHandleChange = (e) => {
   setSlot(e.target.value);
 };
+
+const onUpdateAttendance = (para , attend )=>{
+console.log(para);
+console.log(para.Session);
+const slot_array =  para.Session
+
+const slot_no = submitSlot;
+const ideaId = para.Step3;
+// const slot_no = para.Session[Session.length-1].Slot;
+
+dispatch(UpdateAttendance({id ,attend , ideaId , slot_no }))
+}
 
 const handleSubmit = (e)=>{
 e.preventDefault();
 console.log(slot);
 
-const id = userid._id;
+
 
 if(active==="attendence"){
   console.log("HEY THER ")
@@ -55,7 +69,9 @@ setSubmitSlot(slot);
 
 useEffect(()=>{
   if(state.Ideas!=null && state.Ideas!=undefined ){
-    setIdeas(state.Ideas.Ideas)
+    console.log("OKA IT RAN I M GLAD ")
+console.log(state.Ideas);
+    setIdeas(state.Ideas)
   }
 
 },[state])
@@ -98,10 +114,12 @@ console.log(state);
                 </div>
               </div>
               <div className="btns">
-                <button className="btn" id="present">
+
+              
+                <button onClick = {()=>{onUpdateAttendance(idea , "Present")}} className="btn" id="present">
                   P
                 </button>
-                <button className="btn" id="absent">
+                <button onClick = {()=>{onUpdateAttendance(idea , "Absent" )}}  className="btn" id="absent">
                   A
                 </button>
               </div>
@@ -110,7 +128,7 @@ console.log(state);
         </div>
       ) : (
         <div className="container">
-          {ideas!=null && ideas!=undefined &&ideas.map((idea) => (
+          {ideas!=null && ideas!=undefined && ideas.length>0 &&ideas.map((idea) => (
             <div className="idea-field">
               <div className="idea-card">
                 <p className="name">{idea.title}</p>
