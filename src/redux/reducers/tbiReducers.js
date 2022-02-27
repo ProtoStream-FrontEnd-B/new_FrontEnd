@@ -65,7 +65,7 @@ export default function (state = initialState, action) {
     case CHECK_SLOT:
       return{
         ...state,
-        Ideas:action.payload
+       
       }
       
     case CHECK_ATTENDANCE_SLOT:

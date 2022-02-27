@@ -41,8 +41,16 @@ if(active==="attendence"){
   console.log("HEY THER ")
   const check_slot = slot;
   dispatch(CheckAttendanceSlot({id , check_slot}));
-}
+  setSubmitSlot(slot);
+}else{
+  console.log("HEY THER  its the create slot")
+  const check_slot = slot;
+  console.log(check_slot);
+  
+dispatch(CheckSlot({check_slot,id}));
 setSubmitSlot(slot);
+}
+
 }
 
  useEffect(()=>{

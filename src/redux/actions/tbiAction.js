@@ -177,17 +177,22 @@ export const CheckSlot = ({check_slot , id}) => async (dispatch)=>{
   }
 
   try {
-    const TRL = await axios.post(`${API}/idea/checkslot/${id}` , body , config);
+    const TRL = await axios.post(`${API}/idea/checkSlot/${id}` , body , config);
 
     if(TRL){
+      console.log('hey the check slot run ')
+      console.log(TRL);
+
       dispatch({
         type:CHECK_SLOT,
         payload: TRL
       })
     }
+    alert(TRL.data.message);
     
   } catch (error) {
     console.log(error);
+    alert(error);
   }
 }
 
@@ -211,9 +216,12 @@ try {
       payload: {Idea: TRL.data.Idea}
     })
   }
+
+  alert("Idea invited for the selected slot ");
   
 } catch (error) {
   console.log(error)
+  alert(error);
 }
 
 }
@@ -262,9 +270,11 @@ try {
       payload: TRL
     })
   }
+  alert("Attendance updated...");
   
 } catch (error) 
-{
+{alert(error);
+
 console.log(error)  
 }
 
