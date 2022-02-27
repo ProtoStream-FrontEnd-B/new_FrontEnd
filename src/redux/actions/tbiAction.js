@@ -14,6 +14,7 @@ import {
   CLEAR_STATE
 } from "./types";
 import { API } from "../../API/backend";
+import { useDispatch } from "react-redux";
 
 
 const config = {
@@ -168,6 +169,28 @@ console.log("Hey i just confiremed that get idea run")
   }
 }
 
+
+export const CheckSlot = ({check_slot , id}) => async (dispatch)=>{
+
+  const body = {
+    check_slot: check_slot
+  }
+
+  try {
+    const TRL = await axios.post(`${API}/idea/checkslot/${id}` , body , config);
+
+    if(TRL){
+      dispatch({
+        type:CHECK_SLOT,
+        payload: TRL
+      })
+    }
+    
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export const CreateSlot = ({id , ideaId , Slot})=> async(dispatch)=>{
 
 const body = {
@@ -195,26 +218,6 @@ try {
 
 }
 
-export const CheckSlot = ({check_slot , id}) => async (dispatch)=>{
-
-  const body = {
-    check_slot: check_slot
-  }
-
-  try {
-    const TRL = await axios.post(`${API}/idea/checkslot/${id}` , body , config);
-
-    if(TRL){
-      dispatch({
-        type:CHECK_SLOT,
-        payload: TRL
-      })
-    }
-    
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 export const CheckAttendanceSlot = ({id , check_slot}) => async (dispatch)=>{
 

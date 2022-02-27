@@ -5,7 +5,7 @@ import { EditIdea, SelectIdea } from "../../../redux/actions/mentorAction";
 import arrow from "../../../Assets/icons/arrow.svg";
 import { setJson } from "../../../Global/Helper";
 
-function IdeaCard({ title, name, email, link, year , id , Step2_id }) {
+function IdeaCard({ title, name, email, link, year , id , Step2_id , accept , review }) {
   const [hidden, setHidden] = useState(true);
   const dispatch = useDispatch();
  
@@ -23,7 +23,7 @@ const body ={
 dispatch(SelectIdea(body));
   }
 const state = useSelector((state) => state.mentor);
-const [accept , setAccept] = useState(false);
+
 
 const onAccept = (id)=>{
   const user_id = setJson(localStorage.getItem("user"));
@@ -38,13 +38,7 @@ console.log(id);
 dispatch(EditIdea(body));
 }
 
-useEffect(()=>{
-if(state.Step2!=null || state.Step2!=undefined){
-  setAccept(true);
-}else{
-  setAccept(false)}
 
-},[state])
 
 
   return (
@@ -73,8 +67,10 @@ if(state.Step2!=null || state.Step2!=undefined){
           </div>
         </div>
         <div className="btns">
+       {review&& accept&& <p>Press "Review" before "Accept"</p>}
           <button  className="btn">Dissmiss</button>
-          <button onClick ={()=>{onClickHandle(id)}} className="btn">Review</button>
+          {review&&<button onClick ={()=>{onClickHandle(id)}} className="btn">Review</button>}
+         
         {accept&&<button onClick={ ()=>{onAccept(state.Step2.Step2._id)}} className="btn">Accept</button>}  
         </div>
       </div>

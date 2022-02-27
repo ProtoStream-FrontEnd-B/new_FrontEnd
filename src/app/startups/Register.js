@@ -60,7 +60,7 @@ const Register = () => {
 
    
 
-  },[])
+  },[idea_detail])
   return (
     <div className="register">
       <div className="container">

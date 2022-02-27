@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ideasList from "./Ideas";
-import { UpdateAttendance } from "../../redux/actions/tbiAction";
+import { CheckSlot, UpdateAttendance } from "../../redux/actions/tbiAction";
 import "./css/Attendence.css";
 import { setJson } from "../../Global/Helper";
 import {useDispatch, useSelector} from "react-redux";
@@ -61,6 +61,8 @@ setSubmitSlot(slot);
  },[active])
   const onInvite = (ideaId , Slot) => {
     const id = userid._id;
+
+    
  dispatch(CreateSlot({id ,ideaId , Slot }));
 
 
@@ -69,7 +71,7 @@ setSubmitSlot(slot);
 
 useEffect(()=>{
   if(state.Ideas!=null && state.Ideas!=undefined ){
-    console.log("OKA IT RAN I M GLAD ")
+ 
 console.log(state.Ideas);
     setIdeas(state.Ideas)
   }
@@ -106,10 +108,10 @@ console.log(state);
           {ideas!=null && ideas!=undefined &&ideas.map((idea) => (
             <div className="idea-field">
               <div className="idea-card">
-                <p className="name">{idea.title}</p>
+                <p className="name">{idea._id}</p>
                 <div className="attendence-record">
                   { idea.Session!=null && idea.Session!=undefined && idea.Session.length>0 && idea.Session.map((att) => (
-                    <p className="att">{att.val ? "P" : "A"}</p>
+                    <p className="att">{att.Attend=="Present" ? "P" : "A"}</p>
                   ))}
                 </div>
               </div>
@@ -131,10 +133,10 @@ console.log(state);
           {ideas!=null && ideas!=undefined && ideas.length>0 &&ideas.map((idea) => (
             <div className="idea-field">
               <div className="idea-card">
-                <p className="name">{idea.title}</p>
+                <p className="name">{idea._id}</p>
                 <div className="attendence-record">
                   { idea.Session!=null && idea.Session!=undefined && idea.Session.length>0 && idea.Session.map((att) => (
-                    <p className="att">{att.val ? "P" : "A"}</p>
+                    <p className="att">{att.Attend=="Present" ? "P" : "A"}</p>
                   ))}
                 </div>
               </div>

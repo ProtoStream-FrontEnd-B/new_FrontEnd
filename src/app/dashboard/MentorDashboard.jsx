@@ -58,7 +58,8 @@ function MentorDashboard() {
                   id = {idea._id}
                   link={idea.URL}
                   email={idea.Email}
-                
+                  accept = {idea.review=='0'?true:false}
+                  review = {idea.review=='0'?true:false}
                 />
               ))
             ) : (

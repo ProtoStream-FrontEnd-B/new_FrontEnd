@@ -77,13 +77,18 @@ export const EditIdea =
       })
 
       const Idea = await axios.post(`${API}/idea/editIdea/${id}`, body, config);
-      if (Idea) {
+      if (Idea.data.Message==="Step3 form will open now") {
+        
         dispatch({
           type: EDIT_IDEA,
           payload: { Message: Idea.data.Message },
         });
+
+        alert(Idea.data.Action);
+
       }
     } catch (error) {
+      alert(error);
       console.log(error);
     }
   };

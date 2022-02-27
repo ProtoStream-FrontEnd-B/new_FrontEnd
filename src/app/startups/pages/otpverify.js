@@ -52,7 +52,8 @@ const OTP = () => {
   const ResendOTP = () => {
     console.log("otp sent!");
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const OTP = otp.join("");
 
     console.log(OTP);
