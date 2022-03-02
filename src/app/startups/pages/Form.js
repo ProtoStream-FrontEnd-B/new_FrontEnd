@@ -191,7 +191,7 @@ const Form = () => {
                     className="inp"
                   />
                 ) : (
-                  <label>{data.Fullname}</label>
+                  <label>{data.MobNo}</label>
                 )}
               </div>
               <div className="field">
@@ -265,7 +265,7 @@ const Form = () => {
                 )}
               </div>
               <div className="field">
-                <label htmlFor="URL">Provide URL</label>
+                <label htmlFor="URL">Mentor</label>
                 {verified === 0 ? (
                   <select
                     value={data.Mentor}

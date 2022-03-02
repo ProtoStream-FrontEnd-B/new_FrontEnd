@@ -17,7 +17,7 @@ function IdeaList() {
   },[]);
 const Ideas = state.Ideas;
 
-console.log(state);
+console.log(Ideas);
 
 
   return (
@@ -28,7 +28,7 @@ console.log(state);
       <div className="main">
         <div className="main-container">
           <div className="ideas">
-            {Ideas!=null && Ideas!=undefined &&Ideas.Ideas.map((idea) => (
+            {Ideas!=null && Ideas!=undefined && Ideas.map((idea) => (
               <IdeaCardTbi
                 title={idea.PAN}
                 name={idea.Aadhar}
