@@ -9,6 +9,44 @@
   margin: 1rem auto;
   overflow: auto;
 
+  .completion {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      .head {
+        font-size: var(--heading-main);
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+
+      .continue {
+        cursor: pointer;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 10px;
+        color: black;
+        font-size: var(--button);
+        font-weight: bold;
+        width: 200px;
+        background-color: var(--accent-sec);
+        font-family: var(--font-pr);
+        text-align: center;
+        transition: all 0.1s ease;
+      }
+      // .continue:hover {
+      //   transform: scale(1.05);
+      // }
+    }
+  }
   .progress-bar {
     width: 90%;
     margin: 1rem auto;

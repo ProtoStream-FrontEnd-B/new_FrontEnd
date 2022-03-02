@@ -40,19 +40,19 @@ const Main = () => {
   return (
     <div className="start_page">
       <StartupCard
+        route1="/"
+        route2="/trl_test"
+        head="Evaluate"
+        para=" “Evaluate your startup potential and check the viability of you product by using the TRL Test created by NASA to assess the potential and state of a startup idea or prototype.”  "
+        btn2="Take TRL Test"
+      />
+      <StartupCard
         route1="/resources"
         route2={route2}
         head="Startup"
         para=" “Innovation distinguishes between a leader and a follower.” "
         btn1="Know about Startup"
         btn2="Register Startup Idea"
-      />
-      <StartupCard
-        route1="/"
-        route2="/trl_test"
-        head="Evaluate"
-        para=" “Evaluate your startup potential and check the viability of you product by using the TRL Test created by NASA to assess the potential and state of a startup idea or prototype.”  "
-        btn2="Take TRL Test"
       />
     </div>
   );

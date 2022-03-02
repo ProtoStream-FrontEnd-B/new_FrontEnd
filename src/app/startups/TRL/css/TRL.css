@@ -10,6 +10,58 @@
   overflow: auto;
 }
 
+.trl .completion {
+  height: 80%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.trl .completion .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.trl .completion .content .head {
+  font-size: var(--heading-main);
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.trl .completion .content .continue {
+  cursor: pointer;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  font-size: var(--button);
+  font-weight: bold;
+  width: 200px;
+  background-color: var(--accent-sec);
+  font-family: var(--font-pr);
+  text-align: center;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
 .trl .progress-bar {
   width: 90%;
   margin: 1rem auto;

@@ -20,7 +20,8 @@ function TRL() {
   const changeCurrent = () => {
     console.log(current);
     handleProgression();
-    if (current < 7) setCurrent(current + 1);
+    // if (current < 7)
+    setCurrent(current + 1);
   };
 
   return (
@@ -30,13 +31,26 @@ function TRL() {
           {" "}
         </div>
       </div>
-      <QuestionsContainer
-        question={currQue.Question}
-        info={currQue.info}
-        ans={currQue.Answers}
-        key={currQue.id}
-        change={() => changeCurrent()}
-      />
+      {current <= 7 ? (
+        <QuestionsContainer
+          question={currQue.Question}
+          info={currQue.info}
+          ans={currQue.Answers}
+          key={currQue.id}
+          change={() => changeCurrent()}
+        />
+      ) : (
+        <div className="completion">
+          <div className="content">
+            <div className="head">
+              you've successfully completed the TRL test
+            </div>
+            <a href="/startups">
+              <button className="continue">Register Idea</button>
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
