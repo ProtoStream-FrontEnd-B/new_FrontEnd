@@ -1,0 +1,8 @@
+{
+	"appId": "io.ionic.protostream",
+	"appName": "protostream",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "build",
+	"cordova": {}
+}

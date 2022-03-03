@@ -1,0 +1,7 @@
+{
+  "name": "protostream",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
