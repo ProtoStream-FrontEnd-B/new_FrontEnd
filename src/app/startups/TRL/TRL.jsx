@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import questions from "./Questions.json";
+import { useDispatch } from "react-redux";
 import QuestionsContainer from "./QuestionsContainer";
 import "./css/TRL.css";
 import { useReducer } from "react";
+import { setJson } from "../../../Global/Helper";
+import { UpdateTRL } from "../../../redux/actions/startupAction";
+import { useHistory } from "react-router";
 
 function TRL() {
+const history = useHistory();
+  const dispatch = useDispatch();
+  const userid = setJson(localStorage.getItem("user"));
   const ques = questions.Questions;
   const [current, setCurrent] = useState(0);
   const [length, setLength] = useState(0);
@@ -23,6 +30,22 @@ function TRL() {
     // if (current < 7)
     setCurrent(current + 1);
   };
+
+  const onTrlSubmit = (e) => {
+    e.preventDefault();
+    const id = userid._id;
+    const trl_data = {
+      id,
+      trl_value: {
+        TRL_Test: "pass",
+      },
+    };
+    dispatch(UpdateTRL(trl_data));
+    history.push('/user-dashboard');
+
+  };
+
+
 
   return (
     <div className="trl">
@@ -46,7 +69,7 @@ function TRL() {
               you've successfully completed the TRL test
             </div>
             <a href="/startups">
-              <button className="continue">Register Idea</button>
+              <button onClick = {onTrlSubmit} className="continue">Register Idea</button>
             </a>
           </div>
         </div>

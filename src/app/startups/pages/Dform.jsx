@@ -28,6 +28,9 @@ function Dform() {
     Q5: "",
     Q6: "",
     Q7: "",
+    Knowing:"",
+    Status:"",
+    Qualification:"",
     verified: 0,
   });
   const startup_detail = useSelector((state) => state.startup);
@@ -36,7 +39,7 @@ function Dform() {
     console.log(startup_detail, "hey its the new startup detail");
 
     console.log(idea_detail);
-    if (idea_detail.Idea.status === "approved") {
+    if ( idea_detail.Idea.status!=null && idea_detail.Idea.status!=undefined && idea_detail.Idea.status === "approved") {
       console.log("its the open step2 form ");
     } else if (idea_detail.Idea.status === "under-verified") {
       if (startup_detail.Step3 != null || startup_detail.Step3 != undefined) {
@@ -54,6 +57,9 @@ function Dform() {
           Q5,
           Q6,
           Q7,
+          Knowing,
+          Status,
+          Qualification,
         } = startup_detail.Step3;
         setData({
           ...data,
@@ -69,6 +75,9 @@ function Dform() {
           Q5: Q5,
           Q6: Q6,
           Q7: Q7,
+          Status: Status,
+          Knowing: Knowing,
+          Qualification: Qualification,
           verified: 1,
         });
       } else {
@@ -89,6 +98,9 @@ function Dform() {
           Q5,
           Q6,
           Q7,
+          Knowing,
+          Status,
+          Qualification
         } = startup_detail.Step3;
         setData({
           ...data,
@@ -104,6 +116,9 @@ function Dform() {
           Q5: Q5,
           Q6: Q6,
           Q7: Q7,
+          Status:Status,
+          Knowing: Knowing,
+          Qualification:Qualification,
           verified: 2,
         });
       } else {
@@ -149,6 +164,9 @@ function Dform() {
       Q5: data.Q5,
       Q6: data.Q6,
       Q7: data.Q7,
+      Status:  data.Status,
+      Knowing: data.Knowing,
+      Qualification: data.Qualification
     };
     console.log(body);
 
@@ -164,26 +182,26 @@ function Dform() {
   //const nextstep
   const verified = data.verified;
 
-  useEffect(() => {
-    if (!selectedFile) {
-      setPreview(undefined);
-      return;
-    }
+  // useEffect(() => {
+  //   if (!selectedFile) {
+  //     setPreview(undefined);
+  //     return;
+  //   }
 
-    const objectUrl = URL.createObjectURL(selectedFile);
-    setPreview(objectUrl);
+  //   const objectUrl = URL.createObjectURL(selectedFile);
+  //   setPreview(objectUrl);
 
-    return () => URL.revokeObjectURL(objectUrl);
-  }, [selectedFile]);
+  //   return () => URL.revokeObjectURL(objectUrl);
+  // }, [selectedFile]);
 
-  const handleImage = (e) => {
-    if (!e.target.files || e.target.files.length === 0) {
-      setSelectedFile(undefined);
-      return;
-    }
+  // const handleImage = (e) => {
+  //   if (!e.target.files || e.target.files.length === 0) {
+  //     setSelectedFile(undefined);
+  //     return;
+  //   }
 
-    setSelectedFile(e.target.files[0]);
-  };
+  //   setSelectedFile(e.target.files[0]);
+  // };
 
   console.log(`verified ${verified}`);
 
@@ -193,14 +211,14 @@ function Dform() {
         <div className="basic-details">
           <div className="left">
             <div className="row">
-              <div className="que">Latest Photo</div>
+              {/* <div className="que">Latest Photo</div>
               {selectedFile && <img src={preview} className="preview" />}{" "}
               <input
                 type="file"
                 className="response"
                 accept="image/png, image/jpeg"
                 onChange={(e) => handleImage(e)}
-              />
+              /> */}
               {/* <div className="response">
                 <img src={details.photo} alt="" className="profile" />
               </div> */}
@@ -208,60 +226,102 @@ function Dform() {
             <div className="row">
               <div className="que">Gender</div>
               <div className="response-inp-radio">
-                <input
-                  type="radio"
-                  name="gender"
-                  className="radio-inp"
-                  value="M"
-                />
-                <label htmlFor="">Male</label>
-                <input
-                  type="radio"
-                  name="gender"
-                  className="radio-inp"
-                  value="F"
-                />
+                {verified == 0 && (
+                  <input
+                    type="radio"
+                    name="Gender"
+                    className="radio-inp"
+                    value="Female"
+                    // checked = {data.Gender==="Female"}
+                    onChange={onHandleChange}
+                  />
+                )}
                 <label htmlFor="">Female</label>
+                {verified == 0 && (
+                  <input
+                    type="radio"
+                    name="Gender"
+                    className="radio-inp"
+                    value="Male"
+                    // checked = {data.Gender==="Male"}
+                    onChange={onHandleChange}
+                  />
+                )}
+                {/* {verified==0 && <button onClick = {onRadioChange}>Reset</button>} */}
+                <label htmlFor="">Male</label>
+                {(verified === 1 || verified === 2) && <p>{data.Gender}</p>}
               </div>
               {/* <div className="response">{details.gender}</div> */}
             </div>
             <div className="row">
               <div className="que">Aadhar</div>
-              <input type="number" className="response-inp" />
+              {verified == 0 && (
+                <input
+                  onChange={onHandleChange}
+                  value={data.Aadhar}
+                  type="number"
+                  name="Aadhar"
+                  className="response-inp"
+                />
+              )}
+              {(verified === 1 || verified === 2) && <p>{data.Aadhar}</p>}
               {/* <div className="response">{details.aadhar}</div> */}
             </div>
             <div className="row">
               <div className="que">PAN Number(if any)</div>
-              <input type="text" className="response-inp" />
+              {verified == 0 && (
+                <input
+                  onChange={onHandleChange}
+                  value={data.PAN}
+                  type="text"
+                  name = "PAN"
+                  className="response-inp"
+                />
+              )}
+              {(verified === 1 || verified === 2) && <p>{data.PAN}</p>}
               {/* <div className="response">{details.pan}</div> */}
             </div>
             <div className="row">
               <div className="que">Category</div>
-              <select name="category" id="" className="response-selection">
-                <option value="gen">General</option>
-                <option value="obc">OBC</option>
-                <option value="sc">SC</option>
-                <option value="st">ST</option>
-              </select>
+            {verified==0 && <select
+                value={data.Category}
+                onChange={onHandleChange}
+                name="Category"
+                id=""
+                className="response-selection"
+              >
+                <option value="Student">Student</option>
+                <option value="Pro">Pro</option>
+              
+              </select>}
+              {(verified === 1 || verified === 2) && <p>{data.Category}</p>}
               {/* <div className="response">{details.category}</div> */}
             </div>
           </div>
           <div className="right">
             <div className="row-alt">
               <div className="que">Current Career Status</div>
-              <input type="text" className="response-inp" />
-              {/* <div className="response">{details.status}</div> */}
+              {verified == 0 && (
+                <input
+                  type="text"
+                  className="response-inp"
+                  name="Status"
+                  value={data.Status}
+                  onChange={onHandleChange}
+                />
+              )}
+              {(verified === 1 || verified === 2) && <p>{data.Status}</p>}
             </div>
             <div className="row-alt">
               <div className="que">How did you came to know about TBI</div>
-              <input type="text" className="response-inp" />
+             {verified==0 && <input onChange = {onHandleChange} name="Knowing" value = {data.Knowing} type="text" className="response-inp" />}
               {/* <div className="response">{details.cameToKnow}</div> */}
             </div>
             <div className="row-alt">
               <div className="que">
                 Educational Qualification with Specialization
               </div>
-              <input type="text" className="response-inp" />
+             {verified==0 && <input onChange = {onHandleChange} value = {data.Qualification} name="Qualification" type="text" className="response-inp" />}
               {/* <div className="response">{details.qualification}</div> */}
             </div>
           </div>
@@ -275,16 +335,18 @@ function Dform() {
             <div className="response-inp-radio">
               <input
                 type="radio"
-                name="experience"
+                name="Q1"
                 className="radio-inp"
-                value="yes"
+                value="Yes"
+                onChange = {onHandleChange}
               />
               <label htmlFor="">Yes</label>
               <input
                 type="radio"
-                name="experience"
+                name="Q1"
                 className="radio-inp"
-                value="no"
+                value="No"
+                onChange = {onHandleChange}
               />
               <label htmlFor="">No</label>
             </div>
@@ -307,16 +369,18 @@ function Dform() {
             <div className="response-inp-radio">
               <input
                 type="radio"
-                name="ownVenture"
+                name="Q2"
                 className="radio-inp"
-                value="yes"
+                value="Yes"
+                onChange = {onHandleChange}
               />
               <label htmlFor="">Yes</label>
               <input
                 type="radio"
-                name="ownVenture"
+                name="Q2"
                 className="radio-inp"
-                value="no"
+                value="No"
+                onChange = {onHandleChange}
               />
               <label htmlFor="">No</label>
             </div>
@@ -339,16 +403,18 @@ function Dform() {
             <div className="response-inp-radio">
               <input
                 type="radio"
-                name="support"
+                name="Q3"
                 className="radio-inp"
-                value="yes"
+                value="Yes"
+                onChange = {onHandleChange}
               />
               <label htmlFor="">Yes</label>
               <input
                 type="radio"
-                name="support"
+                name="Q3"
                 className="radio-inp"
-                value="no"
+                value="No"
+                onChange = {onHandleChange}
               />
               <label htmlFor="">No</label>
             </div>
@@ -363,7 +429,7 @@ function Dform() {
             <p className="que">
               Status of work already carried out on the scale of TRL
             </p>
-            <select name="trl" id="" className="response-selection">
+            <select onChange = {onHandleChange} value = {data.Q4} name="Q4" id="" className="response-selection">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -384,10 +450,12 @@ function Dform() {
               opportunities.
             </p>
             <textarea
-              name=""
+              name="Q5"
+              value = {data.Q5}
               id=""
               cols="30"
               rows="10"
+              onChange ={onHandleChange}
               className="response-inp"
             ></textarea>
             {/* <div className="response">
@@ -403,9 +471,10 @@ function Dform() {
             <div className="response-inp-radio">
               <input
                 type="radio"
-                name="committed"
+                name="Q6"
                 className="radio-inp"
-                value="agree"
+                value="Yes"
+                onChange = {onHandleChange}
               />
               <label htmlFor="">I Agree</label>
             </div>
@@ -429,9 +498,10 @@ function Dform() {
             <div className="response-inp-radio">
               <input
                 type="radio"
-                name="declaration"
+                name="Q7"
                 className="radio-inp"
-                value="agree"
+                value="Yes"
+                onChange= {onHandleChange}
               />
               <label htmlFor="">I Agree</label>
             </div>
@@ -444,8 +514,8 @@ function Dform() {
           </div>
         </div>
         <div className="control-buttons">
-          <button className="btn">Upload Signature</button>
-          <button type="submit" className="btn">
+          {/* <button className="btn">Upload Signature</button> */}
+          <button onClick = {onHandleSubmit} type="submit" className="btn">
             Submit
           </button>
         </div>

@@ -82,7 +82,7 @@ const Routes = () => {
           TRL_Test: "pass",
         },
       };
-      dispatch(UpdateTRL(trl_data));
+      // dispatch(UpdateTRL(trl_data));
       dispatch(GetIdea(id));
     }
   }, []);
@@ -165,7 +165,7 @@ const Routes = () => {
           />
           <PrivateRoute
             path="/startups/Register/Dform"
-            component={DetailedForm}
+            component={Dform}
             exact
           />
           <TbiRoute

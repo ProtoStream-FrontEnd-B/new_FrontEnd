@@ -41,11 +41,15 @@ export const GetAllIdea = (id) => async (dispatch) => {
 
 export const SelectIdea = ({id , ideaId})=> async (dispatch)=>{
 
-
+  const body = {
+  
+    ideaId: ideaId
+  }
 
   try {
-    const Idea = await axios.post(`${API}/idea/selectIdea3/${id}` , ideaId , config);
+    const Idea = await axios.post(`${API}/idea/selectIdea3/${id}` , body, config);
     if (Idea) {
+      console.log(Idea)
       dispatch({
         type: SELECT_IDEA_TBI,
         payload: {Idea:Idea.data.Step3},
@@ -72,9 +76,12 @@ export const EditIdea = ({id , status , IdeaId})=> async (dispatch)=>{
       type: EDIT_IDEA_TBI,
       payload: {Step3: Idea.data.Step3, Message: Idea.data.Message}
     });
+
+    alert(Idea.data.Message);
   }
   } catch (error) {
     console.log(error);
+    alert(error);
   }
   
 

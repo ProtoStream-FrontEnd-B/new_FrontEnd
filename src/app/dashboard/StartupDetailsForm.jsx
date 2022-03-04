@@ -4,19 +4,33 @@ import { EditIdea } from "../../redux/actions/tbiAction";
 import { useSelector } from "react-redux";
 import { setJson } from "../../Global/Helper";
 import "./css/StartupDetails.css";
+import { useHistory } from "react-router";
 
 function StartupDetailsForm() {
   const state = useSelector((state) => state.tbi);
   const dispatch = useDispatch();
+  const history = useHistory();
   const userid = setJson(localStorage.getItem("user")); 
-  console.log(state);
-  console.log(userid._id);
-  const handleOnLoad = () => {
 
-  };
 
-  const step3 = state.Step3;
+ console.log(state);
+ 
+  const onHandleLoad = ()=>{
+    if(state.Idea.Idea==null || state.Idea.Idea==undefined){
+      history.push('/tbi-dashboard');
+    }
+  }
+  
+  useEffect(()=>{
+    onHandleLoad();
+    },[state])
+  
 
+
+
+const step3 = state.Idea.Idea;
+
+console.log(step3);
   useEffect(() => {
     console.log(state);
   }, [state]);
@@ -42,7 +56,10 @@ function StartupDetailsForm() {
   const onHandleVerify = (id , IdeaId) => {
     console.log(id)
     const status = "verified";
+    console.log(id , IdeaId);
     dispatch(EditIdea({id ,status , IdeaId}));
+    history.push('/tbi-dashboard');
+    // document.location.reload();
 
   };
 
@@ -185,7 +202,7 @@ function StartupDetailsForm() {
             </div>
           </div>
           <button className="btn">See Uploaded Signature</button>
-          <button onClick= {()=>{onHandleVerify(userid._id ,step3[0]._id )}} className="btn verify">Verify it</button>
+        { step3._id!=null && step3._id !=undefined && <button onClick= {()=>{onHandleVerify(userid._id ,step3._id )}} className="btn verify">Verify it</button>}
         </div>
         <div className="control-buttons">
           <button className="btn">Dismiss with Comment</button>

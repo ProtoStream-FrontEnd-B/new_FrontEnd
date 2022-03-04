@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
+import "./css/DetailedForm.css"
 // import arrow from "../../../Assets/icons/arrow.svg";
 import { setJson } from "../../../Global/Helper";
 import { CreateStep3, GetIdea } from "../../../redux/actions/startupAction";

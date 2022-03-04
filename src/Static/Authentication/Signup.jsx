@@ -209,13 +209,13 @@ useEffect(()=>{
 
         if (resp.user.role === 0) {
           console.log("hi im the user");
-          const trl_data = {
-            id,
-            trl_value: {
-              TRL_Test: "pass",
-            },
-          };
-          dispatch(UpdateTRL(trl_data));
+          // const trl_data = {
+          //   id,
+          //   trl_value: {
+          //     TRL_Test: "pass",
+          //   },
+          // };
+          // dispatch(UpdateTRL(trl_data));
 
           console.log("he");
           history.push("/user-dashboard");
