@@ -4,10 +4,8 @@ import {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
-  REGISTER_FAIL,
   REGISTER_SUCCESS,
-  USER_LOADED,
-  USER_LOADING,
+  REGISTER_FAIL,
 } from "./types";
 
 export const SignUp = (data) => async (dispatch) => {
@@ -31,10 +29,10 @@ export const SignUp = (data) => async (dispatch) => {
     console.log(data2);
     if (data2.data.error == "Email already registered") {
       console.log("this error ran ");
-      alert("Email already registered");
+
       dispatch({
         type: REGISTER_FAIL,
-        payload: { Error: "Email already registered" },
+        payload: { err_msg: "Email already registered" },
       });
     }
     if (data2.data.user) {
@@ -45,10 +43,10 @@ export const SignUp = (data) => async (dispatch) => {
     }
   } catch (error) {
     console.log(`${error} error is here `);
-    alert("please check the fields you have filled");
+
     dispatch({
       type: REGISTER_FAIL,
-      payload: error,
+      payload: "Please check the details"
     });
   }
 };
@@ -79,7 +77,14 @@ export const Login = (data) => async (dispatch) => {
       data,
       config
     );
+    if (data2.data.error) {
 
+
+      dispatch({
+        type: LOGIN_FAIL,
+        payload: { error: data2.data.error }
+      })
+    }
     if (data2.data.user && data2.data.token) {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -92,7 +97,6 @@ export const Login = (data) => async (dispatch) => {
   } catch (error) {
     console.log(error);
     alert("Please check your details");
-    // alert(error);
     dispatch({
       type: LOGIN_FAIL,
       payload: error,
@@ -111,7 +115,7 @@ export const isLogin = (data) => {
   console.log("hfsuayduiuui" + !data.token);
   if (!data.token || !data.user) {
     return {
-      type: LOGIN_FAIL,
+      type: AUTH_ERROR,
       payload: null,
     };
   }
@@ -124,7 +128,7 @@ export const isLogin = (data) => {
     };
   } else {
     return {
-      type: LOGIN_FAIL,
+      type: AUTH_ERROR,
       payload: null,
     };
   }

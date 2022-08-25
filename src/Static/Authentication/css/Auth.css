@@ -1,13 +1,17 @@
 @import url(../../../Global/variables.css);
+
 .auth {
   width: 100%;
   height: 89.6vh;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-family: var(--font-pr);
   text-align: center;
   color: var(--text-pr);
 }
+
 .auth .overlay1,
 .auth .overlay2 {
   position: absolute;
@@ -36,7 +40,10 @@
 }
 .auth .container .form {
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .auth .container .form .inp-box {
   width: 100%;
@@ -94,20 +101,26 @@
     width: 380px;
     margin: 1rem auto;
   }
+
   .auth .container .heading {
     font-size: var(--heading-med);
   }
+
   .auth .container .sub-head {
     font-size: var(--span);
   }
+
   .auth .container .form .inp-box {
     font-size: var(--para);
   }
+
   .auth .container .form .para {
     font-size: 12px;
   }
+
   .auth .container .form .sign-btn {
     padding: 0.5rem;
     font-size: var(--span);
   }
-}/*# sourceMappingURL=Auth.css.map */
+}
+/*# sourceMappingURL=Auth.css.map */
