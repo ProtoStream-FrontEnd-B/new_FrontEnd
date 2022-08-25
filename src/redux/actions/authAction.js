@@ -1,11 +1,14 @@
 import axios from "axios";
 
 import {
+  AUTH_ERROR,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
-  REGISTER_SUCCESS,
   REGISTER_FAIL,
+  REGISTER_SUCCESS,
+  USER_LOADED,
+  USER_LOADING,
 } from "./types";
 
 export const SignUp = (data) => async (dispatch) => {
@@ -46,7 +49,7 @@ export const SignUp = (data) => async (dispatch) => {
 
     dispatch({
       type: REGISTER_FAIL,
-      payload: "Please check the details"
+      payload: "Please check the details",
     });
   }
 };
@@ -78,12 +81,10 @@ export const Login = (data) => async (dispatch) => {
       config
     );
     if (data2.data.error) {
-
-
       dispatch({
         type: LOGIN_FAIL,
-        payload: { error: data2.data.error }
-      })
+        payload: { error: data2.data.error },
+      });
     }
     if (data2.data.user && data2.data.token) {
       dispatch({
