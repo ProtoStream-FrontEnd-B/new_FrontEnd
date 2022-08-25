@@ -12,7 +12,7 @@ function Branches() {
     setCurrBranch(branch);
   };
 
-  const closeModal = () => {
+  const closeModal = () => {''
     setModal(false);
   };
 
