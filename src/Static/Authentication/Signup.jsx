@@ -40,7 +40,7 @@
 //     const branch = branchArray[0];
 //     const newbranch = branch.toUpperCase();
 //     setData({ ...data, branch: newbranch});
-    
+
 //   }
 // },[data.email])
 //   const pushTo = (isAuth) => {
@@ -86,9 +86,9 @@
 //     //   const branch = branchArray[0];
 //     //   const newbranch = branch.toUpperCase();
 //     //   setData({ ...data, branch: newbranch});
-      
+
 //     // }
-    
+
 //     console.log(data);
 //     dispatch(SignUp(data));
 //   };
@@ -151,7 +151,7 @@
 // }
 
 // export default Signin;
-
+import Alert from '@mui/material/Alert';
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { UpdateTRL } from "../../redux/actions/startupAction";
@@ -174,9 +174,9 @@ function Signin() {
 
   const resp = useSelector((state) => state.auth);
 
-  const { isAuthenticated } = resp;
-  const {isLoading} = resp;
-console.log(isLoading)
+  const { isAuthenticated, err_msg, isLoading, err } = resp;
+
+  console.log(isLoading)
   const dispatch = useDispatch();
   const onHandleChange = (e) => {
     setData({
@@ -186,19 +186,19 @@ console.log(isLoading)
   };
 
   // to set the branch in the mentor login without making a new route for mentor 
-useEffect(()=>{
-  console.log("useEffect ran")
-  const mentorRegx = /^([a-z]+)(\.)([a-z]{2,4})(@)(kiet)(\.)(edu)$/;
-  if(mentorRegx.test(data.email)){
-    console.log("i know it run")
-    const a = data.email.split(".");
-    const branchArray = a[1].split("@");
-    const branch = branchArray[0];
-    const newbranch = branch.toUpperCase();
-    setData({ ...data, branch: newbranch});
-    
-  }
-},[data.email])
+  useEffect(() => {
+    console.log("useEffect ran")
+    const mentorRegx = /^([a-z]+)(\.)([a-z]{2,4})(@)(kiet)(\.)(edu)$/;
+    if (mentorRegx.test(data.email)) {
+      console.log("i know it run")
+      const a = data.email.split(".");
+      const branchArray = a[1].split("@");
+      const branch = branchArray[0];
+      const newbranch = branch.toUpperCase();
+      setData({ ...data, branch: newbranch });
+
+    }
+  }, [data.email])
   const pushTo = (isAuth) => {
     if (isAuth) {
       const userid = setJson(localStorage.getItem("user"));
@@ -242,9 +242,9 @@ useEffect(()=>{
     //   const branch = branchArray[0];
     //   const newbranch = branch.toUpperCase();
     //   setData({ ...data, branch: newbranch});
-      
+
     // }
-    
+
     console.log(data);
     dispatch(SignUp(data));
   };
@@ -294,10 +294,11 @@ useEffect(()=>{
             placeholder="Mobile no"
             className="inp-box"
           />
+          {err ? <Alert severity="error">{err_msg}</Alert> : ""}
           <p className="para">
             Already have an Account? <Link to="/signin">Sign in</Link>
           </p>
-          <button disabled = {isLoading} onClick={onHandleSubmit} className={!isLoading?"sign-btn":"sign-btn-hid"}>
+          <button disabled={isLoading} onClick={onHandleSubmit} className={!isLoading ? "sign-btn" : "sign-btn-hid"}>
             Signup
           </button>
         </form>

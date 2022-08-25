@@ -14,6 +14,8 @@ const initialState = {
   isAuthenticated: null,
   isLoading: false,
   user: null,
+  err: false,
+  err_msg: ""
 };
 
 export default function (state = initialState, action) {
@@ -34,41 +36,75 @@ export default function (state = initialState, action) {
     case LOGIN_SUCCESS:
     case REGISTER_SUCCESS:
       localStorage.setItem("token", action.payload.token);
-      localStorage.setItem("user", JSON.stringify(action.payload.user) );
-    
+      localStorage.setItem("user", JSON.stringify(action.payload.user));
+
 
       return {
         ...state,
         ...action.payload,
         isAuthenticated: true,
         isLoading: false,
-       
+
 
       };
-  // case USER_LOADING:
-  //      console.log("hey now i am loading ")
-  //      return{
-  //        ...state ,
-  //        isLoading: true
-  //      };
+    // case USER_LOADING:
+    //      console.log("hey now i am loading ")
+    //      return{
+    //        ...state ,
+    //        isLoading: true
+    //      };
     case AUTH_ERROR:
-    case LOGIN_FAIL:
-    case LOGOUT_SUCCESS:
-    case REGISTER_FAIL:
-
       console.log("Register fail run")
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-      
-     
+
+
       return {
         ...state,
         token: null,
         user: null,
         isAuthenticated: false,
         isLoading: false,
+        err: false
+
       };
-     
+
+
+    case LOGOUT_SUCCESS:
+      console.log("Register fail run")
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+
+
+      return {
+        ...state,
+        token: null,
+        user: null,
+        isAuthenticated: false,
+        isLoading: false,
+        err: false
+
+      };
+
+    case REGISTER_FAIL:
+    case LOGIN_FAIL:
+
+      console.log("Register fail run")
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+
+
+      return {
+        ...state,
+        token: null,
+        user: null,
+        isAuthenticated: false,
+        isLoading: false,
+        err: true,
+        err_msg: action.payload
+
+      };
+
     default:
       return state;
   }

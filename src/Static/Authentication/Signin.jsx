@@ -1,11 +1,12 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Login , Loading } from "../../redux/actions/authAction";
-import { Link , useHistory } from "react-router-dom";
+import { Login, Loading } from "../../redux/actions/authAction";
+import { Link, useHistory } from "react-router-dom";
 import Overlay1 from "../../Assets/Illustrations/Overlay1.svg";
-import { isLogin  } from "../../redux/actions/authAction";
+import { isLogin } from "../../redux/actions/authAction";
 import Overlay2 from "../../Assets/Illustrations/Overlay2.svg";
 import "./css/Auth.css";
+import Alert from '@mui/material/Alert';
 import { setJson } from "../../Global/Helper";
 
 function Signin() {
@@ -18,43 +19,43 @@ function Signin() {
   const history = useHistory();
 
   const resp = useSelector((state) => state.auth);
-  const {isLoading} = resp;
+  const { isLoading, isAuthenticated, err } = resp;
   const userid = setJson(localStorage.getItem("user"));
-  const { isAuthenticated } = resp;
 
+  console.log(err)
   const pushTo = (isAuth) => {
-    
+
     if (isAuth) {
       console.log(resp)
-     
-      if(userid.role===0){
-        
+
+      if (userid.role === 0) {
+
         history.push("/user-dashboard");
       }
-      else if(userid.role===2){
+      else if (userid.role === 2) {
 
         history.push("/tbi-dashboard")
       }
 
-      else if(userid.role===3){
+      else if (userid.role === 3) {
         history.push("/Mentor-dashboard");
       }
-     
+
     }
   };
 
   // useEffect(()=>{
-    
+
   //   pushTo(isAuthenticated);
   // },[])
 
-  
+
   useEffect(() => {
 
-    
- 
-   pushTo(isAuthenticated);
-    
+
+
+    pushTo(isAuthenticated);
+
   }, [isAuthenticated])
   const onHandleChange = (e) => {
     setData({
@@ -65,11 +66,11 @@ function Signin() {
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
-    dispatch(Loading());
+
     dispatch(Login(data));
-    
+
     console.log(isAuthenticated);
-   
+
   };
   return (
     <section className="auth">
@@ -101,6 +102,7 @@ function Signin() {
             className="inp-box"
             onChange={onHandleChange}
           />
+          {err ? <Alert severity="error">Please check the input fields</Alert> : ""}
           <div className="remember">
             <input type="checkbox" name="" id="" />
             <label htmlFor="">Remember me</label>
@@ -109,9 +111,10 @@ function Signin() {
             <Link to="#">Forgot Password.</Link> New here?{" "}
             <Link to="/signup">Sign up</Link>
           </p>
-          <button disabled = {isLoading} onClick = {onHandleSubmit} className={!isLoading?"sign-btn":"sign-btn-hid"}>Login</button>
+          <button disabled={isLoading} onClick={onHandleSubmit} className={!isLoading ? "sign-btn" : "sign-btn-hid"}>Login</button>
         </form>
       </div>
+
     </section>
   );
 }
