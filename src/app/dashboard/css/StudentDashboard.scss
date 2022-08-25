@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  // background-color: red;
 
   .dash-container {
     background-color: #242424;
@@ -23,7 +24,7 @@
       margin-right: 0;
       padding: 1.5rem;
       display: flex;
-      border-radius: 10px;
+      border-radius: 50px;
       text-align: center;
       align-items: center;
       flex-direction: column;
@@ -73,7 +74,7 @@
       }
 
       .log-out {
-        border-radius: 10px;
+        border-radius: 30px;
         padding: 1rem 2rem;
         border: none;
         background-color: var(--comp-sec);
@@ -99,7 +100,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      border-radius: 10px;
+      border-radius: 50px;
       min-height: 80vh;
 
       .card_container {
@@ -142,7 +143,7 @@
         margin-right: 0;
         padding: 1.5rem;
         display: flex;
-        border-radius: 10px;
+        border-radius: 50px;
         text-align: center;
         align-items: center;
         flex-direction: column;
@@ -191,7 +192,7 @@
         }
 
         .log-out {
-          border-radius: 10px;
+          border-radius: 30px;
           padding: 1rem 2rem;
           border: none;
           background-color: var(--comp-sec);
@@ -212,7 +213,8 @@
         justify-content: space-between;
         padding: 10px 20px;
         background-color: var(--comp-sec);
-        border-radius: 10px;
+        border-radius: 50px;
+        // background-color: red;
         color: white;
 
         .mob_img {
@@ -260,7 +262,8 @@
         width: 96%;
         padding: 10px 20px;
         background-color: var(--comp-sec);
-        border-radius: 10px;
+        border-radius: 50px;
+        margin-bottom: 20px;
         color: white;
 
         .mob_img {

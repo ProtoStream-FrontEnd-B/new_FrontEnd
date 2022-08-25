@@ -1,25 +1,17 @@
 .DepartmentBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
   width: 350px;
   margin: 1rem;
   height: 200px;
   background: linear-gradient(111.9deg, var(--accent-pr) 26.31%, var(--accent-sec) 87.23%);
   font-size: var(--heading-main);
   font-weight: bold;
-  -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
   cursor: pointer;
 }
-
 .DepartmentBox .head {
   font-size: var(--heading-main);
   font-family: var(--font-sec);
@@ -27,8 +19,7 @@
 }
 
 .DepartmentBox:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 @media screen and (max-width: 414px) {
@@ -37,5 +28,4 @@
     height: 150px;
     font-size: var(--heading-small);
   }
-}
-/*# sourceMappingURL=DepartmentBox.css.map */
+}/*# sourceMappingURL=DepartmentBox.css.map */

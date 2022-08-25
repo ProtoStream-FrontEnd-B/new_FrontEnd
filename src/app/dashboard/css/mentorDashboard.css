@@ -1,20 +1,12 @@
 .dashboard {
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .dashboard .main-container {
   width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .dashboard .main-container .idea-container {
   background-color: var(--accent-sec);
   padding: 1rem;
@@ -24,5 +16,4 @@
   width: 90%;
   margin: auto;
   height: 80%;
-}
-/*# sourceMappingURL=mentorDashboard.css.map */
+}/*# sourceMappingURL=mentorDashboard.css.map */

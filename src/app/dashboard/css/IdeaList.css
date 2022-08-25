@@ -5,7 +5,6 @@
   padding: 0;
   border-radius: 10px;
 }
-
 .idea-list .header .head {
   background-color: var(--comp-pr);
   padding: 1rem;
@@ -13,14 +12,10 @@
   width: 30%;
   margin-left: 4rem;
 }
-
 .idea-list .main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
-
 .idea-list .main .main-container,
 .idea-list .main .filter-box {
   background-color: var(--comp-pr);
@@ -30,12 +25,10 @@
   min-height: 650px;
   height: 700px;
 }
-
 .idea-list .main .main-container {
   width: 70%;
   padding: 2rem;
 }
-
 .idea-list .main .main-container .ideas {
   background: linear-gradient(283.42deg, var(--accent-sec) 22.46%, var(--accent-pr) 96.19%);
   padding: 1rem;
@@ -43,40 +36,33 @@
   height: 100%;
   overflow: auto;
 }
-
 .idea-list .main .filter-box {
   width: 20%;
   color: var(--text-pr);
   padding: 2rem;
 }
-
 .idea-list .main .filter-box .head {
   font-weight: bold;
   font-size: var(--heading-small);
   font-family: var(--font-pr);
 }
-
 .idea-list .main .filter-box .feedback-container {
   padding: 0;
 }
-
 .idea-list .main .filter-box .feedback-container .feedback {
   padding: 1rem;
   border-radius: 5px;
   background-color: var(--comp-sec);
   margin: 1rem 0;
   width: 100%;
-  -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
   font-family: var(--font-pr);
 }
-
 .idea-list .main .filter-box .feedback-container .feedback .name {
   cursor: pointer;
   font-size: var(--button);
   font-weight: bold;
 }
-
 .idea-list .main .filter-box .feedback-container .feedback:hover {
   background-color: var(--bg-pr);
 }
@@ -113,11 +99,10 @@
     font-size: var(--button);
   }
   .idea-list .main .filter-box .field label,
-  .idea-list .main .filter-box .field input {
+.idea-list .main .filter-box .field input {
     font-size: var(--span);
   }
 }
-
 @media screen and (max-width: 770px) {
   .idea-list {
     width: 100vw;
@@ -135,10 +120,7 @@
   .idea-list .main {
     width: 100%;
     height: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .idea-list .main .main-container {
     width: 95%;
@@ -154,11 +136,10 @@
     font-size: var(--button);
   }
   .idea-list .main .filter-box .field label,
-  .idea-list .main .filter-box .field input {
+.idea-list .main .filter-box .field input {
     font-size: var(--span);
   }
 }
-
 @media screen and (max-width: 428px) {
   .idea-list {
     width: 100vw;
@@ -176,10 +157,7 @@
   .idea-list .main {
     width: 100%;
     height: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .idea-list .main .main-container {
     width: 95%;
@@ -195,8 +173,7 @@
     font-size: var(--button);
   }
   .idea-list .main .filter-box .field label,
-  .idea-list .main .filter-box .field input {
+.idea-list .main .filter-box .field input {
     font-size: var(--span);
   }
-}
-/*# sourceMappingURL=IdeaList.css.map */
+}/*# sourceMappingURL=IdeaList.css.map */

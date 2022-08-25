@@ -2,29 +2,22 @@
 .auth {
   width: 100%;
   height: 89.6vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   font-family: var(--font-pr);
   text-align: center;
   color: var(--text-pr);
 }
-
 .auth .overlay1,
 .auth .overlay2 {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
-
 .auth .overlay1 img,
 .auth .overlay2 img {
   width: 100%;
 }
-
 .auth .container {
   width: 450px;
   padding: 1rem;
@@ -33,27 +26,18 @@
   margin: 1rem;
   z-index: 10;
 }
-
 .auth .container .heading {
   font-size: var(--heading-main);
   margin: 1rem;
 }
-
 .auth .container .sub-head {
   font-size: var(--span);
   margin: 0.5rem;
 }
-
 .auth .container .form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .auth .container .form .inp-box {
   width: 100%;
   border-radius: 5px;
@@ -66,17 +50,14 @@
   outline-color: var(--accent-sec);
   font-family: var(--font-pr);
 }
-
 .auth .container .form .remember input {
   margin: 1rem;
   cursor: pointer;
 }
-
 .auth .container .form .para a {
   color: var(--accent-sec);
   font-family: var(--font-alt);
 }
-
 .auth .container .form .sign-btn {
   width: 100%;
   padding: 0.7rem;
@@ -87,11 +68,9 @@
   font-family: var(--font-pr);
   border: none;
   border-radius: 5px;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   cursor: pointer;
 }
-
 .auth .container .form .sign-btn-hid {
   width: 100%;
   padding: 0.7rem;
@@ -102,11 +81,9 @@
   font-family: var(--font-pr);
   border: none;
   border-radius: 5px;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   opacity: 0.5;
 }
-
 .auth .container .form .sign-btn:hover {
   background-color: var(--accent-pr);
 }
@@ -133,5 +110,4 @@
     padding: 0.5rem;
     font-size: var(--span);
   }
-}
-/*# sourceMappingURL=Auth.css.map */
+}/*# sourceMappingURL=Auth.css.map */

@@ -3,42 +3,28 @@
   height: 550px;
   border-radius: 10px;
   background-color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   color: black;
   margin: 2rem;
   font-family: var(--font-pr);
   padding: 1rem;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-
 .Startup-Card img {
   width: 200px;
 }
-
 .Startup-Card .head {
   font-size: var(--heading-med);
   color: var(--accent-sec);
 }
-
 .Startup-Card .para {
   color: black;
   font-size: var(--para);
 }
-
 .Startup-Card .btn {
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   width: 50%;
   padding: 0.5rem;
@@ -54,7 +40,6 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
 .Startup-Card .btn .btn-1 {
   font-size: var(--button);
   font-weight: bold;
@@ -64,8 +49,6 @@
   cursor: pointer;
   font-family: var(--font-pr);
 }
-
 .Startup-Card .btn:hover {
   background-color: var(--comp-pr);
-}
-/*# sourceMappingURL=StartupCard.css.map */
+}/*# sourceMappingURL=StartupCard.css.map */

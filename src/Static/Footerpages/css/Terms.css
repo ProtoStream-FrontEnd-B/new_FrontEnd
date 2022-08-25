@@ -2,11 +2,9 @@
   width: 90%;
   margin: auto;
 }
-
 .Terms .more-details .toggle-head {
   text-align: center;
 }
-
 .Terms .more-details .toggle-head .sub-head {
   color: var(--text-pr);
   padding-bottom: 1em;
@@ -18,8 +16,6 @@
   font-size: var(--heading-small);
   margin: 2rem;
 }
-
 .Terms .more-details .display {
   display: none;
-}
-/*# sourceMappingURL=Terms.css.map */
+}/*# sourceMappingURL=Terms.css.map */

@@ -1,103 +1,69 @@
 .Startup_card {
-  -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
   background-color: var(--comp-pr);
   height: 750px;
   width: 500px;
   margin: 2rem;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  border-radius: 50px;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
   position: relative;
   text-align: center;
 }
-
 .Startup_card .head {
   text-align: center;
   color: var(--text-pr);
   font-size: var(--heading-main);
   margin-bottom: 5rem;
 }
-
 .Startup_card .para {
   font-size: var(--button);
-  font-weight: bold;
+  font-weight: normal;
   display: inline-block;
-  width: 25rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  width: 80%;
+  align-self: center;
   margin-bottom: 3rem;
 }
-
 .Startup_card .btn_div {
   text-align: center;
   position: absolute;
   bottom: 2rem;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 60%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .Startup_card .btn_div .btn {
-  background: -webkit-gradient(linear, left top, right top, from(var(--accent-sec)), to(var(--accent-pr)));
   background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
-  color: #fff;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  width: 100%;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-  padding: 0.5rem;
-  height: 2rem;
-  -webkit-transition: all ease-in-out 0.3s;
+  font-weight: bold;
+  padding: 1rem;
+  font-size: var(--button);
+  border-radius: 30px;
+  margin: 10px;
   transition: all ease-in-out 0.3s;
-  font-weight: bolder;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
 .Startup_card .btn_div .btn:hover {
   cursor: pointer;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  transform: scale(1.02);
 }
-
 .Startup_card .btn_div .btnhover {
   color: #fff;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  width: 100%;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-  padding: 0.5rem;
-  height: 2rem;
-  -webkit-transition: all ease-in-out 0.3s;
-  transition: all ease-in-out 0.3s;
-  font-weight: bolder;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: var(--comp-pr);
   cursor: pointer;
+  background-color: var(--comp-pr);
+  font-weight: bold;
+  padding: 1rem;
+  font-size: var(--button);
+  border-radius: 30px;
+  margin: 10px;
+  transition: all ease-in-out 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.Startup_card .btn_div .btnhover:hover {
+  background-color: var(--comp-sec);
 }
 
 div:empty {
@@ -105,10 +71,7 @@ div:empty {
 }
 
 .Startup_card:hover {
-  background: -webkit-gradient(linear, left top, right top, from(var(--accent-sec)), to(var(--accent-pr)));
   background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
 }
 
 .Startup_card:hover .btn_div .btn {
@@ -119,5 +82,4 @@ div:empty {
   .Startup_card {
     height: 500px;
   }
-}
-/*# sourceMappingURL=StartupCard.css.map */
+}/*# sourceMappingURL=StartupCard.css.map */

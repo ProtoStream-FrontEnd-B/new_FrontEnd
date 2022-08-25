@@ -1,13 +1,13 @@
 import axios from "axios";
 
 import {
+  LOGIN_FAIL,
+  LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
+  REGISTER_FAIL,
+  REGISTER_SUCCESS,
   USER_LOADED,
   USER_LOADING,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
-  LOGOUT_SUCCESS,
-  REGISTER_SUCCESS,
-  REGISTER_FAIL,
 } from "./types";
 
 export const SignUp = (data) => async (dispatch) => {
@@ -53,30 +53,6 @@ export const SignUp = (data) => async (dispatch) => {
   }
 };
 
-// const delayLogin = (data) => async (dispatch)=>{
-
-//   const config = {
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   };
-//   try {
-//     console.log("Hey this function ran ")
-//     const data2 = await axios.post(`${process.env.REACT_APP_BACKEND_API}/login`, data, config);
-//     if (data2) {
-//       dispatch({
-//         type: LOGIN_SUCCESS,
-//         payload: data2.data,
-
-//       });
-
-//     console.log("User is laoding ")
-//   }
-//  } catch (error) {
-//     console.log("error")
-//   }
-
-// }
 export const Loading = () => {
   console.log("I ran i m sure of it ");
   return {
@@ -112,9 +88,11 @@ export const Login = (data) => async (dispatch) => {
 
       console.log("User is laoded ");
     }
+    console.log("data", data2);
   } catch (error) {
     console.log(error);
     alert("Please check your details");
+    // alert(error);
     dispatch({
       type: LOGIN_FAIL,
       payload: error,

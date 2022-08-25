@@ -1,17 +1,14 @@
 .member {
   margin: 2rem;
 }
-
 .member .PP {
   width: 8em;
   border-radius: 50%;
   margin-bottom: 1rem;
 }
-
 .member .content {
   text-align: center;
 }
-
 .member .content .name {
   font-family: var(--font-sec);
   font-size: var(--button);
@@ -19,19 +16,16 @@
   color: var(--accent-sec);
   margin-bottom: 0.5rem;
 }
-
 .member .content .session {
   font-family: var(--font-pr);
   font-size: var(--para);
   padding-bottom: 0.2em;
   color: var(--text-sec);
 }
-
 .member .content .work {
   font-family: var(--font-sec);
   font-weight: bold;
   font-size: var(--para);
   padding-bottom: 0.2em;
   color: var(--text-pr);
-}
-/*# sourceMappingURL=Member.css.map */
+}/*# sourceMappingURL=Member.css.map */

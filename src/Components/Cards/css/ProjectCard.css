@@ -1,99 +1,57 @@
 .project-container {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 100%;
   border-radius: 10px;
   margin: 0.5rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
-  -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
   font-family: var(--font-pr);
 }
-
 .project-container .project_head_div {
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
   padding: 1rem;
   padding-right: 1rem;
   margin: 0.5rem;
 }
-
 .project-container .project_head_div .project_head {
   font-family: var(--font-sec);
   font-size: 2rem;
   color: var(--accent-sec);
   font-weight: bolder;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
-
 .project-container .project_content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 60%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #252525;
+  align-items: center;
+  color: rgb(37, 37, 37);
 }
-
 .project-container .branch {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   margin: 0.5rem;
   font-family: var(--font-sec);
   font-size: 1rem;
   color: var(--bg-pr);
   font-weight: bolder;
 }
-
 .project-container .project_link {
   width: 25%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  align-items: center;
+  justify-content: space-around;
   margin: 0.5rem;
 }
-
 .project-container .project_btn {
   color: white;
   background: #ffb606;
@@ -106,17 +64,13 @@
 }
 
 .project-container:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 @media screen and (max-width: 1024px) {
   .project-container {
     width: 300px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     padding: 10px;
     display: block;
   }
@@ -137,11 +91,8 @@
     width: 100%;
   }
   .project-container .project_link {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     padding-top: 0.5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     margin: 0;
@@ -152,14 +103,10 @@
     display: none;
   }
 }
-
 @media screen and (max-width: 414px) {
   .project-container {
     width: 300px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     padding: 10px;
     display: block;
   }
@@ -180,11 +127,8 @@
     width: 100%;
   }
   .project-container .project_link {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     padding-top: 0.5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     margin: 0;
@@ -194,5 +138,4 @@
   .project-container .project_link .project_btn {
     display: none;
   }
-}
-/*# sourceMappingURL=ProjectCard.css.map */
+}/*# sourceMappingURL=ProjectCard.css.map */

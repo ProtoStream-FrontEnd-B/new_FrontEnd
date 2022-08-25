@@ -1,15 +1,13 @@
 .AnsCard {
   width: 400px;
   height: 200px;
-  border-radius: 5px;
+  border-radius: 30px;
   background-color: var(--comp-pr);
-  padding: 1rem;
+  padding: 1.5rem;
   margin: 1rem;
   cursor: pointer;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-
 .AnsCard .mhead {
   margin-bottom: 1rem;
 }
@@ -29,5 +27,4 @@
   .AnsCard .sub {
     font-size: var(--para);
   }
-}
-/*# sourceMappingURL=ansCard.css.map */
+}/*# sourceMappingURL=ansCard.css.map */

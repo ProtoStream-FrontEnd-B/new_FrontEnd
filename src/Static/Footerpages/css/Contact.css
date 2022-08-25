@@ -1,7 +1,6 @@
 .contact {
   text-align: center;
 }
-
 .contact .head {
   color: var(--text-pr);
   font-family: var(--font-sec);
@@ -24,5 +23,4 @@
   color: var(--text-pr);
   font-family: var(--font-sec);
   font-size: var(--button);
-}
-/*# sourceMappingURL=Contact.css.map */
+}/*# sourceMappingURL=Contact.css.map */

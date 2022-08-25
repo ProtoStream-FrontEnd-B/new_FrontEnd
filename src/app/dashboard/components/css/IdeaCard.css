@@ -1,30 +1,21 @@
 .Ideacard {
   width: 100%;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 50px;
   margin: 0.5rem auto;
   padding: 1rem;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   height: 70px;
 }
-
 .Ideacard .head {
   font-family: var(--font-pr);
   color: var(--accent-sec);
   font-size: var(--heading-med);
   text-align: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
-
 .Ideacard .head button {
   background-color: transparent;
   border: none;
@@ -32,52 +23,33 @@
   border-radius: 50px;
   width: 50px;
   height: 50px;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-
 .Ideacard .head button img {
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
-
 .Ideacard .head Button:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-
 .Ideacard .hidden-section {
   display: none;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-
 .Ideacard .hidden-section .details {
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   opacity: 0;
   width: 50%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .Ideacard .hidden-section .details .ques,
 .Ideacard .hidden-section .details .ans {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   text-align: left;
 }
-
 .Ideacard .hidden-section .details .ques .question,
 .Ideacard .hidden-section .details .ques .answers,
 .Ideacard .hidden-section .details .ans .question,
@@ -85,7 +57,6 @@
   margin: 0.5rem;
   font-weight: bold;
 }
-
 .Ideacard .hidden-section .btns .btn {
   padding: 0.5rem 1rem;
   font-size: var(--button);
@@ -96,26 +67,19 @@
   margin: 1rem;
   cursor: pointer;
 }
-
 .Ideacard .hidden-section .btns .btn:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .expanded {
   height: 350px;
 }
-
 .expanded .head button img {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
-
 .expanded .hidden-section {
   display: block;
 }
-
 .expanded .hidden-section .details {
   opacity: 1;
-}
-/*# sourceMappingURL=IdeaCard.css.map */
+}/*# sourceMappingURL=IdeaCard.css.map */

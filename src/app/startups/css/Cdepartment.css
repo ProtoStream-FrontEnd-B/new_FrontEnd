@@ -1,28 +1,16 @@
 .Cdepartment {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
   min-height: 90vh;
 }
-
 .Cdepartment .option-header {
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
   width: 50%;
   margin: 1rem;
@@ -32,13 +20,11 @@
   min-width: fit-content;
   background-color: var(--comp-pr);
 }
-
 .Cdepartment .option-header .head {
   font-size: var(--heading-main);
   font-family: var(--font-sec);
   color: var(--text-pr);
 }
-
 .Cdepartment .container {
   width: 95%;
   background-color: var(--comp-sec);
@@ -46,10 +32,8 @@
   padding: 1rem;
   margin: auto;
   height: 100%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   place-items: center;
   overflow: auto;
 }
@@ -63,7 +47,6 @@
     font-size: var(--heading-main);
   }
 }
-
 @media screen and (max-width: 414px) {
   .Cdepartment .option-header {
     width: 90%;
@@ -72,5 +55,4 @@
   .Cdepartment .option-header .head {
     font-size: var(--heading-med);
   }
-}
-/*# sourceMappingURL=Cdepartment.css.map */
+}/*# sourceMappingURL=Cdepartment.css.map */

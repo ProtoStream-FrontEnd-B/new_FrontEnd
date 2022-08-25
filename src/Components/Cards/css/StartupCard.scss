@@ -4,13 +4,14 @@
   height: 750px;
   width: 500px;
   margin: 2rem;
-  border-radius: 10px;
+  border-radius: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
   position: relative;
   text-align: center;
+  // background-color: red;
 
   .head {
     text-align: center;
@@ -21,9 +22,9 @@
 
   .para {
     font-size: var(--button);
-    font-weight: bold;
+    font-weight: normal;
     display: inline-block;
-    width: 25rem;
+    width: 80%;
     align-self: center;
     margin-bottom: 3rem;
   }
@@ -40,15 +41,12 @@
 
     .btn {
       background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
-      color: #fff;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-      width: 100%;
-      min-height: fit-content;
-      padding: 0.5rem;
-      height: 2rem;
+      font-weight: bold;
+      padding: 1rem;
+      font-size: var(--button);
+      border-radius: 30px;
+      margin: 10px;
       transition: all ease-in-out 0.3s;
-      font-weight: bolder;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
@@ -59,17 +57,19 @@
 
     .btnhover {
       color: #fff;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-      width: 100%;
-      min-height: fit-content;
-      padding: 0.5rem;
-      height: 2rem;
-      transition: all ease-in-out 0.3s;
-      font-weight: bolder;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      background-color: var(--comp-pr);
       cursor: pointer;
+      background-color: var(--comp-pr);
+      font-weight: bold;
+      padding: 1rem;
+      font-size: var(--button);
+      border-radius: 30px;
+      margin: 10px;
+      transition: all ease-in-out 0.3s;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .btnhover:hover {
+      background-color: var(--comp-sec);
     }
   }
 }
@@ -80,7 +80,7 @@ div:empty {
 
 .Startup_card:hover {
   background: linear-gradient(90deg, var(--accent-sec), var(--accent-pr));
-  transform: scale(1.05);
+  // transform: scale(1.05);
 }
 
 .Startup_card:hover .btn_div .btn {

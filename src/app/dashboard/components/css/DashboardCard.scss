@@ -1,7 +1,7 @@
 .DashboardCard {
   width: 400px;
   height: 250px;
-  border-radius: 10px;
+  border-radius: 40px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@
   padding: 1rem;
   transition: all 0.2s ease;
   cursor: pointer;
+  background-color: red;
 
   img {
     width: 100px;

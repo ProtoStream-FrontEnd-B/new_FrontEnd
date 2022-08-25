@@ -4,7 +4,6 @@
   color: var(--text-pr);
   font-family: var(--font-sec);
 }
-
 .resources-section .main-heading {
   text-align: center;
   text-decoration: underline;
@@ -14,18 +13,15 @@
   font-size: var(--heading-main);
   margin-bottom: 1rem;
 }
-
 .resources-section .sub {
   font-size: var(--heading-med);
   color: var(--accent-sec);
   margin: 1rem 0;
 }
-
 .resources-section .sec .head {
   font-size: var(--heading-small);
   margin: 2rem 0;
 }
-
 .resources-section .sec p {
   color: var(--text-pr);
   font-family: var(--font-alt);
@@ -35,16 +31,13 @@
   letter-spacing: 0.1rem;
   margin: 1rem 0;
 }
-
 .resources-section .sec .comp .subhead {
   color: var(--accent-sec);
   margin: 1rem 0;
 }
-
 .resources-section .sec .comp ul {
   margin: 1rem;
 }
-
 .resources-section .sec .comp ul li {
   color: var(--text-pr);
   font-family: var(--font-alt);
@@ -53,5 +46,4 @@
   line-height: 30px;
   word-spacing: 0.1rem;
   letter-spacing: 0.1rem;
-}
-/*# sourceMappingURL=Resources.css.map */
+}/*# sourceMappingURL=Resources.css.map */

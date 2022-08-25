@@ -9,65 +9,42 @@
   border-radius: 10px;
   background-color: var(--comp-pr);
   margin: 1rem;
-  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   padding: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   cursor: pointer;
   position: relative;
 }
-
 .Scard header .heading {
   font-size: var(--heading-main);
   color: var(--text-pr);
   font-family: var(--font-pr);
 }
-
 .Scard header .verify-icon {
   top: 20px;
   width: 50px;
   right: 20px;
   position: absolute;
 }
-
 .Scard main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
-
 .Scard main .illustration {
   margin-bottom: 4rem;
 }
-
 .Scard main .para {
   font-family: var(--font-sec);
   font-size: var(--span);
 }
-
 .Scard footer button {
   padding: 0.5rem 1.5rem;
-  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   color: var(--text-pr);
   background-color: var(--bg-pr);
@@ -77,9 +54,7 @@
 }
 
 .hover:hover {
-  -webkit-transform: scale(1.04);
-          transform: scale(1.04);
-  -webkit-transition: all 0.2s ease;
+  transform: scale(1.04);
   transition: all 0.2s ease;
   background: linear-gradient(124.21deg, var(--accent-sec) 28.71%, var(--accent-pr) 82.09%);
 }
@@ -101,5 +76,4 @@
   .Scard main .illustration {
     display: none;
   }
-}
-/*# sourceMappingURL=Scard.css.map */
+}/*# sourceMappingURL=Scard.css.map */

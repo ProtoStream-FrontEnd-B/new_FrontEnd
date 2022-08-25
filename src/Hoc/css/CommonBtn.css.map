@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "CommonBtn.scss"
-    ],
-    "names": [],
-    "file": "CommonBtn.css"
-}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"CommonBtn.css"}
