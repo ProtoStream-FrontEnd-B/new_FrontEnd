@@ -1,39 +1,35 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { EditIdea } from "../../redux/actions/tbiAction";
-import { useSelector } from "react-redux";
-import { setJson } from "../../Global/Helper";
-import "./css/StartupDetails.css";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
+import { setJson } from "../../Global/Helper";
+import { EditIdea } from "../../redux/actions/tbiAction";
+import "./css/StartupDetails.css";
 
 function StartupDetailsForm() {
   const state = useSelector((state) => state.tbi);
   const dispatch = useDispatch();
   const history = useHistory();
-  const userid = setJson(localStorage.getItem("user")); 
+  const userid = setJson(localStorage.getItem("user"));
 
+  console.log(state);
 
- console.log(state);
- 
-  const onHandleLoad = ()=>{
-    if(state.Idea.Idea==null || state.Idea.Idea==undefined){
-      history.push('/tbi-dashboard');
+  const onHandleLoad = () => {
+    if (state.Idea.Idea == null || state.Idea.Idea == undefined) {
+      history.push("/tbi-dashboard");
     }
-  }
-  
-  useEffect(()=>{
+  };
+
+  useEffect(() => {
     onHandleLoad();
-    },[state])
-  
+  }, [state]);
 
+  const step3 = state.Idea.Idea;
 
-
-const step3 = state.Idea.Idea;
-
-console.log(step3);
+  console.log(step3);
   useEffect(() => {
     console.log(state);
   }, [state]);
+
   const details = {
     photo: "",
     gender: "male",
@@ -41,7 +37,7 @@ console.log(step3);
     pan: "FCKUHEHE",
     category: "General",
     status: "Student",
-    cameToKnow: "ProtoStream", 
+    cameToKnow: "ProtoStream",
     qualification: "B.Tech CSE",
     experience: true,
     ownVenture: true,
@@ -53,14 +49,13 @@ console.log(step3);
     agreement2: true,
   };
 
-  const onHandleVerify = (id , IdeaId) => {
-    console.log(id)
+  const onHandleVerify = (id, IdeaId) => {
+    console.log(id);
     const status = "verified";
-    console.log(id , IdeaId);
-    dispatch(EditIdea({id ,status , IdeaId}));
-    history.push('/tbi-dashboard');
+    console.log(id, IdeaId);
+    dispatch(EditIdea({ id, status, IdeaId }));
+    history.push("/tbi-dashboard");
     // document.location.reload();
-
   };
 
   return (
@@ -202,7 +197,16 @@ console.log(step3);
             </div>
           </div>
           <button className="btn">See Uploaded Signature</button>
-        { step3._id!=null && step3._id !=undefined && <button onClick= {()=>{onHandleVerify(userid._id ,step3._id )}} className="btn verify">Verify it</button>}
+          {step3._id != null && step3._id != undefined && (
+            <button
+              onClick={() => {
+                onHandleVerify(userid._id, step3._id);
+              }}
+              className="btn verify"
+            >
+              Verify it
+            </button>
+          )}
         </div>
         <div className="control-buttons">
           <button className="btn">Dismiss with Comment</button>

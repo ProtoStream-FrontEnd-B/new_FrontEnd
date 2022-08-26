@@ -1,21 +1,21 @@
 import React from "react";
-import Footer from '../Footerpages/Footer'
-import Asection from "./Asection";
-import Section from "./Section";
-import Startups from "./Startups";
+import hackathon from "../../Assets/Illustrations/hackathon.svg";
+import internships from "../../Assets/Illustrations/internship.svg";
 import landing from "../../Assets/Illustrations/landing.svg";
 import prototyping from "../../Assets/Illustrations/prototyping.svg";
 import resources from "../../Assets/Illustrations/resources.svg";
-import hackathon from "../../Assets/Illustrations/hackathon.svg";
-import internships from "../../Assets/Illustrations/internship.svg";
-import CommonBtn from "../../Hoc/CommonBtn";
+import startup_sec from "../../Assets/Illustrations/startup_img.svg";
 import NavBar from "../../Components/Header/NavBar";
-import "./css/Home.css"
+import CommonBtn from "../../Hoc/CommonBtn";
+import Footer from "../Footerpages/Footer";
+import Asection from "./Asection";
+import "./css/Home.css";
+import Section from "./Section";
+import Startups from "./Startups";
 
 const Home = () => {
   return (
     <div className="Home">
-
       <Section
         heading="Building the Future, One Idea at a time."
         subHeading="Ideas and Dreams are what makes Entrepreneurs different , but those dreams turned into reality is what makes the world different."
@@ -24,6 +24,17 @@ const Home = () => {
         imageSrc={landing}
         classname="section"
         link="signup"
+        sec_btn_txt="Sign in"
+        sec_link="signin"
+      />
+      <Section
+        heading="Have an Idea ? make it a prototype "
+        subHeading="Its almost always harder to raise capital than you thought it would be , and it always takes longer . so plan for that ?"
+        btnText="Startup"
+        imageSrc={startup_sec}
+        classname="resource section"
+        link="startups"
+        below_txt="For non-college students only "
       />
       <Asection
         imageSrc={internships}
@@ -62,7 +73,6 @@ const Home = () => {
       <CommonBtn />
       <Startups />
       <Footer />
-
     </div>
   );
 };

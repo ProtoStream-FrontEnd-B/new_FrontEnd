@@ -57,6 +57,7 @@
 }
 .section .container .hero-details .btn {
   background: linear-gradient(90.49deg, var(--accent-pr) 17.35%, var(--accent-sec) 59.57%);
+  margin-right: 2rem;
   padding: 0.7rem 2rem;
   margin-top: 3rem;
   color: var(--text-pr);

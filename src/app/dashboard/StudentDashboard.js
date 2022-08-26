@@ -1,20 +1,19 @@
-import { React, useState, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 
+import { useDispatch, useSelector } from "react-redux";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import Badge from "../../Assets/icons/Badge.svg";
 import ProfileImage from "../../Assets/icons/profile.svg";
-import Card from "./components/Card";
-import { Link } from "react-router-dom";
-import { Logout } from "../../redux/actions/authAction";
-import DashboardCard from "../../Components/Cards/DashboardCard";
-import { allHackathons, isAuthenticated, signout } from "../../auth";
-import { NavLink, useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import "./css/StudentDashboard.css";
-import ProjectIcon from "../../Assets/Illustrations/ProjectIcon.svg";
-import { DeskProjectCard } from "../../Components/Cards/ProjectCard";
 import sidebar from "../../Assets/icons/sidebar.png";
-import { GetIdea } from "../../redux/actions/startupAction";
+import ProjectIcon from "../../Assets/Illustrations/ProjectIcon.svg";
+import { allHackathons, isAuthenticated, signout } from "../../auth";
+import DashboardCard from "../../Components/Cards/DashboardCard";
+import { DeskProjectCard } from "../../Components/Cards/ProjectCard";
 import { setJson } from "../../Global/Helper";
+import { Logout } from "../../redux/actions/authAction";
+import { GetIdea } from "../../redux/actions/startupAction";
+import Card from "./components/Card";
+import "./css/StudentDashboard.css";
 
 // const StudentDashboard = () => {
 //     const [load, setLoad] = useState({
@@ -321,7 +320,7 @@ const StudentDashboard = () => {
                     List of your enrolled projects/startups
                   </p>
                 </div>
-                <DeskProjectCard
+                {/* <DeskProjectCard
                   src={ProjectIcon}
                   head="Roxet"
                   para="Creating Reusable Rockets for space exploration and transportation of supplies and sending satellites to the orbit"
@@ -333,7 +332,7 @@ const StudentDashboard = () => {
                   para="Creating Reusable Rockets for space exploration and transportation of supplies and sending satellites to the orbit"
                   branch="ME"
                   members={4}
-                />
+                /> */}
               </DashboardCard>
             </div>
           </>

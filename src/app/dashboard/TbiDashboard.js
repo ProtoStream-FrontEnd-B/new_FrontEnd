@@ -1,25 +1,25 @@
 import React, { useState } from "react";
-import MainArea from "./components/MainArea";
-import DashboardCard from "./components/DashboardCard";
-import StartupCard from "./components/StartupCard";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { signout } from "../../auth";
 import { Logout } from "../../redux/actions/authAction";
+import DashboardCard from "./components/DashboardCard";
+import MainArea from "./components/MainArea";
+import StartupCard from "./components/StartupCard";
 import "./css/TbiDashboard.css";
-import { useDispatch , useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 // adding icons
-import profile from "../../Assets/icons/profile.svg";
 import Badge from "../../Assets/icons/Badge.svg";
-import plus from "../../Assets/icons/plus.svg";
-import trophy from "../../Assets/icons/trophy-icon.svg";
-import idea from "../../Assets/icons/idea-icon.svg";
 import erase from "../../Assets/icons/Erase-icon.svg";
+import idea from "../../Assets/icons/idea-icon.svg";
+import plus from "../../Assets/icons/plus.svg";
+import profile from "../../Assets/icons/profile.svg";
 import slot from "../../Assets/icons/slot-icon.svg";
+import trophy from "../../Assets/icons/trophy-icon.svg";
 
 const TbiDashboard = () => {
   const [active, setActive] = useState("hackathon");
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const history = useHistory();
 
@@ -133,7 +133,7 @@ const dispatch = useDispatch();
           <div className="info">
             <img src={profile} alt="" />
             <p className="name">
-              TBI <span>KIET</span>
+              TBI <span>COLLEGE</span>
             </p>
           </div>
           <div className="btns">
